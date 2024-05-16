@@ -119,3 +119,4 @@ end
 
 [跳转2](tmp/test2.md)
 
+[跳转3](tmp/index.html)
