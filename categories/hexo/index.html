@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>akiraの博客思密达</title>
+    <title>分类: hexo | akiraの博客思密达</title>
     
     
         <meta name="keywords" content="akiraの博客思密达" />
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta property="og:type" content="website">
 <meta property="og:title" content="akiraの博客思密达">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/categories/hexo/index.html">
 <meta property="og:site_name" content="akiraの博客思密达">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="akira23369">
@@ -255,21 +255,24 @@
 </aside>
             
             <section id="main">
-        <article id="post-hexo/使用obsidian来写hexo博客" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/hexo/">hexo</a>
+<div class="timeline timeline-wrap">
+    <div class="timeline-row timeline-row-major">
+        <span class="node"><i class="fa fa-folder"></i></span>
+        <h1 class="title">hexo</h1>
     </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
+                
+    
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">使用obsidian来写hexo博客</a>
+        </h1>
+    
 
-                        
-                        
+                <div class="article-meta">
+                    
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">
@@ -278,94 +281,18 @@
     </div>
 
 
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="noopener" href='https://github.com/akira23369/akira23369.github.io/raw/main/source/_posts/hexo/使用obsidian来写hexo博客.md'> Source </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="noopener" href='https://github.com/akira23369/akira23369.github.io/edit/main/source/_posts/hexo/使用obsidian来写hexo博客.md'> Edit </a>
-                            </div>
-                            <div class="article-meta-button">
-                                <a target="_blank" rel="noopener" href='https://github.com/akira23369/akira23369.github.io/commits/main/source/_posts/hexo/使用obsidian来写hexo博客.md'> History </a>
-                            </div>
-                        
-                    </div>
-                
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">使用obsidian来写hexo博客</a>
-        </h1>
-    
-
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-                
-                
                     
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                    
-                
-                
-                    
-                    <p><h1 id="front-matter"><a class="markdownIt-Anchor" href="#front-matter"></a> Front-Matter</h1>
-<p>obsidian安装Template插件，设置目录后在该目录下创建<code>HexoPost.md</code>文件<br />
-<img src="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/file-20250209211519799.png" alt="" /><br />
-<code>HexoPost.md</code>内容如下</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &lt;% tp.file.title %&gt;</span><br><span class="line">date: &lt;% tp.date.now(&quot;YYYY-MM-DD HH:mm:ss&quot;) %&gt;</span><br><span class="line">toc: true</span><br><span class="line">categories:</span><br><span class="line">&lt;%*</span><br><span class="line">// 自动生成分类（兼容Windows路径）</span><br><span class="line">let folders = await tp.file.folder(true).split(/[\\/]/); </span><br><span class="line">folders = folders.slice(2); // 移除 &quot;<span class="emphasis">_posts&quot; 父级目录</span></span><br><span class="line"><span class="emphasis">for (let category of folders) &#123;</span></span><br><span class="line"><span class="emphasis">    tR += `  - $&#123;category&#125;`;</span></span><br><span class="line"><span class="emphasis">&#125;</span></span><br><span class="line"><span class="emphasis">if (folders.length === 0) &#123;</span></span><br><span class="line"><span class="emphasis">    tR += &quot;  - 未分类&quot;;</span></span><br><span class="line"><span class="emphasis">&#125;</span></span><br><span class="line"><span class="emphasis">%&gt;</span></span><br><span class="line"><span class="emphasis">tags:</span></span><br><span class="line"><span class="emphasis">---</span></span><br></pre></td></tr></table></figure>
-<p>这样就可以在新建md文件后点击obsidian侧边来自动填充categories</p>
-<h1 id="图片管理"><a class="markdownIt-Anchor" href="#图片管理"></a> 图片管理</h1>
-<p>站点配置文件<code>_config.yml</code></p>
-<p>
-                
-            
-        
-        
-            </div>   
-            <div class="article-more-link">
-                <a href="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/#more">查看更多</a>
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/hexo/">hexo</a>
     </div>
-</article>
 
-
-
-
-
-
+                    
+                </div>
+            </div>
+        </div>
     
+</div>
 </section>
         </div>
         <footer id="footer">
