@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-02-20T10:21:59.657Z</updated>
+  <updated>2025-02-20T15:14:04.577Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,215 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>30.音频文件导入</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/30.%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/30.%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5/</id>
+    <published>2025-02-20T15:03:03.000Z</published>
+    <updated>2025-02-20T15:14:04.577Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/30.%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5/file-20250220230421751.png" alt="" /></p><h1 id="音频文件常用格式"><a class="markdownIt-Anchor" href="#音频文件常用格式"></a> 音频文件常用格式</h1><ul><li>wav</li><li>mp3</li><li>ogg</li><li>aiff    （不常用）</li></ul><h1 id="导入音频文件"><a class="markdownIt-Anchor" href="#导入音频文件"></a> 导入音频文件</h1><p>导入音频文件直接从外部拖拽音频文件到Project窗口即可</p><h1 id="force-to-mono-强制变为单声道"><a class="markdownIt-Anchor" href="#force-to-mono-强制变为单声道"></a> Force To Mono 强制变为单声道</h1><ul><li>多声道转单声道</li><li>Normalize 归一化<ul><li>强制为单声道时，混合过程中被标准化</li></ul></li></ul><h1 id="load-in-background-后台加载"><a class="markdownIt-Anchor" href="#load-in-background-后台加载"></a> Load In Background 后台加载</h1><p>在后台加载，不阻塞主线程</p><h1 id="ambisonic-全景声音"><a class="markdownIt-Anchor" href="#ambisonic-全景声音"></a> Ambisonic 全景声音*</h1><ul><li>立体混响声</li><li>非常适合 360 度视频和 XR 应用程序</li><li>如果音频文件包含立体混响声编码的音频，请启用此选项</li></ul><h1 id="loadtype-加载类型"><a class="markdownIt-Anchor" href="#loadtype-加载类型"></a> LoadType 加载类型</h1><ul><li>Decompress On Load 加载时压缩<ul><li>不压缩形式存在内存，加载块，但是内存占用高</li><li>适用于小音效</li></ul></li><li>Compress in memory 压缩内存<ul><li>压缩形式存在内存，加载慢，内存小</li><li>仅适用于较大音效文件</li></ul></li><li>Streaming 流式处理<ul><li>以流形式存在，使用时解码。内存占用最小，cpu消耗高</li><li>性能换内存</li></ul></li></ul><h1 id="preload-audio-data-预加载音频数据"><a class="markdownIt-Anchor" href="#preload-audio-data-预加载音频数据"></a> Preload Audio Data 预加载音频数据</h1><ul><li>预加载音频，勾选后进入场景就加载，不勾选，第一次使用时才加载</li></ul><h1 id="compression-format-压缩格式"><a class="markdownIt-Anchor" href="#compression-format-压缩格式"></a> Compression Format 压缩格式</h1><ul><li>PCM 音频以最高质量存储</li><li>Vorbis 相对PCM压缩的更小，根据质量决定</li><li>ADPCM 包含噪音，会被多次播放的声音，如碰撞声</li></ul><h1 id="quality-音频质量"><a class="markdownIt-Anchor" href="#quality-音频质量"></a> Quality 音频质量*</h1><ul><li>确定要应用于压缩剪辑的压缩量。</li><li>不适用于 PCM/ADPCM/HEVAG 格式</li></ul><h1 id="sample-rate-setting-采样率设置"><a class="markdownIt-Anchor" href="#sample-rate-setting-采样率设置"></a> Sample Rate Setting 采样率设置*</h1><ul><li>PCM 和 ADPCM 压缩格式允许自动优化或手动降低采样率</li><li>Preserve Sample Rate 保持采样率<ul><li>此设置可保持采样率不变（默认值）</li></ul></li><li>Optimize Sample Rate 优化采样率<ul><li>此设置根据分析的最高频率内容自动优化采样率</li></ul></li><li>Override Sample Rate 覆盖采样率<ul><li>此设置允许手动覆盖采样率 因此可有效地将其用于丢弃频率内容。</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="核心系统" scheme="http://example.com/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="音效系统" scheme="http://example.com/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>29.刚体加力</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/29.%E5%88%9A%E4%BD%93%E5%8A%A0%E5%8A%9B/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/29.%E5%88%9A%E4%BD%93%E5%8A%A0%E5%8A%9B/</id>
+    <published>2025-02-20T12:09:49.000Z</published>
+    <updated>2025-02-20T15:00:43.499Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="刚体加力"><a class="markdownIt-Anchor" href="#刚体加力"></a> 刚体加力</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取刚体组件对象</span></span><br><span class="line">rigidbody = <span class="keyword">this</span>.GetComponent&lt;Rigidbody&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加力</span></span><br><span class="line"><span class="comment">// (相对世界坐标系</span></span><br><span class="line">rigidbody.AddForce(Vector3.forward * <span class="number">10</span>);</span><br><span class="line"><span class="comment">//   (相对本地坐标系</span></span><br><span class="line">rigidbody.AddRelativeForce(Vector3.forward * <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加扭矩力</span></span><br><span class="line"><span class="comment">// (世界坐标系      // 没有扭矩阻力会一直动</span></span><br><span class="line">rigidbody.AddTorque(Vector3.up * <span class="number">10</span>);</span><br><span class="line"><span class="comment">// (本地坐标系</span></span><br><span class="line">rigidbody.AddRelativeTorque(Vector3.forward * <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 改变刚体速度       用的少, 位移一般用translate或者给力</span></span><br><span class="line"><span class="comment">// 世界坐标系</span></span><br><span class="line">rigidbody.velocity = Vector3.forward;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 模拟爆炸         在中心产生半径 20m 40的力</span></span><br><span class="line"><span class="comment">// 如果想要所有刚体都产生同样的爆炸效果就必须所有的刚体组件都要调用AddExplosionForce方法</span></span><br><span class="line">rigidbody.AddExplosionForce(<span class="number">40</span>, Vector3.zero, <span class="number">20</span>);</span><br></pre></td></tr></table></figure><h1 id="addforce方法第二个参数力的模式"><a class="markdownIt-Anchor" href="#addforce方法第二个参数力的模式"></a> AddForce方法第二个参数力的模式</h1><h2 id="1-forcemodeforce默认模式"><a class="markdownIt-Anchor" href="#1-forcemodeforce默认模式"></a> <strong>1. ForceMode.Force（默认模式）</strong></h2><ul><li><strong>公式</strong>：F * t = m * v</li><li><strong>说明</strong>：<ul><li>力会持续作用，受物体质量（<code>mass</code>）影响，质量越大加速度越小。</li><li>需要乘以 <code>Time.fixedDeltaTime</code> 才能与物理时间步长匹配（Unity 已自动处理）。</li></ul></li><li><strong>示例</strong>：</li></ul><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 推动质量为2kg的物体，每帧施加10N的力</span></span><br><span class="line">rb.AddForce(Vector3.forward * <span class="number">10</span>, ForceMode.Force);</span><br><span class="line"><span class="comment">// 最终加速度 = 10N / 2kg = 5m/s²</span></span><br></pre></td></tr></table></figure><h3 id="2-forcemodeacceleration"><a class="markdownIt-Anchor" href="#2-forcemodeacceleration"></a> <strong>2. ForceMode.Acceleration</strong></h3><ul><li><strong>公式</strong>：F * t = v （m 为 1）</li><li><strong>说明</strong>：<ul><li><strong>直接施加加速度</strong>，忽略物体质量。</li><li>适合需要固定加速度的场景（如模拟重力）。</li></ul></li><li><strong>示例</strong>：</li></ul><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 无论质量如何，物体以5m/s²的加速度运动</span></span><br><span class="line">rb.AddForce(Vector3.forward * <span class="number">5</span>, ForceMode.Acceleration);</span><br></pre></td></tr></table></figure><h3 id="3-forcemodeimpulse"><a class="markdownIt-Anchor" href="#3-forcemodeimpulse"></a> <strong>3. ForceMode.Impulse</strong></h3><ul><li><strong>公式</strong>：F = m * v  （t 为 1）</li><li><strong>说明</strong>：<ul><li>瞬间施加一个冲量，效果类似“一次性爆发力”。</li><li>受质量影响，质量越大效果越弱。</li></ul></li></ul><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 施加一个冲量为100N·s的力（相当于100N的力作用1秒）</span></span><br><span class="line">rb.AddForce(Vector3.up * <span class="number">100</span>, ForceMode.Impulse);</span><br><span class="line"><span class="comment">// 质量为2kg时，速度增量 = 100 / 2 = 50m/s</span></span><br></pre></td></tr></table></figure><h3 id="4-forcemodevelocitychange"><a class="markdownIt-Anchor" href="#4-forcemodevelocitychange"></a> <strong>4. ForceMode.VelocityChange</strong></h3><ul><li><strong>公式</strong>：F = v   （m 为 1， t 为 1）</li><li><strong>说明</strong>：<ul><li><strong>直接修改速度</strong>，忽略质量和时间步长。</li><li>效果类似“瞬间设置速度”。</li></ul></li><li><strong>示例</strong>：</li></ul><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接将物体的Y轴速度增加10m/s（无视质量）</span></span><br><span class="line">rb.AddForce(Vector3.up * <span class="number">10</span>, ForceMode.VelocityChange);</span><br></pre></td></tr></table></figure><h1 id="恒力场组件"><a class="markdownIt-Anchor" href="#恒力场组件"></a> 恒力场组件</h1><p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/29.%E5%88%9A%E4%BD%93%E5%8A%A0%E5%8A%9B/file-20250220225644597.png" alt="" /></p><h1 id="刚体的休眠"><a class="markdownIt-Anchor" href="#刚体的休眠"></a> 刚体的休眠</h1><p>Unity为了节约性能，可能会让刚体休眠。<br />比如让一个有刚体的Cube，受重力影响掉落一个平面上。<br />当他们静止时，斜向下旋转刚体，这个时候Cube可能不会往下落，因为Cube休眠了。<br />假如这个时候移动一下平面的位置，Cube可能又会往下落，因为移动平面唤醒了刚体。</p><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// IsSleeping方法 获取刚体是否处于休眠状态</span></span><br><span class="line"><span class="keyword">if</span> (rigidBody.IsSleeping())</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 唤醒休眠</span></span><br><span class="line"><span class="keyword">if</span> (rigidBody.IsSleeping())</span><br><span class="line">&#123;</span><br><span class="line">    rigidBody.WakeUp();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;刚体加力&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#刚体加力&quot;&gt;&lt;/a&gt; 刚体加力&lt;/h1&gt;
+&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="核心系统" scheme="http://example.com/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="物理系统" scheme="http://example.com/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>28.碰撞检测之碰撞检测函数</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/28.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E5%87%BD%E6%95%B0/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/28.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E5%87%BD%E6%95%B0/</id>
+    <published>2025-02-20T11:22:55.000Z</published>
+    <updated>2025-02-20T11:50:51.481Z</updated>
+    
+    <content type="html"><![CDATA[<p>注意:碰撞和触发响应函数 属于 特殊的生命周期函数 也是通过反射调用<br /><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/28.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E5%87%BD%E6%95%B0/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E5%9B%BE.bmp" alt="" /><br />ps：<br />只要挂载的对象能和其它物体产生碰撞检测才会响应下面的函数<br />如果是一个异形物体，刚体在父对象上，如果你想通过子对象上挂脚本检测碰撞是不行的，必须挂载到这个刚体父对象上才行。</p><h1 id="物理碰撞检测响应函数"><a class="markdownIt-Anchor" href="#物理碰撞检测响应函数"></a> 物理碰撞检测响应函数</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionEnter</span>(<span class="params">Collision collision</span>)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">// Collision类   (碰撞信息类</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 碰撞到的对象碰撞器的信息</span></span><br><span class="line">Collider collider1 = collision.collider;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 碰撞到的对象的所依附的对象    (GameObject)</span></span><br><span class="line">GameObject gameObject1 = collision.gameObject;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 碰撞到的对象的transform组件信息</span></span><br><span class="line">Transform transform1 = collision.transform;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 触碰点数相关   接触点具体坐标</span></span><br><span class="line">ContactPoint[] contacts = collision.contacts;</span><br><span class="line"></span><br><span class="line">print(<span class="string">$&quot;我被<span class="subst">&#123;collision.gameObject.name&#125;</span>碰撞到了&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 碰撞结束分离时, 自动执行</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionExit</span>(<span class="params">Collision collision</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">$&quot;我和<span class="subst">&#123;collision.gameObject.name&#125;</span>碰撞分离了&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 两个物体相互摩擦时会不停调用该函数</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionStay</span>(<span class="params">Collision collision</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">$&quot;我和<span class="subst">&#123;collision.gameObject.name&#125;</span>一直在产生摩擦&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="触发器检测响应函数"><a class="markdownIt-Anchor" href="#触发器检测响应函数"></a> 触发器检测响应函数</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 触发开始时会自动调用该函数    (传入的是Collider脚本对象)</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerEnter</span>(<span class="params">Collider other</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">$&quot;我被<span class="subst">&#123;other.gameObject.name&#125;</span>触发了&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当Stay结束时调用</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerExit</span>(<span class="params">Collider other</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">$&quot;我被<span class="subst">&#123;other.gameObject.name&#125;</span>结束触发了&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当两触发器相交会不停调用</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerStay</span>(<span class="params">Collider other</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">$&quot;我被<span class="subst">&#123;other.gameObject.name&#125;</span>水乳相融&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>碰撞和触发器函数都可以写成虚函数，在子类去重写逻辑</strong></p><ul><li>一般会把想要重写的碰撞和触发检测函数写成protected保护类型的，加上virtual变成虚函数。</li><li>没有必要写成public，因为不会自己手动调用碰撞和触发检测函数，都是Unity通过反射帮助我们自动调用的。</li></ul><h1 id="小练习"><a class="markdownIt-Anchor" href="#小练习"></a> 小练习</h1><p>在之前Input和Screen中的练习题基础上，加入一个点击鼠标左键可以发射一颗子弹飞出的功能</p><p><strong>给坦克添加一个炮口空物体当做子弹飞出来的位置</strong><br /><strong>添加点击飞出子弹代码，创建子弹预设体，拖拽赋值炮口空物体和子弹预设体</strong></p><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Update内 </span></span><br><span class="line"><span class="keyword">if</span> (Input.GetMouseButtonDown(<span class="number">0</span>)) </span><br><span class="line">&#123; </span><br><span class="line">    <span class="comment">//实例化一个子弹对象 </span></span><br><span class="line">    GameObject obj = Instantiate(bulletObj); </span><br><span class="line">    <span class="comment">//设置对象的位置 </span></span><br><span class="line">    obj.transform.position = bulletPos.position; </span><br><span class="line">    <span class="comment">//设置对象的角度 </span></span><br><span class="line">    obj.transform.eulerAngles = bulletPos.eulerAngles; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>子弹一直飞</strong></p><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Update内 //子弹一直往前飞 </span></span><br><span class="line"><span class="keyword">this</span>.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);</span><br></pre></td></tr></table></figure><p>加入子弹触碰到地面会自动消失的功能</p><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerEnter</span>(<span class="params">Collider other</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//问题一：如果发射子弹时  和坦克自身的碰撞和重合了 可能一开始 就会被移除</span></span><br><span class="line">    <span class="comment">//解决方案：判断自己碰撞到的对象 是什么 一定是特定对象 才移除自己</span></span><br><span class="line">    <span class="keyword">if</span> (other.gameObject.CompareTag(<span class="string">&quot;Ground&quot;</span>) ||</span><br><span class="line">        other.gameObject.CompareTag(<span class="string">&quot;Monster&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//碰撞到别的东西 就让子弹小时</span></span><br><span class="line">        <span class="comment">//一定是移除自己依附的GameObject对象 而不是脚本自己</span></span><br><span class="line">        Destroy(<span class="keyword">this</span>.gameObject);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//问题二：坦克本身就带有碰撞盒  当子弹和坦克自身的碰撞盒碰撞可能会产生力的作用 出现一些意想不到的效果</span></span><br><span class="line">    <span class="comment">//解决方案：把子弹做成触发器 这样就没有了力的作用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> HP = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当子弹碰到我时  就减血 血量为0了 就移除</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerEnter</span>(<span class="params">Collider other</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//由于场景上 只有子弹时触发器 所以我们可以不用进行任何判断 就可以完成这个功能</span></span><br><span class="line">    <span class="comment">//减血</span></span><br><span class="line">    HP -= <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//为0就移除自己</span></span><br><span class="line">    <span class="keyword">if</span> (HP &lt;= <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Destroy(<span class="keyword">this</span>.gameObject);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;注意:碰撞和触发响应函数 属于 特殊的生命周期函数 也是通过反射调用&lt;br /&gt;
+&lt;img src=&quot;/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="核心系统" scheme="http://example.com/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="物理系统" scheme="http://example.com/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>27.碰撞检测之物理材质</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/27.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/27.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/</id>
+    <published>2025-02-20T11:15:21.000Z</published>
+    <updated>2025-02-20T11:22:12.609Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="创建物理材质"><a class="markdownIt-Anchor" href="#创建物理材质"></a> 创建物理材质</h1><ul><li>在Project窗口加号创建或者右键创建</li><li>把物理材质拖拽到两个碰撞器上才能相互作用<br /><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/27.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/file-20250220191639388.png" alt="" /></li></ul><h1 id="物理材质参数"><a class="markdownIt-Anchor" href="#物理材质参数"></a> 物理材质参数</h1><h2 id="dynamic-friction-动摩擦力"><a class="markdownIt-Anchor" href="#dynamic-friction-动摩擦力"></a> Dynamic Friction 动摩擦力</h2><ul><li>已在移动时使用的摩擦力。通常为 0 到 1 之间的值。值为零就像冰一样，值为 1 将使对象迅速静止（除非用很大的力或重力推动对象）。</li></ul><h2 id="static-friction-静摩擦力"><a class="markdownIt-Anchor" href="#static-friction-静摩擦力"></a> Static Friction 静摩擦力</h2><ul><li>当对象静止在表面上时使用的摩擦力。通常为 0 到 1 之间的值。值为零就像冰一样，值为 1 将导致很难让对象移动。</li></ul><h2 id="bounciness-弹性"><a class="markdownIt-Anchor" href="#bounciness-弹性"></a> Bounciness 弹性</h2><ul><li>表面的弹性如何？值为 0 将不会反弹。值为 1 将在反弹时不产生任何能量损失，预计会有一些近似值，但可能只会给模拟增加少量能量。</li></ul><h2 id="friction-combine-摩擦力组合"><a class="markdownIt-Anchor" href="#friction-combine-摩擦力组合"></a> Friction Combine 摩擦力组合</h2><ul><li>两个碰撞对象的摩擦力的组合方式。<ol><li>Average 对两个摩擦值求平均值。</li><li>Minimum 使用两个值中的最小值。</li><li>Maximum 使用两个值中的最大值。</li><li>Multiply 两个摩擦值相乘。</li></ol></li></ul><h2 id="bounce-combine-反弹组合"><a class="markdownIt-Anchor" href="#bounce-combine-反弹组合"></a> Bounce Combine 反弹组合</h2><ul><li>两个碰撞对象的弹性的组合方式。其模式与 Friction Combine 模式相同。<ol><li>Average 对两个摩擦值求平均值。</li><li>Minimum 使用两个值中的最小值。</li><li>Maximum 使用两个值中的最大值。</li><li>Multiply 两个摩擦值相乘。</li></ol></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;创建物理材质&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#创建物理材质&quot;&gt;&lt;/a&gt; 创建物理材质&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;在Project窗口加号创建或者右键创建&lt;/li&gt;
+&lt;li&gt;把物理材质拖拽到两个碰撞器上才能相互作用&lt;br </summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="核心系统" scheme="http://example.com/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="物理系统" scheme="http://example.com/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>26.碰撞检测之碰撞器</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/26.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%A2%B0%E6%92%9E%E5%99%A8/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/26.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%A2%B0%E6%92%9E%E5%99%A8/</id>
+    <published>2025-02-20T10:39:05.000Z</published>
+    <updated>2025-02-20T11:11:29.063Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>知识回顾</strong><br />两个物体都有碰撞器，至少一个物体有刚体<br />碰撞器表示物体的体积（形状）<br />刚体会利用体积进行碰撞计算，模拟真实的碰撞效果，产生力的作用</p><p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/26.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%A2%B0%E6%92%9E%E5%99%A8/file-20250220184701670.png" alt="" /></p><h1 id="3d碰撞器种类"><a class="markdownIt-Anchor" href="#3d碰撞器种类"></a> 3D碰撞器种类</h1><p>1.盒状 2.球状 3.胶囊 4.网格 5.轮胎 6.地形</p><h1 id="共同参数"><a class="markdownIt-Anchor" href="#共同参数"></a> 共同参数</h1><h2 id="edit-collider-编辑碰撞器"><a class="markdownIt-Anchor" href="#edit-collider-编辑碰撞器"></a> Edit Collider 编辑碰撞器</h2><p>改变碰撞体大小</p><h2 id="is-trigger-是否是触发器"><a class="markdownIt-Anchor" href="#is-trigger-是否是触发器"></a> Is Trigger 是否是触发器</h2><ul><li>如果启用此属性，则该碰撞体将用于触发事件，并被物理引擎忽略</li><li>主要用于进行没有物理效果的碰撞检测</li></ul><h2 id="material-物理材质"><a class="markdownIt-Anchor" href="#material-物理材质"></a> Material 物理材质*</h2><ul><li>可以确定碰撞体和其它对象碰撞时的交互（表现）方式。</li></ul><h2 id="center-碰撞器中心"><a class="markdownIt-Anchor" href="#center-碰撞器中心"></a> Center 碰撞器中心</h2><ul><li>碰撞体在对象局部空间中的中心点位置</li></ul><h1 id="常用碰撞器"><a class="markdownIt-Anchor" href="#常用碰撞器"></a> 常用碰撞器</h1><h2 id="boxcollider-盒状碰撞器"><a class="markdownIt-Anchor" href="#boxcollider-盒状碰撞器"></a> BoxCollider 盒状碰撞器</h2><ul><li>Size 大小：碰撞体在X、Y、Z方向上的大小</li></ul><h2 id="sphere-collider-球状碰撞器"><a class="markdownIt-Anchor" href="#sphere-collider-球状碰撞器"></a> Sphere Collider 球状碰撞器</h2><ul><li>Radius 半径：球形碰撞体的半径大小</li></ul><h2 id="capsule-collider-胶囊碰撞器"><a class="markdownIt-Anchor" href="#capsule-collider-胶囊碰撞器"></a> Capsule Collider 胶囊碰撞器</h2><ul><li>Radius 半径：胶囊体的半径</li><li>Height 高度：胶囊体的高度</li><li>Direction 轴向：胶囊体在对象局部空间中的轴向</li></ul><h1 id="异形物体使用多种碰撞器组合"><a class="markdownIt-Anchor" href="#异形物体使用多种碰撞器组合"></a> 异形物体使用多种碰撞器组合</h1><ul><li>刚体对象的子对象碰撞器信息参与碰撞检测</li><li>比如金字塔预设体，只在金字塔最高层级对象添加刚体，子对象的所有Cube都会参与碰撞检测</li><li>再比如一个Cube添加刚体，再给他添加两个空物体，两个空物体分别添加斜着的盒型碰撞器当做支架，这样这个Cube下落时就会被支架撑起来，即便两个空物体连模型都没有只有碰撞器</li></ul><h1 id="不常用碰撞器"><a class="markdownIt-Anchor" href="#不常用碰撞器"></a> 不常用碰撞器*</h1><h2 id="mesh-collider-网格碰撞器"><a class="markdownIt-Anchor" href="#mesh-collider-网格碰撞器"></a> Mesh Collider 网格碰撞器*</h2><ul><li>不常用的原因是性能消耗较高</li><li>默认不会显示绿色的碰撞器边框，开启Convex 才会显示绿色的碰撞器边框</li><li>Convex Mesh Collider 最多 255 个三角形。</li></ul><p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/26.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%A2%B0%E6%92%9E%E5%99%A8/file-20250220190918454.png" alt="" /></p><h2 id="wheel-collider-轮胎碰撞器"><a class="markdownIt-Anchor" href="#wheel-collider-轮胎碰撞器"></a> Wheel Collider 轮胎碰撞器*</h2><ul><li>可以通过给车的父对象加刚体（注意刚体质量一定要大），子对象加车轮碰撞器模拟汽车</li></ul><p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/26.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%A2%B0%E6%92%9E%E5%99%A8/file-20250220190955289.png" alt="" /></p><h2 id="terrain-collider-地形碰撞器"><a class="markdownIt-Anchor" href="#terrain-collider-地形碰撞器"></a> Terrain Collider 地形碰撞器*</h2><ul><li>不常用的原因是性能消耗很高</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;知识回顾&lt;/strong&gt;&lt;br /&gt;
+两个物体都有碰撞器，至少一个物体有刚体&lt;br /&gt;
+碰撞器表示物体的体积（形状）&lt;br /&gt;
+刚体会利用体积进行碰撞计算，模拟真实的碰撞效果，产生力的作用&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2025/02/20/%E</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="核心系统" scheme="http://example.com/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="物理系统" scheme="http://example.com/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>25.碰撞检测之刚体</title>
@@ -600,190 +809,6 @@
     <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     
     <category term="Unity脚本基础" scheme="http://example.com/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>特性</title>
-    <link href="http://example.com/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/"/>
-    <id>http://example.com/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/</id>
-    <published>2025-02-18T09:18:38.000Z</published>
-    <updated>2025-02-18T09:20:20.755Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="特性"><a class="markdownIt-Anchor" href="#特性"></a> 特性</h1><p>特性是一种允许我们向程序的[[程序集]]添加[[元数据]]的语言结构<br />它是用于保存程序结构信息的某种特殊类型的类</p><p>特性提供功能强大的方法以将声明信息与 C# 代码（类型、方法、属性等）相关联。<br />特性与程序实体关联后，即可在运行时使用[[反射]]查询特性信息</p><p>特性的目的是告诉编译器把程序结构的某组[[元数据]]嵌入[[程序集]]中<br />它可以放置在几乎所有的声明中（类、变量、函数等等申明）</p><p>说人话：<br />特性本质是个类<br />我们可以利用特性类为[[元数据]]添加额外信息<br />比如一个类、成员变量、成员方法等等为他们添加更多的额外信息<br />之后可以通过[[反射]]来获取这些额外信息</p><h2 id="自定义特性"><a class="markdownIt-Anchor" href="#自定义特性"></a> 自定义特性</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyCustomAttribute</span> : <span class="title">Attribute</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//特性中的成员 一般根据需求来写</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> info;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyCustomAttribute</span>(<span class="params"><span class="built_in">string</span> info</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.info = info;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">TestFun</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;特性的方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="特性的使用"><a class="markdownIt-Anchor" href="#特性的使用"></a> 特性的使用</h2><p>基本语法: <code>[特性名(参数列表)]</code><br />本质上 就是在调用特性类的构造函数<br />写在哪里？ 类、函数、变量上一行，表示他们具有该特性信息</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">MyCustom(<span class="string">&quot;这是我自己的类&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">MyCustom(<span class="string">&quot;这是一个int型的成员变量&quot;</span>)</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Value;</span><br><span class="line">    [<span class="meta">MyCustom(<span class="string">&quot;这是用来测试的成员函数&quot;</span>)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">TestFun</span>(<span class="params">[MyCustom(<span class="string">&quot;这是用来测试的函数参数&quot;</span></span>)] <span class="built_in">int</span> a)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Type t = <span class="keyword">typeof</span>(MyClass);</span><br><span class="line"><span class="keyword">if</span> (t.IsDefined(<span class="keyword">typeof</span>(MyCustomAttribute), <span class="literal">false</span>))</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;判断一个类型是否使用了某个特性&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取Type元数据中的所有特性</span></span><br><span class="line"><span class="built_in">object</span>[] objects = t.GetCustomAttributes(<span class="literal">true</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; objects.Length; i++)</span><br><span class="line">    Console.WriteLine((objects[i] <span class="keyword">as</span> MyCustomAttribute).Info);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="为特性类加特性-限制其使用范围"><a class="markdownIt-Anchor" href="#为特性类加特性-限制其使用范围"></a> 为特性类加特性  限制其使用范围</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = true, Inherited = true)</span>]</span><br><span class="line"><span class="comment">//参数一：AttributeTargets —— 特性能够用在哪些地方</span></span><br><span class="line"><span class="comment">//参数二：AllowMultiple —— 是否允许多个特性实例用在同一个目标上</span></span><br><span class="line"><span class="comment">//参数三：Inherited —— 特性是否能被派生类和重写成员继承</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyCustom2Attribute</span> : <span class="title">Attribute</span> &#123; &#125;</span><br></pre></td></tr></table></figure><h2 id="系统自带特性过时特性-obsolete"><a class="markdownIt-Anchor" href="#系统自带特性过时特性-obsolete"></a> 系统自带特性——过时特性 Obsolete</h2><p>用于提示用户 使用的方法等成员已经过时 建议使用新方法</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一般加在函数前的特性</span></span><br><span class="line">[<span class="meta">Obsolete(<span class="string">&quot;这个是旧方法&quot;</span>, false)</span>]</span><br><span class="line"><span class="comment">// 第一个参数是提示信息, 第二个参数 true直接报错, false警告</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OldFun</span>()</span> &#123; &#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="系统自带特性调用者信息特性-快速查出哪里的错误"><a class="markdownIt-Anchor" href="#系统自带特性调用者信息特性-快速查出哪里的错误"></a> 系统自带特性——调用者信息特性    (快速查出哪里的错误)</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//哪个文件调用？</span></span><br><span class="line"><span class="comment">//CallerFilePath特性</span></span><br><span class="line"><span class="comment">//哪一行调用？</span></span><br><span class="line"><span class="comment">//CallerLineNumber特性</span></span><br><span class="line"><span class="comment">//哪个函数调用？</span></span><br><span class="line"><span class="comment">//CallerMemberName特性</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">TestClass</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">Obsolete(<span class="string">&quot;这个是旧方法&quot;</span>, false)</span>]</span><br><span class="line">    <span class="comment">// 第一个参数是提示信息, 第二个参数 true直接报错, false警告</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OldFun</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">NewFun</span>(<span class="params"><span class="built_in">string</span> str, [CallerFilePath] <span class="built_in">string</span> fileName = <span class="string">&quot;&quot;</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        [CallerLineNumber] <span class="built_in">int</span> line = <span class="number">0</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        [CallerMemberName] <span class="built_in">string</span> memberName = <span class="string">&quot;&quot;</span></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;这些使用的CallerXXX特性会在, 其它调用者调用时自动将调用者的额外信息填入参数中&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;调用者的文件名 fileName = &quot;</span> + fileName);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;调用者的所在的行数 line = &quot;</span> + line);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;调用者的所处的调用函数名 memberName = &quot;</span> + memberName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="系统自带特性条件编译特性"><a class="markdownIt-Anchor" href="#系统自带特性条件编译特性"></a> 系统自带特性——条件编译特性</h2><p>Conditional 它会和[[预处理指令]] <code>#define配合使用</code></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">Conditional(<span class="string">&quot;Fun&quot;</span>)</span>]        <span class="comment">// 如果 #define 下面就会编译</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Fun</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;如果有#define 我就会执行&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="系统自带特性外部dll包函数特性-dllimport"><a class="markdownIt-Anchor" href="#系统自带特性外部dll包函数特性-dllimport"></a> 系统自带特性——外部Dll包函数特性 DllImport</h2><p><a href="http://xn--vrvzng93aj3vfln.Net">用来标记非.Net</a>(C#)的函数，表明该函数在一个外部的DLL中定义。<br />一般用来调用 C或者C++的Dll包写好的方法<br />需要引用[[命名空间]] using System.Runtime.InteropServices</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">DllImport(<span class="string">&quot;Test.dll&quot;</span>)</span>]         <span class="comment">// 下面这个函数一定在dll中有一模一样的</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="built_in">int</span> <span class="title">Add</span>(<span class="params"><span class="built_in">int</span> a, <span class="built_in">int</span> b</span>)</span>;</span><br><span class="line"><span class="comment">//需要引用命名空间 using System.Runtime.CompilerServices;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;特性&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#特性&quot;&gt;&lt;/a&gt; 特性&lt;/h1&gt;
-&lt;p&gt;特性是一种允许我们向程序的[[程序集]]添加[[元数据]]的语言结构&lt;br /&gt;
-它是用于保存程序结构信息的某种特殊类型的类&lt;/p&gt;
-&lt;p&gt;特性</summary>
-      
-    
-    
-    
-    <category term="编程语言" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="Csharp" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/"/>
-    
-    
-    <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="Csharp" scheme="http://example.com/tags/Csharp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>10.inspector 窗口可编辑变量</title>
-    <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/10.inspector%20%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%98%E9%87%8F/"/>
-    <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/10.inspector%20%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%98%E9%87%8F/</id>
-    <published>2025-02-18T08:47:53.000Z</published>
-    <updated>2025-02-20T09:31:36.451Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="知识点一-私有和保护无法显示编辑"><a class="markdownIt-Anchor" href="#知识点一-私有和保护无法显示编辑"></a> 知识点一 私有和保护无法显示编辑</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="built_in">int</span> i1;</span><br><span class="line"><span class="keyword">protected</span> <span class="built_in">string</span> str1;</span><br></pre></td></tr></table></figure><h1 id="知识点二-让私有的和保护的也可以被显示serializefield"><a class="markdownIt-Anchor" href="#知识点二-让私有的和保护的也可以被显示serializefield"></a> 知识点二 让私有的和保护的也可以被显示SerializeField</h1><p>加上强制序列化字段<a href="/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/" title="特性">特性</a> <code>[SerializeField]</code><br />所谓序列化就是把一个对象保存到一个文件或数据库字段中去</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">SerializeField</span>]</span><br><span class="line"><span class="keyword">private</span> <span class="built_in">int</span> privateInt;</span><br><span class="line">[<span class="meta">SerializeField</span>]</span><br><span class="line"><span class="keyword">protected</span> <span class="built_in">string</span> protectedStr;</span><br></pre></td></tr></table></figure><h1 id="知识点三-公共的可以显示编辑"><a class="markdownIt-Anchor" href="#知识点三-公共的可以显示编辑"></a> 知识点三 公共的可以显示编辑</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> publicInt = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">bool</span> publicBool = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure><h1 id="知识点四-公共的也不让其显示编辑hideininspector"><a class="markdownIt-Anchor" href="#知识点四-公共的也不让其显示编辑hideininspector"></a> 知识点四 公共的也不让其显示编辑HideInInspector</h1><p>在变量前加上<a href="/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/" title="特性">特性</a> <code>[HideInInspector]</code></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">HideInInspector</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> publicInt2 = <span class="number">50</span>;</span><br></pre></td></tr></table></figure><h1 id="知识点五-大部分类型都能显示编辑"><a class="markdownIt-Anchor" href="#知识点五-大部分类型都能显示编辑"></a> 知识点五 大部分类型都能显示编辑</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">int</span>[] array;</span><br><span class="line"><span class="keyword">public</span> List&lt;<span class="built_in">int</span>&gt; list;</span><br><span class="line"><span class="keyword">public</span> E_TestEnum type;</span><br><span class="line"><span class="keyword">public</span> GameObject gameObj;</span><br><span class="line"></span><br><span class="line"><span class="comment">//字典不能被Inspector窗口显示</span></span><br><span class="line"><span class="keyword">public</span> Dictionary&lt;<span class="built_in">int</span>, <span class="built_in">string</span>&gt; dic;</span><br><span class="line"><span class="comment">//自定义类型变量</span></span><br><span class="line"><span class="keyword">public</span> MyStruct myStruct;</span><br><span class="line"><span class="keyword">public</span> MyClass myClass;</span><br></pre></td></tr></table></figure><h1 id="知识点六-让自定义类型可以被访问"><a class="markdownIt-Anchor" href="#知识点六-让自定义类型可以被访问"></a> 知识点六 让自定义类型可以被访问</h1><p>加上序列化<a href="/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/" title="特性">特性</a><code>[System.Serializable]</code><br />字典怎样都不行</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">System.Serializable</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> MyStruct</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">bool</span> sex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[<span class="meta">System.Serializable</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">bool</span> sex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="知识点七-一些辅助-swig10-"><a class="markdownIt-Anchor" href="#知识点七-一些辅助-swig10-"></a> 知识点七 一些辅助<a href="/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/" title="特性">特性</a></h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.分组说明特性Header    **************有用**************</span></span><br><span class="line"><span class="comment">//为成员分组</span></span><br><span class="line"><span class="comment">//Header特性</span></span><br><span class="line"><span class="comment">//[Header(&quot;分组说明&quot;)]</span></span><br><span class="line">[<span class="meta">Header(<span class="string">&quot;基础属性&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> age;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">bool</span> sex;</span><br><span class="line">[<span class="meta">Header(<span class="string">&quot;战斗属性&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> atk;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> def;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.悬停注释Tooltip</span></span><br><span class="line"><span class="comment">//为变量添加说明</span></span><br><span class="line"><span class="comment">//[Tooltip(&quot;说明内容&quot;)]</span></span><br><span class="line">[<span class="meta">Tooltip(<span class="string">&quot;闪避&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> miss;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.间隔特性 Space()</span></span><br><span class="line"><span class="comment">//让两个字段间出现间隔</span></span><br><span class="line"><span class="comment">//[Space()]</span></span><br><span class="line">[<span class="meta">Space()</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> crit;</span><br><span class="line"></span><br><span class="line"><span class="comment">//4.修饰数值的滑条范围Range    **************有用**************</span></span><br><span class="line"><span class="comment">//[Range(最小值, 最大值)]</span></span><br><span class="line">[<span class="meta">Range(0,10)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> luck;</span><br><span class="line"></span><br><span class="line"><span class="comment">//5.多行显示字符串 默认不写参数显示3行</span></span><br><span class="line"><span class="comment">//写参数就是对应行</span></span><br><span class="line"><span class="comment">//[Multiline(4)]</span></span><br><span class="line">[<span class="meta">Multiline(5)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">string</span> tips;</span><br><span class="line"></span><br><span class="line"><span class="comment">//6.滚动条显示字符串 </span></span><br><span class="line"><span class="comment">//默认不写参数就是超过3行显示滚动条</span></span><br><span class="line"><span class="comment">//[TextArea(3, 4)]</span></span><br><span class="line"><span class="comment">//最少显示3行，最多4行，超过4行就显示滚动条</span></span><br><span class="line">[<span class="meta">TextArea(3,4)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">string</span> myLife;</span><br><span class="line"></span><br><span class="line"><span class="comment">//7.为变量添加快捷方法 ContextMenuItem    **************有用**************</span></span><br><span class="line"><span class="comment">//参数1 显示按钮名</span></span><br><span class="line"><span class="comment">//参数2 方法名 不能有参数</span></span><br><span class="line"><span class="comment">//[ContextMenuItem(&quot;显示按钮名&quot;, &quot;方法名&quot;)]</span></span><br><span class="line">[<span class="meta">ContextMenuItem(<span class="string">&quot;重置钱&quot;</span>, <span class="string">&quot;Test&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> money;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Test</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    money = <span class="number">99</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//8.为方法添加特性能够在Inspector中执行</span></span><br><span class="line"><span class="comment">//[ContextMenu(&quot;测试函数&quot;)]</span></span><br><span class="line">[<span class="meta">ContextMenu(<span class="string">&quot;哈哈哈哈&quot;</span>)</span>]</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">TestFun</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    print(<span class="string">&quot;测试方法&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h1 id="注意"><a class="markdownIt-Anchor" href="#注意"></a> 注意</h1><ol><li>Inspector窗口中的变量关联的就是对象的成员变量，运行时改变他们就是在改变成员变量</li><li>拖曳到GameObject对象后 再改变脚本中变量默认值 界面上不会改变<ul><li>要么老老实实的在Inspector窗口改默认值</li><li>要么重新挂载脚本</li></ul></li><li>运行中修改的信息不会保存</li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;知识点一-私有和保护无法显示编辑&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#知识点一-私有和保护无法显示编辑&quot;&gt;&lt;/a&gt; 知识点一 私有和保护无法显示编辑&lt;/h1&gt;
-&lt;figure class=&quot;highlight csharp&quot;&gt;</summary>
-      
-    
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/tags/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    <category term="Unity脚本基础" scheme="http://example.com/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>9.生命周期函数</title>
-    <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/"/>
-    <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/</id>
-    <published>2025-02-18T07:39:12.000Z</published>
-    <updated>2025-02-20T09:31:25.618Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/file-20250218153924857.png" alt="" /></p><p>知识点一 了解帧的概念<br />Unity 底层已经帮助我们做好了死循环<br />我们需要学习Unity的生命周期函数<br />利用它做好的规则来执行我们的游戏逻辑就行了</p><p>知识点二 生命周期函数的概念<br />所有继承MonoBehavior的脚本 最终都会挂载到GameObject游戏对象上<br />生命周期函数 就是该脚本对象依附的GameObject对象从出生到消亡整个生命周期中<br />会通过反射自动调用的一些特殊函数</p><p>注意：<br />生命周期函数的访问修饰符一般为private和protected<br />因为不需要再外部自己调用生命周期函数 都是Unity自己帮助我们调用的<br />当对象（自己这个类脚本对象）被创建时 才会调用该生命周期函数<br />生命周期函数支持多态<br />如果GameObject一开始失活就不会调用生命周期函数</p><p>awake，onenable,start, fixedUpdate,update, laterupdate, ondisenable,ondestroy</p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0.png" alt="" /></p><h1 id="awake"><a class="markdownIt-Anchor" href="#awake"></a> <strong>Awake</strong>：</h1><p>类似构造函数的存在 我们可以在一个类对象 该创建 进行一些初始化操作</p><h1 id="onenable"><a class="markdownIt-Anchor" href="#onenable"></a> <strong>OnEnable</strong>：</h1><p>对于我们来说 想要当一个对象被激活时 进行一些逻辑处理 就可以写在这个函数</p><h1 id="start"><a class="markdownIt-Anchor" href="#start"></a> <strong>Start</strong>：</h1><p>主要作用还是用于初始化信息的 但是它相对Awake来说 要晚一点<br />如果我们在update中动态的创建对象，这个对象马上会执行Awake，但不会立即执行Start，要等到在<strong>下一帧的第一次 <code>Update()</code> 之前</strong>执行才会执行Start</p><h1 id="fixedupdate"><a class="markdownIt-Anchor" href="#fixedupdate"></a> <strong>FixedUpdate</strong>：</h1><p>它主要是用于 进行物理更新<br />它是每一帧的执行的 但是 这里的帧 和游戏帧 有点不同<br />它的时间间隔 是可以在 project setting中的 Time里去设置的</p><h1 id="update"><a class="markdownIt-Anchor" href="#update"></a> <strong>Update</strong>：</h1><p>主要用于处理游戏核心逻辑更新的函数</p><h1 id="lateupdate"><a class="markdownIt-Anchor" href="#lateupdate"></a> <strong>LateUpdate</strong>：</h1><p>一般这个更新是用来处理 摄像机位置更新相关内容的<br />Update和LateUpdate之间 Unity进了一些处理 处理我们动画相关的更新</p><h1 id="ondisable"><a class="markdownIt-Anchor" href="#ondisable"></a> <strong>OnDisable</strong>：</h1><p>如果我们希望在一个对象失活时做一些处理 就可以在该函数中写逻辑<br />失活后不参与游戏循环了，激活后又可以循环</p><h1 id="ondestroy"><a class="markdownIt-Anchor" href="#ondestroy"></a> <strong>OnDestroy</strong>：</h1><p>当对象销毁后调用</p><h1 id="问题不同对象的生命周期函数是在同一个线程中执行吗"><a class="markdownIt-Anchor" href="#问题不同对象的生命周期函数是在同一个线程中执行吗"></a> 问题：不同对象的生命周期函数是在同一个线程中执行吗？</h1><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/21.%E4%B8%8D%E5%90%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E6%98%AF%E5%9C%A8%E5%90%8C%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B%E4%B8%AD%E6%89%A7%E8%A1%8C%E7%9A%84%E5%90%97%EF%BC%9F.png" alt="" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
-      
-    
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/tags/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    <category term="Unity脚本基础" scheme="http://example.com/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>8.脚本基本规则</title>
-    <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/"/>
-    <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/</id>
-    <published>2025-02-18T07:10:14.000Z</published>
-    <updated>2025-02-20T09:31:22.671Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/file-20250218151422456.png" alt="" /></p><p><strong>MonoBehavior基类</strong></p><ol><li>创建的脚本默认都继承MonoBehaviour 继承了它才能够挂载在GameObject上</li><li>继承了MonoBehavior的脚本不能new 只能挂！！！！！！！！</li><li>继承了MonnBehavior的脚本不要去写构造函数，因为我们不会去new它，写构造函数没有任何意义</li><li>继承了MonoBehavior的脚本可以在一个对象上挂多个（如果没有加DisallowMultipleComponent特性）</li><li>继承MonoBehavior的类也可以再次被继承，遵循面向对象继承多态的规则</li></ol><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/20.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99%E8%A1%A5%E5%85%85%20%E5%85%B3%E4%BA%8E%E7%BB%A7%E6%89%BFMono%E7%9A%84%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0.png" alt="" /></p><p><strong>不继承MonoBehavior的类</strong></p><ol><li>不继承Mono的类 不能挂载在GameObject上</li><li>不继承Mono的类 想怎么写怎么写 如果要使用需要自己new</li><li>不继承Mono的类 一般是单例模式的类（用于管理模块） 或者数据结构类（用于存储数据）</li><li>不继承Mono的类 不用保留默认出现的几个函数</li></ol><p>设置挂载脚本的执行顺序，默认时间前是系统必须执行的，可以设置自己添加的脚本的执行顺序，数字越小脚本越先执行<br /><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/file-20250218152646795.png" alt="" /></p><p>打开 当前unity版本下的Editor\Data\Resources\ScriptTemplates目录可以更改默认的脚本模板</p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/file-20250219095817050.png" alt="" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
-      
-    
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/tags/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    <category term="Unity脚本基础" scheme="http://example.com/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>7.预制体和资源包的导入导出</title>
-    <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.%E9%A2%84%E5%88%B6%E4%BD%93%E5%92%8C%E8%B5%84%E6%BA%90%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/"/>
-    <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.%E9%A2%84%E5%88%B6%E4%BD%93%E5%92%8C%E8%B5%84%E6%BA%90%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</id>
-    <published>2025-02-18T07:01:18.000Z</published>
-    <updated>2025-02-20T09:31:08.835Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.%E9%A2%84%E5%88%B6%E4%BD%93%E5%92%8C%E8%B5%84%E6%BA%90%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/file-20250218150634268.png" alt="" /><br />预设体是 Unity 中非常重要的概念，可以理解为一个游戏对象及其组件的集合。其目的是使游戏对象及其资源能够重复使用。当修改预设体时，实例也会同步修改。</p><p><strong>创建预设体</strong><br />将其拖到asset文件夹下<br />右键可以取消预设体</p><p>资源包导出直接右键，导入直接拖</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
-      
-    
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/tags/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    <category term="Unity工作原理" scheme="http://example.com/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
