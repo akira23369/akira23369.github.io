@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-02-18T08:20:05.866Z</updated>
+  <updated>2025-02-20T10:21:59.657Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,670 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>25.碰撞检测之刚体</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/</id>
+    <published>2025-02-20T09:28:06.000Z</published>
+    <updated>2025-02-20T10:21:59.657Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>碰撞产生的必要条件</strong>：两个物体都有碰撞器，至少一个物体有刚体</p><p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220175255335.png" alt="" /></p><p>RigidBody组件信息如下<br /><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220180007874.png" alt="" /></p><h1 id="mass-质量"><a class="markdownIt-Anchor" href="#mass-质量"></a> <strong>Mass 质量</strong></h1><ul><li>默认为千克</li><li>质量越大惯性越大</li></ul><h1 id="drag-空气阻力"><a class="markdownIt-Anchor" href="#drag-空气阻力"></a> <strong>Drag 空气阻力</strong></h1><ul><li>根据力移动对象时影响对象的空气阻力大小，0 表示没有空气阻力</li></ul><h1 id="angular-drag-角阻力扭矩阻力"><a class="markdownIt-Anchor" href="#angular-drag-角阻力扭矩阻力"></a> <strong>Angular Drag 角阻力（扭矩阻力）</strong></h1><ul><li>通俗理解就是阻碍对象旋转的阻力，角阻力越大越不容易旋转</li><li>0 表示没有空气阻力。</li></ul><h1 id="use-gravity-重力开关"><a class="markdownIt-Anchor" href="#use-gravity-重力开关"></a> <strong>Use Gravity 重力开关</strong></h1><ul><li>是否受重力影响</li></ul><h1 id="is-kinematic"><a class="markdownIt-Anchor" href="#is-kinematic"></a> <strong>Is Kinematic</strong></h1><ul><li>控制物理是否影响刚体。</li><li>可以理解为开启后不受力的影响，只能通过Transform移动</li><li>如果启用此选项，则对象将不会被物理引擎驱动，只能通过 (Transform) 对其进行操作。对于移动平台，或者如果要动画化附加了 HingeJoint 的刚体，此属性将非常有用。</li></ul><h1 id="interpolate-插值运算"><a class="markdownIt-Anchor" href="#interpolate-插值运算"></a> <strong>Interpolate 插值运算</strong></h1><ul><li>让刚体物体移动更平滑</li><li>可以更改FixTime，改成一秒，这样对象会很突兀的一秒移动一次，这时开启插值运算就可以让刚体对象平滑移动</li></ul><ol><li>None 无插值运算模式<ul><li>不应用插值运算</li></ul></li><li>Interpolate 插值模式<ul><li>插值将始终滞后一点，但比外推更流畅。</li><li>根据前一帧的变换来平滑变换。</li></ul></li><li>Extrapolate 外推模式<ul><li>外推将根据当前速度预测刚体的位置。</li><li>根据下一帧的估计变换来平滑变换。</li></ul></li></ol><h1 id="collision-detection-碰撞检测模式"><a class="markdownIt-Anchor" href="#collision-detection-碰撞检测模式"></a> <strong>Collision Detection 碰撞检测模式</strong></h1><blockquote><p>Continuous Dynamic 连续动态检测 <strong>&gt;</strong> Continuous Speculative 连续推测检测 <strong>&gt;</strong> Continuous 连续检测 <strong>&gt;</strong> Discrete 离散检测</p></blockquote><ul><li>用于防止快速移动的对象穿过其它对象而不检测碰撞</li></ul><ol><li>Discrete 离散检测<ul><li>默认的碰撞检测模式。</li><li>在每一帧中进行一次碰撞检测，适用于大多数普通物体。</li><li>最省性能，但可能会错过高速物体的碰撞。</li><li>适合一般速度移动的物体，不适合高速移动的小物体。</li><li>对场景中的所有其他碰撞体使用离散碰撞检测。其他碰撞体在测试碰撞时会使用离散碰撞检测。用于正常碰撞（这是默认值）</li></ul></li><li>Continuous 连续检测<ul><li>提高了碰撞检测的精度，特别适合高速移动的物体。</li><li>在每一帧中进行多次碰撞检测，避免高速物体穿过其他物体。</li><li>比 <code>Discrete</code> 消耗更多的性能，但减少了穿透问题。</li><li>适用于高速移动的物体，如子弹或快速飞行的物体。</li><li>对动态碰撞体（具有刚体）使用离散碰撞检测，并对静态碰撞体（没有刚体）使用连续碰撞检测。</li><li>设置为连续动态 (Continuous Dynamic) 的刚体将在测试与该刚体的碰撞时使用连续碰撞检测。（此属性对物理性能有很大影响，如果没有快速对象的碰撞问题，请将其保留为 Discrete 设置）</li><li>其他刚体将使用离散碰撞检测。</li></ul></li><li>Continuous Dynamic 连续动态检测<ul><li>针对快速移动的物体和其他静止或缓慢移动的物体之间的碰撞检测。</li><li>结合 <code>Continuous</code> 和 <code>Discrete</code> 的优点，对高速物体进行多次检测，对慢速或静止物体进行一次检测。</li><li>在保证精度的同时比 <code>Continuous</code> 更省性能。</li><li>适用于快速移动的物体与静止或缓慢移动的物体之间的碰撞检测，如快速移动的角色或车辆。</li><li>性能消耗高</li><li>对设置为连续 (Continuous)和连续动态 (Continuous Dynamic)碰撞的游戏对象使用连续碰撞检测。还将对静态碰撞体（没有刚体）使用连续碰撞检测。</li><li>对于所有其他碰撞体，使用离散碰撞检测。用于快速移动的对象。</li></ul></li><li>Continuous Speculative 连续推测检测<ul><li>使用预测的方式进行碰撞检测。</li><li>预测物体的未来位置，并在物体穿过其他物体前进行检测和处理。</li><li>性能较高，精度也不错，但有时可能会出现误判。</li><li>适合大多数需要高精度且有较高速度的物体。</li><li>对刚体和碰撞体使用推测性连续碰撞检测。该方法通常比连续碰撞检测的成本更低。<br /><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220181902841.png" alt="" /></li></ul></li></ol><h1 id="constraints-刚体约束"><a class="markdownIt-Anchor" href="#constraints-刚体约束"></a> Constraints 刚体约束</h1><ul><li>对刚体运动的限制</li></ul><ol><li>Freeze Position 冻结位置<ul><li>有选择地停止刚体沿世界 X、Y 和 Z 轴的移动。</li></ul></li><li>Freeze Rotation 冻结旋转<ul><li>有选择地停止刚体围绕局部 X、Y 和 Z 轴旋转。</li></ul></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;碰撞产生的必要条件&lt;/strong&gt;：两个物体都有碰撞器，至少一个物体有刚体&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="核心系统" scheme="http://example.com/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="物理系统" scheme="http://example.com/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>24.光面板</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/24.%E5%85%89%E9%9D%A2%E6%9D%BF/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/24.%E5%85%89%E9%9D%A2%E6%9D%BF/</id>
+    <published>2025-02-20T09:07:17.000Z</published>
+    <updated>2025-02-20T09:35:08.172Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/24.%E5%85%89%E9%9D%A2%E6%9D%BF/file-20250220170800403.png" alt="" /><br /><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/24.%E5%85%89%E9%9D%A2%E6%9D%BF/file-20250220171204536.png" alt="" /></p><h1 id="skybox-material-天空盒材质"><a class="markdownIt-Anchor" href="#skybox-material-天空盒材质"></a> <strong>Skybox Material 天空盒材质</strong></h1><p>可以改变天空盒<br />可以在project窗口右键创建材质，材质选择成天空盒着色器</p><h1 id="sun-source-太阳来源"><a class="markdownIt-Anchor" href="#sun-source-太阳来源"></a> Sun Source 太阳来源*</h1><p>不设置会默认使用场景中最亮的方向光代表太阳</p><h1 id="environment-lighting-环境光设置"><a class="markdownIt-Anchor" href="#environment-lighting-环境光设置"></a> Environment Lighting 环境光设置*</h1><h2 id="source-环境光光源颜色"><a class="markdownIt-Anchor" href="#source-环境光光源颜色"></a> Source 环境光光源颜色*</h2><ol><li>Skybox 天空盒：天空和材质作为环境光颜色</li><li>Gradient 渐变：可以为天空、地平线、地面单独选择颜色和他们之间混合</li><li>Color颜色</li></ol><h2 id="intensity-multiplier-环境光亮度"><a class="markdownIt-Anchor" href="#intensity-multiplier-环境光亮度"></a> Intensity Multiplier 环境光亮度*</h2><h2 id="ambient-mode-环境模式"><a class="markdownIt-Anchor" href="#ambient-mode-环境模式"></a> Ambient Mode 环境模式*</h2><ol><li>全局光照模式，只有启用了实时全局和全局烘焙时才有用</li><li>Realtime 实时（已弃用）</li><li>Baked 烘焙</li></ol><h1 id="othersettings-其它设置"><a class="markdownIt-Anchor" href="#othersettings-其它设置"></a> OtherSettings 其它设置*</h1><h2 id="fog-雾开关"><a class="markdownIt-Anchor" href="#fog-雾开关"></a> Fog 雾开关*</h2><ol><li>Color 雾颜色</li><li>Mode 雾计算模式<ul><li>Linear 线性模式<ul><li>随距离线性增加</li><li>Start 开始距离 离摄像机多远开始有雾</li><li>End 结束距离 离摄像机多远完全遮挡</li></ul></li><li>Exponential 指数模式<ul><li>随距离指数增加</li><li>Density 密度 雾强度</li></ul></li><li>Exponential Qquare 指数平方模式<ul><li>随距离比指数更快的增加</li><li>Density 密度 雾强度</li></ul></li></ul></li></ol><h2 id="halo-texture-光晕材质"><a class="markdownIt-Anchor" href="#halo-texture-光晕材质"></a> Halo Texture 光晕材质*</h2><p>光源周围挥着光环的纹理</p><h2 id="halo-strength-光晕强度"><a class="markdownIt-Anchor" href="#halo-strength-光晕强度"></a> Halo Strength 光晕强度*</h2><p>光环可见性</p><h2 id="flare-fade-speed-炫光交叉淡化速度"><a class="markdownIt-Anchor" href="#flare-fade-speed-炫光交叉淡化速度"></a> Flare Fade Speed 炫光交叉淡化速度*</h2><p>耀斑淡出时间，最初出现之后淡出的时间</p><h2 id="flare-strength-炫光强度"><a class="markdownIt-Anchor" href="#flare-strength-炫光强度"></a> Flare Strength 炫光强度*</h2><p>耀斑可见性</p><h2 id="spot-cookie-聚光灯剪影"><a class="markdownIt-Anchor" href="#spot-cookie-聚光灯剪影"></a> Spot Cookie 聚光灯剪影*</h2><p>聚光灯剪影纹理</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="核心系统" scheme="http://example.com/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="光源系统" scheme="http://example.com/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>23.Light光源组件</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/</id>
+    <published>2025-02-20T08:10:23.000Z</published>
+    <updated>2025-02-20T09:35:01.927Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220161146691.png" alt="" /><br /><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220161201502.png" alt="" /></p><p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220165850186.png" alt="" /></p><h1 id="type光源类型"><a class="markdownIt-Anchor" href="#type光源类型"></a> <strong>Type光源类型</strong></h1><ul><li>Spot聚光灯<ul><li>Spot Angle光锥角度</li><li>Range发光范围距离</li></ul></li><li>Directional方向光(环境光)</li><li>Point点光源</li><li>Area面光源</li></ul><h1 id="mode-光源模式"><a class="markdownIt-Anchor" href="#mode-光源模式"></a> <strong>Mode 光源模式</strong></h1><ol><li>Realtime 实时光源：每帧实时计算，效果好，性能消耗大</li><li>Baked 烘焙光源：事先计算好，无法动态变化</li><li>Mixed 混合光源：预先计算+实时运算</li></ol><h1 id="intensity-光源强度"><a class="markdownIt-Anchor" href="#intensity-光源强度"></a> <strong>Intensity 光源强度</strong></h1><h2 id="indirect-multiplier-间接系数"><a class="markdownIt-Anchor" href="#indirect-multiplier-间接系数"></a> Indirect Multiplier 间接系数 *</h2><p>改变间接光的强度<br />低于1，每次反弹会使光更暗<br />大于1，每次反弹会使光更亮</p><h1 id="shadow-type-阴影类型"><a class="markdownIt-Anchor" href="#shadow-type-阴影类型"></a> <strong>Shadow Type 阴影类型</strong></h1><ol><li>NoShadows 关闭阴影</li><li>HardShadows 生硬阴影</li><li>SoftShadows 柔和阴影</li></ol><h1 id="realtime-shadows-实时阴影"><a class="markdownIt-Anchor" href="#realtime-shadows-实时阴影"></a> Realtime Shadows 实时阴影*</h1><ol><li>Strength 强度: 阴影暗度 0~1之间，越大越黑</li><li>Resolution 分辨率: 阴影贴图渲染分辨率，越高越逼真，消耗越高     （Project Setting中的Quallty的设置）</li><li>Bias 偏离: 阴影推离光源的距离</li><li>Normal Bias 法线偏离: 阴影投射面沿法线收缩距离</li><li>Near Panel 近平面: 渲染阴影的近裁剪面</li></ol><h1 id="cookie-剪影"><a class="markdownIt-Anchor" href="#cookie-剪影"></a> <strong>Cookie 剪影</strong></h1><p>投影遮罩: 一般用于聚光灯，显示图案</p><h1 id="draw-halo-绘制光晕"><a class="markdownIt-Anchor" href="#draw-halo-绘制光晕"></a> <strong>Draw Halo 绘制光晕</strong></h1><p>球形光环开关<br />可以用于蜡烛等效果</p><h1 id="flare-眩光"><a class="markdownIt-Anchor" href="#flare-眩光"></a> Flare 眩光</h1><p>耀斑<br />有点类似于太阳耀斑效果<br />想要在Game窗口看到耀斑要在摄像机Camera上加FlareLayer脚本</p><h1 id="render-mode-渲染模式"><a class="markdownIt-Anchor" href="#render-mode-渲染模式"></a> Render Mode 渲染模式*</h1><ol><li>Auto 自动: 运行时确定</li><li>Important 重要: 以像素质量为单位进行渲染，效果逼真，消耗大</li><li>Not Important 非重要: 以快速模式进行渲染</li></ol><h1 id="culling-mask-剔除遮罩"><a class="markdownIt-Anchor" href="#culling-mask-剔除遮罩"></a> <strong>Culling Mask 剔除遮罩</strong></h1><ul><li>剔除遮罩层，决定哪些层的对象受到该光源影响</li></ul><p>ps：所有参数都可都可以在代码中设置</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="核心系统" scheme="http://example.com/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="光源系统" scheme="http://example.com/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>22.Camera代码控制</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/22.Camera%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/22.Camera%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6/</id>
+    <published>2025-02-20T06:40:08.000Z</published>
+    <updated>2025-02-20T09:34:11.418Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="重要静态成员"><a class="markdownIt-Anchor" href="#重要静态成员"></a> 重要静态成员</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取主摄像机       只能是有MainCamera tag的</span></span><br><span class="line">print(Camera.main?.name);         **************</span><br><span class="line"><span class="comment">// 所有摄像机数量</span></span><br><span class="line">print(Camera.allCamerasCount);</span><br><span class="line"><span class="comment">// 所有摄像机</span></span><br><span class="line">Camera[] allCameras = Camera.allCameras;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 渲染相关委托</span></span><br><span class="line"><span class="comment">// 摄像机剔除前处理的委托函 数</span></span><br><span class="line">Camera.onPreCull += (c) =&gt;</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 摄像机渲染前处理的委托</span></span><br><span class="line">Camera.onPreRender += (c) =&gt;</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 摄像机渲染后处理的委托</span></span><br><span class="line">Camera.onPostRender += (c) =&gt;</span><br><span class="line">&#123;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h1 id="重要成员"><a class="markdownIt-Anchor" href="#重要成员"></a> 重要成员</h1><p>Inspector窗口的所有值都能用代码得到并修改<br />比如：<code>Camera.main.depth = 10;</code></p><p><strong>下面非常常用</strong><br /><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/22.Camera%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6/file-20250220145501137.png" alt="" /></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 世界坐标 转 屏幕坐标</span></span><br><span class="line"><span class="comment">// 转换后的x, y就是屏幕坐标, z则为  Camera.main 离 这个物体position有多远 (纵深</span></span><br><span class="line"><span class="comment">//  用这个来做 头顶血条          ****************</span></span><br><span class="line">Vector3 vector3 = Camera.main.WorldToScreenPoint(<span class="keyword">this</span>.transform.position);</span><br><span class="line">print(vector3);</span><br></pre></td></tr></table></figure><p>设置z之后，屏幕坐标就会转换到世界坐标的距离摄像机的z距离的平面上</p><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 屏幕坐标 转 世界坐标</span></span><br><span class="line"><span class="comment">// 转换要自己设定z轴的距离, 否则为0, 一直在视口点上坐标不变</span></span><br><span class="line">Vector3 v = Input.mousePosition;        ***********</span><br><span class="line">v.z = <span class="number">10</span>;</span><br><span class="line">Vector3 vector31 = Camera.main.ScreenToWorldPoint(v);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;重要静态成员&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#重要静态成员&quot;&gt;&lt;/a&gt; 重要静态成员&lt;/h1&gt;
+&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>21.Camera</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/21.Camera/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/21.Camera/</id>
+    <published>2025-02-20T05:43:21.000Z</published>
+    <updated>2025-02-20T09:34:08.115Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="camera可编辑参数"><a class="markdownIt-Anchor" href="#camera可编辑参数"></a> Camera可编辑参数</h1><p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/21.Camera/file-20250220134605164.png" alt="" /><br /><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/21.Camera/file-20250220134621006.png" alt="" /></p><h2 id="clear-flags清楚标志"><a class="markdownIt-Anchor" href="#clear-flags清楚标志"></a> <strong>Clear Flags清楚标志</strong></h2><p>skybox天空盒    （做3d游戏）<br />Solid Color颜色填充     （做2d游戏）<br />Depth only 只画该层，背景透明   （一般多个摄像机叠加渲染的时候使用，一般与下面的<strong>Depth</strong>配合使用）<br />Don’t Clear 不移除，覆盖渲染    （<strong>不常用</strong>，会保留每一帧的渲染内容，就像黄金体验镇魂曲）</p><h2 id="culling-mask剔除遮罩"><a class="markdownIt-Anchor" href="#culling-mask剔除遮罩"></a> <strong>Culling Mask剔除遮罩</strong></h2><p>选择渲染部分层级（Layer）</p><h2 id="projection"><a class="markdownIt-Anchor" href="#projection"></a> <strong>Projection</strong></h2><p>FOV Axis Fov轴：视野轴，决定了光学仪器的视野范围。</p><p>Perspective 透视模式<br />Field of view 视野：摄像机视角（以沿着 FOV Axis__ 下拉选单中指定轴的度数为单位）。0-180度之间，一般保持默认60就行。</p><p>orthographic 正交摄像机（一般用于2D游戏制作）<br />Size：摄制范围</p><h2 id="clipping-planes裁剪平面"><a class="markdownIt-Anchor" href="#clipping-planes裁剪平面"></a> <strong>Clipping Planes裁剪平面</strong></h2><p>Near：近平面<br />Far：远平面</p><h2 id="depth深度"><a class="markdownIt-Anchor" href="#depth深度"></a> <strong>Depth深度</strong></h2><p>渲染顺序上的深度 （数字越小，越先渲染）<br />数字小的照片会先放， 数字大的照片会叠在上面，天空盒有背景是不透明，depth only透明<br /><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/21.Camera/file-20250220141807107.png" alt="" /></p><h2 id="target-texture目标纹理"><a class="markdownIt-Anchor" href="#target-texture目标纹理"></a> <strong>Target Texture目标纹理</strong></h2><p>可以把摄像机画面渲染到一张图上， 主要用于制作小地图<br />在Project右键创建 Render Texture，将创建的Render Texture拖到摄像机，就会把摄像机看到的画面渲染到一张图上</p><h2 id="occlusion-culling剔除遮挡"><a class="markdownIt-Anchor" href="#occlusion-culling剔除遮挡"></a> <strong>Occlusion Culling剔除遮挡</strong></h2><p>勾选时一些游戏物体被大一点的物体挡住可以不用渲染</p><h1 id="不常用的参数"><a class="markdownIt-Anchor" href="#不常用的参数"></a> 不常用的参数</h1><p>Viewport Rect视口范围 屏幕上将绘制该摄像机视图的位置，主要用于双摄像机游戏，0~1 相当于宽高百分比</p><p>Redering path渲染路径<br /><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/21.Camera/file-20250220143333576.png" alt="" /></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;camera可编辑参数&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#camera可编辑参数&quot;&gt;&lt;/a&gt; Camera可编辑参数&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2025/02/20/%E6%B8%B8%E6%88%8F%E5%B</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20.Screen屏幕相关</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20.Screen%E5%B1%8F%E5%B9%95%E7%9B%B8%E5%85%B3/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20.Screen%E5%B1%8F%E5%B9%95%E7%9B%B8%E5%85%B3/</id>
+    <published>2025-02-20T02:50:13.000Z</published>
+    <updated>2025-02-20T09:33:59.444Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="常用"><a class="markdownIt-Anchor" href="#常用"></a> 常用</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前屏幕分辨率  (设备的分辨率</span></span><br><span class="line">Resolution currentResolution = Screen.currentResolution;</span><br><span class="line">print(<span class="string">$&quot;当前分辨率宽:<span class="subst">&#123;currentResolution.width&#125;</span>, 高:<span class="subst">&#123;currentResolution.height&#125;</span>&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当前游戏窗口分辨率 </span></span><br><span class="line">print(<span class="string">$&quot;当前窗口分辨率为:<span class="subst">&#123;Screen.width&#125;</span> * <span class="subst">&#123;Screen.height&#125;</span>&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 屏幕休眠模式   </span></span><br><span class="line">Screen.sleepTimeout = SleepTimeout.NeverSleep;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h1 id="不常用"><a class="markdownIt-Anchor" href="#不常用"></a> 不常用</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 运行时是否全屏</span></span><br><span class="line">Screen.fullScreen = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 窗口模式     (以后在发布的时候在设置, 一般不用代码去设置)</span></span><br><span class="line"><span class="comment">// 独占全屏 FullScreenMode.ExclusiveFullScreen</span></span><br><span class="line"><span class="comment">// 全屏窗口 FullScreenMode.FullScreenWindow;</span></span><br><span class="line"><span class="comment">// 最大化窗口 FullScreenMode.MaximizedWindow</span></span><br><span class="line"><span class="comment">// 窗口模式 FullScreenMode.Windowed;</span></span><br><span class="line">Screen.fullScreenMode = FullScreenMode.FullScreenWindow;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 移动设备转向相关...</span></span><br><span class="line">Screen.autorotateToLandscapeLeft = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 指定屏幕显示方向</span></span><br><span class="line">Screen.orientation = ScreenOrientation.LandscapeLeft;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置分辨率 第三个参数是否为全屏    (移动设备不用, </span></span><br><span class="line">Screen.SetResolution(<span class="number">1920</span>, <span class="number">1080</span>, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;常用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#常用&quot;&gt;&lt;/a&gt; 常用&lt;/h1&gt;
+&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span c</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>19.Input输入相关</title>
+    <link href="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/19.Input%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3/"/>
+    <id>http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/19.Input%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3/</id>
+    <published>2025-02-20T02:39:16.000Z</published>
+    <updated>2025-02-20T09:33:54.556Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>输入内容一定是写在Update当中的</strong></p><h1 id="鼠标位置"><a class="markdownIt-Anchor" href="#鼠标位置"></a> 鼠标位置</h1><p>屏幕坐标的原点是在左下角，右是x轴正向，上是y轴正向</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 鼠标位置</span></span><br><span class="line"><span class="comment">// 返回一个Vector3, 但只有x, y有值</span></span><br><span class="line">print(Input.mousePosition);</span><br></pre></td></tr></table></figure><h1 id="检测鼠标输入"><a class="markdownIt-Anchor" href="#检测鼠标输入"></a> 检测鼠标输入</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检测鼠标输入   (0左键, 1右键, 2滚轮</span></span><br><span class="line"><span class="keyword">if</span> (Input.GetMouseButtonDown(<span class="number">0</span>))</span><br><span class="line">    print(<span class="string">&quot;你按了一次 鼠标左键&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (Input.GetMouseButtonUp(<span class="number">1</span>))</span><br><span class="line">    print(<span class="string">&quot;你抬起了一次 鼠标右键&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (Input.GetMouseButton(<span class="number">0</span>))</span><br><span class="line">    print(<span class="string">&quot;你是一直在按着 鼠标左键&quot;</span>);</span><br><span class="line"><span class="comment">// 返回一个Vector2, 而滚动会改变其中的y值</span></span><br><span class="line"><span class="comment">// y值   -1 往下棍, 0 没滚, 1 往上滚</span></span><br><span class="line">Vector2 mouseScrollDelta = Input.mouseScrollDelta;</span><br><span class="line">print(mouseScrollDelta);</span><br></pre></td></tr></table></figure><h1 id="检测键盘输入"><a class="markdownIt-Anchor" href="#检测键盘输入"></a> 检测键盘输入</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 键盘按下 up抬起, 无长按...</span></span><br><span class="line"><span class="keyword">if</span> (Input.GetKeyDown(KeyCode.W))</span><br><span class="line">    print(<span class="string">&quot;你按下了W键&quot;</span>);</span><br></pre></td></tr></table></figure><h1 id="检测默认轴"><a class="markdownIt-Anchor" href="#检测默认轴"></a> 检测默认轴</h1><p>记不住单词可以在Project Setting中的Input Manager查看</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 默认轴输入</span></span><br><span class="line"><span class="comment">// 当键盘A,D键按下时,  返回-1 到 1之间的变换   </span></span><br><span class="line"><span class="comment">// 即一直按A的话, 返回值会慢慢从0变到 -1</span></span><br><span class="line"><span class="comment">// Input.GetAxisRaw是只会有 -1, 0, 1三个数字之间的突变</span></span><br><span class="line"><span class="built_in">float</span> v = Input.GetAxis(<span class="string">&quot;Horizontal&quot;</span>);</span><br><span class="line">print(v);</span><br><span class="line"></span><br><span class="line"><span class="comment">// W, S 返回-1, 到 1</span></span><br><span class="line"><span class="built_in">float</span> v1 = Input.GetAxis(<span class="string">&quot;Vertical&quot;</span>);</span><br><span class="line">print(v1);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 鼠标横向移动   纵向  Mouse Y</span></span><br><span class="line"><span class="built_in">float</span> v2 = Input.GetAxis(<span class="string">&quot;Mouse X&quot;</span>);</span><br><span class="line">print(v2);</span><br></pre></td></tr></table></figure><h1 id="其它"><a class="markdownIt-Anchor" href="#其它"></a> 其它</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 是否有任意键或鼠标长按</span></span><br><span class="line"><span class="built_in">bool</span> anyKey = Input.anyKey;</span><br><span class="line"><span class="keyword">if</span> (Input.anyKeyDown)</span><br><span class="line">&#123;</span><br><span class="line">    print(<span class="string">$&quot;有一个键按下了按下的是<span class="subst">&#123;Input.inputString&#125;</span>&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 得到连接的手柄的所有按钮名字</span></span><br><span class="line"><span class="built_in">string</span>[] strings = Input.GetJoystickNames();</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; strings.Length; i++)</span><br><span class="line">&#123;</span><br><span class="line">    print(<span class="string">&quot;你连接的所有按钮有&quot;</span>);</span><br><span class="line">    print(strings[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 某一手柄键按下, 抬起, 长按...</span></span><br><span class="line"><span class="built_in">bool</span> v3 = Input.GetButtonDown(strings[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移动设备触摸</span></span><br><span class="line"><span class="keyword">if</span> (Input.touchCount &gt; <span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    Touch touch = Input.touches[<span class="number">0</span>];</span><br><span class="line">    <span class="comment">// 位置</span></span><br><span class="line">    print(touch.position);</span><br><span class="line">    <span class="comment">// 相对上次位置的变化</span></span><br><span class="line">    print(touch.deltaPosition);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 是否启用多点触控</span></span><br><span class="line">Input.multiTouchEnabled = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 陀螺仪  (重力感应)</span></span><br><span class="line"><span class="comment">// 是否开启陀螺仪</span></span><br><span class="line">Input.gyro.enabled = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重力加速度 </span></span><br><span class="line">Vector3 gravity = Input.gyro.gravity;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 旋转速度</span></span><br><span class="line">Vector3 rotationRate = Input.gyro.rotationRate;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 陀螺仪 当前旋转的四元数</span></span><br><span class="line"><span class="comment">// 比如用这个角度信息 来控制场景上的一个3D物体收到重力影响</span></span><br><span class="line"><span class="comment">// 手机怎么动, 他就怎么动</span></span><br><span class="line">Quaternion attitude = Input.gyro.attitude;</span><br></pre></td></tr></table></figure><h1 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h1><h2 id="用wasd键控制前进后退左右转向"><a class="markdownIt-Anchor" href="#用wasd键控制前进后退左右转向"></a> 用WASD键控制前进后退，左右转向</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ws键 控制位移 // 这公式 是 ： 前进方向 * 速度 * 时间 * 输入相关（-1~1 相当于 正向还是反向的感觉 不按就不动 0</span></span><br><span class="line"><span class="keyword">this</span>.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime * Input.GetAxis(<span class="string">&quot;Vertical&quot;</span>)); <span class="comment">//ad键 控制 左右转向 // 这公式 是 ： 转动的轴 * 速度 * 时间 * 输入相关（-1~1 相当于 正向还是反向的感觉 不按就不动 0</span></span><br><span class="line"><span class="keyword">this</span>.transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * Input.GetAxis(<span class="string">&quot;Horizontal&quot;</span>));</span><br></pre></td></tr></table></figure><h2 id="鼠标左右移动控制炮口的转向"><a class="markdownIt-Anchor" href="#鼠标左右移动控制炮口的转向"></a> 鼠标左右移动控制炮口的转向</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head.Rotate(Vector3.up * headRotateSpeed * Time.deltaTime * Input.GetAxis(<span class="string">&quot;Mouse X&quot;</span>));</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;输入内容一定是写在Update当中的&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;鼠标位置&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#鼠标位置&quot;&gt;&lt;/a&gt; 鼠标位置&lt;/h1&gt;
+&lt;p&gt;屏幕坐标的原点是在左下角，右是x轴正向，上是y</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>18.坐标转换</title>
+    <link href="http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/"/>
+    <id>http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/</id>
+    <published>2025-02-19T13:07:14.000Z</published>
+    <updated>2025-02-20T09:33:45.396Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="世界-本地"><a class="markdownIt-Anchor" href="#世界-本地"></a> 世界 -&gt; 本地</h1><p><img src="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/file-20250220093120768.png" alt="" /></p><h2 id="世界坐标系的点-本地坐标系的点"><a class="markdownIt-Anchor" href="#世界坐标系的点-本地坐标系的点"></a> 世界坐标系的点 -&gt; 本地坐标系的点</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 世界坐标 转换为 本地坐标    (会受到缩放影响</span></span><br><span class="line"><span class="comment">// 即 在世界坐标系下的   (0, 0, 1) 在本地坐标系下表示为   transform.InverseTransformPoint(Vector3.forward)</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.InverseTransformPoint(Vector3.forward));</span><br></pre></td></tr></table></figure><p><img src="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/file-20250220093428982.png" alt="" /></p><h2 id="世界坐标系的向量-本地坐标系的向量"><a class="markdownIt-Anchor" href="#世界坐标系的向量-本地坐标系的向量"></a> 世界坐标系的向量 -&gt; 本地坐标系的向量</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 世界坐标系的向量 平移到 本地坐标系后的向量值是     (不受缩放影响</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.InverseTransformDirection(Vector3.forward));</span><br><span class="line"><span class="comment">// 世界坐标系的向量 平移到 本地坐标系后的向量值是     (受缩放影响</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.InverseTransformVector(Vector3.forward));</span><br></pre></td></tr></table></figure><h1 id="本地-世界"><a class="markdownIt-Anchor" href="#本地-世界"></a> 本地 -&gt; 世界</h1><h2 id="本地坐标系的点-世界坐标系的点-最重要的"><a class="markdownIt-Anchor" href="#本地坐标系的点-世界坐标系的点-最重要的"></a> 本地坐标系的点 -&gt; 世界坐标系的点   （最重要的***）</h2><p><img src="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/file-20250220094235927.png" alt="" /></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本地坐标 转换为 世界坐标    (会受到缩放影响</span></span><br><span class="line"><span class="comment">// 即 在本地坐标系下的   (0, 0, 1) 在世界坐标系下表示为   transform.TransformPoint(Vector3.forward)</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.TransformPoint(Vector3.forward));</span><br><span class="line"></span><br><span class="line"><span class="comment">// eg:</span></span><br><span class="line">GameObject obj = <span class="keyword">new</span> GameObject(<span class="string">&quot;左前方物体&quot;</span>);</span><br><span class="line">obj.transform.position = <span class="keyword">this</span>.transform.TransformPoint(<span class="keyword">new</span> Vector3(<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>));  <span class="comment">// 在本地坐标的左前方（-1,0,1）处创建物体   </span></span><br></pre></td></tr></table></figure><h2 id="本地坐标系的向量-世界坐标系的向量"><a class="markdownIt-Anchor" href="#本地坐标系的向量-世界坐标系的向量"></a> 本地坐标系的向量 -&gt; 世界坐标系的向量</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 本地坐标系的向量 平移到 世界坐标系后的向量值是     (不受缩放影响</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.TransformDirection(Vector3.forward));</span><br><span class="line"><span class="comment">// 本地坐标系的向量 平移到 世界坐标系后的向量值是     (受缩放影响</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.TransformVector(Vector3.forward));</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;世界-本地&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#世界-本地&quot;&gt;&lt;/a&gt; 世界 -&amp;gt; 本地&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>17.父子关系</title>
+    <link href="http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/17.%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/"/>
+    <id>http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/17.%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/</id>
+    <published>2025-02-19T08:56:46.000Z</published>
+    <updated>2025-02-20T09:32:55.448Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="获取和设置父对象"><a class="markdownIt-Anchor" href="#获取和设置父对象"></a> 获取和设置父对象</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取父对象</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.parent);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 断绝父子关系</span></span><br><span class="line"><span class="keyword">this</span>.transform.parent = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 认父亲      // 也会顺带把孙子的爷爷也换了</span></span><br><span class="line"><span class="keyword">this</span>.transform.parent = GameObject.Find(<span class="string">&quot;obj&quot;</span>).transform;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 下面这种认父亲的方法    特殊一些</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二个参数为true 则不会改掉物体本来的世界坐标位置,大小什么的</span></span><br><span class="line"><span class="comment">//          为false, 则会把原来Inspector面板上的数字原封不动的赋值到新的Inspector窗口上，则会用自己的transform中的数值</span></span><br><span class="line"><span class="comment">// 子对象世界坐标 = 父对象世界坐标 × 子对象局部坐标（当 worldPositionStays = false 时）。</span></span><br><span class="line"><span class="comment">// 动态创建ui时常用</span></span><br><span class="line"><span class="keyword">this</span>.transform.SetParent(GameObject.Find(<span class="string">&quot;obj&quot;</span>).transform, <span class="literal">false</span>);      </span><br></pre></td></tr></table></figure><h1 id="抛妻弃子"><a class="markdownIt-Anchor" href="#抛妻弃子"></a> 抛妻弃子</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 和自己所有儿子断绝关系,  不会断掉儿子和孙子的</span></span><br><span class="line"><span class="keyword">this</span>.transform.DetachChildren();</span><br></pre></td></tr></table></figure><h1 id="获取子对象及其操作"><a class="markdownIt-Anchor" href="#获取子对象及其操作"></a> 获取子对象及其操作</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据名字查找儿子对象       (不可以查找孙子, 可以找到失活的儿子，GameObject的find不能查找失活的对象 )</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.Find(<span class="string">&quot;Capsule&quot;</span>));</span><br><span class="line"><span class="comment">// 查找Father的儿子Son</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.Find(<span class="string">&quot;Father/Son&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 儿子数量</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.childCount);</span><br><span class="line"><span class="comment">// 遍历</span></span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.transform.childCount; i++)</span><br><span class="line">    print(<span class="keyword">this</span>.transform.GetChild(i));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是不是自己是不是另一个对象的儿子</span></span><br><span class="line"><span class="built_in">bool</span> v = <span class="keyword">this</span>.transform.IsChildOf(transform.parent);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置自己作为儿子编号</span></span><br><span class="line"><span class="keyword">this</span>.transform.SetSiblingIndex(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 得到自己作为儿子的编号</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.GetSiblingIndex());</span><br></pre></td></tr></table></figure><h1 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h1><p>请为Transform写一个拓展方法，可以将它的子对象按名字的长短进行排序改变他们的顺序，名字短的在前面，名字长的在后面</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">TransformExtensions</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SortChildrenByNameLength</span>(<span class="params"><span class="keyword">this</span> Transform obj</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//var children = obj.Cast&lt;Transform&gt;().ToList();</span></span><br><span class="line">        <span class="comment">//children = children.OrderBy(child =&gt; child.name.Length).ToList();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//for (int i = 0; i &lt; children.Count; i++)</span></span><br><span class="line">        <span class="comment">//&#123;</span></span><br><span class="line">        <span class="comment">//    children[i].SetSiblingIndex(i);</span></span><br><span class="line">        <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">        List&lt;Transform&gt; list = <span class="keyword">new</span> List&lt;Transform&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; obj.childCount; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            list.Add(obj.GetChild(i));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//这是根据 名字长短进行排序 利用的 是list的排序 传个函数进去</span></span><br><span class="line">        list.Sort((a, b) =&gt; a.transform.name.Length - b.transform.name.Length);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//根据 list中的排序结果 重新设置每一个对象的 索引编号</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; list.Count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            list[i].SetSiblingIndex(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>请为Transform写一个拓展方法，传入一个名字查找子对象，即使是子对象的子对象也能查找到</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">TransformExtensions</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Transform <span class="title">CustomFind</span>(<span class="params"><span class="keyword">this</span> Transform obj, <span class="built_in">string</span> name</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Transform res = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        res = obj.Find(name);</span><br><span class="line">        <span class="keyword">if</span> (res != <span class="literal">null</span>) <span class="keyword">return</span> res;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; obj.childCount; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            res = obj.GetChild(i).CustomFind(name);</span><br><span class="line">            <span class="keyword">if</span> (res != <span class="literal">null</span>) <span class="keyword">return</span> res;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;获取和设置父对象&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#获取和设置父对象&quot;&gt;&lt;/a&gt; 获取和设置父对象&lt;/h1&gt;
+&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gu</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>16.缩放和看向</title>
+    <link href="http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/16.%E7%BC%A9%E6%94%BE%E5%92%8C%E7%9C%8B%E5%90%91/"/>
+    <id>http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/16.%E7%BC%A9%E6%94%BE%E5%92%8C%E7%9C%8B%E5%90%91/</id>
+    <published>2025-02-19T08:23:15.000Z</published>
+    <updated>2025-02-20T09:32:39.559Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="缩放"><a class="markdownIt-Anchor" href="#缩放"></a> 缩放</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 相对于世界坐标系     // 不能改</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.lossyScale);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 相对于父对象        // 可以改</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.localScale);</span><br><span class="line"></span><br><span class="line"><span class="comment">// unity 没有提供缩放相关的API, 只能自己手动来搞    eg: </span></span><br><span class="line"><span class="keyword">this</span>.transform.localScale += Vector3.one * Time.deltaTime;</span><br></pre></td></tr></table></figure><h1 id="看向"><a class="markdownIt-Anchor" href="#看向"></a> 看向</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将自己的面朝向源点，相对于世界坐标系</span></span><br><span class="line"><span class="keyword">this</span>.transform.LookAt(Vector3.zero);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;缩放&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#缩放&quot;&gt;&lt;/a&gt; 缩放&lt;/h1&gt;
+&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span c</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>15.角度和旋转</title>
+    <link href="http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/15.%E8%A7%92%E5%BA%A6%E5%92%8C%E6%97%8B%E8%BD%AC/"/>
+    <id>http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/15.%E8%A7%92%E5%BA%A6%E5%92%8C%E6%97%8B%E8%BD%AC/</id>
+    <published>2025-02-19T07:30:32.000Z</published>
+    <updated>2025-02-20T09:32:35.248Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/15.%E8%A7%92%E5%BA%A6%E5%92%8C%E6%97%8B%E8%BD%AC/file-20250219153608773.png" alt="" /></p><h1 id="角度相关"><a class="markdownIt-Anchor" href="#角度相关"></a> 角度相关</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 相对于世界坐标角度</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.eulerAngles);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 相对于父对象角度</span></span><br><span class="line"><span class="comment">// Inspector中显示的是相对父对象的角度，localEulerAngles的角度只能是0~360，但Inspector面板是可以负数的</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.localEulerAngles);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不能单个x, y, z赋值</span></span><br><span class="line"><span class="keyword">this</span>.transform.localEulerAngles = <span class="keyword">new</span> Vector3(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure><h1 id="旋转相关"><a class="markdownIt-Anchor" href="#旋转相关"></a> 旋转相关</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自转API    第二个参数默认不写的话，绕着自己坐标转</span></span><br><span class="line"><span class="keyword">this</span>.transform.Rotate(<span class="keyword">new</span> Vector3(<span class="number">0</span>, <span class="number">10</span>, <span class="number">0</span>) * Time.deltaTime * <span class="number">100</span>, Space.World);    <span class="comment">// 每帧绕y轴增加100 * （0，10，0）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//相对于某个轴 转多少度</span></span><br><span class="line"><span class="comment">//参数一:是相对哪个轴进行转动</span></span><br><span class="line"><span class="comment">//参数二:是转动的 角度 是多少</span></span><br><span class="line"><span class="comment">//参数三:默认不填 就是相对于自己的坐标系 进行旋转</span></span><br><span class="line">transform.Rotate(Vector3.up, Time.deltaTime * <span class="number">100</span>);     <span class="comment">// 在自己的坐标系的y轴旋转</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 绕着某个点旋转              绕着源点,   y轴,     转的多少度</span></span><br><span class="line"><span class="keyword">this</span>.transform.RotateAround(Vector3.zero, Vector3.up, <span class="number">10</span> * Time.deltaTime);</span><br></pre></td></tr></table></figure><table><thead><tr><th><strong>代码</strong></th><th>原理</th><th>效率</th><th>可读性</th></tr></thead><tbody><tr><td><code>Rotate(new Vector3(0,1,0) * dt * 100)</code></td><td>欧拉角增量</td><td>较低（需创建Vector3）</td><td>一般</td></tr><tr><td><code>Rotate(Vector3.up, dt * 100)</code></td><td>轴-角度</td><td>较高</td><td>更佳</td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>14.位置位移坐标系相关</title>
+    <link href="http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/14.%E4%BD%8D%E7%BD%AE%E4%BD%8D%E7%A7%BB%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9B%B8%E5%85%B3/"/>
+    <id>http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/14.%E4%BD%8D%E7%BD%AE%E4%BD%8D%E7%A7%BB%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9B%B8%E5%85%B3/</id>
+    <published>2025-02-19T06:59:04.000Z</published>
+    <updated>2025-02-20T09:32:22.769Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="vector常用"><a class="markdownIt-Anchor" href="#vector常用"></a> Vector常用</h1><p>用的是世界坐标</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Vector3.forward     <span class="number">001</span></span><br><span class="line">Vector3.up          <span class="number">010</span></span><br><span class="line">Vector3.down       <span class="number">0</span><span class="number">-10</span></span><br><span class="line">Vector3.left       <span class="number">-100</span></span><br><span class="line">Vector3.right       <span class="number">100</span></span><br><span class="line">Vector3.back       <span class="number">00</span><span class="number">-1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 两点之间的距离</span></span><br><span class="line">Vector3.Distance(v1, v2);</span><br></pre></td></tr></table></figure><h1 id="位置"><a class="markdownIt-Anchor" href="#位置"></a> 位置</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 相对世界坐标原点的值</span></span><br><span class="line">print(<span class="string">$&quot;距离世界源点 <span class="subst">&#123;<span class="keyword">this</span>.transform.position&#125;</span>&quot;</span>);</span><br><span class="line"><span class="comment">// 相对父对象    没父对象就相对于源点</span></span><br><span class="line">print(<span class="string">$&quot;距离父对象坐标点 <span class="subst">&#123;<span class="keyword">this</span>.transform.localPosition&#125;</span>&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 位置的赋值不能单独改x, y, z     只能整体来赋值</span></span><br><span class="line"><span class="keyword">this</span>.transform.position = <span class="keyword">new</span> Vector(<span class="number">5</span>, <span class="keyword">this</span>.transform.position.y, ...);</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">Vector3 tmp = <span class="keyword">this</span>.transform.position;    tmp.y = <span class="number">666</span>;</span><br><span class="line"><span class="keyword">this</span>.transfomr.position = tmp;</span><br></pre></td></tr></table></figure><h1 id="朝向"><a class="markdownIt-Anchor" href="#朝向"></a> 朝向</h1><p>本地坐标系，游戏对象当前的朝向</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="keyword">this</span>.transform.forward);          <span class="comment">// 游戏对象当前的面朝向</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.up);               <span class="comment">// 对象当前的头顶朝向</span></span><br><span class="line">Vector3 right = <span class="keyword">this</span>.transform.right;   <span class="comment">// 右手边</span></span><br></pre></td></tr></table></figure><h1 id="位移"><a class="markdownIt-Anchor" href="#位移"></a> 位移</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1 位移 = 方向 * 速度 * 时间    (手动写, 世界坐标系的话用Vector3.XX)</span></span><br><span class="line">最终位置 = 当前的位置 + 我要变化的位置的路程</span><br><span class="line"><span class="comment">//this.transform.position += this.transform.forward * 1 * Time.deltaTime;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 位移API</span></span><br><span class="line"><span class="comment">// 参数1 表示位移多少    位移 = 方向 * 速度 * 时间</span></span><br><span class="line"><span class="comment">// 参数2 移动所采用的坐标系, 即(1, 0, 0)是哪个坐标系的(1, 0, 0) (不填的话，默认本地相对坐标系Space.Self)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.transform.Translate(Vector3.forward * <span class="number">1</span> * Time.deltaTime, Space.World);   <span class="comment">// 沿着世界坐标系的001去动</span></span><br><span class="line"><span class="keyword">this</span>.transform.Translate(transform.forward * <span class="number">1</span> * Time.deltaTime, Space.World); <span class="comment">// 世界坐标系中沿着自己的面朝向去动</span></span><br><span class="line"><span class="keyword">this</span>.transform.Translate（Vector3.forward * <span class="number">1</span> * Time.deltaTime, Space.Self);   <span class="comment">// 沿着自己坐标系的001去动</span></span><br><span class="line"><span class="comment">// 不会这样移动, 自己相对于世界坐标系的歪曲的数据 再应用于自己的坐标系</span></span><br><span class="line"><span class="keyword">this</span>.transform.Translate(transform.forward * <span class="number">1</span> * Time.deltaTime, Space.Self);  <span class="comment">// 傻逼</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;vector常用&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#vector常用&quot;&gt;&lt;/a&gt; Vector常用&lt;/h1&gt;
+&lt;p&gt;用的是世界坐标&lt;/p&gt;
+&lt;figure class=&quot;highlight csharp&quot;&gt;&lt;table&gt;&lt;t</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>13.时间相关Time</title>
+    <link href="http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/13.%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3Time/"/>
+    <id>http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/13.%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3Time/</id>
+    <published>2025-02-19T06:00:25.000Z</published>
+    <updated>2025-02-20T09:32:15.891Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/13.%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3Time/Pasted%20image%2020240304172349.png" alt="" /></p><h1 id="时间缩放比例"><a class="markdownIt-Anchor" href="#时间缩放比例"></a> 时间缩放比例</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间停止         // 恢复正常         // 2倍速</span></span><br><span class="line">Time.timeScale = <span class="number">0</span>; Time.timeScale = <span class="number">1</span>; Time.timeScale = <span class="number">2</span>;</span><br></pre></td></tr></table></figure><h1 id="帧间隔时间"><a class="markdownIt-Anchor" href="#帧间隔时间"></a> 帧间隔时间</h1><p>即 两帧之间的时间<br /><strong>作用</strong>: 计算位移    每帧移动的距离由<code>speed * Time.deltaTime</code>确定，确保了在不同帧率下物体移动的速度一致<br />典型应用：<code>transform.Translate(Vector3.forward * speed * Time.deltaTime);</code><br />通过乘以 <code>deltaTime</code>，物体每秒移动的距离为 <code>speed</code> 单位，无论帧率如何变化。</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 帧间隔时间</span></span><br><span class="line">print(<span class="string">&quot;受timeScale影响的 &quot;</span> + Time.deltaTime);</span><br><span class="line">print(<span class="string">&quot;不受timeScale影响的&quot;</span> + Time.unscaledDeltaTime);</span><br></pre></td></tr></table></figure><h1 id="游戏开始到现在时间"><a class="markdownIt-Anchor" href="#游戏开始到现在时间"></a> 游戏开始到现在时间</h1><p>一般都单机游戏用，网游一般用服务器时间</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 游戏开始到现在的时间</span></span><br><span class="line">print(<span class="string">&quot;受timeScale影响的&quot;</span> + Time.time);</span><br><span class="line">print(<span class="string">&quot;不受影响的&quot;</span> + Time.unscaledTime);</span><br></pre></td></tr></table></figure><h1 id="物理帧间隔时间"><a class="markdownIt-Anchor" href="#物理帧间隔时间"></a> 物理帧间隔时间</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FixedUpdate</span>()</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">// 物理帧间隔时间</span></span><br><span class="line">print(<span class="string">&quot;受影响的 &quot;</span> + Time.fixedDeltaTime);</span><br><span class="line">print(<span class="string">&quot;不受影响的 &quot;</span> + Time.fixedUnscaledDeltaTime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="总帧数-帧同步"><a class="markdownIt-Anchor" href="#总帧数-帧同步"></a> 总帧数    (帧同步)</h1><p>从开始到现在游戏跑了多少帧（即多少次循环）</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(Time.frameCount);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>12.GameObject</title>
+    <link href="http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/12.GameObject/"/>
+    <id>http://example.com/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/12.GameObject/</id>
+    <published>2025-02-19T02:07:20.000Z</published>
+    <updated>2025-02-20T09:32:08.542Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/12.GameObject/Pasted%20image%2020240304151356.png" alt="" /></p><h1 id="成员变量"><a class="markdownIt-Anchor" href="#成员变量"></a> 成员变量</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 名字</span></span><br><span class="line"><span class="keyword">this</span>.gameObject.name = <span class="string">&quot;改名desu&quot;</span>;</span><br><span class="line"><span class="comment">// 是否激活</span></span><br><span class="line"><span class="built_in">bool</span> activeSelf = <span class="keyword">this</span>.gameObject.activeSelf;</span><br><span class="line"><span class="comment">// 是否静态</span></span><br><span class="line"><span class="built_in">bool</span> isStatic = <span class="keyword">this</span>.gameObject.isStatic;</span><br><span class="line"><span class="comment">// 层级</span></span><br><span class="line"><span class="built_in">int</span> layer = <span class="keyword">this</span>.gameObject.layer;</span><br><span class="line"><span class="comment">// 给游戏对象分的标签</span></span><br><span class="line"><span class="built_in">string</span> tag1 = <span class="keyword">this</span>.gameObject.tag;</span><br></pre></td></tr></table></figure><h1 id="静态方法"><a class="markdownIt-Anchor" href="#静态方法"></a> 静态方法</h1><h2 id="创建自带几何体"><a class="markdownIt-Anchor" href="#创建自带几何体"></a> 创建自带几何体</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建自带几何体</span></span><br><span class="line">GameObject gameObject1 = GameObject.CreatePrimitive(PrimitiveType.Cube);</span><br><span class="line">gameObject1.name = <span class="string">&quot;自己起的名字&quot;</span>;</span><br></pre></td></tr></table></figure><h2 id="在场景中查找对象"><a class="markdownIt-Anchor" href="#在场景中查找对象"></a> 在场景中查找对象</h2><p>只能找到激活对象，无法找到失活对象<br />使用单个查找的api，如果场景有满足调教的多个对象，无法指定找到的是谁</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在场景中查找对象         </span></span><br><span class="line"><span class="comment">// 1.1 单个查找    名字(同名不行)</span></span><br><span class="line"><span class="comment">// 查找效率低    会查询所有场景中所有的对象</span></span><br><span class="line">GameObject gameObject2 = GameObject.Find(<span class="string">&quot;自己起的名字&quot;</span>);</span><br><span class="line">print(gameObject2?.name);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.2 单个查找     tag</span></span><br><span class="line">GameObject gameObject3 = GameObject.FindWithTag(<span class="string">&quot;MainCamera&quot;</span>);</span><br><span class="line">print(gameObject3?.name);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.3 通过Inspector面板去拖到本地的public</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2 多对象查找      tag</span></span><br><span class="line">GameObject[] gameObjects = GameObject.FindGameObjectsWithTag(<span class="string">&quot;Player&quot;</span>);</span><br><span class="line">print(gameObjects?.Length);</span><br><span class="line"></span><br><span class="line"><span class="comment">// FindObjectOfTypes    效率低</span></span><br></pre></td></tr></table></figure><h2 id="克隆对象"><a class="markdownIt-Anchor" href="#克隆对象"></a> 克隆对象</h2><p>根据一个GameObject对象, 创建一个一模一样的对象</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GameObject obj = GameObject.Instantiate(MyObj);</span><br></pre></td></tr></table></figure><h2 id="删除"><a class="markdownIt-Anchor" href="#删除"></a> 删除</h2><ol><li>删除一个指定游戏对象</li><li>删除一个指定脚本对象</li></ol><p><strong>注意:</strong><br />Destroy方法不会马上移除对象, 只是加了一个移除标识<br />一般情况下, 会在下一帧时把这个对象从内存中移除</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 删除对象</span></span><br><span class="line">GameObject.Destroy(gameObject4, <span class="number">5</span>);         <span class="comment">// 第二个参数是延时几秒</span></span><br><span class="line"><span class="comment">// 删除脚本对象</span></span><br><span class="line">GameObject.Destroy(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 一定要马上移除  // 没特殊需求不用</span></span><br><span class="line">GameObject.DestroyImmediate(gameObject4);</span><br></pre></td></tr></table></figure><h2 id="切场景不移除"><a class="markdownIt-Anchor" href="#切场景不移除"></a> 切场景不移除</h2><p>默认情况下, 切场景会删除该场景的所有对象<br />一般写自己依附的对象不被删除</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GameObject.DontDestroyOnLoad(<span class="keyword">this</span>.gameObject);      <span class="comment">// 不移除该脚本依附的游戏对象</span></span><br></pre></td></tr></table></figure><h1 id="成员方法"><a class="markdownIt-Anchor" href="#成员方法"></a> 成员方法</h1><h2 id="创建空物体"><a class="markdownIt-Anchor" href="#创建空物体"></a> 创建空物体</h2><p>顺带加上Test2脚本</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GameObject gameObject5 = <span class="keyword">new</span> GameObject(<span class="string">&quot;创建的空物体名字&quot;</span>, <span class="keyword">typeof</span>(Test2));</span><br></pre></td></tr></table></figure><h2 id="动态给gameobject对象添加脚本"><a class="markdownIt-Anchor" href="#动态给gameobject对象添加脚本"></a> 动态给GameObject对象添加脚本</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给gameObject5加上Test2脚本</span></span><br><span class="line">Test2 test2 = gameObject5.AddComponent&lt;Test2&gt;();</span><br></pre></td></tr></table></figure><h2 id="获取脚本对象-和mono中的重要内容155e67-继承mono的类获取脚本对象的方法一毛一样"><a class="markdownIt-Anchor" href="#获取脚本对象-和mono中的重要内容155e67-继承mono的类获取脚本对象的方法一毛一样"></a> 获取脚本对象 和[[Mono中的重要内容#^155e67 | 继承Mono的类]]获取脚本对象的方法一毛一样</h2><h2 id="标签比较"><a class="markdownIt-Anchor" href="#标签比较"></a> 标签比较</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (gameObject5.CompareTag(<span class="string">&quot;Player&quot;</span>))</span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">&quot;对象标签是Player&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (gameObject5.tag == <span class="string">&quot;Player&quot;</span>)</span><br><span class="line">&#123;</span><br><span class="line">print(<span class="string">&quot;这和上面是一样的&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="设置-失活-和-激活"><a class="markdownIt-Anchor" href="#设置-失活-和-激活"></a> 设置 失活 和 激活</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gameObject5.SetActive(<span class="literal">false</span>);       <span class="comment">// 失活</span></span><br></pre></td></tr></table></figure><h2 id="不建议使用的成员方法"><a class="markdownIt-Anchor" href="#不建议使用的成员方法"></a> 不建议使用的成员方法</h2><p>通过广播或者发送消息的形式, 让自己或者别人 执行某些行为和方法</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 让自己去执行TestFun这个函数, 会在自己对象上挂着的所有脚本去找这个名字的函数, 有一个执行一个</span></span><br><span class="line"><span class="comment">// 涉及到反射    比较影响性能</span></span><br><span class="line"><span class="keyword">this</span>.gameObject.SendMessage(<span class="string">&quot;TestFun&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 广播行为 让自己及其子对象发送消息并执行，让自己及其子对象 执行相同的名字的方法</span></span><br><span class="line"><span class="keyword">this</span>.gameObject.BroadcastMessage(<span class="string">&quot;TestFun&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 让自己及其父对象发送消息并执行</span></span><br><span class="line"><span class="keyword">this</span>.gameObject.SendMessageUpwards(<span class="string">&quot;函数名&quot;</span>);</span><br></pre></td></tr></table></figure><p>继承自Object自然可以用Object.xxx的方式来调用静态函数</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity重要组件和API" scheme="http://example.com/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>11.MonoBehavior中的重要内容</title>
+    <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/11.MonoBehavior%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E5%86%85%E5%AE%B9/"/>
+    <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/11.MonoBehavior%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E5%86%85%E5%AE%B9/</id>
+    <published>2025-02-18T10:13:17.000Z</published>
+    <updated>2025-02-20T09:31:58.691Z</updated>
+    
+    <content type="html"><![CDATA[<a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/" title="8.脚本基本规则">8.脚本基本规则</a><h1 id="重要成员"><a class="markdownIt-Anchor" href="#重要成员"></a> 重要成员</h1><h2 id="获取依附的gameobject"><a class="markdownIt-Anchor" href="#获取依附的gameobject"></a> 获取依附的GameObject</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="keyword">this</span>.gameObject.name);</span><br></pre></td></tr></table></figure><h2 id="获取依附的gameobject的位置信息"><a class="markdownIt-Anchor" href="#获取依附的gameobject的位置信息"></a> 获取依附的GameObject的位置信息</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//得到对象位置信息</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.position);<span class="comment">//位置</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.eulerAngles);<span class="comment">//角度</span></span><br><span class="line">print(<span class="keyword">this</span>.transform.lossyScale);<span class="comment">//缩放大小</span></span><br><span class="line"><span class="comment">//这种写法和上面是一样的效果 都是得到依附的对象的位置信息</span></span><br><span class="line"><span class="keyword">this</span>.gameObject.transform</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="设置脚本是否激活"><a class="markdownIt-Anchor" href="#设置脚本是否激活"></a> 设置脚本是否激活</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">this</span>.enabled = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">print(<span class="string">$&quot;这是其它脚本对象 otherTest, 可以使用本脚本的其它脚本对象来获取gameObject  <span class="subst">&#123;otherTest.gameObject.name&#125;</span>&quot;</span>);</span><br></pre></td></tr></table></figure><h1 id="重要方法"><a class="markdownIt-Anchor" href="#重要方法"></a> 重要方法</h1><h2 id="获取依附对象上挂载的其它脚本-三个重载获取"><a class="markdownIt-Anchor" href="#获取依附对象上挂载的其它脚本-三个重载获取"></a> 获取依附对象上挂载的其它脚本    三个重载获取</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过挂载脚本名</span></span><br><span class="line">Component component = <span class="keyword">this</span>.GetComponent(<span class="string">&quot;Test2&quot;</span>);</span><br><span class="line">Test2 t = component <span class="keyword">as</span> Test2;</span><br><span class="line">print(t);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过type</span></span><br><span class="line">t = <span class="keyword">this</span>.GetComponent(<span class="keyword">typeof</span>(Test2)) <span class="keyword">as</span> Test2;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过           *************用最多*************</span></span><br><span class="line">t = <span class="keyword">this</span>.GetComponent&lt;Test2&gt;();</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="获取多个脚本"><a class="markdownIt-Anchor" href="#获取多个脚本"></a> 获取多个脚本</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Test2[] test2s = <span class="keyword">this</span>.GetComponents&lt;Test2&gt;();</span><br><span class="line"></span><br><span class="line">List&lt;Test2&gt; list = <span class="keyword">new</span> List&lt;Test2&gt;();</span><br><span class="line"><span class="keyword">this</span>.GetComponents&lt;Test2&gt;(list);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="找自己及其子对象的所挂载的脚本"><a class="markdownIt-Anchor" href="#找自己及其子对象的所挂载的脚本"></a> 找自己及其子对象的所挂载的脚本</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里可以不传参数, 默认传false表示不找失活状态的脚本</span></span><br><span class="line"><span class="comment">// 找自己及其父对象的同理</span></span><br><span class="line"><span class="keyword">this</span>.GetComponentsInChildren&lt;Test2&gt;(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure><h1 id="注意"><a class="markdownIt-Anchor" href="#注意"></a> 注意</h1><p><strong>要想操作其它GameObject对象, 必须获取其它的脚本对象, 而且得用Inspector来赋值</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;a href=&quot;/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity脚本基础" scheme="http://example.com/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>特性</title>
+    <link href="http://example.com/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/"/>
+    <id>http://example.com/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/</id>
+    <published>2025-02-18T09:18:38.000Z</published>
+    <updated>2025-02-18T09:20:20.755Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="特性"><a class="markdownIt-Anchor" href="#特性"></a> 特性</h1><p>特性是一种允许我们向程序的[[程序集]]添加[[元数据]]的语言结构<br />它是用于保存程序结构信息的某种特殊类型的类</p><p>特性提供功能强大的方法以将声明信息与 C# 代码（类型、方法、属性等）相关联。<br />特性与程序实体关联后，即可在运行时使用[[反射]]查询特性信息</p><p>特性的目的是告诉编译器把程序结构的某组[[元数据]]嵌入[[程序集]]中<br />它可以放置在几乎所有的声明中（类、变量、函数等等申明）</p><p>说人话：<br />特性本质是个类<br />我们可以利用特性类为[[元数据]]添加额外信息<br />比如一个类、成员变量、成员方法等等为他们添加更多的额外信息<br />之后可以通过[[反射]]来获取这些额外信息</p><h2 id="自定义特性"><a class="markdownIt-Anchor" href="#自定义特性"></a> 自定义特性</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyCustomAttribute</span> : <span class="title">Attribute</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//特性中的成员 一般根据需求来写</span></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> info;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyCustomAttribute</span>(<span class="params"><span class="built_in">string</span> info</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.info = info;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">TestFun</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;特性的方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="特性的使用"><a class="markdownIt-Anchor" href="#特性的使用"></a> 特性的使用</h2><p>基本语法: <code>[特性名(参数列表)]</code><br />本质上 就是在调用特性类的构造函数<br />写在哪里？ 类、函数、变量上一行，表示他们具有该特性信息</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">MyCustom(<span class="string">&quot;这是我自己的类&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">MyCustom(<span class="string">&quot;这是一个int型的成员变量&quot;</span>)</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> Value;</span><br><span class="line">    [<span class="meta">MyCustom(<span class="string">&quot;这是用来测试的成员函数&quot;</span>)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">TestFun</span>(<span class="params">[MyCustom(<span class="string">&quot;这是用来测试的函数参数&quot;</span></span>)] <span class="built_in">int</span> a)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Type t = <span class="keyword">typeof</span>(MyClass);</span><br><span class="line"><span class="keyword">if</span> (t.IsDefined(<span class="keyword">typeof</span>(MyCustomAttribute), <span class="literal">false</span>))</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;判断一个类型是否使用了某个特性&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 获取Type元数据中的所有特性</span></span><br><span class="line"><span class="built_in">object</span>[] objects = t.GetCustomAttributes(<span class="literal">true</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; objects.Length; i++)</span><br><span class="line">    Console.WriteLine((objects[i] <span class="keyword">as</span> MyCustomAttribute).Info);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="为特性类加特性-限制其使用范围"><a class="markdownIt-Anchor" href="#为特性类加特性-限制其使用范围"></a> 为特性类加特性  限制其使用范围</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = true, Inherited = true)</span>]</span><br><span class="line"><span class="comment">//参数一：AttributeTargets —— 特性能够用在哪些地方</span></span><br><span class="line"><span class="comment">//参数二：AllowMultiple —— 是否允许多个特性实例用在同一个目标上</span></span><br><span class="line"><span class="comment">//参数三：Inherited —— 特性是否能被派生类和重写成员继承</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyCustom2Attribute</span> : <span class="title">Attribute</span> &#123; &#125;</span><br></pre></td></tr></table></figure><h2 id="系统自带特性过时特性-obsolete"><a class="markdownIt-Anchor" href="#系统自带特性过时特性-obsolete"></a> 系统自带特性——过时特性 Obsolete</h2><p>用于提示用户 使用的方法等成员已经过时 建议使用新方法</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一般加在函数前的特性</span></span><br><span class="line">[<span class="meta">Obsolete(<span class="string">&quot;这个是旧方法&quot;</span>, false)</span>]</span><br><span class="line"><span class="comment">// 第一个参数是提示信息, 第二个参数 true直接报错, false警告</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OldFun</span>()</span> &#123; &#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="系统自带特性调用者信息特性-快速查出哪里的错误"><a class="markdownIt-Anchor" href="#系统自带特性调用者信息特性-快速查出哪里的错误"></a> 系统自带特性——调用者信息特性    (快速查出哪里的错误)</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//哪个文件调用？</span></span><br><span class="line"><span class="comment">//CallerFilePath特性</span></span><br><span class="line"><span class="comment">//哪一行调用？</span></span><br><span class="line"><span class="comment">//CallerLineNumber特性</span></span><br><span class="line"><span class="comment">//哪个函数调用？</span></span><br><span class="line"><span class="comment">//CallerMemberName特性</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">TestClass</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">Obsolete(<span class="string">&quot;这个是旧方法&quot;</span>, false)</span>]</span><br><span class="line">    <span class="comment">// 第一个参数是提示信息, 第二个参数 true直接报错, false警告</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">OldFun</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">NewFun</span>(<span class="params"><span class="built_in">string</span> str, [CallerFilePath] <span class="built_in">string</span> fileName = <span class="string">&quot;&quot;</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        [CallerLineNumber] <span class="built_in">int</span> line = <span class="number">0</span>,</span></span></span><br><span class="line"><span class="params"><span class="function">        [CallerMemberName] <span class="built_in">string</span> memberName = <span class="string">&quot;&quot;</span></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;这些使用的CallerXXX特性会在, 其它调用者调用时自动将调用者的额外信息填入参数中&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;调用者的文件名 fileName = &quot;</span> + fileName);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;调用者的所在的行数 line = &quot;</span> + line);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;调用者的所处的调用函数名 memberName = &quot;</span> + memberName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="系统自带特性条件编译特性"><a class="markdownIt-Anchor" href="#系统自带特性条件编译特性"></a> 系统自带特性——条件编译特性</h2><p>Conditional 它会和[[预处理指令]] <code>#define配合使用</code></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">Conditional(<span class="string">&quot;Fun&quot;</span>)</span>]        <span class="comment">// 如果 #define 下面就会编译</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Fun</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;如果有#define 我就会执行&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="系统自带特性外部dll包函数特性-dllimport"><a class="markdownIt-Anchor" href="#系统自带特性外部dll包函数特性-dllimport"></a> 系统自带特性——外部Dll包函数特性 DllImport</h2><p><a href="http://xn--vrvzng93aj3vfln.Net">用来标记非.Net</a>(C#)的函数，表明该函数在一个外部的DLL中定义。<br />一般用来调用 C或者C++的Dll包写好的方法<br />需要引用[[命名空间]] using System.Runtime.InteropServices</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">DllImport(<span class="string">&quot;Test.dll&quot;</span>)</span>]         <span class="comment">// 下面这个函数一定在dll中有一模一样的</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="built_in">int</span> <span class="title">Add</span>(<span class="params"><span class="built_in">int</span> a, <span class="built_in">int</span> b</span>)</span>;</span><br><span class="line"><span class="comment">//需要引用命名空间 using System.Runtime.CompilerServices;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;特性&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#特性&quot;&gt;&lt;/a&gt; 特性&lt;/h1&gt;
+&lt;p&gt;特性是一种允许我们向程序的[[程序集]]添加[[元数据]]的语言结构&lt;br /&gt;
+它是用于保存程序结构信息的某种特殊类型的类&lt;/p&gt;
+&lt;p&gt;特性</summary>
+      
+    
+    
+    
+    <category term="编程语言" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="Csharp" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/"/>
+    
+    
+    <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="Csharp" scheme="http://example.com/tags/Csharp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>10.inspector 窗口可编辑变量</title>
+    <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/10.inspector%20%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%98%E9%87%8F/"/>
+    <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/10.inspector%20%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%98%E9%87%8F/</id>
+    <published>2025-02-18T08:47:53.000Z</published>
+    <updated>2025-02-20T09:31:36.451Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="知识点一-私有和保护无法显示编辑"><a class="markdownIt-Anchor" href="#知识点一-私有和保护无法显示编辑"></a> 知识点一 私有和保护无法显示编辑</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="built_in">int</span> i1;</span><br><span class="line"><span class="keyword">protected</span> <span class="built_in">string</span> str1;</span><br></pre></td></tr></table></figure><h1 id="知识点二-让私有的和保护的也可以被显示serializefield"><a class="markdownIt-Anchor" href="#知识点二-让私有的和保护的也可以被显示serializefield"></a> 知识点二 让私有的和保护的也可以被显示SerializeField</h1><p>加上强制序列化字段<a href="/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/" title="特性">特性</a> <code>[SerializeField]</code><br />所谓序列化就是把一个对象保存到一个文件或数据库字段中去</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">SerializeField</span>]</span><br><span class="line"><span class="keyword">private</span> <span class="built_in">int</span> privateInt;</span><br><span class="line">[<span class="meta">SerializeField</span>]</span><br><span class="line"><span class="keyword">protected</span> <span class="built_in">string</span> protectedStr;</span><br></pre></td></tr></table></figure><h1 id="知识点三-公共的可以显示编辑"><a class="markdownIt-Anchor" href="#知识点三-公共的可以显示编辑"></a> 知识点三 公共的可以显示编辑</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> publicInt = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">bool</span> publicBool = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure><h1 id="知识点四-公共的也不让其显示编辑hideininspector"><a class="markdownIt-Anchor" href="#知识点四-公共的也不让其显示编辑hideininspector"></a> 知识点四 公共的也不让其显示编辑HideInInspector</h1><p>在变量前加上<a href="/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/" title="特性">特性</a> <code>[HideInInspector]</code></p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">HideInInspector</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> publicInt2 = <span class="number">50</span>;</span><br></pre></td></tr></table></figure><h1 id="知识点五-大部分类型都能显示编辑"><a class="markdownIt-Anchor" href="#知识点五-大部分类型都能显示编辑"></a> 知识点五 大部分类型都能显示编辑</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="built_in">int</span>[] array;</span><br><span class="line"><span class="keyword">public</span> List&lt;<span class="built_in">int</span>&gt; list;</span><br><span class="line"><span class="keyword">public</span> E_TestEnum type;</span><br><span class="line"><span class="keyword">public</span> GameObject gameObj;</span><br><span class="line"></span><br><span class="line"><span class="comment">//字典不能被Inspector窗口显示</span></span><br><span class="line"><span class="keyword">public</span> Dictionary&lt;<span class="built_in">int</span>, <span class="built_in">string</span>&gt; dic;</span><br><span class="line"><span class="comment">//自定义类型变量</span></span><br><span class="line"><span class="keyword">public</span> MyStruct myStruct;</span><br><span class="line"><span class="keyword">public</span> MyClass myClass;</span><br></pre></td></tr></table></figure><h1 id="知识点六-让自定义类型可以被访问"><a class="markdownIt-Anchor" href="#知识点六-让自定义类型可以被访问"></a> 知识点六 让自定义类型可以被访问</h1><p>加上序列化<a href="/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/" title="特性">特性</a><code>[System.Serializable]</code><br />字典怎样都不行</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">System.Serializable</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">struct</span> MyStruct</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">bool</span> sex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[<span class="meta">System.Serializable</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> age;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">bool</span> sex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="知识点七-一些辅助-swig10-"><a class="markdownIt-Anchor" href="#知识点七-一些辅助-swig10-"></a> 知识点七 一些辅助<a href="/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/" title="特性">特性</a></h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.分组说明特性Header    **************有用**************</span></span><br><span class="line"><span class="comment">//为成员分组</span></span><br><span class="line"><span class="comment">//Header特性</span></span><br><span class="line"><span class="comment">//[Header(&quot;分组说明&quot;)]</span></span><br><span class="line">[<span class="meta">Header(<span class="string">&quot;基础属性&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> age;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">bool</span> sex;</span><br><span class="line">[<span class="meta">Header(<span class="string">&quot;战斗属性&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> atk;</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> def;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.悬停注释Tooltip</span></span><br><span class="line"><span class="comment">//为变量添加说明</span></span><br><span class="line"><span class="comment">//[Tooltip(&quot;说明内容&quot;)]</span></span><br><span class="line">[<span class="meta">Tooltip(<span class="string">&quot;闪避&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> miss;</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.间隔特性 Space()</span></span><br><span class="line"><span class="comment">//让两个字段间出现间隔</span></span><br><span class="line"><span class="comment">//[Space()]</span></span><br><span class="line">[<span class="meta">Space()</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> crit;</span><br><span class="line"></span><br><span class="line"><span class="comment">//4.修饰数值的滑条范围Range    **************有用**************</span></span><br><span class="line"><span class="comment">//[Range(最小值, 最大值)]</span></span><br><span class="line">[<span class="meta">Range(0,10)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">float</span> luck;</span><br><span class="line"></span><br><span class="line"><span class="comment">//5.多行显示字符串 默认不写参数显示3行</span></span><br><span class="line"><span class="comment">//写参数就是对应行</span></span><br><span class="line"><span class="comment">//[Multiline(4)]</span></span><br><span class="line">[<span class="meta">Multiline(5)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">string</span> tips;</span><br><span class="line"></span><br><span class="line"><span class="comment">//6.滚动条显示字符串 </span></span><br><span class="line"><span class="comment">//默认不写参数就是超过3行显示滚动条</span></span><br><span class="line"><span class="comment">//[TextArea(3, 4)]</span></span><br><span class="line"><span class="comment">//最少显示3行，最多4行，超过4行就显示滚动条</span></span><br><span class="line">[<span class="meta">TextArea(3,4)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">string</span> myLife;</span><br><span class="line"></span><br><span class="line"><span class="comment">//7.为变量添加快捷方法 ContextMenuItem    **************有用**************</span></span><br><span class="line"><span class="comment">//参数1 显示按钮名</span></span><br><span class="line"><span class="comment">//参数2 方法名 不能有参数</span></span><br><span class="line"><span class="comment">//[ContextMenuItem(&quot;显示按钮名&quot;, &quot;方法名&quot;)]</span></span><br><span class="line">[<span class="meta">ContextMenuItem(<span class="string">&quot;重置钱&quot;</span>, <span class="string">&quot;Test&quot;</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">int</span> money;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Test</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    money = <span class="number">99</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//8.为方法添加特性能够在Inspector中执行</span></span><br><span class="line"><span class="comment">//[ContextMenu(&quot;测试函数&quot;)]</span></span><br><span class="line">[<span class="meta">ContextMenu(<span class="string">&quot;哈哈哈哈&quot;</span>)</span>]</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">TestFun</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    print(<span class="string">&quot;测试方法&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h1 id="注意"><a class="markdownIt-Anchor" href="#注意"></a> 注意</h1><ol><li>Inspector窗口中的变量关联的就是对象的成员变量，运行时改变他们就是在改变成员变量</li><li>拖曳到GameObject对象后 再改变脚本中变量默认值 界面上不会改变<ul><li>要么老老实实的在Inspector窗口改默认值</li><li>要么重新挂载脚本</li></ul></li><li>运行中修改的信息不会保存</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;知识点一-私有和保护无法显示编辑&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#知识点一-私有和保护无法显示编辑&quot;&gt;&lt;/a&gt; 知识点一 私有和保护无法显示编辑&lt;/h1&gt;
+&lt;figure class=&quot;highlight csharp&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    
+    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
+    
+    <category term="unity" scheme="http://example.com/tags/unity/"/>
+    
+    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
+    
+    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity脚本基础" scheme="http://example.com/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>9.生命周期函数</title>
     <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/"/>
     <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/</id>
     <published>2025-02-18T07:39:12.000Z</published>
-    <updated>2025-02-18T08:20:05.866Z</updated>
+    <updated>2025-02-20T09:31:25.618Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/file-20250218153924857.png" alt="" /></p><p>知识点一 了解帧的概念<br />Unity 底层已经帮助我们做好了死循环<br />我们需要学习Unity的生命周期函数<br />利用它做好的规则来执行我们的游戏逻辑就行了</p><p>知识点二 生命周期函数的概念<br />所有继承MonoBehavior的脚本 最终都会挂载到GameObject游戏对象上<br />生命周期函数 就是该脚本对象依附的GameObject对象从出生到消亡整个生命周期中<br />会通过反射自动调用的一些特殊函数</p><p>注意：<br />生命周期函数的访问修饰符一般为private和protected<br />因为不需要再外部自己调用生命周期函数 都是Unity自己帮助我们调用的<br />当对象（自己这个类脚本对象）被创建时 才会调用该生命周期函数<br />生命周期函数支持多态<br />如果GameObject一开始失活就不会调用生命周期函数</p><p>awake，onenable,start, fixedUpdate,update, laterupdate, ondisenable,ondestroy</p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0.png" alt="" /></p><h1 id="awake"><a class="markdownIt-Anchor" href="#awake"></a> <strong>Awake</strong>：</h1><p>类似构造函数的存在 我们可以在一个类对象 该创建 进行一些初始化操作</p><h1 id="onenable"><a class="markdownIt-Anchor" href="#onenable"></a> <strong>OnEnable</strong>：</h1><p>对于我们来说 想要当一个对象被激活时 进行一些逻辑处理 就可以写在这个函数</p><h1 id="start"><a class="markdownIt-Anchor" href="#start"></a> <strong>Start</strong>：</h1><p>主要作用还是用于初始化信息的 但是它相对Awake来说 要晚一点<br />如果我们在update中动态的创建对象，这个对象马上会执行Awake，但不会立即执行Start，要等到在<strong>下一帧的第一次 <code>Update()</code> 之前</strong>执行才会执行Start</p><h1 id="fixedupdate"><a class="markdownIt-Anchor" href="#fixedupdate"></a> <strong>FixedUpdate</strong>：</h1><p>它主要是用于 进行物理更新<br />它是每一帧的执行的 但是 这里的帧 和游戏帧 有点不同<br />它的时间间隔 是可以在 project setting中的 Time里去设置的</p><h1 id="update"><a class="markdownIt-Anchor" href="#update"></a> <strong>Update</strong>：</h1><p>主要用于处理游戏核心逻辑更新的函数</p><h1 id="lateupdate"><a class="markdownIt-Anchor" href="#lateupdate"></a> <strong>LateUpdate</strong>：</h1><p>一般这个更新是用来处理 摄像机位置更新相关内容的<br />Update和LateUpdate之间 Unity进了一些处理 处理我们动画相关的更新</p><h1 id="ondisable"><a class="markdownIt-Anchor" href="#ondisable"></a> <strong>OnDisable</strong>：</h1><p>如果我们希望在一个对象失活时做一些处理 就可以在该函数中写逻辑<br />失活后不参与游戏循环了，激活后又可以循环</p><h1 id="ondestroy"><a class="markdownIt-Anchor" href="#ondestroy"></a> <strong>OnDestroy</strong>：</h1><p>当对象销毁后调用</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/file-20250218153924857.png" alt="" /></p><p>知识点一 了解帧的概念<br />Unity 底层已经帮助我们做好了死循环<br />我们需要学习Unity的生命周期函数<br />利用它做好的规则来执行我们的游戏逻辑就行了</p><p>知识点二 生命周期函数的概念<br />所有继承MonoBehavior的脚本 最终都会挂载到GameObject游戏对象上<br />生命周期函数 就是该脚本对象依附的GameObject对象从出生到消亡整个生命周期中<br />会通过反射自动调用的一些特殊函数</p><p>注意：<br />生命周期函数的访问修饰符一般为private和protected<br />因为不需要再外部自己调用生命周期函数 都是Unity自己帮助我们调用的<br />当对象（自己这个类脚本对象）被创建时 才会调用该生命周期函数<br />生命周期函数支持多态<br />如果GameObject一开始失活就不会调用生命周期函数</p><p>awake，onenable,start, fixedUpdate,update, laterupdate, ondisenable,ondestroy</p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0.png" alt="" /></p><h1 id="awake"><a class="markdownIt-Anchor" href="#awake"></a> <strong>Awake</strong>：</h1><p>类似构造函数的存在 我们可以在一个类对象 该创建 进行一些初始化操作</p><h1 id="onenable"><a class="markdownIt-Anchor" href="#onenable"></a> <strong>OnEnable</strong>：</h1><p>对于我们来说 想要当一个对象被激活时 进行一些逻辑处理 就可以写在这个函数</p><h1 id="start"><a class="markdownIt-Anchor" href="#start"></a> <strong>Start</strong>：</h1><p>主要作用还是用于初始化信息的 但是它相对Awake来说 要晚一点<br />如果我们在update中动态的创建对象，这个对象马上会执行Awake，但不会立即执行Start，要等到在<strong>下一帧的第一次 <code>Update()</code> 之前</strong>执行才会执行Start</p><h1 id="fixedupdate"><a class="markdownIt-Anchor" href="#fixedupdate"></a> <strong>FixedUpdate</strong>：</h1><p>它主要是用于 进行物理更新<br />它是每一帧的执行的 但是 这里的帧 和游戏帧 有点不同<br />它的时间间隔 是可以在 project setting中的 Time里去设置的</p><h1 id="update"><a class="markdownIt-Anchor" href="#update"></a> <strong>Update</strong>：</h1><p>主要用于处理游戏核心逻辑更新的函数</p><h1 id="lateupdate"><a class="markdownIt-Anchor" href="#lateupdate"></a> <strong>LateUpdate</strong>：</h1><p>一般这个更新是用来处理 摄像机位置更新相关内容的<br />Update和LateUpdate之间 Unity进了一些处理 处理我们动画相关的更新</p><h1 id="ondisable"><a class="markdownIt-Anchor" href="#ondisable"></a> <strong>OnDisable</strong>：</h1><p>如果我们希望在一个对象失活时做一些处理 就可以在该函数中写逻辑<br />失活后不参与游戏循环了，激活后又可以循环</p><h1 id="ondestroy"><a class="markdownIt-Anchor" href="#ondestroy"></a> <strong>OnDestroy</strong>：</h1><p>当对象销毁后调用</p><h1 id="问题不同对象的生命周期函数是在同一个线程中执行吗"><a class="markdownIt-Anchor" href="#问题不同对象的生命周期函数是在同一个线程中执行吗"></a> 问题：不同对象的生命周期函数是在同一个线程中执行吗？</h1><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/21.%E4%B8%8D%E5%90%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E6%98%AF%E5%9C%A8%E5%90%8C%E4%B8%80%E4%B8%AA%E7%BA%BF%E7%A8%8B%E4%B8%AD%E6%89%A7%E8%A1%8C%E7%9A%84%E5%90%97%EF%BC%9F.png" alt="" /></p>]]></content>
     
     
       
@@ -49,6 +706,8 @@
     <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
     
     <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="Unity脚本基础" scheme="http://example.com/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -57,9 +716,9 @@
     <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/"/>
     <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/</id>
     <published>2025-02-18T07:10:14.000Z</published>
-    <updated>2025-02-18T07:30:27.082Z</updated>
+    <updated>2025-02-20T09:31:22.671Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/file-20250218151422456.png" alt="" /></p><p><strong>MonoBehavior基类</strong></p><ol><li>创建的脚本默认都继承MonoBehaviour 继承了它才能够挂载在GameObject上</li><li>继承了MonoBehavior的脚本不能new 只能挂！！！！！！！！</li><li>继承了MonnBehavior的脚本不要去写构造函数，因为我们不会去new它，写构造函数没有任何意义</li><li>继承了MonoBehavior的脚本可以在一个对象上挂多个（如果没有加DisallowMultipleComponent特性）</li><li>继承MonoBehavior的类也可以再次被继承，遵循面向对象继承多态的规则</li></ol><p><strong>不继承MonoBehavior的类</strong></p><ol><li>不继承Mono的类 不能挂载在GameObject上</li><li>不继承Mono的类 想怎么写怎么写 如果要使用需要自己new</li><li>不继承Mono的类 一般是单例模式的类（用于管理模块） 或者数据结构类（用于存储数据）</li><li>不继承Mono的类 不用保留默认出现的几个函数</li></ol><p>设置挂载脚本的执行顺序，默认时间前是系统必须执行的，可以设置自己添加的脚本的执行顺序，数字越小脚本越先执行<br /><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/file-20250218152646795.png" alt="" /></p><p>打开 当前unity版本下的Editor\Data\Resources\ScriptTemplates目录可以更改默认的脚本模板</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/file-20250218151422456.png" alt="" /></p><p><strong>MonoBehavior基类</strong></p><ol><li>创建的脚本默认都继承MonoBehaviour 继承了它才能够挂载在GameObject上</li><li>继承了MonoBehavior的脚本不能new 只能挂！！！！！！！！</li><li>继承了MonnBehavior的脚本不要去写构造函数，因为我们不会去new它，写构造函数没有任何意义</li><li>继承了MonoBehavior的脚本可以在一个对象上挂多个（如果没有加DisallowMultipleComponent特性）</li><li>继承MonoBehavior的类也可以再次被继承，遵循面向对象继承多态的规则</li></ol><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/20.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99%E8%A1%A5%E5%85%85%20%E5%85%B3%E4%BA%8E%E7%BB%A7%E6%89%BFMono%E7%9A%84%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0.png" alt="" /></p><p><strong>不继承MonoBehavior的类</strong></p><ol><li>不继承Mono的类 不能挂载在GameObject上</li><li>不继承Mono的类 想怎么写怎么写 如果要使用需要自己new</li><li>不继承Mono的类 一般是单例模式的类（用于管理模块） 或者数据结构类（用于存储数据）</li><li>不继承Mono的类 不用保留默认出现的几个函数</li></ol><p>设置挂载脚本的执行顺序，默认时间前是系统必须执行的，可以设置自己添加的脚本的执行顺序，数字越小脚本越先执行<br /><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/file-20250218152646795.png" alt="" /></p><p>打开 当前unity版本下的Editor\Data\Resources\ScriptTemplates目录可以更改默认的脚本模板</p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/file-20250219095817050.png" alt="" /></p>]]></content>
     
     
       
@@ -86,6 +745,8 @@
     
     <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     
+    <category term="Unity脚本基础" scheme="http://example.com/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/"/>
+    
   </entry>
   
   <entry>
@@ -93,7 +754,7 @@
     <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.%E9%A2%84%E5%88%B6%E4%BD%93%E5%92%8C%E8%B5%84%E6%BA%90%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/"/>
     <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.%E9%A2%84%E5%88%B6%E4%BD%93%E5%92%8C%E8%B5%84%E6%BA%90%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</id>
     <published>2025-02-18T07:01:18.000Z</published>
-    <updated>2025-02-18T07:09:04.061Z</updated>
+    <updated>2025-02-20T09:31:08.835Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.%E9%A2%84%E5%88%B6%E4%BD%93%E5%92%8C%E8%B5%84%E6%BA%90%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/file-20250218150634268.png" alt="" /><br />预设体是 Unity 中非常重要的概念，可以理解为一个游戏对象及其组件的集合。其目的是使游戏对象及其资源能够重复使用。当修改预设体时，实例也会同步修改。</p><p><strong>创建预设体</strong><br />将其拖到asset文件夹下<br />右键可以取消预设体</p><p>资源包导出直接右键，导入直接拖</p>]]></content>
     
@@ -122,253 +783,7 @@
     
     <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
     
-  </entry>
-  
-  <entry>
-    <title>6.反射机制和游戏场景</title>
-    <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/"/>
-    <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/</id>
-    <published>2025-02-18T03:33:39.000Z</published>
-    <updated>2025-02-18T06:47:58.807Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="unity中的反射机制"><a class="markdownIt-Anchor" href="#unity中的反射机制"></a> Unity中的反射机制</h1><p>Unity引擎本质是一个软件使用它时是处于运行中的我们是在一个<strong>运行中的软件里制作游戏</strong>的<br />Unity开发的本质就是<br />在Unity引擎的基础上利用反射和引擎提供的各种功能进行的拓展开发</p><p>回忆一下反射的概念<br />程序正在运行时，可以查看其它程序集或者自身的元数据（元数据就是程序当中的类，对象，函数，变量之类的东西）<br /><strong>一个运行的程序查看本身或者其它程序的元数据的行为就叫做反射</strong><br />在程序运行时，通过反射可以得到其它程序集或者自己程序集中<br />代码的各种信息，比如<strong>类，函数，变量，对象</strong>等等<br />我们可以实例化它们，执行它们，操作它们</p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/file-20250218120738338.png" alt="" /></p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/file-20250218120803062.png" alt="" /></p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/file-20250218120832453.png" alt="" /></p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/file-20250218121432204.png" alt="" /></p><h2 id="unity-反射机制的完整工作流"><a class="markdownIt-Anchor" href="#unity-反射机制的完整工作流"></a> <strong>Unity 反射机制的完整工作流</strong></h2><p>假设你写了一个 <code>PlayerController.cs</code> 脚本</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PlayerController</span> : <span class="title">MonoBehaviour</span> &#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] </span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">float</span> _moveSpeed = <span class="number">5.0f</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span> &#123;</span><br><span class="line">        <span class="comment">// 移动逻辑</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol><li><strong>脚本编译阶段</strong>：<br />Unity 会通过 <strong>Mono/C# 编译器</strong> 将你的脚本编译到 <code>Assembly-CSharp.dll</code> 中，同时生成 <strong>元数据表</strong></li><li><strong>编辑器反射阶段</strong>：<ul><li>Unity Editor 通过反射扫描所有 <code>MonoBehaviour</code> 子类</li><li>解析 <code>[SerializeField]</code> 等特性</li><li>生成 Inspector 面板的 UI 元素</li></ul></li><li><strong>运行时反射阶段</strong>：<ul><li>当场景加载时，Unity 通过反射：</li><li>实例化 <code>PlayerController</code> 对象</li><li>将序列化数据（如 <code>_moveSpeed</code>）注入到对应字段</li><li>构建消息系统的方法表（用于 <code>SendMessage()</code>）</li></ul></li></ol><h1 id="游戏场景"><a class="markdownIt-Anchor" href="#游戏场景"></a> 游戏场景</h1><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/file-20250218144730031.png" alt="" /></p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/file-20250218144756785.png" alt="" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;unity中的反射机制&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#unity中的反射机制&quot;&gt;&lt;/a&gt; Unity中的反射机制&lt;/h1&gt;
-&lt;p&gt;Unity引擎本质是一个软件使用它时是处于运行中的我们是在一个&lt;strong&gt;运行中的软件</summary>
-      
-    
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/tags/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>5.工具栏与对象的父子关系</title>
-    <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/"/>
-    <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/</id>
-    <published>2025-02-18T03:27:14.000Z</published>
-    <updated>2025-02-18T03:29:32.618Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/file-20250218112840351.png" alt="" /><br /><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/file-20250218112831664.png" alt="" /><br /><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/file-20250218112921719.png" alt="" /></p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/file-20250218112930590.png" alt="" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
-      
-    
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/tags/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>4.Inspector和Console窗口</title>
-    <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Inspector%E5%92%8CConsole%E7%AA%97%E5%8F%A3/"/>
-    <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Inspector%E5%92%8CConsole%E7%AA%97%E5%8F%A3/</id>
-    <published>2025-02-18T02:08:55.000Z</published>
-    <updated>2025-02-18T03:09:52.116Z</updated>
-    
-    <content type="html"><![CDATA[<p>选择对象进行标记<br />选择是否激活对象<br />修改对象名<br />设置对象为静态对象<br />标签<br />层级<br /><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Inspector%E5%92%8CConsole%E7%AA%97%E5%8F%A3/file-20250218110640617.png" alt="" /></p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Inspector%E5%92%8CConsole%E7%AA%97%E5%8F%A3/file-20250218110950099.png" alt="" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;选择对象进行标记&lt;br /&gt;
-选择是否激活对象&lt;br /&gt;
-修改对象名&lt;br /&gt;
-设置对象为静态对象&lt;br /&gt;
-标签&lt;br /&gt;
-层级&lt;br /&gt;
-&lt;img src=&quot;/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/un</summary>
-      
-    
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/tags/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>3.Game和Project窗口</title>
-    <link href="http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.Game%E5%92%8CProject%E7%AA%97%E5%8F%A3/"/>
-    <id>http://example.com/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.Game%E5%92%8CProject%E7%AA%97%E5%8F%A3/</id>
-    <published>2025-02-18T01:56:51.000Z</published>
-    <updated>2025-02-18T02:07:28.062Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.Game%E5%92%8CProject%E7%AA%97%E5%8F%A3/file-20250218095821718.png" alt="" /></p><p><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.Game%E5%92%8CProject%E7%AA%97%E5%8F%A3/file-20250218100519850.png" alt="" /><br /><img src="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.Game%E5%92%8CProject%E7%AA%97%E5%8F%A3/file-20250218100726374.png" alt="" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%</summary>
-      
-    
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/tags/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2.Scene和Hierarchy窗口</title>
-    <link href="http://example.com/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/"/>
-    <id>http://example.com/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/</id>
-    <published>2025-02-16T02:24:38.000Z</published>
-    <updated>2025-02-18T01:50:27.873Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>主要内容</strong><br /><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/file-20250216102520780.png" alt="" /><br /><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/file-20250216102554147.png" alt="" /></p><p>窗口布局<br />左上角Layout选项<br /><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/file-20250218085931465.png" alt="" /></p><p>Scene和Hierarchy<br />场景窗口和层级窗口是息息相关的<br />层级窗口中看到的内容就是场景窗口中的显示对象</p><p><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/file-20250218090249643.png" alt="" /></p><p><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/file-20250218090421898.png" alt="" /></p><p><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/file-20250218094630293.png" alt="" /><br /><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/file-20250218095026456.png" alt="" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;strong&gt;主要内容&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&quot;/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97</summary>
-      
-    
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/tags/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1.unity入门概述</title>
-    <link href="http://example.com/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.unity%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/"/>
-    <id>http://example.com/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.unity%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/</id>
-    <published>2025-02-16T01:27:03.000Z</published>
-    <updated>2025-02-16T01:27:13.273Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>主要学习内容</strong><br /><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.unity%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/file-20250216091459443.png" alt="" /></p><p><strong>学习建议</strong><br /><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.unity%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/file-20250216091602088.png" alt="" /></p><p><strong>以前做游戏 vs 现在做游戏</strong><br /><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.unity%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/file-20250216091641344.png" alt="" /></p><p><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.unity%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/file-20250216091654478.png" alt="" /></p><p><strong>如何学习游戏引擎</strong><br /><img src="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.unity%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/file-20250216091732793.png" alt="" /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;strong&gt;主要学习内容&lt;/strong&gt;&lt;br /&gt;
-&lt;img src=&quot;/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%</summary>
-      
-    
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-    
-    <category term="游戏引擎" scheme="http://example.com/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/"/>
-    
-    <category term="unity" scheme="http://example.com/tags/unity/"/>
-    
-    <category term="unity入门" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8/"/>
-    
-    <category term="unity入门基础知识" scheme="http://example.com/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用obsidian来写hexo博客</title>
-    <link href="http://example.com/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://example.com/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/</id>
-    <published>2025-02-09T12:59:52.000Z</published>
-    <updated>2025-02-09T14:27:43.346Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="front-matter"><a class="markdownIt-Anchor" href="#front-matter"></a> Front-Matter</h1><p>obsidian安装Template插件，设置目录后在该目录下创建<code>HexoPost.md</code>文件<br /><img src="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/file-20250209211519799.png" alt="" /><br /><code>HexoPost.md</code>内容如下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &lt;% tp.file.title %&gt;</span><br><span class="line">date: &lt;% tp.date.now(&quot;YYYY-MM-DD HH:mm:ss&quot;) %&gt;</span><br><span class="line">toc: true</span><br><span class="line">categories:</span><br><span class="line">&lt;%*</span><br><span class="line">// 自动生成分类（兼容Windows路径）</span><br><span class="line">let folders = await tp.file.folder(true).split(/[\\/]/); </span><br><span class="line">folders = folders.slice(2); // 移除 &quot;_posts&quot; 父级目录</span><br><span class="line">for (let category of folders) &#123;</span><br><span class="line">    tR += `  - $&#123;category&#125;`;</span><br><span class="line">&#125;</span><br><span class="line">if (folders.length === 0) &#123;</span><br><span class="line">    tR += &quot;  - 未分类&quot;;</span><br><span class="line">&#125;</span><br><span class="line">%&gt;</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p>这样就可以在新建md文件后点击obsidian侧边来自动填充categories</p><h1 id="图片管理"><a class="markdownIt-Anchor" href="#图片管理"></a> 图片管理</h1><p>站点配置文件<code>_config.yml</code></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span>  <span class="comment"># 启用文章资源文件夹</span></span><br></pre></td></tr></table></figure><p>obsidian安装 Custom Attachment Location插件并进行如下设置<br /><img src="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/file-20250209210939390.png" alt="" /></p><h1 id="其它小优化"><a class="markdownIt-Anchor" href="#其它小优化"></a> 其它小优化</h1><h2 id="设置新建笔记位置"><a class="markdownIt-Anchor" href="#设置新建笔记位置"></a> 设置新建笔记位置</h2><p><img src="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/file-20250209212128818.png" alt="" /></p><h2 id="关闭wiki链接"><a class="markdownIt-Anchor" href="#关闭wiki链接"></a> 关闭wiki链接</h2><p><img src="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/file-20250209212237730.png" alt="" /><br />文章内跳转使用md语法<br /><code>[显示文本](#锚点)</code><br />md标题自动生成锚点（全小写，空格换-）或者自定义锚点（<code>&lt;a id=&quot;nihao&quot;&gt;&lt;/a&gt;</code>）</p><h2 id="忽略文件夹"><a class="markdownIt-Anchor" href="#忽略文件夹"></a> 忽略文件夹</h2><p><img src="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/file-20250209220830917.png" alt="" /></p><h1 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h1><p><a href="https://ohlia.github.io/Wiki-site/wiki/Hexo/build-blog-by-hexo/">使用 Hexo 搭建博客 | OHLIA’s Wiki</a><br /><a href="https://itreefly.com/posts/e5113722.html">Hexo和Obsidian：让个人博客写作更加优雅、高效 - ＊tree_fly 's Blog</a><br /><a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md">给博客上Live2d</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;front-matter&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#front-matter&quot;&gt;&lt;/a&gt; Front-Matter&lt;/h1&gt;
-&lt;p&gt;obsidian安装Template插件，设置目录后在该目录下创建&lt;code&gt;Hex</summary>
-      
-    
-    
-    
-    <category term="hexo" scheme="http://example.com/categories/hexo/"/>
-    
+    <category term="Unity工作原理" scheme="http://example.com/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>25.碰撞检测之刚体 | akiraの博客思密达</title>
+    
+    
+        <meta name="keywords" content="游戏引擎,unity,unity入门,unity入门基础知识,核心系统,物理系统" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="碰撞产生的必要条件：两个物体都有碰撞器，至少一个物体有刚体  RigidBody组件信息如下   Mass 质量  默认为千克 质量越大惯性越大   Drag 空气阻力  根据力移动对象时影响对象的空气阻力大小，0 表示没有空气阻力   Angular Drag 角阻力（扭矩阻力）  通俗理解就是阻碍对象旋转的阻力，角阻力越大越不容易旋转 0 表示没有空气阻力。   Use Gravity 重力开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="25.碰撞检测之刚体">
+<meta property="og:url" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/index.html">
+<meta property="og:site_name" content="akiraの博客思密达">
+<meta property="og:description" content="碰撞产生的必要条件：两个物体都有碰撞器，至少一个物体有刚体  RigidBody组件信息如下   Mass 质量  默认为千克 质量越大惯性越大   Drag 空气阻力  根据力移动对象时影响对象的空气阻力大小，0 表示没有空气阻力   Angular Drag 角阻力（扭矩阻力）  通俗理解就是阻碍对象旋转的阻力，角阻力越大越不容易旋转 0 表示没有空气阻力。   Use Gravity 重力开">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220175255335.png">
+<meta property="og:image" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220180007874.png">
+<meta property="og:image" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220181902841.png">
+<meta property="article:published_time" content="2025-02-20T09:28:06.000Z">
+<meta property="article:modified_time" content="2025-02-20T10:21:59.657Z">
+<meta property="article:author" content="akira23369">
+<meta property="article:tag" content="游戏引擎">
+<meta property="article:tag" content="unity">
+<meta property="article:tag" content="unity入门">
+<meta property="article:tag" content="unity入门基础知识">
+<meta property="article:tag" content="核心系统">
+<meta property="article:tag" content="物理系统">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220175255335.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="akiraの博客思密达" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">akiraの博客思密达</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/man">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/man">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>分类</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hexo
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/09/hexo/%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">使用obsidian来写hexo博客</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            游戏引擎
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            unity
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            unity入门
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            unity入门基础知识
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.unity%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/">1.unity入门概述</a></li>  <li class="file"><a href="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/">2.Scene和Hierarchy窗口</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.Game%E5%92%8CProject%E7%AA%97%E5%8F%A3/">3.Game和Project窗口</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Inspector%E5%92%8CConsole%E7%AA%97%E5%8F%A3/">4.Inspector和Console窗口</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/">5.工具栏与对象的父子关系</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/">6.反射机制和游戏场景</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.%E9%A2%84%E5%88%B6%E4%BD%93%E5%92%8C%E8%B5%84%E6%BA%90%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/">7.预制体和资源包的导入导出</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/">8.脚本基本规则</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/">9.生命周期函数</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/10.inspector%20%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%98%E9%87%8F/">10.inspector 窗口可编辑变量</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/11.MonoBehavior%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E5%86%85%E5%AE%B9/">11.MonoBehavior中的重要内容</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/12.GameObject/">12.GameObject</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/13.%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3Time/">13.时间相关Time</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/14.%E4%BD%8D%E7%BD%AE%E4%BD%8D%E7%A7%BB%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9B%B8%E5%85%B3/">14.位置位移坐标系相关</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/15.%E8%A7%92%E5%BA%A6%E5%92%8C%E6%97%8B%E8%BD%AC/">15.角度和旋转</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/16.%E7%BC%A9%E6%94%BE%E5%92%8C%E7%9C%8B%E5%90%91/">16.缩放和看向</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/17.%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/">17.父子关系</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/">18.坐标转换</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/19.Input%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3/">19.Input输入相关</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20.Screen%E5%B1%8F%E5%B9%95%E7%9B%B8%E5%85%B3/">20.Screen屏幕相关</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/21.Camera/">21.Camera</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/22.Camera%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6/">22.Camera代码控制</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/">23.Light光源组件</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/24.%E5%85%89%E9%9D%A2%E6%9D%BF/">24.光面板</a></li>  <li class="file active"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/">25.碰撞检测之刚体</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Csharp
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E7%89%B9%E6%80%A7/">特性</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>标签</span></h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Csharp/" rel="tag">Csharp</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" rel="tag">Unity工作原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" rel="tag">Unity界面基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" rel="tag">Unity脚本基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" rel="tag">Unity重要组件和API</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity%E5%85%A5%E9%97%A8/" rel="tag">unity入门</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">unity入门基础知识</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" rel="tag">光源系统</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" rel="tag">核心系统</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a><span class="tag-list-count">25</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" rel="tag">物理系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-游戏引擎/unity/unity入门/unity入门基础知识/25.碰撞检测之刚体" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/">游戏引擎</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/">unity</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/">unity入门</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">unity入门基础知识</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/unity/" rel="tag">unity</a>, <a class="tag-link-link" href="/tags/unity%E5%85%A5%E9%97%A8/" rel="tag">unity入门</a>, <a class="tag-link-link" href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">unity入门基础知识</a>, <a class="tag-link-link" href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" rel="tag">核心系统</a>, <a class="tag-link-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a>, <a class="tag-link-link" href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" rel="tag">物理系统</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/">
+            <time datetime="2025-02-20T09:28:06.000Z" itemprop="datePublished">2025-02-20</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/akira23369/akira23369.github.io.git/raw/main/source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/25.碰撞检测之刚体.md'> Source </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/akira23369/akira23369.github.io.git/edit/main/source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/25.碰撞检测之刚体.md'> Edit </a>
+                            </div>
+                            <div class="article-meta-button">
+                                <a target="_blank" rel="noopener" href='https://github.com/akira23369/akira23369.github.io.git/commits/main/source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/25.碰撞检测之刚体.md'> History </a>
+                            </div>
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            25.碰撞检测之刚体
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mass-%E8%B4%A8%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text"> Mass 质量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#drag-%E7%A9%BA%E6%B0%94%E9%98%BB%E5%8A%9B"><span class="toc-number">2.</span> <span class="toc-text"> Drag 空气阻力</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#angular-drag-%E8%A7%92%E9%98%BB%E5%8A%9B%E6%89%AD%E7%9F%A9%E9%98%BB%E5%8A%9B"><span class="toc-number">3.</span> <span class="toc-text"> Angular Drag 角阻力（扭矩阻力）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#use-gravity-%E9%87%8D%E5%8A%9B%E5%BC%80%E5%85%B3"><span class="toc-number">4.</span> <span class="toc-text"> Use Gravity 重力开关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#is-kinematic"><span class="toc-number">5.</span> <span class="toc-text"> Is Kinematic</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#interpolate-%E6%8F%92%E5%80%BC%E8%BF%90%E7%AE%97"><span class="toc-number">6.</span> <span class="toc-text"> Interpolate 插值运算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#collision-detection-%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text"> Collision Detection 碰撞检测模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#constraints-%E5%88%9A%E4%BD%93%E7%BA%A6%E6%9D%9F"><span class="toc-number">8.</span> <span class="toc-text"> Constraints 刚体约束</span></a></li></ol>
+                </div>
+            
+        
+        
+            <p><strong>碰撞产生的必要条件</strong>：两个物体都有碰撞器，至少一个物体有刚体</p>
+<p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220175255335.png" alt="" /></p>
+<p>RigidBody组件信息如下<br />
+<img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220180007874.png" alt="" /></p>
+<h1 id="mass-质量"><a class="markdownIt-Anchor" href="#mass-质量"></a> <strong>Mass 质量</strong></h1>
+<ul>
+<li>默认为千克</li>
+<li>质量越大惯性越大</li>
+</ul>
+<h1 id="drag-空气阻力"><a class="markdownIt-Anchor" href="#drag-空气阻力"></a> <strong>Drag 空气阻力</strong></h1>
+<ul>
+<li>根据力移动对象时影响对象的空气阻力大小，0 表示没有空气阻力</li>
+</ul>
+<h1 id="angular-drag-角阻力扭矩阻力"><a class="markdownIt-Anchor" href="#angular-drag-角阻力扭矩阻力"></a> <strong>Angular Drag 角阻力（扭矩阻力）</strong></h1>
+<ul>
+<li>通俗理解就是阻碍对象旋转的阻力，角阻力越大越不容易旋转</li>
+<li>0 表示没有空气阻力。</li>
+</ul>
+<h1 id="use-gravity-重力开关"><a class="markdownIt-Anchor" href="#use-gravity-重力开关"></a> <strong>Use Gravity 重力开关</strong></h1>
+<ul>
+<li>是否受重力影响</li>
+</ul>
+<h1 id="is-kinematic"><a class="markdownIt-Anchor" href="#is-kinematic"></a> <strong>Is Kinematic</strong></h1>
+<ul>
+<li>控制物理是否影响刚体。</li>
+<li>可以理解为开启后不受力的影响，只能通过Transform移动</li>
+<li>如果启用此选项，则对象将不会被物理引擎驱动，只能通过 (Transform) 对其进行操作。对于移动平台，或者如果要动画化附加了 HingeJoint 的刚体，此属性将非常有用。</li>
+</ul>
+<h1 id="interpolate-插值运算"><a class="markdownIt-Anchor" href="#interpolate-插值运算"></a> <strong>Interpolate 插值运算</strong></h1>
+<ul>
+<li>让刚体物体移动更平滑</li>
+<li>可以更改FixTime，改成一秒，这样对象会很突兀的一秒移动一次，这时开启插值运算就可以让刚体对象平滑移动</li>
+</ul>
+<ol>
+<li>None 无插值运算模式
+<ul>
+<li>不应用插值运算</li>
+</ul>
+</li>
+<li>Interpolate 插值模式
+<ul>
+<li>插值将始终滞后一点，但比外推更流畅。</li>
+<li>根据前一帧的变换来平滑变换。</li>
+</ul>
+</li>
+<li>Extrapolate 外推模式
+<ul>
+<li>外推将根据当前速度预测刚体的位置。</li>
+<li>根据下一帧的估计变换来平滑变换。</li>
+</ul>
+</li>
+</ol>
+<h1 id="collision-detection-碰撞检测模式"><a class="markdownIt-Anchor" href="#collision-detection-碰撞检测模式"></a> <strong>Collision Detection 碰撞检测模式</strong></h1>
+<blockquote>
+<p>Continuous Dynamic 连续动态检测 <strong>&gt;</strong> Continuous Speculative 连续推测检测 <strong>&gt;</strong> Continuous 连续检测 <strong>&gt;</strong> Discrete 离散检测</p>
+</blockquote>
+<ul>
+<li>用于防止快速移动的对象穿过其它对象而不检测碰撞</li>
+</ul>
+<ol>
+<li>Discrete 离散检测
+<ul>
+<li>默认的碰撞检测模式。</li>
+<li>在每一帧中进行一次碰撞检测，适用于大多数普通物体。</li>
+<li>最省性能，但可能会错过高速物体的碰撞。</li>
+<li>适合一般速度移动的物体，不适合高速移动的小物体。</li>
+<li>对场景中的所有其他碰撞体使用离散碰撞检测。其他碰撞体在测试碰撞时会使用离散碰撞检测。用于正常碰撞（这是默认值）</li>
+</ul>
+</li>
+<li>Continuous 连续检测
+<ul>
+<li>提高了碰撞检测的精度，特别适合高速移动的物体。</li>
+<li>在每一帧中进行多次碰撞检测，避免高速物体穿过其他物体。</li>
+<li>比 <code>Discrete</code> 消耗更多的性能，但减少了穿透问题。</li>
+<li>适用于高速移动的物体，如子弹或快速飞行的物体。</li>
+<li>对动态碰撞体（具有刚体）使用离散碰撞检测，并对静态碰撞体（没有刚体）使用连续碰撞检测。</li>
+<li>设置为连续动态 (Continuous Dynamic) 的刚体将在测试与该刚体的碰撞时使用连续碰撞检测。（此属性对物理性能有很大影响，如果没有快速对象的碰撞问题，请将其保留为 Discrete 设置）</li>
+<li>其他刚体将使用离散碰撞检测。</li>
+</ul>
+</li>
+<li>Continuous Dynamic 连续动态检测
+<ul>
+<li>针对快速移动的物体和其他静止或缓慢移动的物体之间的碰撞检测。</li>
+<li>结合 <code>Continuous</code> 和 <code>Discrete</code> 的优点，对高速物体进行多次检测，对慢速或静止物体进行一次检测。</li>
+<li>在保证精度的同时比 <code>Continuous</code> 更省性能。</li>
+<li>适用于快速移动的物体与静止或缓慢移动的物体之间的碰撞检测，如快速移动的角色或车辆。</li>
+<li>性能消耗高</li>
+<li>对设置为连续 (Continuous)和连续动态 (Continuous Dynamic)碰撞的游戏对象使用连续碰撞检测。还将对静态碰撞体（没有刚体）使用连续碰撞检测。</li>
+<li>对于所有其他碰撞体，使用离散碰撞检测。用于快速移动的对象。</li>
+</ul>
+</li>
+<li>Continuous Speculative 连续推测检测
+<ul>
+<li>使用预测的方式进行碰撞检测。</li>
+<li>预测物体的未来位置，并在物体穿过其他物体前进行检测和处理。</li>
+<li>性能较高，精度也不错，但有时可能会出现误判。</li>
+<li>适合大多数需要高精度且有较高速度的物体。</li>
+<li>对刚体和碰撞体使用推测性连续碰撞检测。该方法通常比连续碰撞检测的成本更低。<br />
+<img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220181902841.png" alt="" /></li>
+</ul>
+</li>
+</ol>
+<h1 id="constraints-刚体约束"><a class="markdownIt-Anchor" href="#constraints-刚体约束"></a> Constraints 刚体约束</h1>
+<ul>
+<li>对刚体运动的限制</li>
+</ul>
+<ol>
+<li>Freeze Position 冻结位置
+<ul>
+<li>有选择地停止刚体沿世界 X、Y 和 Z 轴的移动。</li>
+</ul>
+</li>
+<li>Freeze Rotation 冻结旋转
+<ul>
+<li>有选择地停止刚体围绕局部 X、Y 和 Z 轴旋转。</li>
+</ul>
+</li>
+</ol>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/24.%E5%85%89%E9%9D%A2%E6%9D%BF/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">24.光面板</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            akira23369 &copy; 2025 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
