@@ -1,0 +1,20 @@
+{
+  "newFileLocation": "folder",
+  "newFileFolderPath": "source/_posts",
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "alwaysUpdateLinks": true,
+  "userIgnoreFilters": [
+    "scaffolds/",
+    "themes/",
+    "node_modules/",
+    "public/"
+  ],
+  "attachmentFolderPath": "source/img",
+  "propertiesInDocument": "source",
+  "promptDelete": false,
+  "smartIndentList": true,
+  "readableLineLength": false,
+  "useTab": false,
+  "strictLineBreaks": true
+}

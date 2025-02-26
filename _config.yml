@@ -1,0 +1,164 @@
+# 站点配置
+# 文档：https://hexo.io/docs/configuration.html
+# 来源：https://github.com/hexojs/hexo/
+
+
+# 站点信息
+# Site
+title: akiraの博客思密达  # 网站标题
+subtitle: ''  # 网站副标题
+description: ''  # 网站描述
+keywords:  # 网站关键词
+author: akira23369  # 网站作者
+language: zh-CN  # 网站语言
+timezone: ''  # 网站时区
+
+# URL 配置
+# URL
+url: http://example.com  # 网站 URL，例如 GitHub Page 设置为 https://username.github.io/project
+# permalink: :year/:month/:day/:title/  # 文章永久链接格式
+permalink: :year/:month/:day/:title/  # 文章永久链接格式
+permalink_defaults:  # 永久链接默认值
+pretty_urls:  # 漂亮 URL 配置
+  trailing_index: true  # 设置为 false 以从永久链接中移除尾随的 'index.html'
+  trailing_html: true  # 设置为 false 以从永久链接中移除尾随的 '.html'
+
+# 目录配置
+# Directory
+source_dir: source  # 源文件夹，存放内容
+public_dir: public  # 公共文件夹，存放生成的静态网站
+tag_dir: tags  # 标签目录
+archive_dir: archives  # 归档目录
+category_dir: categories  # 分类目录
+code_dir: downloads/code  # 代码目录（source_dir 的子目录）
+i18n_dir: :lang  # 国际化目录
+skip_render:  # 跳过渲染的路径
+  - README.md
+  - '_posts/**/embed_page/**'
+
+# 写作配置
+# Writing
+new_post_name: :title.md  # 新文章文件名格式
+default_layout: post  # 默认布局
+titlecase: false  # 将标题转换为标题大小写
+external_link:  # 外部链接配置
+  enable: true  # 在新标签页中打开外部链接
+  field: site  # 应用于整个站点
+  exclude: ''
+filename_case: 0  # 转换文件名为 1 小写；2 大写
+render_drafts: false  # 显示草稿
+post_asset_folder: true  # 启用文章资源文件夹
+relative_link: false  # 使链接相对于根文件夹
+future: true  # 显示未来的文章
+syntax_highlighter: highlight.js  # 代码块语法高亮设置
+highlight:  # highlight.js 配置
+  line_number: true  # 显示行号
+  auto_detect: false  # 自动检测语言
+  tab_replace: ''
+  wrap: true  # 自动换行
+  hljs: false
+  style: color-brewer  # blog\node_modules\highlight.js\styles目录下
+prismjs:  # PrismJS 配置
+  preprocess: true  # 预处理代码
+  line_number: true  # 显示行号
+  tab_replace: ''
+
+# 主页设置
+# Home page setting
+index_generator:  # 生成文章归档
+  path: ''  # 博客索引页的根路径
+  per_page: 10  # 每页显示的文章数
+  order_by: -date  # 文章排序，按日期降序
+
+# 分类与标签
+# Category & Tag
+default_category: uncategorized  # 默认分类
+category_map:  # 分类别名映射
+tag_map:  # 标签别名映射
+
+# 元数据元素
+# Metadata elements
+meta_generator: true  # 启用 meta 生成器
+
+# 日期/时间格式
+# Date / Time format
+date_format: YYYY-MM-DD  # 日期格式
+time_format: HH:mm:ss  # 时间格式
+updated_option: 'mtime'  # updated 值的选项，支持 'mtime', 'date', 'empty'
+
+# 分页配置
+# Pagination
+per_page: 10  # 每页显示的文章数，0 表示禁用分页
+pagination_dir: page  # 分页目录格式
+
+# 包含/排除文件
+# Include / Exclude file(s)
+include:  # 包含的文件
+exclude:  # 排除的文件
+ignore:  # 忽略的文件
+
+# 扩展配置
+# Extensions
+# theme: landscape  # 主题名称
+theme: Wikitten  # 主题名称
+
+# 部署配置
+# Deployment
+deploy:  # 部署设置
+  type: git  # 部署类型
+  repo: git@github.com:akira23369/akira23369.github.io.git
+  branch: main
+
+# Markdown config
+markdown_it_plus:
+  render:
+    html: true						
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: false  # 替换常用排版元素
+    quotes: '“”‘’'
+  plugins:
+  anchors:	
+    level: 2
+    collisionSuffix: 'v'
+    permalink: true
+    permalinkClass: header-anchor
+    permalinkSide: 'left'
+    permalinkSymbol: ¶
+
+# markdown_it_plus:
+#      highlight: true
+#      html: true
+#      xhtmlOut: true
+#      breaks: true
+#      langPrefix:
+#      linkify: true
+#      typographer:
+#      quotes: “”‘’
+#      pre_class: highlight
+
+
+# hexo-filter-titlebased-link 配置
+titlebased_link:
+  enable: true   # 启用插件
+
+
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: live2d-widget-model-miku
+  display:
+    position: right
+    width: 150
+    height: 300
+  mobile:
+    show: false
+  react:
+    opacity: 0.7

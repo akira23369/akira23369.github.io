@@ -1,0 +1,250 @@
+{
+  "main": {
+    "id": "7a66d12ef91862d0",
+    "type": "split",
+    "children": [
+      {
+        "id": "42adf89d0d7091dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5092f984e135978d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/UI系统/GUI/GUI基础知识/12.GUI总结.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "12.GUI总结"
+            }
+          },
+          {
+            "id": "b509d9f00d863399",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/5.反射存储List数据类型.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5.反射存储List数据类型"
+            }
+          },
+          {
+            "id": "c544a70e878b3da1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/编程语言/Csharp/反射.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "反射"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0377b531688ba68b",
+    "type": "split",
+    "children": [
+      {
+        "id": "d60c26340a172d22",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d2fcaadfe57a2b0b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "a6ee99b2db3bfbe0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "133d4597a25b3379",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 321.5
+  },
+  "right": {
+    "id": "cdc41ef16c706e04",
+    "type": "split",
+    "children": [
+      {
+        "id": "2266cd75240a047c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "86cc3175dabe7bdd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "source/_posts/游戏引擎/unity/unity入门/1.unity入门概述.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "1.unity入门概述 的反向链接列表"
+            }
+          },
+          {
+            "id": "9650fb664d478cf6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "source/_posts/子分类/新新新测试分类.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "新新新测试分类 的出链列表"
+            }
+          },
+          {
+            "id": "846cfa0e9798339c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "a7ef396574ef1a27",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/18.坐标转换.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "18.坐标转换 的大纲"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "d2fcaadfe57a2b0b",
+  "lastOpenFiles": [
+    "public/tags/UI系统/page/2/index.html",
+    "public/tags/UI系统/page/2",
+    "public/tags/UI系统/page",
+    "public/tags/GUI基础知识/page/2/index.html",
+    "public/tags/GUI基础知识/page/2",
+    "public/tags/GUI基础知识/page",
+    "public/tags/GUI/page/2/index.html",
+    "public/tags/GUI/page/2",
+    "public/tags/GUI/page",
+    "public/page/7/index.html",
+    "public/page/7",
+    "public/2025/02/26/UI系统/GUI/GUI基础知识/12.GUI总结/file-20250226202233700.png",
+    "public/2025/02/26/UI系统/GUI/GUI基础知识/4.多选框和单选框/file-20250226163031217.png",
+    "public/2025/02/26/UI系统/GUI/GUI基础知识/5.输入框和拖动条/file-20250226172348488.png",
+    "public/2025/02/26/UI系统/GUI/GUI基础知识/3.文本和按钮控件/file-20250226154310264.png",
+    "public/2025/02/26/UI系统/GUI/GUI基础知识/3.文本和按钮控件/file-20250226154239867.png",
+    "public/2025/02/26/UI系统/GUI/GUI基础知识/7.工具栏和选择网格/file-20250226175258640.png",
+    "public/2025/02/26/UI系统/GUI/GUI基础知识/7.工具栏和选择网格/file-20250226174958930.png",
+    "public/2025/02/26/UI系统/GUI/GUI基础知识/7.工具栏和选择网格/file-20250226174735170.png",
+    "public/2025/02/26/UI系统/GUI/GUI基础知识/8.滚动列表和分组/file-20250226193343545.png",
+    "public/2025/02/26/UI系统/GUI/GUI基础知识/8.滚动列表和分组/file-20250226193327395.png",
+    "source/_posts/UI系统/GUI/GUI基础知识/11.GUILayout自动布局.md",
+    "source/_posts/UI系统/GUI/GUI基础知识/12.GUI总结.md",
+    "source/_posts/UI系统/GUI/GUI基础知识/10.自定义皮肤样式.md",
+    "source/_posts/UI系统/GUI/GUI基础知识/9.窗口.md",
+    "source/_posts/UI系统/GUI/GUI基础知识/5.输入框和拖动条.md",
+    "source/_posts/UI系统/GUI/GUI基础知识/4.多选框和单选框.md",
+    "source/_posts/UI系统/GUI/GUI基础知识/7.工具栏和选择网格.md",
+    "source/_posts/UI系统/GUI/GUI基础知识/6.图片绘制和框.md",
+    "source/_posts/UI系统/GUI/GUI基础知识/8.滚动列表和分组.md",
+    "source/_posts/UI系统/GUI/GUI基础知识/2.GUI工作原理与主要作用.md",
+    "source/_posts/UI系统/GUI/GUI基础知识/3.文本和按钮控件.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/9.生命周期函数.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/28.碰撞检测之碰撞检测函数.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/29.刚体加力.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/21.Camera.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/22.Camera代码控制.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/26.碰撞检测之碰撞器.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/19.Input输入相关.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/17.父子关系.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/16.缩放和看向.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/15.角度和旋转.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/14.位置位移坐标系相关.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/13.时间相关Time.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/12.GameObject.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/11.MonoBehavior中的重要内容.md"
+  ]
+}
