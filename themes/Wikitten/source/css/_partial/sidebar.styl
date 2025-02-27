@@ -1,236 +1,616 @@
-#sidebar
-    @media mq-normal
-        column(sidebar-column)
-    @media mq-tablet
-        column(sidebar-column-tablet)
+/* 侧边栏样式 */
+#sidebar {
+    // 在正常屏幕尺寸下的样式
+    @media mq-normal {
+        // 调用 column 混合宏，传入 sidebar-column 参数
+        column(sidebar-column);
+    }
+    // 在平板屏幕尺寸下的样式
+    @media mq-tablet {
+        // 调用 column 混合宏，传入 sidebar-column-tablet 参数
+        column(sidebar-column-tablet);
+    }
+}
 
+/* 小部件通用样式 */
+.widget {
+    // 继承 $base-style 样式
+    @extend $base-style;
+    line-height: line-height; // 设置行高，使用自定义变量
+    word-wrap: break-word; // 允许长单词或 URL 地址换行到下一行
+    font-size: 0.9em; // 字体大小为父元素的 0.9 倍
 
-.widget
-    @extend $base-style
-    line-height: line-height
-    word-wrap: break-word
-    font-size: 0.9em
-    ul, ol
-        list-style: none
-        margin: 0
-        ul, ol
-            margin: 0 20px
-        ul
-            list-style: disc
-        ol
-            list-style: decimal
+    ul, ol {
+        list-style: none; // 去除列表项的默认样式
+        margin: 0; // 去除列表的外边距
 
-.category-list-count
-.tag-list-count
-.archive-list-count
-    padding-left: 5px
-    color: color-grey
-    font-size: 0.85em
-    &:before
-        content: "("
-    &:after
-        content: ")"
+        ul, ol {
+            margin: 0 20px; // 嵌套列表的左右外边距为 20px
+        }
 
-.tagcloud
-    a
-        display: inline-block
-        margin-right: 10px
-        &:before
-            content: "#"
+        ul {
+            list-style: disc; // 无序列表使用圆点作为列表项标记
+        }
 
-.widget-wrap
-    margin: block-margin 0
-    background-color: color-background + 20%
-    border: 4px solid color-border-stretch
-    border-radius: 4px
-    padding: 20px
-    h3
-        line-height: 20px
-        background: color-meta-head
-        margin: -21px -21px 10px -21px
-        padding: 0 20px
-        line-height: 30px
-        border: 1px solid #666
-        border-radius: 4px 4px 0 0
-        a
-            margin-top: 5px
-            float: right
+        ol {
+            list-style: decimal; // 有序列表使用数字作为列表项标记
+        }
+    }
+}
+
+/* 分类列表计数、标签列表计数、归档列表计数样式 */
+.category-list-count,
+.tag-list-count,
+.archive-list-count {
+    padding-left: 5px; // 左内边距为 5px
+    color: color-grey; // 文字颜色使用自定义灰色变量
+    font-size: 0.85em; // 字体大小为父元素的 0.85 倍
+
+    &:before {
+        content: "("; // 在元素内容前添加左括号
+    }
+
+    &:after {
+        content: ")"; // 在元素内容后添加右括号
+    }
+}
+
+/* 标签云样式 */
+.tagcloud {
+    a {
+        display: inline-block; // 以行内块级元素显示
+        margin-right: 10px; // 右外边距为 10px
+
+        &:before {
+            content: "#"; // 在链接前添加 # 符号
+        }
+    }
+}
+
+/* 小部件包裹容器样式 */
+.widget-wrap {
+    margin: block-margin 0; // 上下外边距使用自定义变量，左右外边距为 0
+    background-color: color-background + 20%; // 背景颜色为自定义背景颜色加深 20%
+    border: 4px solid color-border-stretch; // 边框为 4px 宽，颜色使用自定义拉伸边框颜色变量
+    border-radius: 4px; // 圆角半径为 4px
+    padding: 20px; // 内边距为 20px
+
+    h3 {
+        line-height: 20px; // 行高为 20px
+        background: color-meta-head; // 背景颜色使用自定义元数据头部颜色变量
+        margin: -21px -21px 10px -21px; // 外边距设置，使标题部分超出容器
+        padding: 0 20px; // 左右内边距为 20px，上下内边距为 0
+        line-height: 30px; // 行高为 30px
+        border: 1px solid #666; // 边框为 1px 宽的灰色边框
+        border-radius: 4px 4px 0 0; // 上圆角半径为 4px，下圆角半径为 0
+
+        a {
+            margin-top: 5px; // 顶部外边距为 5px
+            float: right; // 右浮动
+        }
+
         a,
-        span
-            border-radius: 4px 4px 0 0
-            background: color-background + 20%
-            font-size: 15px
-            line-height: 18px
-            padding: 5px 10px
-            vertical-align:bottom
-            i
-                font-size: 20px
-                vertical-align:bottom
+        span {
+            border-radius: 4px 4px 0 0; // 上圆角半径为 4px，下圆角半径为 0
+            background: color-background + 20%; // 背景颜色为自定义背景颜色加深 20%
+            font-size: 15px; // 字体大小为 15px
+            line-height: 18px; // 行高为 18px
+            padding: 5px 10px; // 内边距为 5px（上下）和 10px（左右）
+            vertical-align: bottom; // 垂直对齐方式为底部对齐
 
-.widget-title
-    @extend $block-caption
-    margin-bottom: 0
+            i {
+                font-size: 20px; // 字体图标大小为 20px
+                vertical-align: bottom; // 垂直对齐方式为底部对齐
+            }
+        }
+    }
+}
 
-.widget
-    padding: 15px 5px
-    a
-        color: color-sidebar-text
-        text-decoration: none
-        &:hover
-            color: color-sidebar-text-dark
-    ul, ol, dl
-        ul, ol, dl
-            margin-left: 15px
-            list-style: disc
-    ul, ol
-        list-style: none
+/* 小部件标题样式 */
+.widget-title {
+    // 继承 $block-caption 样式
+    @extend $block-caption;
+    margin-bottom: 0; // 底部外边距为 0
+}
+
+/* 小部件样式补充 */
+.widget {
+    padding: 15px 5px; // 内边距为 15px（上下）和 5px（左右）
+
+    a {
+        color: color-sidebar-text; // 链接颜色使用自定义侧边栏文本颜色变量
+        text-decoration: none; // 去除下划线
+
+        &:hover {
+            color: color-sidebar-text-dark; // 鼠标悬停时链接颜色使用自定义侧边栏深色文本颜色变量
+        }
+    }
+
+    ul, ol, dl {
+        ul, ol, dl {
+            margin-left: 15px; // 嵌套列表的左外边距为 15px
+            list-style: disc; // 无序列表使用圆点作为列表项标记
+        }
+    }
+
+    ul, ol {
+        list-style: none; // 去除列表项的默认样式
+
         li,
-        .category-list-child
-            padding: 10px 0
-            font-size: font-size
-            border-bottom: 1px solid border-color
-            a
-                color: color-sidebar-text
-        ul, ol
-            list-style: none
-            li
-                border: none
-                &:last-child
-                    padding-bottom: 0px
-    ul:not(#recent-post), ol:not(#recent-post)
-        li
-            a
-                &:before
-                    color: #ccc
-                    content: "\f0da"
-                    font-size: 12px
-                    margin-right: 6px
-                    font-family: FontAwesome
-                    transition: 0.2s ease
-                &:hover:before
-                    color: color-sidebar-text-dark
+        .category-list-child {
+            padding: 10px 0; // 上下内边距为 10px，左右内边距为 0
+            font-size: font-size; // 字体大小使用自定义变量
+            border-bottom: 1px solid border-color; // 底部边框为 1px 宽，颜色使用自定义边框颜色变量
 
-#toTop
-    @extend $block
-    display: none
-    cursor: pointer
-    text-align: center
-    width: 60px
-    height: 60px
-    color: white
-    font-size: 50px
-    line-height: 55px
-    background: color-default
-    opacity: 0.8
-    border-radius: 4px
-    bottom: 20px
-    margin: 20px
-    position: fixed
-    @media mq-mobile
-        width: 52px
-        height: 52px
-        font-size: 34px
-        line-height: 52px
-    @media mq-mini
-        width: 48px
-        height: 48px
-        font-size: 32px
-        line-height: 48px
+            a {
+                color: color-sidebar-text; // 链接颜色使用自定义侧边栏文本颜色变量
+            }
+        }
+
+        ul, ol {
+            list-style: none; // 去除列表项的默认样式
+
+            li {
+                border: none; // 去除边框
+
+                &:last-child {
+                    padding-bottom: 0px; // 最后一个列表项底部内边距为 0
+                }
+            }
+        }
+    }
+
+    ul:not(#recent-post), ol:not(#recent-post) {
+        li {
+            a {
+                &:before {
+                    color: #ccc; // 伪元素文字颜色为浅灰色
+                    content: "\f0da"; // 伪元素内容为向右箭头的字体图标
+                    font-size: 12px; // 字体图标大小为 12px
+                    margin-right: 6px; // 右外边距为 6px
+                    font-family: FontAwesome; // 字体图标字体为 FontAwesome
+                    transition: 0.2s ease; // 过渡效果，时长 0.2 秒，缓动函数为 ease
+
+                    &:hover:before {
+                        color: color-sidebar-text-dark; // 鼠标悬停时伪元素文字颜色使用自定义侧边栏深色文本颜色变量
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 返回顶部按钮样式 */
+#toTop {
+    // 继承 $block 样式
+    @extend $block;
+    display: none; // 默认隐藏
+    cursor: pointer; // 鼠标指针为手型
+    text-align: center; // 文字居中
+    width: 60px; // 宽度为 60px
+    height: 60px; // 高度为 60px
+    color: white; // 文字颜色为白色
+    font-size: 50px; // 字体大小为 50px
+    line-height: 55px; // 行高为 55px
+    background: color-default; // 背景颜色使用自定义默认颜色变量
+    opacity: 0.8; // 透明度为 0.8
+    border-radius: 4px; // 圆角半径为 4px
+    bottom: 20px; // 底部偏移 20px
+    margin: 20px; // 外边距为 20px
+    position: fixed; // 固定定位
+
+    // 在移动屏幕尺寸下的样式
+    @media mq-mobile {
+        width: 52px; // 宽度为 52px
+        height: 52px; // 高度为 52px
+        font-size: 34px; // 字体大小为 34px
+        line-height: 52px; // 行高为 52px
+    }
+
+    // 在小屏幕尺寸下的样式
+    @media mq-mini {
+        width: 48px; // 宽度为 48px
+        height: 48px; // 高度为 48px
+        font-size: 32px; // 字体大小为 32px
+        line-height: 48px; // 行高为 48px
+    }
+}
+
+/* 最近文章列表样式 */
+#recent-post {
+    li {
+        // 清除浮动
+        clearfix();
+        padding: 10px 0 10px 94px; // 内边距设置
+
+        &.no-thumbnail {
+            li {
+                padding: 10px 0px; // 没有缩略图时列表项的内边距设置
+            }
+        }
+
+        .item-thumbnail {
+            opacity: 1; // 缩略图初始透明度为 1
+            float: left; // 左浮动
+            margin-left: -94px; // 左外边距为 -94px
+            transition: all 0.2s ease; // 过渡效果，时长 0.2 秒，缓动函数为 ease
+
+            .thumbnail {
+                width: 80px; // 缩略图宽度为 80px
+                height: 80px; // 缩略图高度为 80px
+                display: block; // 以块级元素显示
+                position: relative; // 相对定位
+                overflow: hidden; // 超出部分隐藏
+
+                span {
+                    width: 100%; // 宽度为父元素的 100%
+                    height: 100%; // 高度为父元素的 100%
+                    display: block; // 以块级元素显示
+                }
+
+                .thumbnail-image {
+                    position: absolute; // 绝对定位
+                    background-size: cover; // 背景图片覆盖整个元素
+                    background-position: center; // 背景图片居中显示
+                }
+
+                .thumbnail-none {
+                    background-image: url(thumbnail-default-small); // 没有缩略图时的默认背景图片
+                    background-size: 100% 100%; // 背景图片大小为 100%
+                }
+            }
+        }
+
+        .item-inner {
+            a {
+            }
+
+            .item-category {
+                font-size: 13px; // 分类字体大小为 13px
+                text-transform: uppercase; // 文本转换为大写
+
+                a {
+                    color: color-link; // 分类链接颜色使用自定义链接颜色变量
+
+                    &:hover {
+                        color: color-sidebar-text-dark; // 鼠标悬停时分类链接颜色使用自定义侧边栏深色文本颜色变量
+                    }
+                }
+
+                a, .fa {
+                    margin-right: 5px; // 分类链接和字体图标右外边距为 5px
+                }
+            }
+
+            .item-title {
+                font-size: 15px; // 标题字体大小为 15px
+
+                a {
+                    color: color-sidebar-text-dark; // 标题链接颜色使用自定义侧边栏深色文本颜色变量
+                    transition: all 0.2s ease; // 过渡效果，时长 0.2 秒，缓动函数为 ease
+                }
+            }
+
+            .item-date {
+                color: #aaa; // 日期文字颜色为浅灰色
+                font-size: 13px; // 日期字体大小为 13px
+                text-transform: uppercase; // 文本转换为大写
+            }
+        }
+
+        &:hover {
+            .item-thumbnail {
+                opacity: 0.8; // 鼠标悬停时缩略图透明度为 0.8
+            }
+
+            .item-title a {
+                color: color-link; // 鼠标悬停时标题链接颜色使用自定义链接颜色变量
+            }
+        }
+    }
+}
+
+/* 分类列表样式 */
+#categories {
+    text-shadow: 0 1px 0 #FFFFFF; // 文字阴影，白色，向下偏移 1px
+    font-size: 13px; // 字体大小为 13px
+
+    ul {
+        margin-bottom: 0; // 底部外边距为 0
+
+        li:last-child {
+            padding-bottom: 0; // 最后一个列表项底部内边距为 0
+        }
+    }
+
+    li {
+        padding: 5px 0; // 上下内边距为 5px，左右内边距为 0
+
+        ul {
+            padding-left: 20px; // 子列表左内边距为 20px
+            display: none; // 默认隐藏
+            margin-top: 5px; // 顶部外边距为 5px
+        }
+
+        &.directory.open > ul {
+            display: block; // 当列表项为目录且有 open 类时，显示子列表
+        }
+
+        &.directory {
+            font-weight: bold; // 目录项字体加粗
+
+            & > a {
+                color: #333; // 目录项链接颜色为深灰色
+
+                &:hover {
+                    text-decoration: none; // 鼠标悬停时去除下划线
+                }
+            }
+        }
+
+        &.file {
+            font-weight: normal; // 文件项字体正常
+            word-wrap: break-word; // 允许长单词或 URL 地址换行到下一行
+
+            &.active > a {
+                font-weight: bold; // 活动文件项链接字体加粗
+            }
+        }
+
+        li.file {
+            padding-left: 10px; // 文件项左内边距为 10px
+            word-wrap: break-word; // 允许长单词或 URL 地址换行到下一行
+        }
+
+        a,
+        a:hover {
+            display: block; // 以块级元素显示
+            text-decoration: none; // 去除下划线
+        }
+
+        a:focus:before {
+            content: "↪"; // 链接聚焦时在前面添加箭头符号
+            float: left; // 左浮动
+            margin-left: -13px; // 左外边距为 -13px
+            font-weight: bold; // 字体加粗
+            color: #333; // 文字颜色为深灰色
+        }
+    }
+}
+// #sidebar
+//     @media mq-normal
+//         column(sidebar-column)
+//     @media mq-tablet
+//         column(sidebar-column-tablet)
+
+
+// .widget
+//     @extend $base-style
+//     line-height: line-height
+//     word-wrap: break-word
+//     font-size: 0.9em
+    
+//     ul, ol
+//         list-style: none
+//         margin: 0
+//         ul, ol
+//             margin: 0 20px
+//         ul
+//             list-style: disc
+//         ol
+//             list-style: decimal
+
+// .category-list-count
+// .tag-list-count
+// .archive-list-count
+//     padding-left: 5px
+//     color: color-grey
+//     font-size: 0.85em
+//     &:before
+//         content: "("
+//     &:after
+//         content: ")"
+
+// .tagcloud
+//     a
+//         display: inline-block
+//         margin-right: 10px
+//         &:before
+//             content: "#"
+
+// .widget-wrap
+//     margin: block-margin 0
+//     background-color: color-background + 20%
+//     border: 4px solid color-border-stretch
+//     border-radius: 4px
+//     padding: 20px
+//     h3
+//         line-height: 20px
+//         background: color-meta-head
+//         margin: -21px -21px 10px -21px
+//         padding: 0 20px
+//         line-height: 30px
+//         border: 1px solid #666
+//         border-radius: 4px 4px 0 0
+//         a
+//             margin-top: 5px
+//             float: right
+//         a,
+//         span
+//             border-radius: 4px 4px 0 0
+//             background: color-background + 20%
+//             font-size: 15px
+//             line-height: 18px
+//             padding: 5px 10px
+//             vertical-align:bottom
+//             i
+//                 font-size: 20px
+//                 vertical-align:bottom
+
+// .widget-title
+//     @extend $block-caption
+//     margin-bottom: 0
+
+// .widget
+//     padding: 15px 5px
+//     a
+//         color: color-sidebar-text
+//         text-decoration: none
+//         &:hover
+//             color: color-sidebar-text-dark
+//     ul, ol, dl
+//         ul, ol, dl
+//             margin-left: 15px
+//             list-style: disc
+//     ul, ol
+//         list-style: none
+//         li,
+//         .category-list-child
+//             padding: 10px 0
+//             font-size: font-size
+//             border-bottom: 1px solid border-color
+//             a
+//                 color: color-sidebar-text
+//         ul, ol
+//             list-style: none
+//             li
+//                 border: none
+//                 &:last-child
+//                     padding-bottom: 0px
+//     ul:not(#recent-post), ol:not(#recent-post)
+//         li
+//             a
+//                 &:before
+//                     color: #ccc
+//                     content: "\f0da"
+//                     font-size: 12px
+//                     margin-right: 6px
+//                     font-family: FontAwesome
+//                     transition: 0.2s ease
+//                 &:hover:before
+//                     color: color-sidebar-text-dark
+
+// #toTop
+//     @extend $block
+//     display: none
+//     cursor: pointer
+//     text-align: center
+//     width: 60px
+//     height: 60px
+//     color: white
+//     font-size: 50px
+//     line-height: 55px
+//     background: color-default
+//     opacity: 0.8
+//     border-radius: 4px
+//     bottom: 20px
+//     margin: 20px
+//     position: fixed
+//     @media mq-mobile
+//         width: 52px
+//         height: 52px
+//         font-size: 34px
+//         line-height: 52px
+//     @media mq-mini
+//         width: 48px
+//         height: 48px
+//         font-size: 32px
+//         line-height: 48px
    
 
-#recent-post
-    li
-        clearfix()
-        padding: 10px 0 10px 94px
-    &.no-thumbnail
-        li
-            padding: 10px 0px
-    li
-        .item-thumbnail
-            opacity: 1
-            float: left
-            margin-left: -94px
-            transition: all 0.2s ease
-            .thumbnail
-                width: 80px
-                height: 80px
-                display: block
-                position: relative
-                overflow: hidden
-                span
-                    width: 100%
-                    height: 100%
-                    display: block
-                .thumbnail-image
-                    position: absolute
-                    background-size: cover
-                    background-position: center
-                .thumbnail-none
-                    background-image: url(thumbnail-default-small)
-                    background-size: 100% 100%
-        .item-inner
-            a
-            .item-category
-                font-size: 13px
-                text-transform: uppercase
-                a
-                    color: color-link
-                    &:hover
-                        color: color-sidebar-text-dark
-                a, .fa
-                    margin-right: 5px
-            .item-title
-                font-size: 15px
-                a
-                    color: color-sidebar-text-dark
-                    transition: all 0.2s ease
-            .item-date
-                color: #aaa
-                font-size: 13px
-                text-transform: uppercase
-        &:hover
-            .item-thumbnail
-                opacity: 0.8
-            .item-title a
-                color: color-link
+// #recent-post
+//     li
+//         clearfix()
+//         padding: 10px 0 10px 94px
+//     &.no-thumbnail
+//         li
+//             padding: 10px 0px
+//     li
+//         .item-thumbnail
+//             opacity: 1
+//             float: left
+//             margin-left: -94px
+//             transition: all 0.2s ease
+//             .thumbnail
+//                 width: 80px
+//                 height: 80px
+//                 display: block
+//                 position: relative
+//                 overflow: hidden
+//                 span
+//                     width: 100%
+//                     height: 100%
+//                     display: block
+//                 .thumbnail-image
+//                     position: absolute
+//                     background-size: cover
+//                     background-position: center
+//                 .thumbnail-none
+//                     background-image: url(thumbnail-default-small)
+//                     background-size: 100% 100%
+//         .item-inner
+//             a
+//             .item-category
+//                 font-size: 13px
+//                 text-transform: uppercase
+//                 a
+//                     color: color-link
+//                     &:hover
+//                         color: color-sidebar-text-dark
+//                 a, .fa
+//                     margin-right: 5px
+//             .item-title
+//                 font-size: 15px
+//                 a
+//                     color: color-sidebar-text-dark
+//                     transition: all 0.2s ease
+//             .item-date
+//                 color: #aaa
+//                 font-size: 13px
+//                 text-transform: uppercase
+//         &:hover
+//             .item-thumbnail
+//                 opacity: 0.8
+//             .item-title a
+//                 color: color-link
                 
-#categories
-    text-shadow: 0 1px 0 #FFFFFF
-    font-size: 13px
-    ul
-        margin-bottom: 0
-        li:last-child
-            padding-bottom: 0
-    li
-        padding: 5px 0
-        ul
-            padding-left: 20px
-            display: none
-            margin-top: 5px
-        &.directory.open > ul
-            display: block
-        &.directory
-            font-weight: bold
-            & > a
-                color: #333
-                &:hover
-                    text-decoration: none
-        &.file
-            font-weight: normal
-            word-wrap: break-word
-            &.active > a
-                font-weight: bold
-        li.file
-            padding-left: 10px
-            word-wrap: break-word
-        a,
-        a:hover
-            display: block
-            text-decoration: none
-        a:focus:before
-            content: "↪"
-            float: left
-            margin-left: -13px
-            font-weight: bold
-            color: #333
+// #categories
+//     text-shadow: 0 1px 0 #FFFFFF
+//     font-size: 13px
+//     ul
+//         margin-bottom: 0
+//         li:last-child
+//             padding-bottom: 0
+//     li
+//         padding: 5px 0
+//         ul
+//             padding-left: 20px
+//             display: none
+//             margin-top: 5px
+//         &.directory.open > ul
+//             display: block
+//         &.directory
+//             font-weight: bold
+//             & > a
+//                 color: #333
+//                 &:hover
+//                     text-decoration: none
+//         &.file
+//             font-weight: normal
+//             word-wrap: break-word
+//             &.active > a
+//                 font-weight: bold
+//         li.file
+//             padding-left: 10px
+//             word-wrap: break-word
+//         a,
+//         a:hover
+//             display: block
+//             text-decoration: none
+//         a:focus:before
+//             content: "↪"
+//             float: left
+//             margin-left: -13px
+//             font-weight: bold
+//             color: #333
                     

@@ -1,457 +1,1071 @@
-article
-    padding: 3px
-    border-radius: 4px
-    background-color: color-border-stretch
-.article
-    margin: block-margin 0
+/* 文章整体样式 */
+article {
+    padding: 3px; /* 内边距为3px */
+    border-radius: 4px; /* 圆角半径为4px */
+    background-color: color-border-stretch; /* 背景颜色，使用自定义颜色变量 */
+    // background-color: color #00000045
+}
 
-.article-inner
-    @extend $block
-    overflow: hidden
-    background: white
-    border-radius: 4px
-    border: 1px solid #BBB
+/* 带有.article类的元素样式 */
+.article {
+    margin: block-margin 0; /* 上下外边距使用自定义变量，左右外边距为0 */
+}
 
-.article-banner
-    width:100%
-    height:auto
+/* 文章内部容器样式 */
+.article-inner {
+    @extend $block; /* 继承$block的样式 */
+    overflow: hidden; /* 超出部分隐藏 */
+    // background: transparent; /* 背景透明 */
+    background: white; /* 注释掉的背景颜色设置为白色 */
+    border-radius: 4px; /* 圆角半径为4px */
+    border: 1px solid #BBB; /* 边框为1px宽的灰色边框 */
+}
 
-.article-header
-    padding: 0 article-padding 0
-    .article-title
-        display: block
-        margin-bottom: 14px
+/* 文章横幅样式 */
+.article-banner {
+    width: 100%; /* 宽度为父元素的100% */
+    height: auto; /* 高度自适应 */
+}
 
-.article-title
-    font-size: 2em
-    color: color-default
-    text-decoration: none
-    line-height: line-height-title
-    a&:visited
-        color: color-default
-    a&:hover
-        color: color-link
-    @media mq-mini
-        font-size: 1.6em
-    @media mq-mobile
-        font-size: 1.6em
+/* 文章头部样式 */
+.article-header {
+    padding: 0 article-padding 0; /* 左右内边距使用自定义变量，上下内边距为0 */
+    .article-title {
+        display: block; /* 以块级元素显示 */
+        margin-bottom: 14px; /* 底部外边距为14px */
+    }
+}
 
-.article-meta
-    @extend $block-caption
-    text-transform: none
-    clearfix()
-    line-height: 1.6em
-    & > div
-        float: left
-        margin-right: 10px
-        .fa
-            margin-right: 3px
-    a
-        color: color-default
-        &:hover
-            color: color-link
-div.article-meta-button
-    float: right
-    margin-right: 0
-    margin-left: 10px
-    a
-        padding: 4px 8px
-        margin: 2px 0
-        font-size: 85%
-        background: #555
-        border-radius: 3px
-        text-transform: none
-        &:hover
-            background: #333
-            
-.article-inner .article-meta
-        line-height: 20px
-        background: color-meta-head
-        margin: 0px -21px 20px -21px
-        padding: 0 20px;
-        line-height: 30px
-        border: 1px solid #666
-        border-radius: 4px 4px 0 0
-        color: #fff
-        a
-            color: #fff 
-            
-.article-category
-    .fa-angle-right
-        margin: 0 5px
+/* 文章标题样式 */
+.article-title {
+    font-size: 2em; /* 字体大小为2em */
+    color: color-default; /* 文字颜色使用自定义颜色变量 */
+    text-decoration: none; /* 去除下划线 */
+    line-height: line-height-title; /* 行高使用自定义变量 */
+    a&:visited {
+        color: color-default; /* 已访问链接颜色使用自定义颜色变量 */
+    }
+    a&:hover {
+        color: color-link; /* 鼠标悬停时链接颜色使用自定义颜色变量 */
+    }
+    @media mq-mini {
+        font-size: 1.6em; /* 在小屏幕设备下字体大小为1.6em */
+    }
+    @media mq-mobile {
+        font-size: 1.6em; /* 在移动设备下字体大小为1.6em */
+    }
+}
 
-.article-tag
-    .tag-link
-        &:before
-            content: "#"
+/* 文章元数据样式 */
+.article-meta {
+    @extend $block-caption; /* 继承$block-caption的样式 */
+    text-transform: none; /* 不进行文本大小写转换 */
+    clearfix(); /* 清除浮动 */
+    line-height: 1.6em; /* 行高为1.6em */
+    & > div {
+        float: left; /* 左浮动 */
+        margin-right: 10px; /* 右外边距为10px */
+        .fa {
+            margin-right: 3px; /* 字体图标右外边距为3px */
+        }
+    }
+    a {
+        color: color-default; /* 链接颜色使用自定义颜色变量 */
+        &:hover {
+            color: color-link; /* 鼠标悬停时链接颜色使用自定义颜色变量 */
+        }
+    }
+}
 
-.article-entry
-    @extend $base-style
-    clearfix()
-    color: color-default
-    padding: 0 article-padding
-    line-height: line-height
-    p, table
-        line-height: line-height
-        margin: line-height 0
-    h1, h2, h3, h4, h5, h6
-        font-weight: bold
-        line-height: line-height-title
-        margin: line-height-title 0
-        display: table
-        .headerlink
-            &::before
-                content: "#"
-                visibility: hidden
-            float: left
-            margin-left: -20px
-            line-height: 1
-        &:hover .headerlink
-            text-decoration: none
-            &::before
-                visibility: visible
-    a
-        color: color-link
-        text-decoration: none
-        &:hover
-            text-decoration: underline
-    ul, ol, dl
-        margin-top: line-height
-        margin-bottom: line-height
-        li.task-list
-            margin-left: 0
-            list-style: none
-    img, video
-        max-width: 100%
-        height: auto
-        display: block
-        margin: auto
-    iframe
-        border: none
-    table
-        width: 100%
-        border-collapse: collapse
-        border-spacing: 0
-    th
-        font-weight: bold
-        border-bottom: 3px solid color-border
-        padding-bottom: 0.5em
-    td
-        border-bottom: 1px solid color-border
-        padding: 10px 0
-    blockquote
-        position: static
-        font-family: font-serif
-        font-size: 1.1em
-        margin: 0 -20px
-        padding: 10px 20px 10px 54px
-        background: #fcfcfc
-        border-left: 4px solid #eee
-        &:before
-            top: 20px
-            left: -40px
-            float: left
-            content: "\f10d"
-            color: #e2e2e2
-            font-size: 32px
-            font-family: FontAwesome
-            text-align: center
-            position: relative
-        footer
-            font-size: font-size
-            margin: line-height 0
-            font-family: font-sans
-            cite
-                &:before
-                    content: "—"
-                    padding: 0 0.5em
-    .pullquote
-        text-align: left
-        width: 45%
-        margin: 0
-        &.left
-            margin-left: 0.5em
-            margin-right: 1em
-        &.right
-            margin-right: 0.5em
-            margin-left: 1em
-    .caption
-        color: color-grey
-        display: block
-        font-size: 0.9em
-        margin-top: 0.5em
-        position: relative
-        text-align: center
+/* 文章元数据按钮样式 */
+div.article-meta-button {
+    float: right; /* 右浮动 */
+    margin-right: 0; /* 右外边距为0 */
+    margin-left: 10px; /* 左外边距为10px */
+    a {
+        padding: 4px 8px; /* 内边距为4px（上下）和8px（左右） */
+        margin: 2px 0; /* 上下外边距为2px，左右外边距为0 */
+        font-size: 85%; /* 字体大小为父元素的85% */
+        background: #555; /* 背景颜色为深灰色 */
+        border-radius: 3px; /* 圆角半径为3px */
+        text-transform: none; /* 不进行文本大小写转换 */
+        &:hover {
+            background: #333; /* 鼠标悬停时背景颜色为更深的灰色 */
+        }
+    }
+}
+
+/* 文章内部元数据样式 */
+.article-inner .article-meta {
+    line-height: 20px; /* 行高为20px */
+    background: color-meta-head; /* 背景颜色使用自定义颜色变量 */
+    margin: 0px -21px 20px -21px; /* 外边距设置 */
+    padding: 0 20px; /* 左右内边距为20px，上下内边距为0 */
+    line-height: 30px; /* 行高为30px */
+    border: 1px solid #666; /* 边框为1px宽的灰色边框 */
+    border-radius: 4px 4px 0 0; /* 上圆角半径为4px，下圆角半径为0 */
+    color: #fff; /* 文字颜色为白色 */
+    a {
+        color: #fff; /* 链接颜色为白色 */
+    }
+}
+
+/* 文章分类样式 */
+.article-category {
+    .fa-angle-right {
+        margin: 0 5px; /* 字体图标左右外边距为5px */
+    }
+}
+
+/* 文章标签样式 */
+.article-tag {
+    .tag-link {
+        &:before {
+            content: "#"; /* 在标签链接前添加#符号 */
+        }
+    }
+}
+
+/* 文章内容样式 */
+.article-entry {
+    @extend $base-style; /* 继承$base-style的样式 */
+    clearfix(); /* 清除浮动 */
+    color: color-default; /* 文字颜色使用自定义颜色变量 */
+    padding: 0 article-padding; /* 左右内边距使用自定义变量，上下内边距为0 */
+    line-height: line-height; /* 行高使用自定义变量 */
+    p, table {
+        line-height: line-height; /* 段落和表格行高使用自定义变量 */
+        margin: line-height 0; /* 上下外边距使用自定义变量，左右外边距为0 */
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold; /* 标题字体加粗 */
+        line-height: line-height-title; /* 标题行高使用自定义变量 */
+        margin: line-height-title 0; /* 标题上下外边距使用自定义变量，左右外边距为0 */
+        display: table; /* 以表格形式显示 */
+        .headerlink {
+            &::before {
+                content: "#"; /* 在标题链接前添加#符号 */
+                visibility: hidden; /* 初始隐藏 */
+            }
+            float: left; /* 左浮动 */
+            margin-left: -20px; /* 左外边距为-20px */
+            line-height: 1; /* 行高为1 */
+        }
+        &:hover .headerlink {
+            text-decoration: none; /* 鼠标悬停时去除下划线 */
+            &::before {
+                visibility: visible; /* 鼠标悬停时显示#符号 */
+            }
+        }
+    }
+    a {
+        color: color-link; /* 链接颜色使用自定义颜色变量 */
+        text-decoration: none; /* 去除下划线 */
+        &:hover {
+            text-decoration: underline; /* 鼠标悬停时添加下划线 */
+        }
+    }
+    ul, ol, dl {
+        margin-top: line-height; /* 列表顶部外边距使用自定义变量 */
+        margin-bottom: line-height; /* 列表底部外边距使用自定义变量 */
+        li.task-list {
+            margin-left: 0; /* 任务列表项左外边距为0 */
+            list-style: none; /* 去除列表项符号 */
+        }
+    }
+    img, video {
+        max-width: 100%; /* 最大宽度为父元素的100% */
+        height: auto; /* 高度自适应 */
+        display: block; /* 以块级元素显示 */
+        margin: auto; /* 水平居中 */
+    }
+    iframe {
+        border: none; /* 去除边框 */
+    }
+    table {
+        width: 100%; /* 表格宽度为父元素的100% */
+        border-collapse: collapse; /* 合并边框 */
+        border-spacing: 0; /* 边框间距为0 */
+    }
+    th {
+        font-weight: bold; /* 表头字体加粗 */
+        border-bottom: 3px solid color-border; /* 表头底部边框为3px宽，颜色使用自定义变量 */
+        padding-bottom: 0.5em; /* 表头上部内边距为0.5em */
+    }
+    td {
+        border-bottom: 1px solid color-border; /* 表格单元格底部边框为1px宽，颜色使用自定义变量 */
+        padding: 10px 0; /* 表格单元格上下内边距为10px，左右内边距为0 */
+    }
+    blockquote {
+        position: static; /* 定位方式为静态 */
+        font-family: font-serif; /* 引用字体使用自定义字体 */
+        font-size: 1.1em; /* 引用字体大小为1.1em */
+        margin: 0 -20px; /* 引用左右外边距为-20px，上下外边距为0 */
+        padding: 10px 20px 10px 54px; /* 引用内边距设置 */
+        background: #fcfcfc; /* 引用背景颜色为浅灰色 */
+        border-left: 4px solid #eee; /* 引用左边框为4px宽的浅灰色边框 */
+        &:before {
+            top: 20px; /* 定位顶部偏移20px */
+            left: -40px; /* 定位左侧偏移-40px */
+            float: left; /* 左浮动 */
+            content: "\f10d"; /* 引用前添加字体图标 */
+            color: #e2e2e2; /* 字体图标颜色为浅灰色 */
+            font-size: 32px; /* 字体图标大小为32px */
+            font-family: FontAwesome; /* 字体图标字体为FontAwesome */
+            text-align: center; /* 文字居中 */
+            position: relative; /* 定位方式为相对定位 */
+        }
+        footer {
+            font-size: font-size; /* 引用底部字体大小使用自定义变量 */
+            margin: line-height 0; /* 引用底部上下外边距使用自定义变量，左右外边距为0 */
+            font-family: font-sans; /* 引用底部字体使用自定义字体 */
+            cite {
+                &:before {
+                    content: "—"; /* 在引用底部引用者前添加横线 */
+                    padding: 0 0.5em; /* 左右内边距为0.5em */
+                }
+            }
+        }
+    }
+    .pullquote {
+        text-align: left; /* 引用文字左对齐 */
+        width: 45%; /* 引用宽度为父元素的45% */
+        margin: 0; /* 外边距为0 */
+        &.left {
+            margin-left: 0.5em; /* 左对齐引用左外边距为0.5em */
+            margin-right: 1em; /* 左对齐引用右外边距为1em */
+        }
+        &.right {
+            margin-right: 0.5em; /* 右对齐引用右外边距为0.5em */
+            margin-left: 1em; /* 右对齐引用左外边距为1em */
+        }
+    }
+    .caption {
+        color: color-grey; /* 图片说明文字颜色使用自定义颜色变量 */
+        display: block; /* 以块级元素显示 */
+        font-size: 0.9em; /* 图片说明字体大小为0.9em */
+        margin-top: 0.5em; /* 图片说明顶部外边距为0.5em */
+        position: relative; /* 定位方式为相对定位 */
+        text-align: center; /* 文字居中 */
+    }
     // http://webdesignerwall.com/tutorials/css-elastic-videos
-    .video-container
-        position: relative
-        padding-top: (9 / 16 * 100)% // 16:9 ratio
-        height: 0
-        overflow: hidden
-        iframe, object, embed
-            position: absolute
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            margin-top: 0
+    .video-container {
+        position: relative; /* 定位方式为相对定位 */
+        padding-top: (9 / 16 * 100)%; /* 视频容器顶部内边距为56.25%，实现16:9比例 */
+        height: 0; /* 高度为0 */
+        overflow: hidden; /* 超出部分隐藏 */
+        iframe, object, embed {
+            position: absolute; /* 定位方式为绝对定位 */
+            top: 0; /* 定位顶部偏移0 */
+            left: 0; /* 定位左侧偏移0 */
+            width: 100%; /* 宽度为父元素的100% */
+            height: 100%; /* 高度为父元素的100% */
+            margin-top: 0; /* 顶部外边距为0 */
+        }
+    }
+}
 
-div .article-more-link
-    padding: 0 0 20px 20px
+/* 文章更多链接样式 */
+div .article-more-link {
+    padding: 0 0 20px 20px; /* 内边距设置 */
+}
 
-.article-more-link a
-    display: inline-block
-    line-height: 1em
-    padding: 6px 15px
-    border-radius: 15px
-    background: color-background
-    color: color-grey
-    text-shadow: 0 1px #fff
-    text-decoration: none
-    &:hover
-        background: color-link
-        color: #fff
-        text-decoration: none
-        text-shadow: 0 1px darken(color-link, 20%)
+.article-more-link a {
+    display: inline-block; /* 以行内块级元素显示 */
+    line-height: 1em; /* 行高为1em */
+    padding: 6px 15px; /* 内边距为6px（上下）和15px（左右） */
+    border-radius: 15px; /* 圆角半径为15px */
+    background: color-background; /* 背景颜色使用自定义颜色变量 */
+    color: color-grey; /* 文字颜色使用自定义颜色变量 */
+    text-shadow: 0 1px #fff; /* 文字阴影 */
+    text-decoration: none; /* 去除下划线 */
+    &:hover {
+        background: color-link; /* 鼠标悬停时背景颜色使用自定义颜色变量 */
+        color: #fff; /* 鼠标悬停时文字颜色为白色 */
+        text-decoration: none; /* 鼠标悬停时去除下划线 */
+        text-shadow: 0 1px darken(color-link, 20%); /* 鼠标悬停时文字阴影 */
+    }
+}
 
-.article-footer
-    clearfix()
-    font-size: 0.85em
-    line-height: line-height
-    border-top: 1px solid color-border
-    padding-top: line-height
-    margin: 0 article-padding article-padding
-    a
-        color: color-grey
-        text-decoration: none
-        &:hover
-            color: color-default
+/* 文章底部样式 */
+.article-footer {
+    clearfix(); /* 清除浮动 */
+    font-size: 0.85em; /* 字体大小为0.85em */
+    line-height: line-height; /* 行高使用自定义变量 */
+    border-top: 1px solid color-border; /* 顶部边框为1px宽，颜色使用自定义变量 */
+    padding-top: line-height; /* 顶部内边距使用自定义变量 */
+    margin: 0 article-padding article-padding; /* 外边距设置 */
+    a {
+        color: color-grey; /* 链接颜色使用自定义颜色变量 */
+        text-decoration: none; /* 去除下划线 */
+        &:hover {
+            color: color-default; /* 鼠标悬停时链接颜色使用自定义颜色变量 */
+        }
+    }
+}
 
-.article-comment-link
-    float: right
-    &:before
-        content: "\f075"
-        font-family: FontAwesome
-        padding-right: 5px
+/* 文章评论链接样式 */
+.article-comment-link {
+    float: right; /* 右浮动 */
+    &:before {
+        content: "\f075"; /* 在评论链接前添加字体图标 */
+        font-family: FontAwesome; /* 字体图标字体为FontAwesome */
+        padding-right: 5px; /* 字体图标右内边距为5px */
+    }
+}
 
-.share-container
-    float: left
+/* 分享容器样式 */
+.share-container {
+    float: left; /* 左浮动 */
+}
 
-.article-share-link
-    float: right
-    cursor: pointer
-    margin-left: 20px
-    .fa-share
-        margin-right: 5px
+/* 文章分享链接样式 */
+.article-share-link {
+    float: right; /* 右浮动 */
+    cursor: pointer; /* 鼠标指针为手型 */
+    margin-left: 20px; /* 左外边距为20px */
+    .fa-share {
+        margin-right: 5px; /* 字体图标右外边距为5px */
+    }
+}
 
-#article-nav
-    clearfix()
-    position: relative
-    @media mq-normal
-        margin: block-margin 0
-        &:before
-            absolute-center(8px)
-            content: ""
-            border-radius: 50%
-            background: color-default + #222
+/* 文章导航样式 */
+#article-nav {
+    clearfix(); /* 清除浮动 */
+    position: relative; /* 定位方式为相对定位 */
+    @media mq-normal {
+        margin: block-margin 0; /* 在正常屏幕下上下外边距使用自定义变量，左右外边距为0 */
+        &:before {
+            absolute-center(8px); /* 绝对居中定位，大小为8px */
+            content: ""; /* 伪元素内容为空 */
+            border-radius: 50%; /* 圆角半径为50%，形成圆形 */
+            background: color-default + #222; /* 背景颜色为自定义颜色变量加#222 */
+        }
+    }
+}
 
-.article-nav-link-wrap
-    text-decoration: none
-    color: color-grey
-    box-sizing: border-box
-    margin-top: block-margin
-    text-align: center
-    display: block
-    &:hover
-        color: color-default
-    @media mq-normal
-        width: 50%
-        margin-top: 0
+/* 文章导航链接样式 */
+.article-nav-link-wrap {
+    text-decoration: none; /* 去除下划线 */
+    color: color-grey; /* 链接颜色使用自定义颜色变量 */
+    box-sizing: border-box; /* 盒模型计算方式为border-box */
+    margin-top: block-margin; /* 顶部外边距使用自定义变量 */
+    text-align: center; /* 文字居中 */
+    display: block; /* 以块级元素显示 */
+    &:hover {
+        color: color-default; /* 鼠标悬停时链接颜色使用自定义颜色变量 */
+    }
+    @media mq-normal {
+        width: 50%; /* 在正常屏幕下宽度为父元素的50% */
+        margin-top: 0; /* 顶部外边距为0 */
+    }
+}
 
-#article-nav-newer
-    @media mq-normal
-        float: left
-        text-align: right
-        padding-right: 20px
+/* 文章导航 - 较新文章链接样式 */
+#article-nav-newer {
+    @media mq-normal {
+        float: left; /* 在正常屏幕下左浮动 */
+        text-align: right; /* 文字右对齐 */
+        padding-right: 20px; /* 右内边距为20px */
+    }
+}
 
-#article-nav-older
-    @media mq-normal
-        float: right
-        text-align: left
-        padding-left: 20px
+/* 文章导航 - 较旧文章链接样式 */
+#article-nav-older {
+    @media mq-normal {
+        float: right; /* 在正常屏幕下右浮动 */
+        text-align: left; /* 文字左对齐 */
+        padding-left: 20px; /* 左内边距为20px */
+    }
+}
 
-.article-nav-caption
-    letter-spacing: 2px
-    line-height: 1em
-    font-weight: bold
-    color: color-default
-    text-transform: uppercase
-    #article-nav-newer &
-        margin-right: -2px
+/* 文章导航标题说明样式 */
+.article-nav-caption {
+    letter-spacing: 2px; /* 字母间距为2px */
+    line-height: 1em; /* 行高为1em */
+    font-weight: bold; /* 字体加粗 */
+    color: color-default; /* 文字颜色使用自定义颜色变量 */
+    text-transform: uppercase; /* 文本转换为大写 */
+    #article-nav-newer & {
+        margin-right: -2px; /* 在较新文章导航中右外边距为 -2px */
+    }
+}
 
-.article-nav-title
-    font-size: 0.85em
-    margin-top: 0.5em
-    color: color-default
-    line-height: line-height
+/* 文章导航标题样式 */
+.article-nav-title {
+    font-size: 0.85em; /* 字体大小为0.85em */
+    margin-top: 0.5em; /* 顶部外边距为0.5em */
+    color: color-default; /* 文字颜色使用自定义颜色变量 */
+    line-height: line-height; /* 行高使用自定义变量 */
+}
 
-.article-share-box
-    position: absolute
-    display: none
-    background: #fff
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1)
-    border-radius: 3px
-    margin-left: -145px
-    overflow: hidden
-    z-index: 1
-    &.on
-        display: block
+/* 文章分享框样式 */
+.article-share-box {
+    position: absolute; /* 绝对定位 */
+    display: none; /* 默认隐藏 */
+    background: #fff; /* 背景颜色为白色 */
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    border-radius: 3px; /* 圆角半径为3px */
+    margin-left: -145px; /* 左外边距为 -145px */
+    overflow: hidden; /* 超出部分隐藏 */
+    z-index: 1; /* 层级为1 */
+    &.on {
+        display: block; /* 当添加.on类时显示 */
+    }
+}
 
-.article-share-input
-    width: 100%
-    background: none
-    box-sizing: border-box
-    font: 14px font-sans
-    padding: 0 10px
-    color: color-default
-    outline: none
-    border: 1px solid color-border
-    border-radius: 3px 3px 0 0
-    height: 36px
-    line-height: 36px
+/* 文章分享输入框样式 */
+.article-share-input {
+    width: 100%; /* 宽度为父元素的100% */
+    background: none; /* 无背景 */
+    box-sizing: border-box; /* 盒模型计算方式为border-box */
+    font: 14px font-sans; /* 字体大小为14px，使用自定义无衬线字体 */
+    padding: 0 10px; /* 左右内边距为10px，上下内边距为0 */
+    color: color-default; /* 文字颜色使用自定义颜色变量 */
+    outline: none; /* 去除聚焦时的轮廓 */
+    border: 1px solid color-border; /* 边框为1px宽，颜色使用自定义变量 */
+    border-radius: 3px 3px 0 0; /* 上圆角半径为3px，下圆角半径为0 */
+    height: 36px; /* 高度为36px */
+    line-height: 36px; /* 行高为36px */
+}
 
-.article-share-links
-    clearfix()
-    background: color-background
+/* 文章分享链接容器样式 */
+.article-share-links {
+    clearfix(); /* 清除浮动 */
+    background: color-background; /* 背景颜色使用自定义颜色变量 */
+}
 
-$article-share-link
-    width: 50px
-    height: 36px
-    display: block
-    float: left
-    position: relative
-    color: #999
-    text-shadow: 0 1px #fff
-    &:before
-        font-size: 20px
-        absolute-center(@font-size)
-        text-align: center
-    &:hover
-        color: #fff
+/* 文章分享链接基础样式 */
+$article-share-link {
+    width: 50px; /* 宽度为50px */
+    height: 36px; /* 高度为36px */
+    display: block; /* 以块级元素显示 */
+    float: left; /* 左浮动 */
+    position: relative; /* 相对定位 */
+    color: #999; /* 文字颜色为灰色 */
+    text-shadow: 0 1px #fff; /* 文字阴影 */
+    &:before {
+        font-size: 20px; /* 字体图标大小为20px */
+        absolute-center(@font-size); /* 绝对居中定位，大小为字体大小 */
+        text-align: center; /* 文字居中 */
+    }
+    &:hover {
+        color: #fff; /* 鼠标悬停时文字颜色为白色 */
+    }
+}
 
-.article-share-twitter
-    @extend $article-share-link
-    &:hover
-        background: color-twitter
-        text-shadow: 0 1px darken(color-twitter, 20%)
+/* 文章分享到Twitter样式 */
+.article-share-twitter {
+    @extend $article-share-link; /* 继承文章分享链接基础样式 */
+    &:hover {
+        background: color-twitter; /* 鼠标悬停时背景颜色使用自定义Twitter颜色变量 */
+        text-shadow: 0 1px darken(color-twitter, 20%); /* 鼠标悬停时文字阴影 */
+    }
+}
 
-.article-share-facebook
-    @extend $article-share-link
-    &:hover
-        background: color-facebook
-        text-shadow: 0 1px darken(color-facebook, 20%)
+/* 文章分享到Facebook样式 */
+.article-share-facebook {
+    @extend $article-share-link; /* 继承文章分享链接基础样式 */
+    &:hover {
+        background: color-facebook; /* 鼠标悬停时背景颜色使用自定义Facebook颜色变量 */
+        text-shadow: 0 1px darken(color-facebook, 20%); /* 鼠标悬停时文字阴影 */
+    }
+}
 
-.article-share-pinterest
-    @extend $article-share-link
-    &:hover
-        background: color-pinterest
-        text-shadow: 0 1px darken(color-pinterest, 20%)
+/* 文章分享到Pinterest样式 */
+.article-share-pinterest {
+    @extend $article-share-link; /* 继承文章分享链接基础样式 */
+    &:hover {
+        background: color-pinterest; /* 鼠标悬停时背景颜色使用自定义Pinterest颜色变量 */
+        text-shadow: 0 1px darken(color-pinterest, 20%); /* 鼠标悬停时文字阴影 */
+    }
+}
 
-.article-share-google
-    @extend $article-share-link
-    &:hover
-        background: color-google
-        text-shadow: 0 1px darken(color-google, 20%)
+/* 文章分享到Google样式 */
+.article-share-google {
+    @extend $article-share-link; /* 继承文章分享链接基础样式 */
+    &:hover {
+        background: color-google; /* 鼠标悬停时背景颜色使用自定义Google颜色变量 */
+        text-shadow: 0 1px darken(color-google, 20%); /* 鼠标悬停时文字阴影 */
+    }
+}
 
-.article-gallery
-    overflow: hidden
-    background: black
-    position: relative
-    text-align: center
-    margin: line-height 0
-    .gallery-item
-        display: none
-        max-width: 100%
+/* 文章画廊样式 */
+.article-gallery {
+    overflow: hidden; /* 超出部分隐藏 */
+    background: black; /* 背景颜色为黑色 */
+    position: relative; /* 相对定位 */
+    text-align: center; /* 文字居中 */
+    margin: line-height 0; /* 上下外边距使用自定义变量，左右外边距为0 */
+    .gallery-item {
+        display: none; /* 默认隐藏 */
+        max-width: 100%; /* 最大宽度为父元素的100% */
         &:before,
-        &:after
-            top: 50%
-            width: 40px
-            height: 36px
-            font-size: 36px
-            line-height: 36px
-            margin-top: -18px
-            position: absolute
-            font-family: FontAwesome
-            color: rgba(255, 255, 255, .5)
-        &:hover
+        &:after {
+            top: 50%; /* 定位顶部偏移50% */
+            width: 40px; /* 宽度为40px */
+            height: 36px; /* 高度为36px */
+            font-size: 36px; /* 字体图标大小为36px */
+            line-height: 36px; /* 行高为36px */
+            margin-top: -18px; /* 顶部外边距为 -18px */
+            position: absolute; /* 绝对定位 */
+            font-family: FontAwesome; /* 字体图标字体为FontAwesome */
+            color: rgba(255, 255, 255, .5); /* 文字颜色为半透明白色 */
+        }
+        &:hover {
             &:before,
-            &:after
-                color: rgba(255, 255, 255, .8)
-        &:before
-            left: 0
-            content: "\f104"
-        &:after
-            right: 0
-            content: "\f105"
-        &:first-child
-            display: block
-        img
-            display: block
-            max-width: 100%
-            margin: 0 auto
+            &:after {
+                color: rgba(255, 255, 255, .8); /* 鼠标悬停时文字颜色为更透明的白色 */
+            }
+        }
+        &:before {
+            left: 0; /* 定位左侧偏移0 */
+            content: "\f104"; /* 左侧添加左箭头字体图标 */
+        }
+        &:after {
+            right: 0; /* 定位右侧偏移0 */
+            content: "\f105"; /* 右侧添加右箭头字体图标 */
+        }
+        &:first-child {
+            display: block; /* 第一个子元素显示 */
+        }
+        img {
+            display: block; /* 以块级元素显示 */
+            max-width: 100%; /* 最大宽度为父元素的100% */
+            margin: 0 auto; /* 水平居中 */
+        }
+    }
+}
 
-/* topic section */
-.toc-article
-    background #F9F9F9
-    margin 2em 0 0 0.2em
-    padding 1em
-    border: 1px solid #000
-    border-radius 0px
-    .toc-title
-        font-size 120%
-    strong
-        padding 0.3em 1
+/* 主题部分 - 文章目录样式 */
+.toc-article {
+    background: #F9F9F9; /* 背景颜色为浅灰色 */
+    margin: 2em 0 0 0.2em; /* 外边距设置 */
+    padding: 1em; /* 内边距为1em */
+    border: 1px solid #000; /* 边框为1px宽的黑色边框 */
+    border-radius: 0px; /* 圆角半径为0px */
+    .toc-title {
+        font-size: 120%; /* 目录标题字体大小为父元素的120% */
+    }
+    strong {
+        padding: 0.3em 1; /* 加粗文本内边距设置 */
+    }
+}
 
-ol.toc
-    width 100%
-    margin 1em 2em 0 0
+/* 目录有序列表样式 */
+ol.toc {
+    width: 100%; /* 宽度为父元素的100% */
+    margin: 1em 2em 0 0; /* 外边距设置 */
+}
 
-#toc
-    line-height 1em
-    font-size 0.8em
-    float right
-    .toc
-        padding 0
-        li
-            list-style-type none
-    .toc-child
-        padding-left 0em
+/* 目录ID样式 */
+#toc {
+    line-height: 1em; /* 行高为1em */
+    font-size: 0.8em; /* 字体大小为0.8em */
+    float: right; /* 右浮动 */
+    .toc {
+        padding: 0; /* 内边距为0 */
+        li {
+            list-style-type: none; /* 去除列表项符号 */
+        }
+    }
+    .toc-child {
+        padding-left: 0em; /* 子目录左内边距为0em */
+    }
+}
 
-#toc.toc-aside
-    display none
-    width 13%
-    position fixed
-    right 2%
-    top 320px
-    overflow hidden
-    line-height 1.5em
-    font-size 1em
-    color color-heading
-    opacity .6
-    transition opacity 1s ease-out
-    strong
-        padding 0.3em 0
-        color color-font
-    &:hover
-        transition opacity .3s ease-out
-        opacity 1
-    a
-        transition color 1s ease-out
-        &:hover
-            color color-theme
-            transition color .3s ease-out
+/* 侧边栏目录样式 */
+#toc.toc-aside {
+    display: none; /* 默认隐藏 */
+    width: 13%; /* 宽度为父元素的13% */
+    position: fixed; /* 固定定位 */
+    right: 2%; /* 右侧偏移2% */
+    top: 320px; /* 顶部偏移320px */
+    overflow: hidden; /* 超出部分隐藏 */
+    line-height: 1.5em; /* 行高为1.5em */
+    font-size: 1em; /* 字体大小为1em */
+    color: color-heading; /* 文字颜色使用自定义标题颜色变量 */
+    opacity: .6; /* 透明度为0.6 */
+    transition: opacity 1s ease-out; /* 透明度过渡效果，时长1秒，缓出 */
+    strong {
+        padding: 0.3em 0; /* 加粗文本内边距设置 */
+        color: color-font; /* 加粗文本颜色使用自定义字体颜色变量 */
+    }
+    &:hover {
+        transition: opacity .3s ease-out; /* 鼠标悬停时透明度过渡效果，时长0.3秒，缓出 */
+        opacity: 1; /* 鼠标悬停时透明度为1 */
+    }
+    a {
+        transition: color 1s ease-out; /* 链接颜色过渡效果，时长1秒，缓出 */
+        &:hover {
+            color: color-theme; /* 鼠标悬停时链接颜色使用自定义主题颜色变量 */
+            transition: color .3s ease-out; /* 鼠标悬停时链接颜色过渡效果，时长0.3秒，缓出 */
+        }
+    }
+}
 
-/* lightgallery */
-.lg-outer
-    .lg-thumb-item
-        border-radius: 0 !important
+/* lightgallery插件样式 - 缩略图项样式 */
+.lg-outer .lg-thumb-item {
+    border-radius: 0 !important; /* 缩略图项圆角半径为0，强制覆盖其他样式 */
+}
+
+
+// article
+//     padding: 3px
+//     border-radius: 4px
+//     background-color: color-border-stretch
+// .article
+//     margin: block-margin 0
+
+// .article-inner
+//     @extend $block
+//     overflow: hidden
+//     background: transparent
+//     // background: white
+//     border-radius: 4px
+//     border: 1px solid #BBB
+
+// .article-banner
+//     width:100%
+//     height:auto
+
+// .article-header
+//     padding: 0 article-padding 0
+//     .article-title
+//         display: block
+//         margin-bottom: 14px
+
+// .article-title
+//     font-size: 2em
+//     color: color-default
+//     text-decoration: none
+//     line-height: line-height-title
+//     a&:visited
+//         color: color-default
+//     a&:hover
+//         color: color-link
+//     @media mq-mini
+//         font-size: 1.6em
+//     @media mq-mobile
+//         font-size: 1.6em
+
+// .article-meta
+//     @extend $block-caption
+//     text-transform: none
+//     clearfix()
+//     line-height: 1.6em
+//     & > div
+//         float: left
+//         margin-right: 10px
+//         .fa
+//             margin-right: 3px
+//     a
+//         color: color-default
+//         &:hover
+//             color: color-link
+// div.article-meta-button
+//     float: right
+//     margin-right: 0
+//     margin-left: 10px
+//     a
+//         padding: 4px 8px
+//         margin: 2px 0
+//         font-size: 85%
+//         background: #555
+//         border-radius: 3px
+//         text-transform: none
+//         &:hover
+//             background: #333
+            
+// .article-inner .article-meta
+//         line-height: 20px
+//         background: color-meta-head
+//         margin: 0px -21px 20px -21px
+//         padding: 0 20px;
+//         line-height: 30px
+//         border: 1px solid #666
+//         border-radius: 4px 4px 0 0
+//         color: #fff
+//         a
+//             color: #fff 
+            
+// .article-category
+//     .fa-angle-right
+//         margin: 0 5px
+
+// .article-tag
+//     .tag-link
+//         &:before
+//             content: "#"
+
+// .article-entry
+//     @extend $base-style
+//     clearfix()
+//     color: color-default
+//     padding: 0 article-padding
+//     line-height: line-height
+//     p, table
+//         line-height: line-height
+//         margin: line-height 0
+//     h1, h2, h3, h4, h5, h6
+//         font-weight: bold
+//         line-height: line-height-title
+//         margin: line-height-title 0
+//         display: table
+//         .headerlink
+//             &::before
+//                 content: "#"
+//                 visibility: hidden
+//             float: left
+//             margin-left: -20px
+//             line-height: 1
+//         &:hover .headerlink
+//             text-decoration: none
+//             &::before
+//                 visibility: visible
+//     a
+//         color: color-link
+//         text-decoration: none
+//         &:hover
+//             text-decoration: underline
+//     ul, ol, dl
+//         margin-top: line-height
+//         margin-bottom: line-height
+//         li.task-list
+//             margin-left: 0
+//             list-style: none
+//     img, video
+//         max-width: 100%
+//         height: auto
+//         display: block
+//         margin: auto
+//     iframe
+//         border: none
+//     table
+//         width: 100%
+//         border-collapse: collapse
+//         border-spacing: 0
+//     th
+//         font-weight: bold
+//         border-bottom: 3px solid color-border
+//         padding-bottom: 0.5em
+//     td
+//         border-bottom: 1px solid color-border
+//         padding: 10px 0
+//     blockquote
+//         position: static
+//         font-family: font-serif
+//         font-size: 1.1em
+//         margin: 0 -20px
+//         padding: 10px 20px 10px 54px
+//         background: #fcfcfc
+//         border-left: 4px solid #eee
+//         &:before
+//             top: 20px
+//             left: -40px
+//             float: left
+//             content: "\f10d"
+//             color: #e2e2e2
+//             font-size: 32px
+//             font-family: FontAwesome
+//             text-align: center
+//             position: relative
+//         footer
+//             font-size: font-size
+//             margin: line-height 0
+//             font-family: font-sans
+//             cite
+//                 &:before
+//                     content: "—"
+//                     padding: 0 0.5em
+//     .pullquote
+//         text-align: left
+//         width: 45%
+//         margin: 0
+//         &.left
+//             margin-left: 0.5em
+//             margin-right: 1em
+//         &.right
+//             margin-right: 0.5em
+//             margin-left: 1em
+//     .caption
+//         color: color-grey
+//         display: block
+//         font-size: 0.9em
+//         margin-top: 0.5em
+//         position: relative
+//         text-align: center
+//     // http://webdesignerwall.com/tutorials/css-elastic-videos
+//     .video-container
+//         position: relative
+//         padding-top: (9 / 16 * 100)% // 16:9 ratio
+//         height: 0
+//         overflow: hidden
+//         iframe, object, embed
+//             position: absolute
+//             top: 0
+//             left: 0
+//             width: 100%
+//             height: 100%
+//             margin-top: 0
+
+// div .article-more-link
+//     padding: 0 0 20px 20px
+
+// .article-more-link a
+//     display: inline-block
+//     line-height: 1em
+//     padding: 6px 15px
+//     border-radius: 15px
+//     background: color-background
+//     color: color-grey
+//     text-shadow: 0 1px #fff
+//     text-decoration: none
+//     &:hover
+//         background: color-link
+//         color: #fff
+//         text-decoration: none
+//         text-shadow: 0 1px darken(color-link, 20%)
+
+// .article-footer
+//     clearfix()
+//     font-size: 0.85em
+//     line-height: line-height
+//     border-top: 1px solid color-border
+//     padding-top: line-height
+//     margin: 0 article-padding article-padding
+//     a
+//         color: color-grey
+//         text-decoration: none
+//         &:hover
+//             color: color-default
+
+// .article-comment-link
+//     float: right
+//     &:before
+//         content: "\f075"
+//         font-family: FontAwesome
+//         padding-right: 5px
+
+// .share-container
+//     float: left
+
+// .article-share-link
+//     float: right
+//     cursor: pointer
+//     margin-left: 20px
+//     .fa-share
+//         margin-right: 5px
+
+// #article-nav
+//     clearfix()
+//     position: relative
+//     @media mq-normal
+//         margin: block-margin 0
+//         &:before
+//             absolute-center(8px)
+//             content: ""
+//             border-radius: 50%
+//             background: color-default + #222
+
+// .article-nav-link-wrap
+//     text-decoration: none
+//     color: color-grey
+//     box-sizing: border-box
+//     margin-top: block-margin
+//     text-align: center
+//     display: block
+//     &:hover
+//         color: color-default
+//     @media mq-normal
+//         width: 50%
+//         margin-top: 0
+
+// #article-nav-newer
+//     @media mq-normal
+//         float: left
+//         text-align: right
+//         padding-right: 20px
+
+// #article-nav-older
+//     @media mq-normal
+//         float: right
+//         text-align: left
+//         padding-left: 20px
+
+// .article-nav-caption
+//     letter-spacing: 2px
+//     line-height: 1em
+//     font-weight: bold
+//     color: color-default
+//     text-transform: uppercase
+//     #article-nav-newer &
+//         margin-right: -2px
+
+// .article-nav-title
+//     font-size: 0.85em
+//     margin-top: 0.5em
+//     color: color-default
+//     line-height: line-height
+
+// .article-share-box
+//     position: absolute
+//     display: none
+//     background: #fff
+//     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1)
+//     border-radius: 3px
+//     margin-left: -145px
+//     overflow: hidden
+//     z-index: 1
+//     &.on
+//         display: block
+
+// .article-share-input
+//     width: 100%
+//     background: none
+//     box-sizing: border-box
+//     font: 14px font-sans
+//     padding: 0 10px
+//     color: color-default
+//     outline: none
+//     border: 1px solid color-border
+//     border-radius: 3px 3px 0 0
+//     height: 36px
+//     line-height: 36px
+
+// .article-share-links
+//     clearfix()
+//     background: color-background
+
+// $article-share-link
+//     width: 50px
+//     height: 36px
+//     display: block
+//     float: left
+//     position: relative
+//     color: #999
+//     text-shadow: 0 1px #fff
+//     &:before
+//         font-size: 20px
+//         absolute-center(@font-size)
+//         text-align: center
+//     &:hover
+//         color: #fff
+
+// .article-share-twitter
+//     @extend $article-share-link
+//     &:hover
+//         background: color-twitter
+//         text-shadow: 0 1px darken(color-twitter, 20%)
+
+// .article-share-facebook
+//     @extend $article-share-link
+//     &:hover
+//         background: color-facebook
+//         text-shadow: 0 1px darken(color-facebook, 20%)
+
+// .article-share-pinterest
+//     @extend $article-share-link
+//     &:hover
+//         background: color-pinterest
+//         text-shadow: 0 1px darken(color-pinterest, 20%)
+
+// .article-share-google
+//     @extend $article-share-link
+//     &:hover
+//         background: color-google
+//         text-shadow: 0 1px darken(color-google, 20%)
+
+// .article-gallery
+//     overflow: hidden
+//     background: black
+//     position: relative
+//     text-align: center
+//     margin: line-height 0
+//     .gallery-item
+//         display: none
+//         max-width: 100%
+//         &:before,
+//         &:after
+//             top: 50%
+//             width: 40px
+//             height: 36px
+//             font-size: 36px
+//             line-height: 36px
+//             margin-top: -18px
+//             position: absolute
+//             font-family: FontAwesome
+//             color: rgba(255, 255, 255, .5)
+//         &:hover
+//             &:before,
+//             &:after
+//                 color: rgba(255, 255, 255, .8)
+//         &:before
+//             left: 0
+//             content: "\f104"
+//         &:after
+//             right: 0
+//             content: "\f105"
+//         &:first-child
+//             display: block
+//         img
+//             display: block
+//             max-width: 100%
+//             margin: 0 auto
+
+// /* topic section */
+// .toc-article
+//     background #F9F9F9
+//     margin 2em 0 0 0.2em
+//     padding 1em
+//     border: 1px solid #000
+//     border-radius 0px
+//     .toc-title
+//         font-size 120%
+//     strong
+//         padding 0.3em 1
+
+// ol.toc
+//     width 100%
+//     margin 1em 2em 0 0
+
+// #toc
+//     line-height 1em
+//     font-size 0.8em
+//     float right
+//     .toc
+//         padding 0
+//         li
+//             list-style-type none
+//     .toc-child
+//         padding-left 0em
+
+// #toc.toc-aside
+//     display none
+//     width 13%
+//     position fixed
+//     right 2%
+//     top 320px
+//     overflow hidden
+//     line-height 1.5em
+//     font-size 1em
+//     color color-heading
+//     opacity .6
+//     transition opacity 1s ease-out
+//     strong
+//         padding 0.3em 0
+//         color color-font
+//     &:hover
+//         transition opacity .3s ease-out
+//         opacity 1
+//     a
+//         transition color 1s ease-out
+//         &:hover
+//             color color-theme
+//             transition color .3s ease-out
+
+// /* lightgallery */
+// .lg-outer
+//     .lg-thumb-item
+//         border-radius: 0 !important
+
