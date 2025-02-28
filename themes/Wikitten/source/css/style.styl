@@ -1,227 +1,227 @@
-// @import "nib"
-// @import "_variables"
-// @import "_util/mixin"
-// @import "_util/grid"
+@import "nib"
+@import "_variables"
+@import "_util/mixin"
+@import "_util/grid"
 
-// global-reset()
+global-reset()
 
-// input, button
-//     margin: 0
-//     padding: 0
-//     &::-moz-focus-inner
-//         border: 0
-//         padding: 0
+input, button
+    margin: 0
+    padding: 0
+    &::-moz-focus-inner
+        border: 0
+        padding: 0
 
-// html, body, #container
-//     height: 100%
+html, body, #container
+    height: 100%
 
-// body
-//     color: color-default
-//     // background: color-background
-//     background: url('/MyImg/test.jpg')
-//     background-size: cover
-//     background-attachment: fixed
-//     font: font-size font-sans
-//     -webkit-text-size-adjust: 100%
+body
+    color: color-default
+    // background: color-background
+    background: url('/MyImg/1733075511460.png')
+    background-size: cover
+    background-attachment: fixed
+    font: font-size font-sans
+    -webkit-text-size-adjust: 100%
 
-// a
-//     color: color-link
-//     text-decoration: none
-//     &:visited
-//         color: color-link
+a
+    color: color-link
+    text-decoration: none
+    &:visited
+        color: color-link
 
-// code
-//     margin: 0 2px
-//     color: #e96900
-//     padding: 3px 5px
-//     font-size: 0.8em
-//     border-radius: 2px
-//     font-family: font-mono
-//     background-color: #f8f8f8
+code
+    margin: 0 2px
+    color: #e96900
+    padding: 3px 5px
+    font-size: 0.8em
+    border-radius: 2px
+    font-family: font-mono
+    background-color: #f8f8f8
 
-// .outer
-//     clearfix()
-//     max-width: (column-width + gutter-width) * columns * 2
-//     margin: 0 auto
-//     padding: 0 gutter-width
-//     @media mq-mini
-//         padding: 0
+.outer
+    clearfix()
+    max-width: (column-width + gutter-width) * columns * 2
+    margin: 0 auto
+    padding: 0 gutter-width
+    @media mq-mini
+        padding: 0
 
-// .left, .alignleft
-//     float: left
+.left, .alignleft
+    float: left
 
-// .right, .alignright
-//     float: right
+.right, .alignright
+    float: right
 
-// .clear
-//     clear: both
+.clear
+    clear: both
 
-// .logo
-//     width: logo-width
-//     height: logo-height
-//     background-repeat: no-repeat
-//     background-image: url(logo-url)
-//     background-size: logo-width logo-height
+.logo
+    width: logo-width
+    height: logo-height
+    background-repeat: no-repeat
+    background-image: url(logo-url)
+    background-size: logo-width logo-height
 
-// #container
-//     position: relative
-//     & > .outer
-//         margin-bottom: 30px
+#container
+    position: relative
+    & > .outer
+        margin-bottom: 30px
 
-// #main
-//     @media mq-normal
-//         column(main-column)
-//     @media mq-tablet
-//         if sidebar
-//             column(main-column-tablet)
-//         else
-//             width: 100%
-//     @media mq-mobile
-//         width: 100%
-//     @media mq-mini
-//         width: 100%
+#main
+    @media mq-normal
+        column(main-column)
+    @media mq-tablet
+        if sidebar
+            column(main-column-tablet)
+        else
+            width: 100%
+    @media mq-mobile
+        width: 100%
+    @media mq-mini
+        width: 100%
 
-// @import "_extend"
-// @import "_partial/header"
-// @import "_partial/profile"
-// @import "_partial/article"
-// @import "_partial/comment"
-// @import "_partial/archive"
-// @import "_partial/timeline"
-// @import "_partial/footer"
-// @import "_partial/sidebar"
-// @import "_partial/insight"
-// @import "_highlight/index"
+@import "_extend"
+@import "_partial/header"
+@import "_partial/profile"
+@import "_partial/article"
+@import "_partial/comment"
+@import "_partial/archive"
+@import "_partial/timeline"
+@import "_partial/footer"
+@import "_partial/sidebar"
+@import "_partial/insight"
+@import "_highlight/index"
 
-// if sidebar is left
-//     #profile
-//         float: right
+if sidebar is left
+    #profile
+        float: right
 
 
 /******************************
 *           核心配置
 *******************************/
-@import "nib"               // Stylus 混合库（提供 CSS3 前缀兼容）
-@import "_variables"        // 主题变量（颜色、字体、尺寸等）
-@import "_util/mixin"       // 自定义混合函数（clearfix 等）
-@import "_util/grid"        // 栅格系统（column 布局函数）
-global-reset()              // 初始化默认样式（类似 normalize.css）
+// @import "nib"               // Stylus 混合库（提供 CSS3 前缀兼容）
+// @import "_variables"        // 主题变量（颜色、字体、尺寸等）
+// @import "_util/mixin"       // 自定义混合函数（clearfix 等）
+// @import "_util/grid"        // 栅格系统（column 布局函数）
+// global-reset()              // 初始化默认样式（类似 normalize.css）
 
-/******************************
-*        表单元素重置
-*******************************/
-input, button
-    margin: 0
-    padding: 0
-    &::-moz-focus-inner      // 移除 Firefox 按钮内边距
-        border: 0
-        padding: 0
+// /******************************
+// *        表单元素重置
+// *******************************/
+// input, button
+//     margin: 0
+//     padding: 0
+//     &::-moz-focus-inner      // 移除 Firefox 按钮内边距
+//         border: 0
+//         padding: 0
 
-/******************************
-*        基础布局设置
-*******************************/
-html, body, #container
-    height: 100%             // 确保全屏高度布局
+// /******************************
+// *        基础布局设置
+// *******************************/
+// html, body, #container
+//     height: 100%             // 确保全屏高度布局
 
-body
-    color: color-default     // 使用 _variables 中定义的颜色
-    background: url('/MyImg/1733075511460.png')  // 你设置的背景图 ✅
-    background-size: cover   // 背景图覆盖整个屏幕
-    background-attachment: fixed  // 固定背景（滚动时不动）
-    font: font-size font-sans   // 字体设置（变量来自 _variables）
-    -webkit-text-size-adjust: 100%  // 禁用 iOS 横屏字体放大
+// body
+//     color: color-default     // 使用 _variables 中定义的颜色
+//     background: url('/MyImg/1733075511460.png')  // 你设置的背景图 ✅
+//     background-size: cover   // 背景图覆盖整个屏幕
+//     background-attachment: fixed  // 固定背景（滚动时不动）
+//     font: font-size font-sans   // 字体设置（变量来自 _variables）
+//     -webkit-text-size-adjust: 100%  // 禁用 iOS 横屏字体放大
 
-a
-    color: color-link        // 链接颜色
-    text-decoration: none
-    &:visited                // 已访问链接颜色
-        color: color-link
+// a
+//     color: color-link        // 链接颜色
+//     text-decoration: none
+//     &:visited                // 已访问链接颜色
+//         color: color-link
 
-/******************************
-*        代码块样式
-*******************************/
-code
-    margin: 0 2px
-    color: #e96900          // 橙色代码字体
-    padding: 3px 5px
-    font-size: 0.8em
-    border-radius: 2px
-    font-family: font-mono   // 等宽字体（来自变量）
-    background-color: #f8f8f8  // 浅灰背景
+// /******************************
+// *        代码块样式
+// *******************************/
+// code
+//     margin: 0 2px
+//     color: #e96900          // 橙色代码字体
+//     padding: 3px 5px
+//     font-size: 0.8em
+//     border-radius: 2px
+//     font-family: font-mono   // 等宽字体（来自变量）
+//     background-color: #f8f8f8  // 浅灰背景
 
-/******************************
-*        布局工具类
-*******************************/
-.outer
-    clearfix()              // 清除浮动（来自 _util/mixin）
-    max-width: (column-width + gutter-width) * columns * 2  // 最大宽度计算
-    margin: 0 auto          // 居中
-    // background: rgba(255, 255, 255, 0.7) !important // hhhhhhhh
-    padding: 0 gutter-width // 左右内边距（变量来自栅格系统）
-    @media mq-mini          // 极小屏幕适配
-        padding: 0
+// /******************************
+// *        布局工具类
+// *******************************/
+// .outer
+//     clearfix()              // 清除浮动（来自 _util/mixin）
+//     max-width: (column-width + gutter-width) * columns * 2  // 最大宽度计算
+//     margin: 0 auto          // 居中
+//     // background: rgba(255, 255, 255, 0.7) !important // hhhhhhhh
+//     padding: 0 gutter-width // 左右内边距（变量来自栅格系统）
+//     @media mq-mini          // 极小屏幕适配
+//         padding: 0
 
-.left, .alignleft           // 左浮动工具类
-    float: left
+// .left, .alignleft           // 左浮动工具类
+//     float: left
 
-.right, .alignright         // 右浮动工具类
-    float: right
+// .right, .alignright         // 右浮动工具类
+//     float: right
 
-.clear                      // 清除浮动工具类
-    clear: both
+// .clear                      // 清除浮动工具类
+//     clear: both
 
-/******************************
-*        LOGO 设置
-*******************************/
-.logo
-    width: logo-width       // 尺寸来自 _variables
-    height: logo-height
-    background-repeat: no-repeat
-    background-image: url(logo-url)  // LOGO 图片路径
-    background-size: logo-width logo-height
+// /******************************
+// *        LOGO 设置
+// *******************************/
+// .logo
+//     width: logo-width       // 尺寸来自 _variables
+//     height: logo-height
+//     background-repeat: no-repeat
+//     background-image: url(logo-url)  // LOGO 图片路径
+//     background-size: logo-width logo-height
 
-/******************************
-*        容器与主内容区
-*******************************/
-#container
-    position: relative      // 相对定位（子元素绝对定位参考点）
-    & > .outer
-        margin-bottom: 30px // 底部留白
+// /******************************
+// *        容器与主内容区
+// *******************************/
+// #container
+//     position: relative      // 相对定位（子元素绝对定位参考点）
+//     & > .outer
+//         margin-bottom: 30px // 底部留白
 
-#main                       // 主内容区响应式布局
-    @media mq-normal        // 正常屏幕
-        column(main-column) // 使用栅格系统的 column 函数（参数来自变量）
-    @media mq-tablet        // 平板适配
-        if sidebar          // 根据侧边栏开关状态判断
-            column(main-column-tablet)
-        else
-            width: 100%
-    @media mq-mobile        // 手机适配
-        width: 100%
-    @media mq-mini          // 极小屏幕
-        width: 100%
+// #main                       // 主内容区响应式布局
+//     @media mq-normal        // 正常屏幕
+//         column(main-column) // 使用栅格系统的 column 函数（参数来自变量）
+//     @media mq-tablet        // 平板适配
+//         if sidebar          // 根据侧边栏开关状态判断
+//             column(main-column-tablet)
+//         else
+//             width: 100%
+//     @media mq-mobile        // 手机适配
+//         width: 100%
+//     @media mq-mini          // 极小屏幕
+//         width: 100%
 
-/******************************
-*        组件导入
-*******************************/
-@import "_extend"           // 扩展样式
-@import "_partial/header"   // 头部组件
-@import "_partial/profile"  // 个人资料组件
-@import "_partial/article"  // 文章样式
-@import "_partial/comment"  // 评论组件
-@import "_partial/archive"  // 归档页样式
-@import "_partial/timeline" // 时间线样式
-@import "_partial/footer"   // 页脚组件
-@import "_partial/sidebar"  // 侧边栏组件
-@import "_partial/insight"  // 数据统计组件
-@import "_highlight/index"  // 代码高亮主题
+// /******************************
+// *        组件导入
+// *******************************/
+// @import "_extend"           // 扩展样式
+// @import "_partial/header"   // 头部组件
+// @import "_partial/profile"  // 个人资料组件
+// @import "_partial/article"  // 文章样式
+// @import "_partial/comment"  // 评论组件
+// @import "_partial/archive"  // 归档页样式
+// @import "_partial/timeline" // 时间线样式
+// @import "_partial/footer"   // 页脚组件
+// @import "_partial/sidebar"  // 侧边栏组件
+// @import "_partial/insight"  // 数据统计组件
+// @import "_highlight/index"  // 代码高亮主题
 
 
-/******************************
-*        侧边栏位置适配
-*******************************/
-if sidebar is left          // 如果侧边栏在左侧
-    #profile                // 调整个人资料模块位置
-        float: right
+// /******************************
+// *        侧边栏位置适配
+// *******************************/
+// if sidebar is left          // 如果侧边栏在左侧
+//     #profile                // 调整个人资料模块位置
+//         float: right
 
 

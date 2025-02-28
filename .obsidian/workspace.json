@@ -13,15 +13,58 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/你好呀.md",
+                "file": "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/10.inspector 窗口可编辑变量.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "你好呀"
+              "title": "10.inspector 窗口可编辑变量"
+            }
+          },
+          {
+            "id": "b8741c34c779b6e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/10.inspector 窗口可编辑变量.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10.inspector 窗口可编辑变量"
+            }
+          },
+          {
+            "id": "0e602b7960ed3c27",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/10.inspector 窗口可编辑变量.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10.inspector 窗口可编辑变量"
+            }
+          },
+          {
+            "id": "1e8b8dfa0ac4d4f3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/编程语言/Csharp/csharp委托.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "csharp委托"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -170,24 +213,39 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "3d22961c2f487be6",
+  "active": "1e8b8dfa0ac4d4f3",
   "lastOpenFiles": [
-    "public/archives/2025/page/8/index.html",
-    "public/2025/02/27/index/index.html",
-    "public/2025/02/27/index",
-    "source/_posts/hexo/2.hexo源码上传到GitHub.md",
+    "source/_posts/编程语言/Csharp/csharp特性.md",
+    "source/_posts/编程语言/Csharp/csharp反射.md",
+    "source/_posts/编程语言/Csharp/csharp的Lambda表达式.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/10.inspector 窗口可编辑变量.md",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/3.Unity随机数和UnityAction委托/index.html",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/2.Cursor鼠标的隐藏锁定图片/index.html",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/index.html",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/file-20250227213144486.png",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/3.Unity随机数和UnityAction委托",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/2.Cursor鼠标的隐藏锁定图片",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目",
+    "public/2025/02/27/游戏引擎/unity/unity入门",
+    "public/2025/02/27/游戏引擎/unity",
+    "public/2025/02/27/游戏引擎",
+    "source/_posts/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/1.反射知识补充.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/file-20250227213144486.png",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门实践项目/2.Cursor鼠标的隐藏锁定图片.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门实践项目/3.Unity随机数和UnityAction委托.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出.md",
+    "public/2000/01/01/你好呀/Csharp/csharp反射/file-20250221205846017.png",
+    "public/2000/01/01/你好呀/Csharp/csharp反射/file-20250221210648838.png",
+    "public/2000/01/01/你好呀/Csharp/csharp反射/file-20250221205838748.png",
+    "public/2000/01/01/你好呀/Csharp/csharp反射/file-20250221205837141.png",
+    "source/_posts/编程语言/Csharp/csharp委托.md",
     "source/_posts/你好呀.md",
+    "source/_posts/hello-world.md",
+    "source/_posts/hexo/2.hexo源码上传到GitHub.md",
     "source/_posts/数据/网站标题页.md",
     "source/_posts/hexo/1.使用obsidian来写hexo博客.md",
     "source/_posts/UI系统/GUI/GUI实践项目/12.自定义控件拼面板.md",
-    "public/categories/UI系统/GUI/GUI实践项目/page/2/index.html",
-    "public/categories/UI系统/GUI/GUI实践项目/page/2",
-    "public/categories/UI系统/GUI/GUI实践项目/page",
-    "public/page/8/index.html",
-    "public/archives/2025/02/page/8/index.html",
-    "public/tags/GUI/page/3/index.html",
-    "public/tags/GUI/page/3",
-    "public/tags/UI系统/page/3/index.html",
     "public/2025/02/27/UI系统/GUI/GUI实践项目/12.自定义控件拼面板/file-20250227171203497.png",
     "source/_posts/UI系统/GUI/GUI实践项目/11.自定义图片绘制.md",
     "source/_posts/UI系统/GUI/GUI实践项目/9.自定义单选框.md",
@@ -202,21 +260,6 @@
     "source/_posts/UI系统/GUI/GUI实践项目/3.九宫格概念.md",
     "public/MyImg/《原神》神里绫华4k电脑桌面壁纸.jpg",
     "public/MyImg/1733075511460.png",
-    "source/MyImg/1733075511460.png",
-    "source/MyImg/《原神》神里绫华4k电脑桌面壁纸.jpg",
-    "source/MyImg/《原神》神里绫华4k电脑桌面壁纸_花猫壁纸(huamaobizhi.com)_1a75ce61.jpg",
-    "public/MyImg/test.jpg",
-    "source/MyImg/test.jpg",
-    "public/test.jpg",
-    "source/_posts/myTest.md",
-    "source/_posts/UI系统/GUI/GUI实践项目/1.编辑模式下让指定代码运行.md",
-    "source/_posts/编程语言/Csharp/反射.md",
-    "source/_posts/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/5.反射存储List数据类型.md",
-    "source/_posts/UI系统/GUI/GUI基础知识/12.GUI总结.md",
-    "source/_posts/UI系统/GUI/GUI基础知识/11.GUILayout自动布局.md",
-    "source/_posts/UI系统/GUI/GUI基础知识/10.自定义皮肤样式.md",
-    "source/_posts/UI系统/GUI/GUI基础知识/9.窗口.md",
-    "source/_posts/UI系统/GUI/GUI基础知识/5.输入框和拖动条.md",
-    "source/_posts/UI系统/GUI/GUI基础知识/4.多选框和单选框.md"
+    "source/_posts/myTest.md"
   ]
 }

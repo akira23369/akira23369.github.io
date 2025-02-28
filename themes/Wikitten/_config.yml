@@ -1,0 +1,123 @@
+# ========== 菜单配置 ==========
+# 定义导航栏菜单项，格式为 `显示名称: 路径`
+menu:
+  首页: /              # 首页链接，指向根目录
+  归档: /archives      # 归档页面，展示所有文章列表
+  分类: /categories    # 分类页面，按分类展示文章
+  标签: /tags          # 标签页面，按标签展示文章
+  关于: /about         # 关于页面，自定义内容（需手动创建）
+
+
+# ========== 个性化设置 ==========
+customize:
+  # Logo 配置
+  logo:
+    enabled: true      # 是否启用 Logo
+    width: 40          # Logo 宽度（像素）
+    height: 40         # Logo 高度（像素）
+    url: /logo.png     # Logo 图片路径（存放在 `source` 目录下）
+
+  # 个人资料栏配置
+  profile:
+    enabled: false     # 是否显示个人资料栏
+    avatar:            # 本地头像路径（如 `images/avatar.png`）
+    gravatar: zth_9451@qq.com  # Gravatar 邮箱，优先级高于本地头像
+    author: zthxxx            # 作者名称
+    author_title: Designer & Programmer  # 作者头衔
+    location: Chengdu, China  # 地理位置
+    follow: https://github.com/zthxxx/  # 关注链接（如 GitHub）
+
+  # 其他配置
+  highlight: agate          # 代码高亮主题（如 monokai、github） 目录：blog\themes\Wikitten\source\css\_highlight
+  sidebar: left               # 侧边栏位置（left/right）
+  category_perExpand: false   # 是否默认展开分类目录
+  thumbnail: true             # 是否显示文章缩略图
+  favicon: /favicon.ico       # 网站图标路径
+  # default_index_file: index.md # 首页默认显示的文件（替代主题默认首页）
+  # default_index_file: 数据/网站标题页.md # 首页默认显示的文件（替代主题默认首页）
+  default_index_file: 你好呀.md # 首页默认显示的文件（替代主题默认首页）
+
+  # 社交链接配置
+  social_links:
+    # github: https://github.com/zthxxx/zthxxx.github.io  # GitHub 主页
+    github: https://github.com/akira23369
+    # stack-overflow: http://stackoverflow.com/users/7277090/zthxxx?tab=profile
+    stack-overflow: https://stackoverflow.com/users/25003731/akira
+    codepen: # http://codepen.io/zthxxx/                  # CodePen 主页
+    rss: # /atom.xml                                      # RSS 订阅地址
+  social_link_tooltip: false  # 是否启用社交链接的悬浮提示
+
+
+# ========== 侧边栏小工具 ==========
+# 可选项：category（分类）、recent_posts（最新文章）、archive（归档）、tag（标签）、tagcloud（标签云）、links（友链）
+widgets:
+  - category                 # 显示分类目录
+  # - recent_posts           # 显示最新文章（需取消注释启用）
+  # - archive                # 显示文章归档
+  - tag                    # 显示标签
+#   - tagcloud               # 显示标签云
+  # - links                  # 显示友情链接
+
+
+# ========== 摘要生成 ==========
+auto_excerpt:
+  enable: true    # 是否自动生成摘要
+  lines: 8        # 自动截取文章前 5 行作为摘要（若未使用 <!--more--> 分隔符）
+
+
+# ========== 搜索功能 ==========
+search:
+  insight: true   # 启用 Insight 搜索（需安装 `hexo-generator-json-content` 插件）
+  swiftype:       # Swiftype 搜索服务的安装密钥（需注册获取）
+  baidu: false    # 是否启用百度站内搜索（启用需关闭其他搜索引擎）
+
+
+# ========== 历史版本控制 ==========
+# 用于集成 GitHub 等平台管理页面历史版本
+history_control:
+  enable: false              # 是否启用
+#   server_link: https://github.com  # 版本控制平台链接（推荐 GitHub）
+#   user: zthxxx              # 用户名
+#   repertory: Wiki-site      # 仓库名
+#   branch: writing           # 分支名
+  server_link: https://github.com  # 版本控制平台链接（推荐 GitHub）
+  user: akira23369              # 用户名
+  repertory: akira23369.github.io      # 仓库名
+  branch: hexo           # 分支名
+
+
+
+# ========== 评论系统 ==========
+comment:
+  disqus:        # Disqus 评论插件短名称（需注册获取）
+  duoshuo:       # 多说评论插件短名称（已停止服务，不建议使用）
+  youyan:        # 友言评论插件 UID（需注册获取）
+
+
+# ========== 社交分享 ==========
+# 可选服务：jiathis（JiaThis）、bdshare（百度分享）、addtoany（AddToAny）、default（主题默认）
+share: default
+
+
+# ========== 插件配置 ==========
+plugins:
+  lightgallery: true      # 启用灯箱画廊（图片点击放大）
+  justifiedgallery: true  # 启用瀑布流式图片布局
+  mathjax: true           # 启用 MathJax 数学公式支持
+  google_analytics:       # Google Analytics 跟踪 ID（如 UA-XXXXX-X）
+  google_site_verification:  # Google 站长工具验证码
+  baidu_analytics:        # 百度统计的哈希密钥
+  busuanzi_count: true    # 启用不蒜子站点访问统计
+
+
+# ========== 杂项配置 ==========
+miscellaneous:
+  open_graph:             # Open Graph 元数据（优化社交媒体分享）
+    fb_app_id:            # Facebook App ID
+    fb_admins:            # Facebook 管理员 ID
+    twitter_id:           # Twitter 用户名
+    google_plus:          # Google+ 个人资料 ID
+  links:                  # 自定义链接（需按主题文档格式填写）
+
+
+
