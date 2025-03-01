@@ -41,6 +41,8 @@ greet("Alice"); // 输出 "Hello, Alice!"
 ```
 
 # Lambda表达式的简写
+注意和{% post_link csharp表达式体 %}的区别
+
 ## **简化1：自动类型推断**
 当委托类型明确时，参数类型可省略：  `(int x) => ...` → `x => ...`
 ```cs
