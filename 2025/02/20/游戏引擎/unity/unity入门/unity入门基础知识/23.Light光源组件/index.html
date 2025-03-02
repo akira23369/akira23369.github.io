@@ -6,15 +6,15 @@
     <title>23.Light光源组件 | akiraの博客思密达</title>
     
     
-        <meta name="keywords" content="游戏引擎,unity,unity入门,unity入门基础知识,光源系统,核心系统" />
+        <meta name="keywords" content="游戏引擎,unity,unity入门,unity入门基础知识,核心系统,光源系统" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Type光源类型  Spot聚光灯  Spot Angle光锥角度 Range发光范围距离   Directional方向光(环境光) Point点光源 Area面光源   Mode 光源模式  Realtime 实时光源：每帧实时计算，效果好，性能消耗大 Baked 烘焙光源：事先计算好，无法动态变化 Mixed 混合光源：预先计算+实时运算   Intensity 光源强度  Indi">
+    <meta name="description" content="Type光源类型 Spot聚光灯 Spot Angle光锥角度 Range发光范围距离   Directional方向光(环境光) Point点光源 Area面光源  Mode 光源模式 Realtime 实时光源：每帧实时计算，效果好，性能消耗大 Baked 烘焙光源：事先计算好，无法动态变化 Mixed 混合光源：预先计算+实时运算  Intensity 光源强度Indirect Mult">
 <meta property="og:type" content="article">
 <meta property="og:title" content="23.Light光源组件">
 <meta property="og:url" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/index.html">
 <meta property="og:site_name" content="akiraの博客思密达">
-<meta property="og:description" content="Type光源类型  Spot聚光灯  Spot Angle光锥角度 Range发光范围距离   Directional方向光(环境光) Point点光源 Area面光源   Mode 光源模式  Realtime 实时光源：每帧实时计算，效果好，性能消耗大 Baked 烘焙光源：事先计算好，无法动态变化 Mixed 混合光源：预先计算+实时运算   Intensity 光源强度  Indi">
+<meta property="og:description" content="Type光源类型 Spot聚光灯 Spot Angle光锥角度 Range发光范围距离   Directional方向光(环境光) Point点光源 Area面光源  Mode 光源模式 Realtime 实时光源：每帧实时计算，效果好，性能消耗大 Baked 烘焙光源：事先计算好，无法动态变化 Mixed 混合光源：预先计算+实时运算  Intensity 光源强度Indirect Mult">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220161146691.png">
 <meta property="og:image" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220161201502.png">
@@ -26,8 +26,8 @@
 <meta property="article:tag" content="unity">
 <meta property="article:tag" content="unity入门">
 <meta property="article:tag" content="unity入门基础知识">
-<meta property="article:tag" content="光源系统">
 <meta property="article:tag" content="核心系统">
+<meta property="article:tag" content="光源系统">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220161146691.png">
     
@@ -76,7 +76,9 @@
     
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
-<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="akiraの博客思密达" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="akiraの博客思密达" type="application/atom+xml">
 </head>
 
 <body>
@@ -324,7 +326,7 @@
                             &nbsp;
                             unity基础
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/1.unity%E5%9F%BA%E7%A1%80%E6%A6%82%E8%BF%B0/">1.unity基础概述</a></li>  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/2.Mathf%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E7%BB%93%E6%9E%84%E4%BD%93%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">2.Mathf数学计算结构体常用方法</a></li>  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/3.%E5%9D%90%E6%A0%87%E7%B3%BB/">3.坐标系</a></li>  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/4.Vector3%E5%90%91%E9%87%8F/">4.Vector3向量</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/1.unity%E5%9F%BA%E7%A1%80%E6%A6%82%E8%BF%B0/">1.unity基础概述</a></li>  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/2.Mathf%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E7%BB%93%E6%9E%84%E4%BD%93%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">2.Mathf数学计算结构体常用方法</a></li>  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/3.%E5%9D%90%E6%A0%87%E7%B3%BB/">3.坐标系</a></li>  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/4.Vector3%E5%90%91%E9%87%8F/">4.Vector3向量</a></li>  <li class="file"><a href="/2025/03/02/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/5.Quaternion%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%9B%9B%E5%85%83%E6%95%B0/">5.Quaternion为什么要使用四元数</a></li>  <li class="file"><a href="/2025/03/02/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/6.Quaternion%E5%9B%9B%E5%85%83%E6%95%B0%E6%A6%82%E5%BF%B5/">6.Quaternion四元数概念</a></li>  <li class="file"><a href="/2025/03/02/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/7.%E5%9B%9B%E5%85%83%E6%95%B0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">7.四元数常用方法</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -420,7 +422,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title"><span>标签</span></h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Csharp/" rel="tag">Csharp</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">GUI基础知识</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" rel="tag">GUI实践项目</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PlayerPrefs/" rel="tag">PlayerPrefs</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">PlayerPrefs基础知识</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" rel="tag">PlayerPrefs实践项目</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI%E7%B3%BB%E7%BB%9F/" rel="tag">UI系统</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" rel="tag">Unity工作原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" rel="tag">Unity界面基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" rel="tag">Unity脚本基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" rel="tag">Unity重要组件和API</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">41</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity%E5%85%A5%E9%97%A8/" rel="tag">unity入门</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">unity入门基础知识</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" rel="tag">unity入门实践项目</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity%E5%9F%BA%E7%A1%80/" rel="tag">unity基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" rel="tag">光源系统</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE/" rel="tag">数据</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" rel="tag">数据持久化</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" rel="tag">核心系统</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a><span class="tag-list-count">41</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" rel="tag">物理系统</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" rel="tag">音效系统</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3D%E6%95%B0%E5%AD%A6/" rel="tag">3D数学</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Csharp/" rel="tag">Csharp</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI/" rel="tag">GUI</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">GUI基础知识</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" rel="tag">GUI实践项目</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PlayerPrefs/" rel="tag">PlayerPrefs</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">PlayerPrefs基础知识</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" rel="tag">PlayerPrefs实践项目</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI%E7%B3%BB%E7%BB%9F/" rel="tag">UI系统</a><span class="tag-list-count">24</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" rel="tag">Unity工作原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" rel="tag">Unity界面基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" rel="tag">Unity脚本基础</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" rel="tag">Unity重要组件和API</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/" rel="tag">unity</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity%E5%85%A5%E9%97%A8/" rel="tag">unity入门</a><span class="tag-list-count">37</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="tag">unity入门基础知识</a><span class="tag-list-count">33</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" rel="tag">unity入门实践项目</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity%E5%9F%BA%E7%A1%80/" rel="tag">unity基础</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" rel="tag">光源系统</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE/" rel="tag">数据</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" rel="tag">数据持久化</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" rel="tag">核心系统</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" rel="tag">游戏引擎</a><span class="tag-list-count">44</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" rel="tag">物理系统</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" rel="tag">音效系统</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -479,18 +481,15 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#type%E5%85%89%E6%BA%90%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text"> Type光源类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mode-%E5%85%89%E6%BA%90%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text"> Mode 光源模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#intensity-%E5%85%89%E6%BA%90%E5%BC%BA%E5%BA%A6"><span class="toc-number">3.</span> <span class="toc-text"> Intensity 光源强度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#indirect-multiplier-%E9%97%B4%E6%8E%A5%E7%B3%BB%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text"> Indirect Multiplier 间接系数 *</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shadow-type-%E9%98%B4%E5%BD%B1%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text"> Shadow Type 阴影类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#realtime-shadows-%E5%AE%9E%E6%97%B6%E9%98%B4%E5%BD%B1"><span class="toc-number">5.</span> <span class="toc-text"> Realtime Shadows 实时阴影*</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cookie-%E5%89%AA%E5%BD%B1"><span class="toc-number">6.</span> <span class="toc-text"> Cookie 剪影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#draw-halo-%E7%BB%98%E5%88%B6%E5%85%89%E6%99%95"><span class="toc-number">7.</span> <span class="toc-text"> Draw Halo 绘制光晕</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#flare-%E7%9C%A9%E5%85%89"><span class="toc-number">8.</span> <span class="toc-text"> Flare 眩光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#render-mode-%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F"><span class="toc-number">9.</span> <span class="toc-text"> Render Mode 渲染模式*</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#culling-mask-%E5%89%94%E9%99%A4%E9%81%AE%E7%BD%A9"><span class="toc-number">10.</span> <span class="toc-text"> Culling Mask 剔除遮罩</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Type%E5%85%89%E6%BA%90%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">Type光源类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mode-%E5%85%89%E6%BA%90%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">Mode 光源模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Intensity-%E5%85%89%E6%BA%90%E5%BC%BA%E5%BA%A6"><span class="toc-number">3.</span> <span class="toc-text">Intensity 光源强度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Indirect-Multiplier-%E9%97%B4%E6%8E%A5%E7%B3%BB%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text">Indirect Multiplier 间接系数 *</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shadow-Type-%E9%98%B4%E5%BD%B1%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text">Shadow Type 阴影类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Realtime-Shadows-%E5%AE%9E%E6%97%B6%E9%98%B4%E5%BD%B1"><span class="toc-number">5.</span> <span class="toc-text">Realtime Shadows 实时阴影*</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cookie-%E5%89%AA%E5%BD%B1"><span class="toc-number">6.</span> <span class="toc-text">Cookie 剪影</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Draw-Halo-%E7%BB%98%E5%88%B6%E5%85%89%E6%99%95"><span class="toc-number">7.</span> <span class="toc-text">Draw Halo 绘制光晕</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Flare-%E7%9C%A9%E5%85%89"><span class="toc-number">8.</span> <span class="toc-text">Flare 眩光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Render-Mode-%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F"><span class="toc-number">9.</span> <span class="toc-text">Render Mode 渲染模式*</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Culling-Mask-%E5%89%94%E9%99%A4%E9%81%AE%E7%BD%A9"><span class="toc-number">10.</span> <span class="toc-text">Culling Mask 剔除遮罩</span></a></li></ol>
                 </div>
             
         
         
-            <p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220161146691.png" alt="" /><br />
-<img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220161201502.png" alt="" /></p>
-<p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220165850186.png" alt="" /></p>
-<h1 id="type光源类型"><a class="markdownIt-Anchor" href="#type光源类型"></a> <strong>Type光源类型</strong></h1>
-<ul>
-<li>Spot聚光灯
-<ul>
+            <p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220161146691.png" alt=""><br><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220161201502.png" alt=""></p>
+<p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/file-20250220165850186.png" alt=""></p>
+<h1 id="Type光源类型"><a href="#Type光源类型" class="headerlink" title="Type光源类型"></a><strong>Type光源类型</strong></h1><ul>
+<li>Spot聚光灯<ul>
 <li>Spot Angle光锥角度</li>
 <li>Range发光范围距离</li>
 </ul>
@@ -499,48 +498,33 @@
 <li>Point点光源</li>
 <li>Area面光源</li>
 </ul>
-<h1 id="mode-光源模式"><a class="markdownIt-Anchor" href="#mode-光源模式"></a> <strong>Mode 光源模式</strong></h1>
-<ol>
+<h1 id="Mode-光源模式"><a href="#Mode-光源模式" class="headerlink" title="Mode 光源模式"></a><strong>Mode 光源模式</strong></h1><ol>
 <li>Realtime 实时光源：每帧实时计算，效果好，性能消耗大</li>
 <li>Baked 烘焙光源：事先计算好，无法动态变化</li>
 <li>Mixed 混合光源：预先计算+实时运算</li>
 </ol>
-<h1 id="intensity-光源强度"><a class="markdownIt-Anchor" href="#intensity-光源强度"></a> <strong>Intensity 光源强度</strong></h1>
-<h2 id="indirect-multiplier-间接系数"><a class="markdownIt-Anchor" href="#indirect-multiplier-间接系数"></a> Indirect Multiplier 间接系数 *</h2>
-<p>改变间接光的强度<br />
-低于1，每次反弹会使光更暗<br />
-大于1，每次反弹会使光更亮</p>
-<h1 id="shadow-type-阴影类型"><a class="markdownIt-Anchor" href="#shadow-type-阴影类型"></a> <strong>Shadow Type 阴影类型</strong></h1>
-<ol>
+<h1 id="Intensity-光源强度"><a href="#Intensity-光源强度" class="headerlink" title="Intensity 光源强度"></a><strong>Intensity 光源强度</strong></h1><h2 id="Indirect-Multiplier-间接系数"><a href="#Indirect-Multiplier-间接系数" class="headerlink" title="Indirect Multiplier 间接系数 *"></a>Indirect Multiplier 间接系数 *</h2><p>改变间接光的强度<br>低于1，每次反弹会使光更暗<br>大于1，每次反弹会使光更亮</p>
+<h1 id="Shadow-Type-阴影类型"><a href="#Shadow-Type-阴影类型" class="headerlink" title="Shadow Type 阴影类型"></a><strong>Shadow Type 阴影类型</strong></h1><ol>
 <li>NoShadows 关闭阴影</li>
 <li>HardShadows 生硬阴影</li>
 <li>SoftShadows 柔和阴影</li>
 </ol>
-<h1 id="realtime-shadows-实时阴影"><a class="markdownIt-Anchor" href="#realtime-shadows-实时阴影"></a> Realtime Shadows 实时阴影*</h1>
-<ol>
+<h1 id="Realtime-Shadows-实时阴影"><a href="#Realtime-Shadows-实时阴影" class="headerlink" title="Realtime Shadows 实时阴影*"></a>Realtime Shadows 实时阴影*</h1><ol>
 <li>Strength 强度: 阴影暗度 0~1之间，越大越黑</li>
 <li>Resolution 分辨率: 阴影贴图渲染分辨率，越高越逼真，消耗越高     （Project Setting中的Quallty的设置）</li>
 <li>Bias 偏离: 阴影推离光源的距离</li>
 <li>Normal Bias 法线偏离: 阴影投射面沿法线收缩距离</li>
 <li>Near Panel 近平面: 渲染阴影的近裁剪面</li>
 </ol>
-<h1 id="cookie-剪影"><a class="markdownIt-Anchor" href="#cookie-剪影"></a> <strong>Cookie 剪影</strong></h1>
-<p>投影遮罩: 一般用于聚光灯，显示图案</p>
-<h1 id="draw-halo-绘制光晕"><a class="markdownIt-Anchor" href="#draw-halo-绘制光晕"></a> <strong>Draw Halo 绘制光晕</strong></h1>
-<p>球形光环开关<br />
-可以用于蜡烛等效果</p>
-<h1 id="flare-眩光"><a class="markdownIt-Anchor" href="#flare-眩光"></a> Flare 眩光</h1>
-<p>耀斑<br />
-有点类似于太阳耀斑效果<br />
-想要在Game窗口看到耀斑要在摄像机Camera上加FlareLayer脚本</p>
-<h1 id="render-mode-渲染模式"><a class="markdownIt-Anchor" href="#render-mode-渲染模式"></a> Render Mode 渲染模式*</h1>
-<ol>
+<h1 id="Cookie-剪影"><a href="#Cookie-剪影" class="headerlink" title="Cookie 剪影"></a><strong>Cookie 剪影</strong></h1><p>投影遮罩: 一般用于聚光灯，显示图案</p>
+<h1 id="Draw-Halo-绘制光晕"><a href="#Draw-Halo-绘制光晕" class="headerlink" title="Draw Halo 绘制光晕"></a><strong>Draw Halo 绘制光晕</strong></h1><p>球形光环开关<br>可以用于蜡烛等效果</p>
+<h1 id="Flare-眩光"><a href="#Flare-眩光" class="headerlink" title="Flare 眩光"></a>Flare 眩光</h1><p>耀斑<br>有点类似于太阳耀斑效果<br>想要在Game窗口看到耀斑要在摄像机Camera上加FlareLayer脚本</p>
+<h1 id="Render-Mode-渲染模式"><a href="#Render-Mode-渲染模式" class="headerlink" title="Render Mode 渲染模式*"></a>Render Mode 渲染模式*</h1><ol>
 <li>Auto 自动: 运行时确定</li>
 <li>Important 重要: 以像素质量为单位进行渲染，效果逼真，消耗大</li>
 <li>Not Important 非重要: 以快速模式进行渲染</li>
 </ol>
-<h1 id="culling-mask-剔除遮罩"><a class="markdownIt-Anchor" href="#culling-mask-剔除遮罩"></a> <strong>Culling Mask 剔除遮罩</strong></h1>
-<ul>
+<h1 id="Culling-Mask-剔除遮罩"><a href="#Culling-Mask-剔除遮罩" class="headerlink" title="Culling Mask 剔除遮罩"></a><strong>Culling Mask 剔除遮罩</strong></h1><ul>
 <li>剔除遮罩层，决定哪些层的对象受到该光源影响</li>
 </ul>
 <p>ps：所有参数都可都可以在代码中设置</p>
