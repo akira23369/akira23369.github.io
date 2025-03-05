@@ -2284,94 +2284,71 @@ ol.toc {
 .article-entry .highlight .line {
   height: 1.6em;
 }
-/*
- * Agate by Taufik Nurrohman <https://github.com/tovic>
- * ----------------------------------------------------
- *
- * #ade5fc
- * #a2fca2
- * #c6b4f0
- * #d36363
- * #fcc28c
- * #fc9b9b
- * #ffa
- * #fff
- * #333
- * #62c8f3
- * #888
- *
- */
 .highlight {
-  color: #fff;
-  background: #333;
-}
-.highlight .code .name,
-.highlight .code .strong {
-  font-weight: bold;
-}
-.highlight .code .code,
-.highlight .code .emphasis {
-  font-style: italic;
-}
-.highlight .code .tag {
-  color: #62c8f3;
-}
-.highlight .code .variable,
-.highlight .code .template-variable,
-.highlight .code .selector-id,
-.highlight .code .selector-class {
-  color: #ade5fc;
-}
-.highlight .code .string,
-.highlight .code .bullet {
-  color: #a2fca2;
-}
-.highlight .code .type,
-.highlight .code .title,
-.highlight .code .section,
-.highlight .code .attribute,
-.highlight .code .quote,
-.highlight .code .built_in,
-.highlight .code .builtin-name {
-  color: #ffa;
-}
-.highlight .code .number,
-.highlight .code .symbol,
-.highlight .code .bullet {
-  color: #d36363;
+  color: #e0e2e4;
+  background: #282b2e;
 }
 .highlight .code .keyword,
 .highlight .code .selector-tag,
-.highlight .code .literal {
-  color: #fcc28c;
+.highlight .code .literal,
+.highlight .code .selector-id {
+  color: #93c763;
 }
-.highlight .code .comment,
-.highlight .code .deletion,
-.highlight .code .code {
-  color: #888;
+.highlight .code .number {
+  color: #ffcd22;
+}
+.highlight .code .attribute {
+  color: #668bb0;
+}
+.highlight .code .code,
+.highlight .code .class .title,
+.highlight .code .section {
+  color: #fff;
 }
 .highlight .code .regexp,
 .highlight .code .link {
-  color: #c6b4f0;
+  color: #d39745;
 }
 .highlight .code .meta {
-  color: #fc9b9b;
+  color: #557182;
 }
+.highlight .code .tag,
+.highlight .code .name,
+.highlight .code .bullet,
+.highlight .code .subst,
+.highlight .code .emphasis,
+.highlight .code .type,
+.highlight .code .built_in,
+.highlight .code .selector-attr,
+.highlight .code .selector-pseudo,
+.highlight .code .addition,
+.highlight .code .variable,
+.highlight .code .template-tag,
+.highlight .code .template-variable {
+  color: #8cbbad;
+}
+.highlight .code .string,
+.highlight .code .symbol {
+  color: #ec7600;
+}
+.highlight .code .comment,
+.highlight .code .quote,
 .highlight .code .deletion {
-  background-color: #fc9b9b;
-  color: #333;
+  color: #818e96;
 }
-.highlight .code .addition {
-  background-color: #a2fca2;
-  color: #333;
+.highlight .code .selector-class {
+  color: #a082bd;
 }
-.highlight .code .highlight a {
-  color: inherit;
-}
-.highlight .code .highlight a:focus,
-.highlight .code .highlight a:hover {
-  color: inherit;
-  text-decoration: underline;
+.highlight .code .keyword,
+.highlight .code .selector-tag,
+.highlight .code .literal,
+.highlight .code .doctag,
+.highlight .code .title,
+.highlight .code .section,
+.highlight .code .type,
+.highlight .code .name,
+.highlight .code .strong {
+  font-weight: bold;
 }
 #profile {
   float: right;
