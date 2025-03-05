@@ -141,7 +141,7 @@ foreach (var msg in messages)  // 此时才开始真正执行
     - **暂停当前方法**，记录当前位置（状态）。
     - 下次循环时，从暂停的位置继续执行。
 
-**底层原理：状态机**
+## **底层原理：状态机**
 编译器会将 `yield return` 代码转换为一个隐藏的“状态机”类。例如，上述 `GetMessages()` 会被编译成一个类似如下的类：
 ```cs
 class GeneratedStateMachine : IEnumerator<string>
@@ -244,4 +244,3 @@ public IEnumerable<Node> Traverse(Node root)
     }
 }
 ```
-

@@ -101,6 +101,7 @@ ignore:  # 忽略的文件
 # Extensions
 # theme: landscape  # 主题名称
 theme: Wikitten  # 主题名称
+# theme: butterfly  # 主题名称
 
 # 部署配置
 # Deployment

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/10.inspector 窗口可编辑变量.md",
+                "file": "source/_posts/游戏引擎/unity/unity基础/10.协同程序.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10.inspector 窗口可编辑变量"
+              "title": "10.协同程序"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity基础/10.协同程序.md",
+                "file": "source/categories/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10.协同程序"
+              "title": "index"
             }
           },
           {
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/编程语言/Csharp/csharp的Lambda表达式.md",
+                "file": "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/28.碰撞检测之碰撞检测函数.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "csharp的Lambda表达式"
+              "title": "28.碰撞检测之碰撞检测函数"
             }
           }
         ],
@@ -216,50 +216,50 @@
   "active": "0e602b7960ed3c27",
   "lastOpenFiles": [
     "db.json",
-    "public/MyImg/《原神》神里绫华4k电脑桌面壁纸.jpg",
-    "public/MyImg/test.jpg",
-    "public/MyImg/1733075511460.png",
-    "public/MyImg",
     "public/live2dw/assets/moc/miku.2048/texture_00.png",
     "public/live2dw/assets/mtn/miku_shake_01.mtn",
     "public/live2dw/assets/mtn/miku_m_06.mtn",
     "public/live2dw/assets/mtn/miku_m_05.mtn",
     "public/live2dw/assets/mtn/miku_m_04.mtn",
     "public/live2dw/assets/mtn/miku_m_03.mtn",
+    "public/live2dw/assets/mtn/miku_m_01.mtn",
     "public/live2dw/assets/mtn/miku_m_02.mtn",
     "public/live2dw/assets/mtn/miku_idle_01.mtn",
-    "public/live2dw/assets/mtn/miku_m_01.mtn",
+    "public/live2dw/assets/moc/miku.2048",
     "public/live2dw/assets/moc/miku.moc",
-    "public/libs/lightgallery/fonts/lg.svg",
-    "public/css/images/thumb-default-small.png",
-    "public/css/images/logo.png",
     "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/file-20250227213144486.png",
-    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301144027904.png",
-    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143929796.png",
-    "source/_posts/游戏引擎/unity/unity基础/9.延迟函数.md",
-    "source/_posts/游戏引擎/unity/unity基础/10.协同程序.md",
-    "source/_posts/编程语言/Csharp/csharp迭代器.md",
-    "source/_posts/编程语言/Csharp/csharp的Lambda表达式.md",
-    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/10.inspector 窗口可编辑变量.md",
-    "source/_posts/编程语言/Csharp/csharp委托.md",
-    "source/_posts/编程语言/Csharp/csharp多线程.md",
-    "source/_posts/编程语言/Csharp/泛型委托和泛型接口の协变和逆变.md",
-    "source/_posts/编程语言/Csharp/csharp表达式体.md",
-    "source/_posts/编程语言/Csharp/csharp特性.md",
-    "source/_posts/编程语言/Csharp/csharp拓展方法.md",
-    "source/_posts/编程语言/Csharp/csharp事件.md",
-    "source/_posts/编程语言/Csharp/csharp反射.md",
-    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/18.坐标转换.md",
-    "source/_posts/游戏引擎/unity/unity基础/8.Quaternion四元数计算.md",
-    "source/_posts/游戏引擎/unity/unity基础/7.Quaternion四元数常用方法.md",
-    "source/_posts/游戏引擎/unity/unity基础/6.Quaternion四元数概念.md",
-    "source/_posts/hexo/3.hexo插件.md",
-    "source/_posts/hexo/2.hexo源码上传到GitHub.md",
-    "source/_posts/hexo/1.使用obsidian来写hexo博客.md",
-    "node_modules/hexo-simple-mindmap/node_modules/dom-serializer/node_modules/entities/readme.md",
-    "node_modules/undici/types/README.md",
-    "node_modules/undici/docs/docs/best-practices/writing-tests.md",
-    "node_modules/undici/docs/docs/best-practices/proxy.md",
-    "node_modules/undici/docs/docs/best-practices/mocking-request.md"
+    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/13.打包PlayerPrefsDataMgr/file-20250224111710339.png",
+    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/34.unity入门基础知识总结/file-20250221165603601.png",
+    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/31.AudioSource音频源组件和AudioListener音频监听组件/file-20250221155703937.png",
+    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/31.AudioSource音频源组件和AudioListener音频监听组件/file-20250221153553505.png",
+    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/31.AudioSource音频源组件和AudioListener音频监听组件/file-20250221155634858.png",
+    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/31.AudioSource音频源组件和AudioListener音频监听组件/file-20250221153449553.png",
+    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/31.AudioSource音频源组件和AudioListener音频监听组件/file-20250221153408611.png",
+    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/2.需求分析/Pasted image 20240311161937.png",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/1.NGUI基础知识概述.md",
+    "node_modules/is-regex/CHANGELOG.md",
+    "node_modules/babel-walk/README.md",
+    "node_modules/babel-walk/LICENSE.md",
+    "node_modules/@babel/parser/README.md",
+    "node_modules/@babel/parser/CHANGELOG.md",
+    "node_modules/dunder-proto/README.md",
+    "node_modules/dunder-proto/CHANGELOG.md",
+    "node_modules/token-stream/README.md",
+    "node_modules/token-stream/HISTORY.md",
+    "node_modules/assert-never/README.md",
+    "node_modules/math-intrinsics/README.md",
+    "node_modules/math-intrinsics/CHANGELOG.md",
+    "node_modules/has-symbols/README.md",
+    "node_modules/has-symbols/CHANGELOG.md",
+    "node_modules/get-proto/README.md",
+    "node_modules/get-proto/CHANGELOG.md",
+    "node_modules/es-object-atoms/README.md",
+    "node_modules/es-object-atoms/CHANGELOG.md",
+    "node_modules/es-define-property/README.md",
+    "node_modules/es-define-property/CHANGELOG.md",
+    "node_modules/es-errors/README.md",
+    "node_modules/es-errors/CHANGELOG.md",
+    "node_modules/get-intrinsic/README.md",
+    "node_modules/get-intrinsic/CHANGELOG.md"
   ]
 }

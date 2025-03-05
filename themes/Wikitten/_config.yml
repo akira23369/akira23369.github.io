@@ -28,14 +28,14 @@ customize:
     follow: https://github.com/zthxxx/  # 关注链接（如 GitHub）
 
   # 其他配置
-  highlight: agate          # 代码高亮主题（如 monokai、github） 目录：blog\themes\Wikitten\source\css\_highlight
+  highlight: obsidian          # 代码高亮主题（如 monokai、github） 目录：blog\themes\Wikitten\source\css\_highlight
   sidebar: left               # 侧边栏位置（left/right）
   category_perExpand: false   # 是否默认展开分类目录
   thumbnail: true             # 是否显示文章缩略图
   favicon: /favicon.ico       # 网站图标路径
   # default_index_file: index.md # 首页默认显示的文件（替代主题默认首页）
   # default_index_file: 数据/网站标题页.md # 首页默认显示的文件（替代主题默认首页）
-  default_index_file: 你好呀.md # 首页默认显示的文件（替代主题默认首页）
+  default_index_file: #你好呀.md # 首页默认显示的文件（替代主题默认首页）
 
   # 社交链接配置
   social_links:
