@@ -35,7 +35,7 @@ customize:
   favicon: /favicon.ico       # 网站图标路径
   # default_index_file: index.md # 首页默认显示的文件（替代主题默认首页）
   # default_index_file: 数据/网站标题页.md # 首页默认显示的文件（替代主题默认首页）
-  default_index_file: #你好呀.md # 首页默认显示的文件（替代主题默认首页）
+  default_index_file: 你好呀.md # 首页默认显示的文件（替代主题默认首页）
 
   # 社交链接配置
   social_links:
