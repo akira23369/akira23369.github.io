@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity基础/11.特殊文件夹.md",
+                "file": "source/_posts/UI系统/NGUI/NGUI基础知识/13.PopupList下拉列表.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "11.特殊文件夹"
+              "title": "13.PopupList下拉列表"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/UI系统/NGUI/NGUI基础知识/5.EventSystem事件系统组件.md",
+                "file": "source/_posts/UI系统/NGUI/NGUI基础知识/24.NGUI之其它.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5.EventSystem事件系统组件"
+              "title": "24.NGUI之其它"
             }
           },
           {
@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/hexo/3.hexo插件.md",
+                "file": "source/_posts/UI系统/NGUI/NGUI基础知识/13.PopupList下拉列表.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3.hexo插件"
+              "title": "13.PopupList下拉列表"
             }
           }
         ],
@@ -215,51 +215,51 @@
   },
   "active": "0e602b7960ed3c27",
   "lastOpenFiles": [
-    "public/categories/游戏引擎/unity/page/6/index.html",
-    "public/categories/游戏引擎/unity/page/6",
-    "public/categories/游戏引擎/unity/page/5/index.html",
-    "public/categories/游戏引擎/unity/page/5",
-    "public/categories/游戏引擎/unity/page/4/index.html",
-    "public/categories/游戏引擎/unity/page/4",
-    "public/categories/游戏引擎/unity/page/3/index.html",
-    "public/categories/游戏引擎/unity/page/3",
-    "public/categories/游戏引擎/unity/page/2/index.html",
-    "public/categories/游戏引擎/unity/page/2",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/4.Panel组件(UIPanel).md",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/5.EventSystem事件系统组件.md",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/5.Label文本控件.md",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/4.Panel组件(UIPanel)/file-20250307164730316.png",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/4.Panel组件(UIPanel)/file-20250307164724001.png",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/4.Panel组件(UIPanel)/Panel参数相关.png",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/3.Root组件(UIRoot).md",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/3.Root组件(UIRoot)/file-20250307161529324.png",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/3.Root组件(UIRoot)/file-20250307161448667.png",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/3.Root组件(UIRoot)/file-20250307161045191.png",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/3.Root组件(UIRoot)/file-20250307160952789.png",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/3.Root组件(UIRoot)/file-20250307155036904.png",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/3.Root组件(UIRoot)/file-20250307153243528.png",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/3.Root组件(UIRoot)/file-20250307153235916.png",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/3.Root组件(UIRoot)",
-    "source/_posts/hexo/3.hexo插件.md",
-    "source/_posts/游戏引擎/unity/unity基础/11.特殊文件夹.md",
-    "source/_posts/游戏引擎/unity/unity基础/10.协同程序.md",
-    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/28.碰撞检测之碰撞检测函数.md",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/2.NGUI下载和导入.md",
+    "public/categories/数据/数据持久化/XML/page/2/index.html",
+    "public/categories/数据/数据持久化/XML/page/2",
+    "public/categories/数据/数据持久化/PlayerPrefs/page/2/index.html",
+    "public/categories/数据/数据持久化/PlayerPrefs/page/2",
+    "public/categories/UI系统/NGUI/NGUI基础知识/page/3/index.html",
+    "public/categories/UI系统/NGUI/NGUI基础知识/page/3",
+    "public/categories/UI系统/NGUI/NGUI基础知识/page/2/index.html",
+    "public/categories/UI系统/NGUI/NGUI基础知识/page/2",
+    "public/categories/UI系统/GUI/GUI实践项目/page/2/index.html",
+    "public/categories/UI系统/GUI/GUI实践项目/page/2",
+    "public/categories/UI系统/GUI/GUI基础知识/page/2/index.html",
+    "public/libs/lightgallery/img/youtube-play.png",
+    "public/libs/lightgallery/img/vimeo-play.png",
+    "public/libs/lightgallery/img/video-play.png",
+    "public/libs/lightgallery/img/loading.gif",
+    "public/libs/lightgallery/fonts/lg.svg",
+    "public/css/images/thumb-default-small.png",
+    "public/css/images/logo.png",
+    "public/MyImg/《原神》神里绫华4k电脑桌面壁纸.jpg",
+    "public/MyImg/test.jpg",
+    "public/MyImg/1733075511460.png",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/13.PopupList下拉列表.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/18.EventListener和EventTrigger事件相关.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/24.NGUI之其它.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/22.3d模型和粒子特效显示在UI之前.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/21.NGUI缓动.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/20.NGUI字体.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/19.Drawcall.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/16.ScrollView滚动视图.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/17.Anchor锚点.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/15.ScrollBar滚动条和ProgressBar进度条.md",
     "source/_posts/UI系统/NGUI/NGUI基础知识/1.NGUI基础知识概述.md",
-    "source/_posts/数据/数据持久化/XML/XML实践项目/2.XMLDataMgr存储读取功能.md",
-    "source/_posts/数据/数据持久化/XML/XML实践项目/1.需求分析+XML数据管理类创建.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/11.让Dictionary支持序列化和反序列化.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/10.IXmlSerializable接口.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/8.CSharp中XML序列化.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/9.CSharp中XML反序列化.md",
-    "source/_posts/编程语言/Csharp/csharp的using语句.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/7.XML总结.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/6.CSharp存储XML文件.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/5.CSharp读取XML文件.md",
-    "source/_posts/编程语言/Csharp/csharp迭代器.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/3.XML属性.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/2.XML基础语法.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/1.XML基础知识概述.md"
+    "source/_posts/UI系统/NGUI/NGUI基础知识/14.Slider滑动条.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/7.Sprite精灵图片.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/12.Input输入框.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/11.Toggle单多选框.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/4.Panel组件(UIPanel).md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/10.Button按钮.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/3.Root组件(UIRoot).md",
+    "source/_posts/游戏引擎/unity/unity基础/11.特殊文件夹.md",
+    "source/_posts/hexo/3.hexo插件.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/9.Texture纹理图片.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/8.Label文本.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/5.EventSystem事件系统组件.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/6.图集制作.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/5.Label文本控件.md"
   ]
 }
