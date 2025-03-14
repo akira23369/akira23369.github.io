@@ -54,8 +54,8 @@ widgets:
   - category                 # 显示分类目录
   # - recent_posts           # 显示最新文章（需取消注释启用）
   # - archive                # 显示文章归档
-  - tag                    # 显示标签
-#   - tagcloud               # 显示标签云
+  # - tag                    # 显示标签
+  - tagcloud               # 显示标签云
   # - links                  # 显示友情链接
 
 
