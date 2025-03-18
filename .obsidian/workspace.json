@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity核心/23.SpriteShapeRenderer精灵形状渲染器和SpriteShapeController精灵形状控制器.md",
+                "file": "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "23.SpriteShapeRenderer精灵形状渲染器和SpriteShapeController精灵形状控制器"
+              "title": "35.单张图片骨骼编辑"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/25.碰撞检测之刚体.md",
+                "file": "source/_posts/游戏引擎/unity/unity核心/30.创建和编辑Animation动画文件.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "25.碰撞检测之刚体"
+              "title": "30.创建和编辑Animation动画文件"
             }
           },
           {
@@ -109,7 +109,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#主题",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -134,7 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 412.5
+    "width": 410.5
   },
   "right": {
     "id": "cdc41ef16c706e04",
@@ -228,51 +228,51 @@
   },
   "active": "3d22961c2f487be6",
   "lastOpenFiles": [
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318230928345.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318230815265.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318230723614.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318230705614.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318230409363.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318230137062.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318230105754.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318230036163.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318225859890.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318225842012.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑/file-20250318225755876.png",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑",
+    "source/_posts/游戏引擎/unity/unity核心/34.2D序列帧动画.md",
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑.md",
+    "source/_posts/游戏引擎/unity/unity核心/34.2D序列帧动画",
+    "source/_posts/游戏引擎/unity/unity核心/33.AnimatorController动画控制器.md",
     "db.json",
-    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/3.Unity随机数和UnityAction委托/index.html",
-    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/file-20250227213144486.png",
-    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/index.html",
-    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/9.反射读取List数据类型/index.html",
-    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/2.Cursor鼠标的隐藏锁定图片/index.html",
-    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/8.反射读取常用成员数据/index.html",
-    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/13.打包PlayerPrefsDataMgr/index.html",
-    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/13.打包PlayerPrefsDataMgr/file-20250224111710339.png",
-    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/12.加密思路/index.html",
-    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/11.反射读取自定义类型/index.html",
-    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/10.反射读取Dictionary数据类型/index.html",
-    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/6.反射存储Dictionary数据类型/index.html",
-    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/2.需求分析/Pasted image 20240311161937.png",
-    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/2.需求分析/Pasted image 20240311161837.png",
-    "public/2025/02/21/数据/数据持久化/PlayerPrefs/PlayerPrefs基础知识/4.PlayerPrefs总结/file-20250221202739818.png",
-    "public/2025/02/21/数据/数据持久化/PlayerPrefs/PlayerPrefs基础知识/3.PlayerPrefs不同平台的存储位置/file-20250221201237349.png",
-    "public/2025/02/21/数据/数据持久化/PlayerPrefs/PlayerPrefs基础知识/4.PlayerPrefs总结/file-20250221202731186.png",
-    "public/2025/02/21/数据/数据持久化/PlayerPrefs/PlayerPrefs基础知识/4.PlayerPrefs总结/file-20250221202721966.png",
-    "public/2025/02/21/数据/数据持久化/PlayerPrefs/PlayerPrefs基础知识/1.PlayerPrefs概述/file-20250221194754823.png",
-    "public/2025/02/21/数据/数据持久化/PlayerPrefs/PlayerPrefs基础知识/1.PlayerPrefs概述/file-20250221194636919.png",
-    "source/_posts/游戏引擎/unity/unity核心/22.SpriteShapeProfile精灵形状概述文件.md",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/9.CSharp中XML反序列化/index.html",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/8.CSharp中XML序列化/index.html",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/7.XML总结/index.html",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/index.html",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/6.CSharp存储XML文件/index.html",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/5.CSharp读取XML文件/index.html",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/2.XML基础语法/index.html",
+    "source/_posts/游戏引擎/unity/unity核心/30.创建和编辑Animation动画文件.md",
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/25.碰撞检测之刚体.md",
+    "source/_posts/游戏引擎/unity/unity核心/31.老动画系统.md",
+    "source/_posts/游戏引擎/unity/unity核心/32.有限状态机概念.md",
+    "source/_posts/游戏引擎/unity/unity核心/29.认识Animation动画窗口.md",
+    "source/_posts/游戏引擎/unity/unity核心/28.瓦片地图代码控制.md",
+    "source/_posts/游戏引擎/unity/unity核心/27.瓦片地图扩展包.md",
+    "source/_posts/游戏引擎/unity/unity核心/26.瓦片地图关键脚本和碰撞器.md",
+    "source/_posts/游戏引擎/unity/unity核心/25.TilePalette瓦片调色板窗口.md",
+    "source/_posts/游戏引擎/unity/unity核心/24.Tilemap瓦片资源.md",
     "source/_posts/游戏引擎/unity/unity核心/23.SpriteShapeRenderer精灵形状渲染器和SpriteShapeController精灵形状控制器.md",
+    "source/_posts/游戏引擎/unity/unity核心/22.SpriteShapeProfile精灵形状概述文件.md",
+    "source/_posts/游戏引擎/unity/unity核心/15.SortingGroup排序分组.md",
+    "source/_posts/游戏引擎/unity/unity核心/14.SpriteMask精灵遮罩.md",
+    "source/_posts/游戏引擎/unity/unity核心/13.SpriteCreator精灵创造者.md",
+    "source/_posts/游戏引擎/unity/unity核心/9.SpriteEditor之Single.md",
     "source/_posts/游戏引擎/unity/unity核心/21.Effector2D效应器组件.md",
     "source/_posts/游戏引擎/unity/unity核心/20.ConstantForce2D恒定力组件.md",
     "source/_posts/游戏引擎/unity/unity核心/19.PhysicsMaterial2D物理材质.md",
     "source/_posts/游戏引擎/unity/unity核心/18.Collision2D碰撞器和碰撞检测函数.md",
     "source/_posts/游戏引擎/unity/unity核心/17.Rigidbody2D刚体.md",
-    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/25.碰撞检测之刚体.md",
-    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/26.碰撞检测之碰撞器.md",
-    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/27.碰撞检测之物理材质.md",
-    "source/_posts/游戏引擎/unity/unity核心/10.SpriteEditor之Multiple.md",
-    "source/_posts/游戏引擎/unity/unity核心/16.SpriteAtlas精灵图集.md",
-    "source/_posts/游戏引擎/unity/unity核心/14.SpriteMask精灵遮罩.md",
-    "source/_posts/游戏引擎/unity/unity核心/15.SortingGroup排序分组.md",
-    "source/_posts/游戏引擎/unity/unity基础/10.协同程序.md",
-    "source/_posts/游戏引擎/unity/unity核心/13.SpriteCreator精灵创造者.md",
-    "source/_posts/游戏引擎/unity/unity核心/12.SpriteRenderer精灵渲染器.md",
-    "source/_posts/游戏引擎/unity/unity核心/5.纹理形状设置.md",
-    "source/_posts/游戏引擎/unity/unity核心/4.纹理类型设置.md",
-    "source/_posts/游戏引擎/unity/unity核心/7.纹理平铺拉伸设置.md",
-    "source/_posts/游戏引擎/unity/unity核心/2.模型制作流程.md",
-    "source/_posts/游戏引擎/unity/unity核心/6.纹理高级设置.md",
-    "source/_posts/游戏引擎/unity/unity核心/8.纹理平台打包相关设置.md",
-    "source/_posts/游戏引擎/unity/unity核心/9.SpriteEditor之Single.md",
-    "source/_posts/游戏引擎/unity/unity核心/11.SpriteEditor之Polygon多边形编辑.md"
+    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/26.碰撞检测之碰撞器.md"
   ]
 }
