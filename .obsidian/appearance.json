@@ -1,5 +1,6 @@
 {
   "monospaceFontFamily": "Consolas",
-  "cssTheme": "Blue Topaz",
-  "accentColor": "#11a4ee"
+  "cssTheme": "Everforest",
+  "accentColor": "#11a4ee",
+  "theme": "moonstone"
 }

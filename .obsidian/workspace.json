@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity核心/42.Spine使用骨骼动画文件.md",
+                "file": "source/_posts/游戏引擎/unity/unity核心/56.动画2d混合.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "42.Spine使用骨骼动画文件"
+              "title": "56.动画2d混合"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity核心/46.Model模型页签.md",
+                "file": "source/_posts/游戏引擎/unity/unity核心/54.3d动画分层和遮罩.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "46.Model模型页签"
+              "title": "54.3d动画分层和遮罩"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity核心/30.创建和编辑Animation动画文件.md",
+                "file": "source/_posts/游戏引擎/unity/unity核心/33.AnimatorController动画控制器.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "30.创建和编辑Animation动画文件"
+              "title": "33.AnimatorController动画控制器"
             }
           },
           {
@@ -91,8 +91,7 @@
               "title": "13.PopupList下拉列表"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -124,10 +123,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Animator",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
@@ -241,53 +240,53 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "5eeb5442f136ce84",
+  "active": "3d22961c2f487be6",
   "lastOpenFiles": [
     "db.json",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/9.CSharp中XML反序列化/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/8.CSharp中XML序列化/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/7.XML总结/index.html",
     "public/2025/03/06/数据/数据持久化/XML/XML基础知识/7.XML总结/file-20250306163231778.png",
     "public/2025/03/06/数据/数据持久化/XML/XML基础知识/7.XML总结/file-20250306163224731.png",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/7.XML总结/index.html",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/9.CSharp中XML反序列化/index.html",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/8.CSharp中XML序列化/index.html",
+    "public/2025/03/07/数据/数据持久化/XML/XML基础知识/11.让Dictionary支持序列化和反序列化/index.html",
     "public/2025/03/06/数据/数据持久化/XML/XML基础知识/7.XML总结/file-20250306163202847.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/5.CSharp读取XML文件/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111106544.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/5.CSharp读取XML文件/file-20250306150429321.png",
     "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111044803.png",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111106544.png",
     "public/2025/03/06/数据/数据持久化/XML/XML基础知识/6.CSharp存储XML文件/index.html",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/5.CSharp读取XML文件/index.html",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/5.CSharp读取XML文件/file-20250306150429321.png",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111044803.png",
     "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111016341.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111010632.png",
     "public/2025/03/06/数据/数据持久化/XML/XML基础知识/3.XML属性/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/3.XML属性/file-20250306110232832.png",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111010632.png",
     "public/2025/03/06/数据/数据持久化/XML/XML基础知识/3.XML属性/file-20250306105935001.png",
+    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/3.XML属性/file-20250306110232832.png",
     "public/2025/03/06/数据/数据持久化/XML/XML基础知识/2.XML基础语法/index.html",
     "public/2025/03/06/数据/数据持久化/XML/XML基础知识/10.IXmlSerializable接口/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/1.XML基础知识概述/index.html",
-    "source/_posts/游戏引擎/unity/unity核心/45.模型导入概述.md",
+    "source/_posts/游戏引擎/unity/unity核心/55.动画1d混合.md",
+    "source/_posts/游戏引擎/unity/unity核心/56.动画2d混合.md",
+    "source/_posts/游戏引擎/unity/unity核心/54.3d动画分层和遮罩.md",
+    "source/_posts/游戏引擎/unity/unity核心/53.3d动画的使用.md",
+    "source/_posts/游戏引擎/unity/unity核心/52.Materials材质纹理页签.md",
+    "source/_posts/游戏引擎/unity/unity核心/51.Animation动画页签动画剪辑其它设置.md",
+    "source/_posts/游戏引擎/unity/unity核心/49.Animation动画页签基础信息设置.md",
+    "source/_posts/游戏引擎/unity/unity核心/50.Animation动画页签动画剪辑基础设置.md",
     "source/_posts/游戏引擎/unity/unity核心/46.Model模型页签.md",
+    "source/_posts/游戏引擎/unity/unity核心/45.模型导入概述.md",
+    "source/_posts/游戏引擎/unity/unity核心/33.AnimatorController动画控制器.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/11.Toggle单多选框.md",
+    "source/_posts/游戏引擎/unity/unity核心/30.创建和编辑Animation动画文件.md",
+    "source/_posts/游戏引擎/unity/unity核心/47.Rig操纵页签.md",
+    "source/_posts/游戏引擎/unity/unity核心/42.Spine使用骨骼动画文件.md",
+    "source/_posts/游戏引擎/unity/unity核心/48.Animation动画页签概述.md",
     "source/_posts/游戏引擎/unity/unity核心/44.Spine骨骼动画代码控制.md",
     "source/_posts/游戏引擎/unity/unity核心/43.Spine骨骼动画参数.md",
-    "source/_posts/游戏引擎/unity/unity核心/42.Spine使用骨骼动画文件.md",
     "source/_posts/游戏引擎/unity/unity核心/41.Spine导入.md",
     "source/_posts/游戏引擎/unity/unity核心/40.换装不同文件资源.md",
     "source/_posts/游戏引擎/unity/unity核心/39.换装同一文件资源.md",
     "source/_posts/游戏引擎/unity/unity核心/38.反向动力学IK.md",
     "source/_posts/游戏引擎/unity/unity核心/37.psb图片骨骼编辑.md",
     "source/_posts/游戏引擎/unity/unity核心/36.图集图片骨骼编辑.md",
-    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑.md",
-    "source/_posts/游戏引擎/unity/unity核心/34.2D序列帧动画.md",
-    "source/_posts/游戏引擎/unity/unity核心/33.AnimatorController动画控制器.md",
-    "source/_posts/游戏引擎/unity/unity核心/30.创建和编辑Animation动画文件.md",
-    "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/25.碰撞检测之刚体.md",
-    "source/_posts/游戏引擎/unity/unity核心/31.老动画系统.md",
-    "source/_posts/游戏引擎/unity/unity核心/32.有限状态机概念.md",
-    "source/_posts/游戏引擎/unity/unity核心/29.认识Animation动画窗口.md",
-    "source/_posts/游戏引擎/unity/unity核心/28.瓦片地图代码控制.md",
-    "source/_posts/游戏引擎/unity/unity核心/27.瓦片地图扩展包.md",
-    "source/_posts/游戏引擎/unity/unity核心/26.瓦片地图关键脚本和碰撞器.md",
-    "source/_posts/游戏引擎/unity/unity核心/25.TilePalette瓦片调色板窗口.md",
-    "source/_posts/游戏引擎/unity/unity核心/24.Tilemap瓦片资源.md",
-    "source/_posts/游戏引擎/unity/unity核心/23.SpriteShapeRenderer精灵形状渲染器和SpriteShapeController精灵形状控制器.md"
+    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑.md"
   ]
 }
