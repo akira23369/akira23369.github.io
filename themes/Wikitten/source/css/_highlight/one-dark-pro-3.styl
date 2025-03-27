@@ -1,0 +1,83 @@
+/* Everforest Dark Enhanced Code Highlight */
+/* 增强型语法区分版本 */
+
+.highlight
+    color: #d3c6aa
+    background: #2d353b
+    .code
+        /* 注释 */
+        .comment,
+        .quote
+            color: #859289
+            font-style: italic
+
+        /* 变量/字段（橙红） */
+        .variable,
+        .template-variable,
+        .name,
+        .attr
+            color: #e67e80
+
+        /* 类型/类名（浅蓝） */
+        .type,
+        .class,
+        .title
+            color: #7fbbb3
+
+        /* 方法调用（浅紫） */
+        .function,
+        .meta
+            color: #d699b6
+
+        /* 操作符/标点（青蓝） */
+        .operator,
+        .punctuation
+            color: #7fbbb3
+
+        /* 关键字（粉红） */
+        .keyword,
+        .selector-tag
+            color: #d699b6
+
+        /* 数字/常量（浅黄） */
+        .number,
+        .literal,
+        .params
+            color: #dbbc7f
+
+        /* 字符串（柔绿） */
+        .string,
+        .regexp,
+        .bullet
+            color: #a7c080
+
+        /* 特殊符号 */
+        .symbol
+            color: #83c092
+
+        /* 新增的差异化规则 */
+        .built_in,  // 内置类型/方法
+            color: #e69875
+
+        .attr  // 特性/属性
+            color: #a7c080
+
+        /* Diff 相关 */
+        .deletion,
+        .addition
+            color: #d3c6aa
+            display: inline-block
+            width: 100%
+
+        .deletion
+            background-color: #e67e8055
+
+        .addition
+            background-color: #a7c08055
+
+        /* 强调样式 */
+        .emphasis
+            font-style: italic
+
+        .strong
+            font-weight: bold

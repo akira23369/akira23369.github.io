@@ -51,6 +51,7 @@ post_asset_folder: true  # 启用文章资源文件夹
 relative_link: false  # 使链接相对于根文件夹
 future: true  # 显示未来的文章
 syntax_highlighter: highlight.js  # 代码块语法高亮设置
+# syntax_highlighter: prismjs  # 代码块语法高亮设置
 highlight:  # highlight.js 配置
   line_number: true  # 显示行号
   auto_detect: false  # 自动检测语言
@@ -102,6 +103,9 @@ ignore:  # 忽略的文件
 # theme: landscape  # 主题名称
 theme: Wikitten  # 主题名称
 # theme: butterfly  # 主题名称
+# theme: next
+# theme: icarus
+# theme: tree
 
 # 部署配置
 # Deployment
@@ -175,3 +179,4 @@ math:
         inlineMath: [ ['$','$'], ["\\(","\\)"] ]
         displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
         processEscapes: true
+

@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity核心/56.动画2d混合.md",
+                "file": "source/_posts/数据/数据持久化/XML/12.XML数据管理类.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "56.动画2d混合"
+              "title": "12.XML数据管理类"
+            }
+          },
+          {
+            "id": "ed683bade3aac1cf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/游戏引擎/unity/unity核心/66.导航网格外连接组件.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "66.导航网格外连接组件"
             }
           },
           {
@@ -27,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity核心/54.3d动画分层和遮罩.md",
+                "file": "source/_posts/游戏引擎/unity/unity核心/58.动画IK控制.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "54.3d动画分层和遮罩"
+              "title": "58.动画IK控制"
             }
           },
           {
@@ -41,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity核心/33.AnimatorController动画控制器.md",
+                "file": "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/9.生命周期函数.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "33.AnimatorController动画控制器"
+              "title": "9.生命周期函数"
             }
           },
           {
@@ -123,7 +137,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Animator",
+                "query": "cover",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -243,50 +257,50 @@
   "active": "3d22961c2f487be6",
   "lastOpenFiles": [
     "db.json",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/7.XML总结/file-20250306163231778.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/7.XML总结/file-20250306163224731.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/7.XML总结/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/9.CSharp中XML反序列化/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/8.CSharp中XML序列化/index.html",
-    "public/2025/03/07/数据/数据持久化/XML/XML基础知识/11.让Dictionary支持序列化和反序列化/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/7.XML总结/file-20250306163202847.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111106544.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/6.CSharp存储XML文件/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/5.CSharp读取XML文件/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/5.CSharp读取XML文件/file-20250306150429321.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111044803.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111016341.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/3.XML属性/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/4.XML文件存放的位置/file-20250306111010632.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/3.XML属性/file-20250306105935001.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/3.XML属性/file-20250306110232832.png",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/2.XML基础语法/index.html",
-    "public/2025/03/06/数据/数据持久化/XML/XML基础知识/10.IXmlSerializable接口/index.html",
-    "source/_posts/游戏引擎/unity/unity核心/55.动画1d混合.md",
-    "source/_posts/游戏引擎/unity/unity核心/56.动画2d混合.md",
-    "source/_posts/游戏引擎/unity/unity核心/54.3d动画分层和遮罩.md",
-    "source/_posts/游戏引擎/unity/unity核心/53.3d动画的使用.md",
-    "source/_posts/游戏引擎/unity/unity核心/52.Materials材质纹理页签.md",
-    "source/_posts/游戏引擎/unity/unity核心/51.Animation动画页签动画剪辑其它设置.md",
-    "source/_posts/游戏引擎/unity/unity核心/49.Animation动画页签基础信息设置.md",
-    "source/_posts/游戏引擎/unity/unity核心/50.Animation动画页签动画剪辑基础设置.md",
-    "source/_posts/游戏引擎/unity/unity核心/46.Model模型页签.md",
-    "source/_posts/游戏引擎/unity/unity核心/45.模型导入概述.md",
-    "source/_posts/游戏引擎/unity/unity核心/33.AnimatorController动画控制器.md",
-    "source/_posts/UI系统/NGUI/NGUI基础知识/11.Toggle单多选框.md",
-    "source/_posts/游戏引擎/unity/unity核心/30.创建和编辑Animation动画文件.md",
-    "source/_posts/游戏引擎/unity/unity核心/47.Rig操纵页签.md",
-    "source/_posts/游戏引擎/unity/unity核心/42.Spine使用骨骼动画文件.md",
-    "source/_posts/游戏引擎/unity/unity核心/48.Animation动画页签概述.md",
-    "source/_posts/游戏引擎/unity/unity核心/44.Spine骨骼动画代码控制.md",
-    "source/_posts/游戏引擎/unity/unity核心/43.Spine骨骼动画参数.md",
-    "source/_posts/游戏引擎/unity/unity核心/41.Spine导入.md",
-    "source/_posts/游戏引擎/unity/unity核心/40.换装不同文件资源.md",
-    "source/_posts/游戏引擎/unity/unity核心/39.换装同一文件资源.md",
-    "source/_posts/游戏引擎/unity/unity核心/38.反向动力学IK.md",
-    "source/_posts/游戏引擎/unity/unity核心/37.psb图片骨骼编辑.md",
-    "source/_posts/游戏引擎/unity/unity核心/36.图集图片骨骼编辑.md",
-    "source/_posts/游戏引擎/unity/unity核心/35.单张图片骨骼编辑.md"
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/3.Unity随机数和UnityAction委托/index.html",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/index.html",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/2.Cursor鼠标的隐藏锁定图片/index.html",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/file-20250227213144486.png",
+    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/13.打包PlayerPrefsDataMgr/index.html",
+    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/8.反射读取常用成员数据/index.html",
+    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/13.打包PlayerPrefsDataMgr/file-20250224111710339.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143929796.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301144027904.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/index.html",
+    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/9.反射读取List数据类型/index.html",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143846271.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143825667.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143740401.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143730160.png",
+    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/11.反射读取自定义类型/index.html",
+    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/12.加密思路/index.html",
+    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/10.反射读取Dictionary数据类型/index.html",
+    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/2.需求分析/Pasted image 20240311161937.png",
+    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/2.需求分析/Pasted image 20240311161837.png",
+    "source/_posts/数据/数据持久化/XML/11.让Dictionary支持序列化和反序列化.md",
+    "source/_posts/数据/数据持久化/XML/10.IXmlSerializable接口.md",
+    "source/_posts/数据/数据持久化/XML/9.CSharp中XML反序列化.md",
+    "source/_posts/数据/数据持久化/XML/8.CSharp中XML序列化.md",
+    "source/_posts/数据/数据持久化/XML/7.XML总结.md",
+    "source/_posts/数据/数据持久化/XML/6.CSharp存储XML文件.md",
+    "source/_posts/数据/数据持久化/XML/5.CSharp读取XML文件.md",
+    "source/_posts/数据/数据持久化/XML/4.XML文件存放的位置.md",
+    "source/_posts/数据/数据持久化/XML/3.XML属性.md",
+    "source/_posts/数据/数据持久化/XML/2.XML基础语法.md",
+    "source/_posts/数据/数据持久化/XML/1.XML基础知识概述.md",
+    "source/_posts/数据/数据持久化/XML/XML基础知识/3.XML属性.md",
+    "source/_posts/数据/数据持久化/XML/12.XML数据管理类.md",
+    "source/_posts/数据/数据持久化/XML/XML基础知识/13.XMLDataMgr存储读取功能.md",
+    "source/_posts/数据/数据持久化/Json/8.Json实践小项目.md",
+    "source/_posts/数据/数据持久化/Json/1.Json基础知识概述.md",
+    "source/_posts/数据/数据持久化/Json/6.Newtonsoft.Json.md",
+    "source/_posts/数据/数据持久化/Json/7.各Json库对比.md",
+    "source/_posts/数据/数据持久化/Json/4.JsonUtility.md",
+    "source/_posts/数据/数据持久化/Json/5.LitJson.md",
+    "source/_posts/数据/数据持久化/Json/3.Excel转Json.md",
+    "source/_posts/数据/数据持久化/Json/2.Json基本语法.md",
+    "source/_posts/数据/数据持久化/Json/3.Excel转Json/未命名.md",
+    "source/_posts/编程语言/Csharp/csharp表达式体.md",
+    "source/_posts/数据/数据持久化/未命名.md"
   ]
 }
