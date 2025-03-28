@@ -9,12 +9,12 @@
         <meta name="keywords" content="游戏引擎,unity,物理系统,核心系统,unity入门,unity入门基础知识" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="碰撞产生的必要条件：两个物体都有碰撞器，至少一个物体有刚体  RigidBody组件信息如下 Mass 质量 默认为千克 质量越大惯性越大  Drag 空气阻力 根据力移动对象时影响对象的空气阻力大小，0 表示没有空气阻力  Angular Drag 角阻力（扭矩阻力） 通俗理解就是阻碍对象旋转的阻力，角阻力越大越不容易旋转 0 表示没有空气阻力。  Use Gravity 重力开关 是否受重力影">
+    <meta name="description" content="碰撞产生的必要条件：两个物体都有碰撞器，至少一个物体有刚体  RigidBody组件信息如下   Mass 质量  默认为千克 质量越大惯性越大   Drag 空气阻力  根据力移动对象时影响对象的空气阻力大小，0 表示没有空气阻力   Angular Drag 角阻力（扭矩阻力）  通俗理解就是阻碍对象旋转的阻力，角阻力越大越不容易旋转 0 表示没有空气阻力。   Use Gravity 重力开">
 <meta property="og:type" content="article">
 <meta property="og:title" content="25.碰撞检测之刚体">
 <meta property="og:url" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/index.html">
 <meta property="og:site_name" content="akiraの博客思密达">
-<meta property="og:description" content="碰撞产生的必要条件：两个物体都有碰撞器，至少一个物体有刚体  RigidBody组件信息如下 Mass 质量 默认为千克 质量越大惯性越大  Drag 空气阻力 根据力移动对象时影响对象的空气阻力大小，0 表示没有空气阻力  Angular Drag 角阻力（扭矩阻力） 通俗理解就是阻碍对象旋转的阻力，角阻力越大越不容易旋转 0 表示没有空气阻力。  Use Gravity 重力开关 是否受重力影">
+<meta property="og:description" content="碰撞产生的必要条件：两个物体都有碰撞器，至少一个物体有刚体  RigidBody组件信息如下   Mass 质量  默认为千克 质量越大惯性越大   Drag 空气阻力  根据力移动对象时影响对象的空气阻力大小，0 表示没有空气阻力   Angular Drag 角阻力（扭矩阻力）  通俗理解就是阻碍对象旋转的阻力，角阻力越大越不容易旋转 0 表示没有空气阻力。   Use Gravity 重力开">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220175255335.png">
 <meta property="og:image" content="http://example.com/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220180007874.png">
@@ -239,6 +239,15 @@
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/05/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0/">1.NGUI基础知识概述</a></li>  <li class="file"><a href="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.NGUI%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AF%BC%E5%85%A5/">2.NGUI下载和导入</a></li>  <li class="file"><a href="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.Root%E7%BB%84%E4%BB%B6(UIRoot)/">3.Root组件(UIRoot)</a></li>  <li class="file"><a href="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel)/">4.Panel组件(UIPanel)</a></li>  <li class="file"><a href="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.EventSystem%E4%BA%8B%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%BB%84%E4%BB%B6/">5.EventSystem事件系统组件</a></li>  <li class="file"><a href="/2025/03/10/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%9B%BE%E9%9B%86%E5%88%B6%E4%BD%9C/">6.图集制作</a></li>  <li class="file"><a href="/2025/03/10/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.Sprite%E7%B2%BE%E7%81%B5%E5%9B%BE%E7%89%87/">7.Sprite精灵图片</a></li>  <li class="file"><a href="/2025/03/10/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.Label%E6%96%87%E6%9C%AC/">8.Label文本</a></li>  <li class="file"><a href="/2025/03/10/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.Texture%E7%BA%B9%E7%90%86%E5%9B%BE%E7%89%87/">9.Texture纹理图片</a></li>  <li class="file"><a href="/2025/03/10/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/10.Button%E6%8C%89%E9%92%AE/">10.Button按钮</a></li>  <li class="file"><a href="/2025/03/11/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/11.Toggle%E5%8D%95%E5%A4%9A%E9%80%89%E6%A1%86/">11.Toggle单多选框</a></li>  <li class="file"><a href="/2025/03/11/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/12.Input%E8%BE%93%E5%85%A5%E6%A1%86/">12.Input输入框</a></li>  <li class="file"><a href="/2025/03/11/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/13.PopupList%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8/">13.PopupList下拉列表</a></li>  <li class="file"><a href="/2025/03/11/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/14.Slider%E6%BB%91%E5%8A%A8%E6%9D%A1/">14.Slider滑动条</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/15.ScrollBar%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%92%8CProgressBar%E8%BF%9B%E5%BA%A6%E6%9D%A1/">15.ScrollBar滚动条和ProgressBar进度条</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/16.ScrollView%E6%BB%9A%E5%8A%A8%E8%A7%86%E5%9B%BE/">16.ScrollView滚动视图</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/17.Anchor%E9%94%9A%E7%82%B9/">17.Anchor锚点</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.EventListener%E5%92%8CEventTrigger%E4%BA%8B%E4%BB%B6%E7%9B%B8%E5%85%B3/">18.EventListener和EventTrigger事件相关</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/19.Drawcall/">19.Drawcall</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20.NGUI%E5%AD%97%E4%BD%93/">20.NGUI字体</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/21.NGUI%E7%BC%93%E5%8A%A8/">21.NGUI缓动</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/22.3d%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88%E6%98%BE%E7%A4%BA%E5%9C%A8UI%E4%B9%8B%E5%89%8D/">22.3d模型和粒子特效显示在UI之前</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/24.NGUI%E4%B9%8B%E5%85%B6%E5%AE%83/">24.NGUI之其它</a></li>  <li class="file"><a href="/2025/03/13/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.NGUI%E6%80%BB%E7%BB%93/">25.NGUI总结</a></li>  </ul> 
                     </li> 
                      </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            UGUI
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/1.UGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0/">1.UGUI基础知识概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/2.%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/">2.六大基础组件概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/3.Canvas%E7%94%BB%E5%B8%83%E7%BB%84%E4%BB%B6/">3.Canvas画布组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/4.CanvasScaler%E7%94%BB%E5%B8%83%E7%BC%A9%E6%94%BE%E6%8E%A7%E5%88%B6%E7%BB%84%E4%BB%B6/">4.CanvasScaler画布缩放控制组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/5.GraphicRaycaster%E5%9B%BE%E5%BD%A2%E5%B0%84%E7%BA%BF%E6%8A%95%E5%B0%84%E5%99%A8%E7%BB%84%E4%BB%B6/">5.GraphicRaycaster图形射线投射器组件</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -467,7 +476,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title"><span>标签云</span></h3>
         <div class="widget tagcloud">
-            <a href="/tags/2d-Animation/" style="font-size: 12.17px;">2d Animation</a> <a href="/tags/2d%E5%8A%A8%E7%94%BB/" style="font-size: 14.35px;">2d动画</a> <a href="/tags/2d%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">2d序列帧动画</a> <a href="/tags/2d%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">2d物理系统</a> <a href="/tags/2d%E7%9B%B8%E5%85%B3/" style="font-size: 17.39px;">2d相关</a> <a href="/tags/2d%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/" style="font-size: 13.91px;">2d骨骼动画</a> <a href="/tags/3D%E6%95%B0%E5%AD%A6/" style="font-size: 12.61px;">3D数学</a> <a href="/tags/3d%E5%8A%A8%E7%94%BB%E7%9B%B8%E5%85%B3/" style="font-size: 13.48px;">3d动画相关</a> <a href="/tags/Csharp/" style="font-size: 14.35px;">Csharp</a> <a href="/tags/GUI/" style="font-size: 16.96px;">GUI</a> <a href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.78px;">GUI基础知识</a> <a href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 14.78px;">GUI实践项目</a> <a href="/tags/Json/" style="font-size: 13.04px;">Json</a> <a href="/tags/NGUI/" style="font-size: 16.96px;">NGUI</a> <a href="/tags/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.96px;">NGUI基础知识</a> <a href="/tags/PlayerPrefs/" style="font-size: 16.09px;">PlayerPrefs</a> <a href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.3px;">PlayerPrefs基础知识</a> <a href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 15.22px;">PlayerPrefs实践项目</a> <a href="/tags/Spine/" style="font-size: 11.3px;">Spine</a> <a href="/tags/Sprite/" style="font-size: 13.91px;">Sprite</a> <a href="/tags/Tilemap/" style="font-size: 11.74px;">Tilemap</a> <a href="/tags/UI%E7%B3%BB%E7%BB%9F/" style="font-size: 19.13px;">UI系统</a> <a href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" style="font-size: 10.43px;">Unity工作原理</a> <a href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity界面基础</a> <a href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity脚本基础</a> <a href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" style="font-size: 14.35px;">Unity重要组件和API</a> <a href="/tags/XML/" style="font-size: 14.78px;">XML</a> <a href="/tags/hexo/" style="font-size: 10.87px;">hexo</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unity%E5%85%A5%E9%97%A8/" style="font-size: 18.7px;">unity入门</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.26px;">unity入门基础知识</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 11.3px;">unity入门实践项目</a> <a href="/tags/unity%E5%9F%BA%E7%A1%80/" style="font-size: 16.52px;">unity基础</a> <a href="/tags/unity%E6%A0%B8%E5%BF%83/" style="font-size: 19.57px;">unity核心</a> <a href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10.43px;">光源系统</a> <a href="/tags/%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" style="font-size: 15.65px;">动画系统</a> <a href="/tags/%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 12.17px;">图片导入相关设置</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">导航系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 18.7px;">数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" style="font-size: 18.7px;">数据持久化</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" style="font-size: 17.83px;">核心系统</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3/" style="font-size: 13.04px;">模型导入相关</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" style="font-size: 20px;">游戏引擎</a> <a href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14.78px;">物理系统</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 14.35px;">编程语言</a> <a href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" style="font-size: 10.87px;">音效系统</a>
+            <a href="/tags/2d-Animation/" style="font-size: 12.17px;">2d Animation</a> <a href="/tags/2d%E5%8A%A8%E7%94%BB/" style="font-size: 14.35px;">2d动画</a> <a href="/tags/2d%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">2d序列帧动画</a> <a href="/tags/2d%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">2d物理系统</a> <a href="/tags/2d%E7%9B%B8%E5%85%B3/" style="font-size: 17.39px;">2d相关</a> <a href="/tags/2d%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/" style="font-size: 13.91px;">2d骨骼动画</a> <a href="/tags/3D%E6%95%B0%E5%AD%A6/" style="font-size: 12.61px;">3D数学</a> <a href="/tags/3d%E5%8A%A8%E7%94%BB%E7%9B%B8%E5%85%B3/" style="font-size: 13.48px;">3d动画相关</a> <a href="/tags/Csharp/" style="font-size: 14.35px;">Csharp</a> <a href="/tags/GUI/" style="font-size: 16.96px;">GUI</a> <a href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.78px;">GUI基础知识</a> <a href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 14.78px;">GUI实践项目</a> <a href="/tags/Json/" style="font-size: 13.04px;">Json</a> <a href="/tags/NGUI/" style="font-size: 16.96px;">NGUI</a> <a href="/tags/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.96px;">NGUI基础知识</a> <a href="/tags/PlayerPrefs/" style="font-size: 16.09px;">PlayerPrefs</a> <a href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.3px;">PlayerPrefs基础知识</a> <a href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 15.22px;">PlayerPrefs实践项目</a> <a href="/tags/Spine/" style="font-size: 11.3px;">Spine</a> <a href="/tags/Sprite/" style="font-size: 13.91px;">Sprite</a> <a href="/tags/Tilemap/" style="font-size: 11.74px;">Tilemap</a> <a href="/tags/UGUI/" style="font-size: 11.74px;">UGUI</a> <a href="/tags/UGUI%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/" style="font-size: 11.3px;">UGUI六大基础组件</a> <a href="/tags/UI%E7%B3%BB%E7%BB%9F/" style="font-size: 19.13px;">UI系统</a> <a href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" style="font-size: 10.43px;">Unity工作原理</a> <a href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity界面基础</a> <a href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity脚本基础</a> <a href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" style="font-size: 14.35px;">Unity重要组件和API</a> <a href="/tags/XML/" style="font-size: 14.78px;">XML</a> <a href="/tags/hexo/" style="font-size: 10.87px;">hexo</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unity%E5%85%A5%E9%97%A8/" style="font-size: 18.7px;">unity入门</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.26px;">unity入门基础知识</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 11.3px;">unity入门实践项目</a> <a href="/tags/unity%E5%9F%BA%E7%A1%80/" style="font-size: 16.52px;">unity基础</a> <a href="/tags/unity%E6%A0%B8%E5%BF%83/" style="font-size: 19.57px;">unity核心</a> <a href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10.43px;">光源系统</a> <a href="/tags/%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" style="font-size: 15.65px;">动画系统</a> <a href="/tags/%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 12.17px;">图片导入相关设置</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">导航系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 18.7px;">数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" style="font-size: 18.7px;">数据持久化</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" style="font-size: 17.83px;">核心系统</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3/" style="font-size: 13.04px;">模型导入相关</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" style="font-size: 20px;">游戏引擎</a> <a href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14.78px;">物理系统</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 14.35px;">编程语言</a> <a href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" style="font-size: 10.87px;">音效系统</a>
         </div>
     </div>
 
@@ -526,61 +535,73 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mass-%E8%B4%A8%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text">Mass 质量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Drag-%E7%A9%BA%E6%B0%94%E9%98%BB%E5%8A%9B"><span class="toc-number">2.</span> <span class="toc-text">Drag 空气阻力</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Angular-Drag-%E8%A7%92%E9%98%BB%E5%8A%9B%EF%BC%88%E6%89%AD%E7%9F%A9%E9%98%BB%E5%8A%9B%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">Angular Drag 角阻力（扭矩阻力）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Use-Gravity-%E9%87%8D%E5%8A%9B%E5%BC%80%E5%85%B3"><span class="toc-number">4.</span> <span class="toc-text">Use Gravity 重力开关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Is-Kinematic"><span class="toc-number">5.</span> <span class="toc-text">Is Kinematic</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Interpolate-%E6%8F%92%E5%80%BC%E8%BF%90%E7%AE%97"><span class="toc-number">6.</span> <span class="toc-text">Interpolate 插值运算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Collision-Detection-%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">Collision Detection 碰撞检测模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Constraints-%E5%88%9A%E4%BD%93%E7%BA%A6%E6%9D%9F"><span class="toc-number">8.</span> <span class="toc-text">Constraints 刚体约束</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mass-%E8%B4%A8%E9%87%8F"><span class="toc-number">1.</span> <span class="toc-text"> Mass 质量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#drag-%E7%A9%BA%E6%B0%94%E9%98%BB%E5%8A%9B"><span class="toc-number">2.</span> <span class="toc-text"> Drag 空气阻力</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#angular-drag-%E8%A7%92%E9%98%BB%E5%8A%9B%E6%89%AD%E7%9F%A9%E9%98%BB%E5%8A%9B"><span class="toc-number">3.</span> <span class="toc-text"> Angular Drag 角阻力（扭矩阻力）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#use-gravity-%E9%87%8D%E5%8A%9B%E5%BC%80%E5%85%B3"><span class="toc-number">4.</span> <span class="toc-text"> Use Gravity 重力开关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#is-kinematic"><span class="toc-number">5.</span> <span class="toc-text"> Is Kinematic</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#interpolate-%E6%8F%92%E5%80%BC%E8%BF%90%E7%AE%97"><span class="toc-number">6.</span> <span class="toc-text"> Interpolate 插值运算</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#collision-detection-%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text"> Collision Detection 碰撞检测模式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#constraints-%E5%88%9A%E4%BD%93%E7%BA%A6%E6%9D%9F"><span class="toc-number">8.</span> <span class="toc-text"> Constraints 刚体约束</span></a></li></ol>
                 </div>
             
         
         
             <p><strong>碰撞产生的必要条件</strong>：两个物体都有碰撞器，至少一个物体有刚体</p>
-<p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220175255335.png" alt=""></p>
-<p>RigidBody组件信息如下<br><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220180007874.png" alt=""></p>
-<h1 id="Mass-质量"><a href="#Mass-质量" class="headerlink" title="Mass 质量"></a><strong>Mass 质量</strong></h1><ul>
+<p><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220175255335.png" alt="" /></p>
+<p>RigidBody组件信息如下<br />
+<img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220180007874.png" alt="" /></p>
+<h1 id="mass-质量"><a class="markdownIt-Anchor" href="#mass-质量"></a> <strong>Mass 质量</strong></h1>
+<ul>
 <li>默认为千克</li>
 <li>质量越大惯性越大</li>
 </ul>
-<h1 id="Drag-空气阻力"><a href="#Drag-空气阻力" class="headerlink" title="Drag 空气阻力"></a><strong>Drag 空气阻力</strong></h1><ul>
+<h1 id="drag-空气阻力"><a class="markdownIt-Anchor" href="#drag-空气阻力"></a> <strong>Drag 空气阻力</strong></h1>
+<ul>
 <li>根据力移动对象时影响对象的空气阻力大小，0 表示没有空气阻力</li>
 </ul>
-<h1 id="Angular-Drag-角阻力（扭矩阻力）"><a href="#Angular-Drag-角阻力（扭矩阻力）" class="headerlink" title="Angular Drag 角阻力（扭矩阻力）"></a><strong>Angular Drag 角阻力（扭矩阻力）</strong></h1><ul>
+<h1 id="angular-drag-角阻力扭矩阻力"><a class="markdownIt-Anchor" href="#angular-drag-角阻力扭矩阻力"></a> <strong>Angular Drag 角阻力（扭矩阻力）</strong></h1>
+<ul>
 <li>通俗理解就是阻碍对象旋转的阻力，角阻力越大越不容易旋转</li>
 <li>0 表示没有空气阻力。</li>
 </ul>
-<h1 id="Use-Gravity-重力开关"><a href="#Use-Gravity-重力开关" class="headerlink" title="Use Gravity 重力开关"></a><strong>Use Gravity 重力开关</strong></h1><ul>
+<h1 id="use-gravity-重力开关"><a class="markdownIt-Anchor" href="#use-gravity-重力开关"></a> <strong>Use Gravity 重力开关</strong></h1>
+<ul>
 <li>是否受重力影响</li>
 </ul>
-<h1 id="Is-Kinematic"><a href="#Is-Kinematic" class="headerlink" title="Is Kinematic"></a><strong>Is Kinematic</strong></h1><ul>
+<h1 id="is-kinematic"><a class="markdownIt-Anchor" href="#is-kinematic"></a> <strong>Is Kinematic</strong></h1>
+<ul>
 <li>控制物理是否影响刚体。</li>
 <li>可以理解为开启后不受力的影响，只能通过Transform移动</li>
 <li>如果启用此选项，则对象将不会被物理引擎驱动，只能通过 (Transform) 对其进行操作。对于移动平台，或者如果要动画化附加了 HingeJoint 的刚体，此属性将非常有用。</li>
 </ul>
-<h1 id="Interpolate-插值运算"><a href="#Interpolate-插值运算" class="headerlink" title="Interpolate 插值运算"></a><strong>Interpolate 插值运算</strong></h1><ul>
+<h1 id="interpolate-插值运算"><a class="markdownIt-Anchor" href="#interpolate-插值运算"></a> <strong>Interpolate 插值运算</strong></h1>
+<ul>
 <li>让刚体物体移动更平滑</li>
 <li>可以更改FixTime，改成一秒，这样对象会很突兀的一秒移动一次，这时开启插值运算就可以让刚体对象平滑移动</li>
 </ul>
 <ol>
-<li>None 无插值运算模式<ul>
+<li>None 无插值运算模式
+<ul>
 <li>不应用插值运算</li>
 </ul>
 </li>
-<li>Interpolate 插值模式<ul>
+<li>Interpolate 插值模式
+<ul>
 <li>插值将始终滞后一点，但比外推更流畅。</li>
 <li>根据前一帧的变换来平滑变换。</li>
 </ul>
 </li>
-<li>Extrapolate 外推模式<ul>
+<li>Extrapolate 外推模式
+<ul>
 <li>外推将根据当前速度预测刚体的位置。</li>
 <li>根据下一帧的估计变换来平滑变换。</li>
 </ul>
 </li>
 </ol>
-<h1 id="Collision-Detection-碰撞检测模式"><a href="#Collision-Detection-碰撞检测模式" class="headerlink" title="Collision Detection 碰撞检测模式"></a><strong>Collision Detection 碰撞检测模式</strong></h1><blockquote>
+<h1 id="collision-detection-碰撞检测模式"><a class="markdownIt-Anchor" href="#collision-detection-碰撞检测模式"></a> <strong>Collision Detection 碰撞检测模式</strong></h1>
+<blockquote>
 <p>Continuous Dynamic 连续动态检测 <strong>&gt;</strong> Continuous Speculative 连续推测检测 <strong>&gt;</strong> Continuous 连续检测 <strong>&gt;</strong> Discrete 离散检测</p>
 </blockquote>
 <ul>
 <li>用于防止快速移动的对象穿过其它对象而不检测碰撞</li>
 </ul>
 <ol>
-<li>Discrete 离散检测<ul>
+<li>Discrete 离散检测
+<ul>
 <li>默认的碰撞检测模式。</li>
 <li>在每一帧中进行一次碰撞检测，适用于大多数普通物体。</li>
 <li>最省性能，但可能会错过高速物体的碰撞。</li>
@@ -588,44 +609,51 @@
 <li>对场景中的所有其他碰撞体使用离散碰撞检测。其他碰撞体在测试碰撞时会使用离散碰撞检测。用于正常碰撞（这是默认值）</li>
 </ul>
 </li>
-<li>Continuous 连续检测<ul>
+<li>Continuous 连续检测
+<ul>
 <li>提高了碰撞检测的精度，特别适合高速移动的物体。</li>
 <li>在每一帧中进行多次碰撞检测，避免高速物体穿过其他物体。</li>
-<li>比 <code>Discrete</code> 消耗更多的性能，但减少了穿透问题。</li>
+<li>比 <code>Discrete</code> 消耗更多的性能，但减少了穿透问题。</li>
 <li>适用于高速移动的物体，如子弹或快速飞行的物体。</li>
 <li>对动态碰撞体（具有刚体）使用离散碰撞检测，并对静态碰撞体（没有刚体）使用连续碰撞检测。</li>
 <li>设置为连续动态 (Continuous Dynamic) 的刚体将在测试与该刚体的碰撞时使用连续碰撞检测。（此属性对物理性能有很大影响，如果没有快速对象的碰撞问题，请将其保留为 Discrete 设置）</li>
 <li>其他刚体将使用离散碰撞检测。</li>
 </ul>
 </li>
-<li>Continuous Dynamic 连续动态检测<ul>
+<li>Continuous Dynamic 连续动态检测
+<ul>
 <li>针对快速移动的物体和其他静止或缓慢移动的物体之间的碰撞检测。</li>
-<li>结合 <code>Continuous</code> 和 <code>Discrete</code> 的优点，对高速物体进行多次检测，对慢速或静止物体进行一次检测。</li>
-<li>在保证精度的同时比 <code>Continuous</code> 更省性能。</li>
+<li>结合 <code>Continuous</code> 和 <code>Discrete</code> 的优点，对高速物体进行多次检测，对慢速或静止物体进行一次检测。</li>
+<li>在保证精度的同时比 <code>Continuous</code> 更省性能。</li>
 <li>适用于快速移动的物体与静止或缓慢移动的物体之间的碰撞检测，如快速移动的角色或车辆。</li>
 <li>性能消耗高</li>
 <li>对设置为连续 (Continuous)和连续动态 (Continuous Dynamic)碰撞的游戏对象使用连续碰撞检测。还将对静态碰撞体（没有刚体）使用连续碰撞检测。</li>
 <li>对于所有其他碰撞体，使用离散碰撞检测。用于快速移动的对象。</li>
 </ul>
 </li>
-<li>Continuous Speculative 连续推测检测<ul>
+<li>Continuous Speculative 连续推测检测
+<ul>
 <li>使用预测的方式进行碰撞检测。</li>
 <li>预测物体的未来位置，并在物体穿过其他物体前进行检测和处理。</li>
 <li>性能较高，精度也不错，但有时可能会出现误判。</li>
 <li>适合大多数需要高精度且有较高速度的物体。</li>
-<li>对刚体和碰撞体使用推测性连续碰撞检测。该方法通常比连续碰撞检测的成本更低。<br><img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220181902841.png" alt=""></li>
+<li>对刚体和碰撞体使用推测性连续碰撞检测。该方法通常比连续碰撞检测的成本更低。<br />
+<img src="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/file-20250220181902841.png" alt="" /></li>
 </ul>
 </li>
 </ol>
-<h1 id="Constraints-刚体约束"><a href="#Constraints-刚体约束" class="headerlink" title="Constraints 刚体约束"></a>Constraints 刚体约束</h1><ul>
+<h1 id="constraints-刚体约束"><a class="markdownIt-Anchor" href="#constraints-刚体约束"></a> Constraints 刚体约束</h1>
+<ul>
 <li>对刚体运动的限制</li>
 </ul>
 <ol>
-<li>Freeze Position 冻结位置<ul>
+<li>Freeze Position 冻结位置
+<ul>
 <li>有选择地停止刚体沿世界 X、Y 和 Z 轴的移动。</li>
 </ul>
 </li>
-<li>Freeze Rotation 冻结旋转<ul>
+<li>Freeze Rotation 冻结旋转
+<ul>
 <li>有选择地停止刚体围绕局部 X、Y 和 Z 轴旋转。</li>
 </ul>
 </li>

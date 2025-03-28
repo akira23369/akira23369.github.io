@@ -9,12 +9,12 @@
         <meta name="keywords" content="游戏引擎,unity,核心系统,unity核心,动画系统,2d动画,2d骨骼动画,2d Animation" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="什么是IK在骨骼动画中，构建骨骼的方法被称为正向动力学。它的表现形式是，子骨骼（关节）的位置根据父骨骼（关节）的旋转而改变。用我们人体举例子，当我们抬起手臂时，是肩部关节带动的整个手臂的运动，用父子骨骼理解的话就是父带动了子。 而IK全称是Inverse Kinematics，翻译过来的意思就是反向动力学的意思。它和正向动力学恰恰相反。它的表现形式是，子骨骼（关节）末端的位置改变会带动自己以及自己">
+    <meta name="description" content="什么是IK  在骨骼动画中，构建骨骼的方法被称为正向动力学。 它的表现形式是，子骨骼（关节）的位置根据父骨骼（关节）的旋转而改变。 用我们人体举例子，当我们抬起手臂时，是肩部关节带动的整个手臂的运动，用父子骨骼理解的话就是父带动了子。 而IK全称是Inverse Kinematics，翻译过来的意思就是反向动力学的意思。 它和正向动力学恰恰相反。 它的表现形式是，子骨骼（关节）末端的位置改变会带">
 <meta property="og:type" content="article">
 <meta property="og:title" content="38.反向动力学IK">
 <meta property="og:url" content="http://example.com/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/index.html">
 <meta property="og:site_name" content="akiraの博客思密达">
-<meta property="og:description" content="什么是IK在骨骼动画中，构建骨骼的方法被称为正向动力学。它的表现形式是，子骨骼（关节）的位置根据父骨骼（关节）的旋转而改变。用我们人体举例子，当我们抬起手臂时，是肩部关节带动的整个手臂的运动，用父子骨骼理解的话就是父带动了子。 而IK全称是Inverse Kinematics，翻译过来的意思就是反向动力学的意思。它和正向动力学恰恰相反。它的表现形式是，子骨骼（关节）末端的位置改变会带动自己以及自己">
+<meta property="og:description" content="什么是IK  在骨骼动画中，构建骨骼的方法被称为正向动力学。 它的表现形式是，子骨骼（关节）的位置根据父骨骼（关节）的旋转而改变。 用我们人体举例子，当我们抬起手臂时，是肩部关节带动的整个手臂的运动，用父子骨骼理解的话就是父带动了子。 而IK全称是Inverse Kinematics，翻译过来的意思就是反向动力学的意思。 它和正向动力学恰恰相反。 它的表现形式是，子骨骼（关节）末端的位置改变会带">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/0b16ba3c4c1d2db13641b1849d7cee4f.gif">
 <meta property="og:image" content="http://example.com/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319110212808.png">
@@ -272,6 +272,15 @@
                     </li> 
                      </ul> 
                     </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            UGUI
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/1.UGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0/">1.UGUI基础知识概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/2.%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/">2.六大基础组件概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/3.Canvas%E7%94%BB%E5%B8%83%E7%BB%84%E4%BB%B6/">3.Canvas画布组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/4.CanvasScaler%E7%94%BB%E5%B8%83%E7%BC%A9%E6%94%BE%E6%8E%A7%E5%88%B6%E7%BB%84%E4%BB%B6/">4.CanvasScaler画布缩放控制组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/5.GraphicRaycaster%E5%9B%BE%E5%BD%A2%E5%B0%84%E7%BA%BF%E6%8A%95%E5%B0%84%E5%99%A8%E7%BB%84%E4%BB%B6/">5.GraphicRaycaster图形射线投射器组件</a></li>  </ul> 
+                    </li> 
                      </ul> 
                     </li> 
                     
@@ -499,7 +508,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title"><span>标签云</span></h3>
         <div class="widget tagcloud">
-            <a href="/tags/2d-Animation/" style="font-size: 12.17px;">2d Animation</a> <a href="/tags/2d%E5%8A%A8%E7%94%BB/" style="font-size: 14.35px;">2d动画</a> <a href="/tags/2d%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">2d序列帧动画</a> <a href="/tags/2d%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">2d物理系统</a> <a href="/tags/2d%E7%9B%B8%E5%85%B3/" style="font-size: 17.39px;">2d相关</a> <a href="/tags/2d%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/" style="font-size: 13.91px;">2d骨骼动画</a> <a href="/tags/3D%E6%95%B0%E5%AD%A6/" style="font-size: 12.61px;">3D数学</a> <a href="/tags/3d%E5%8A%A8%E7%94%BB%E7%9B%B8%E5%85%B3/" style="font-size: 13.48px;">3d动画相关</a> <a href="/tags/Csharp/" style="font-size: 14.35px;">Csharp</a> <a href="/tags/GUI/" style="font-size: 16.96px;">GUI</a> <a href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.78px;">GUI基础知识</a> <a href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 14.78px;">GUI实践项目</a> <a href="/tags/Json/" style="font-size: 13.04px;">Json</a> <a href="/tags/NGUI/" style="font-size: 16.96px;">NGUI</a> <a href="/tags/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.96px;">NGUI基础知识</a> <a href="/tags/PlayerPrefs/" style="font-size: 16.09px;">PlayerPrefs</a> <a href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.3px;">PlayerPrefs基础知识</a> <a href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 15.22px;">PlayerPrefs实践项目</a> <a href="/tags/Spine/" style="font-size: 11.3px;">Spine</a> <a href="/tags/Sprite/" style="font-size: 13.91px;">Sprite</a> <a href="/tags/Tilemap/" style="font-size: 11.74px;">Tilemap</a> <a href="/tags/UI%E7%B3%BB%E7%BB%9F/" style="font-size: 19.13px;">UI系统</a> <a href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" style="font-size: 10.43px;">Unity工作原理</a> <a href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity界面基础</a> <a href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity脚本基础</a> <a href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" style="font-size: 14.35px;">Unity重要组件和API</a> <a href="/tags/XML/" style="font-size: 14.78px;">XML</a> <a href="/tags/hexo/" style="font-size: 10.87px;">hexo</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unity%E5%85%A5%E9%97%A8/" style="font-size: 18.7px;">unity入门</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.26px;">unity入门基础知识</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 11.3px;">unity入门实践项目</a> <a href="/tags/unity%E5%9F%BA%E7%A1%80/" style="font-size: 16.52px;">unity基础</a> <a href="/tags/unity%E6%A0%B8%E5%BF%83/" style="font-size: 19.57px;">unity核心</a> <a href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10.43px;">光源系统</a> <a href="/tags/%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" style="font-size: 15.65px;">动画系统</a> <a href="/tags/%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 12.17px;">图片导入相关设置</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">导航系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 18.7px;">数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" style="font-size: 18.7px;">数据持久化</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" style="font-size: 17.83px;">核心系统</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3/" style="font-size: 13.04px;">模型导入相关</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" style="font-size: 20px;">游戏引擎</a> <a href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14.78px;">物理系统</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 14.35px;">编程语言</a> <a href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" style="font-size: 10.87px;">音效系统</a>
+            <a href="/tags/2d-Animation/" style="font-size: 12.17px;">2d Animation</a> <a href="/tags/2d%E5%8A%A8%E7%94%BB/" style="font-size: 14.35px;">2d动画</a> <a href="/tags/2d%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">2d序列帧动画</a> <a href="/tags/2d%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">2d物理系统</a> <a href="/tags/2d%E7%9B%B8%E5%85%B3/" style="font-size: 17.39px;">2d相关</a> <a href="/tags/2d%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/" style="font-size: 13.91px;">2d骨骼动画</a> <a href="/tags/3D%E6%95%B0%E5%AD%A6/" style="font-size: 12.61px;">3D数学</a> <a href="/tags/3d%E5%8A%A8%E7%94%BB%E7%9B%B8%E5%85%B3/" style="font-size: 13.48px;">3d动画相关</a> <a href="/tags/Csharp/" style="font-size: 14.35px;">Csharp</a> <a href="/tags/GUI/" style="font-size: 16.96px;">GUI</a> <a href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.78px;">GUI基础知识</a> <a href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 14.78px;">GUI实践项目</a> <a href="/tags/Json/" style="font-size: 13.04px;">Json</a> <a href="/tags/NGUI/" style="font-size: 16.96px;">NGUI</a> <a href="/tags/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.96px;">NGUI基础知识</a> <a href="/tags/PlayerPrefs/" style="font-size: 16.09px;">PlayerPrefs</a> <a href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.3px;">PlayerPrefs基础知识</a> <a href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 15.22px;">PlayerPrefs实践项目</a> <a href="/tags/Spine/" style="font-size: 11.3px;">Spine</a> <a href="/tags/Sprite/" style="font-size: 13.91px;">Sprite</a> <a href="/tags/Tilemap/" style="font-size: 11.74px;">Tilemap</a> <a href="/tags/UGUI/" style="font-size: 11.74px;">UGUI</a> <a href="/tags/UGUI%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/" style="font-size: 11.3px;">UGUI六大基础组件</a> <a href="/tags/UI%E7%B3%BB%E7%BB%9F/" style="font-size: 19.13px;">UI系统</a> <a href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" style="font-size: 10.43px;">Unity工作原理</a> <a href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity界面基础</a> <a href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity脚本基础</a> <a href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" style="font-size: 14.35px;">Unity重要组件和API</a> <a href="/tags/XML/" style="font-size: 14.78px;">XML</a> <a href="/tags/hexo/" style="font-size: 10.87px;">hexo</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unity%E5%85%A5%E9%97%A8/" style="font-size: 18.7px;">unity入门</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.26px;">unity入门基础知识</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 11.3px;">unity入门实践项目</a> <a href="/tags/unity%E5%9F%BA%E7%A1%80/" style="font-size: 16.52px;">unity基础</a> <a href="/tags/unity%E6%A0%B8%E5%BF%83/" style="font-size: 19.57px;">unity核心</a> <a href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10.43px;">光源系统</a> <a href="/tags/%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" style="font-size: 15.65px;">动画系统</a> <a href="/tags/%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 12.17px;">图片导入相关设置</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">导航系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 18.7px;">数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" style="font-size: 18.7px;">数据持久化</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" style="font-size: 17.83px;">核心系统</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3/" style="font-size: 13.04px;">模型导入相关</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" style="font-size: 20px;">游戏引擎</a> <a href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14.78px;">物理系统</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 14.35px;">编程语言</a> <a href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" style="font-size: 10.87px;">音效系统</a>
         </div>
     </div>
 
@@ -558,48 +567,109 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFIK"><span class="toc-number">1.</span> <span class="toc-text">什么是IK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2DIK%E5%8C%85%E5%BC%95%E5%85%A5"><span class="toc-number">2.</span> <span class="toc-text">2DIK包引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2DIK%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">2DIK的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IK%E7%9B%B8%E5%85%B3%E8%84%9A%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text">IK相关脚本参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IK-Manager-2D-%E8%84%9A%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.1.</span> <span class="toc-text">IK Manager 2D 脚本参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CCD-Solver-2D%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">CCD Solver 2D参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LimbSolver2D%E8%84%9A%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.3.</span> <span class="toc-text">LimbSolver2D脚本参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IK%E5%AF%B9%E4%BA%8E%E6%88%91%E4%BB%AC%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">4.</span> <span class="toc-text">IK对于我们的意义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">5.</span> <span class="toc-text">练习</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFik"><span class="toc-number">1.</span> <span class="toc-text"> 什么是IK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2dik%E5%8C%85%E5%BC%95%E5%85%A5"><span class="toc-number">2.</span> <span class="toc-text"> 2DIK包引入</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2dik%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text"> 2DIK的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ik%E7%9B%B8%E5%85%B3%E8%84%9A%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text"> IK相关脚本参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ik-manager-2d-%E8%84%9A%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.1.</span> <span class="toc-text"> IK Manager 2D 脚本参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ccd-solver-2d%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text"> CCD Solver 2D参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#limbsolver2d%E8%84%9A%E6%9C%AC%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.3.</span> <span class="toc-text"> LimbSolver2D脚本参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ik%E5%AF%B9%E4%BA%8E%E6%88%91%E4%BB%AC%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">4.</span> <span class="toc-text"> IK对于我们的意义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0"><span class="toc-number">5.</span> <span class="toc-text"> 练习</span></a></li></ol>
                 </div>
             
         
         
-            <h1 id="什么是IK"><a href="#什么是IK" class="headerlink" title="什么是IK"></a>什么是IK</h1><p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/0b16ba3c4c1d2db13641b1849d7cee4f.gif" alt=""><br>在骨骼动画中，构建骨骼的方法被称为正向动力学。<br>它的表现形式是，子骨骼（关节）的位置根据父骨骼（关节）的旋转而改变。<br>用我们人体举例子，当我们抬起手臂时，是肩部关节带动的整个手臂的运动，用父子骨骼理解的话就是父带动了子。</p>
-<p>而IK全称是Inverse Kinematics，翻译过来的意思就是反向动力学的意思。<br>它和正向动力学恰恰相反。<br>它的表现形式是，子骨骼（关节）末端的位置改变会带动自己以及自己的父骨骼（关节）旋转。<br>用我们人体举例子，当我们拿起一个杯子的时候是用手掌去拿，以杯子为参照物，我们移动杯子的位置，手臂会随着杯子一起移动，用父子骨骼理解的话就是子带动了父。</p>
-<h1 id="2DIK包引入"><a href="#2DIK包引入" class="headerlink" title="2DIK包引入"></a>2DIK包引入</h1><p>2022版本自带有<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319110212808.png" alt=""></p>
-<h1 id="2DIK的使用"><a href="#2DIK的使用" class="headerlink" title="2DIK的使用"></a>2DIK的使用</h1><p>先给权杖也弄骨骼<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319110517069.png" alt=""></p>
-<p>新建一个空物体作为根对象，拖PSB图片做成子物体，给根物体添加IKManager2D组件<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172851394.png" alt=""></p>
-<h2 id="IK相关脚本参数"><a href="#IK相关脚本参数" class="headerlink" title="IK相关脚本参数"></a>IK相关脚本参数</h2><p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/IK知识点.png" alt=""></p>
-<h3 id="IK-Manager-2D-脚本参数"><a href="#IK-Manager-2D-脚本参数" class="headerlink" title="IK Manager 2D 脚本参数"></a>IK Manager 2D 脚本参数</h3><p>IK Solvers：IK解算器，在这里添加IK<br> <img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319111501368.png" alt=""><br>Chain（CCD）：可以自定义影响N个关节点，不能反向<br>Chain（FABRIK）：可以自定义影响N个关节点，可以反向<br>Limb：只会影响3个关节点，一般四肢选这个<br>Weight：权重，当有多个IK控制同一点时权重会影响控制的百分比<br>Restore Default Pose：回复默认位置</p>
+            <h1 id="什么是ik"><a class="markdownIt-Anchor" href="#什么是ik"></a> 什么是IK</h1>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/0b16ba3c4c1d2db13641b1849d7cee4f.gif" alt="" /><br />
+在骨骼动画中，构建骨骼的方法被称为正向动力学。<br />
+它的表现形式是，子骨骼（关节）的位置根据父骨骼（关节）的旋转而改变。<br />
+用我们人体举例子，当我们抬起手臂时，是肩部关节带动的整个手臂的运动，用父子骨骼理解的话就是父带动了子。</p>
+<p>而IK全称是Inverse Kinematics，翻译过来的意思就是反向动力学的意思。<br />
+它和正向动力学恰恰相反。<br />
+它的表现形式是，子骨骼（关节）末端的位置改变会带动自己以及自己的父骨骼（关节）旋转。<br />
+用我们人体举例子，当我们拿起一个杯子的时候是用手掌去拿，以杯子为参照物，我们移动杯子的位置，手臂会随着杯子一起移动，用父子骨骼理解的话就是子带动了父。</p>
+<h1 id="2dik包引入"><a class="markdownIt-Anchor" href="#2dik包引入"></a> 2DIK包引入</h1>
+<p>2022版本自带有<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319110212808.png" alt="" /></p>
+<h1 id="2dik的使用"><a class="markdownIt-Anchor" href="#2dik的使用"></a> 2DIK的使用</h1>
+<p>先给权杖也弄骨骼<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319110517069.png" alt="" /></p>
+<p>新建一个空物体作为根对象，拖PSB图片做成子物体，给根物体添加IKManager2D组件<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172851394.png" alt="" /></p>
+<h2 id="ik相关脚本参数"><a class="markdownIt-Anchor" href="#ik相关脚本参数"></a> IK相关脚本参数</h2>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/IK%E7%9F%A5%E8%AF%86%E7%82%B9.png" alt="" /></p>
+<h3 id="ik-manager-2d-脚本参数"><a class="markdownIt-Anchor" href="#ik-manager-2d-脚本参数"></a> IK Manager 2D 脚本参数</h3>
+<p>IK Solvers：IK解算器，在这里添加IK<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319111501368.png" alt="" /><br />
+Chain（CCD）：可以自定义影响N个关节点，不能反向<br />
+Chain（FABRIK）：可以自定义影响N个关节点，可以反向<br />
+Limb：只会影响3个关节点，一般四肢选这个<br />
+Weight：权重，当有多个IK控制同一点时权重会影响控制的百分比<br />
+Restore Default Pose：回复默认位置</p>
 <p>给左右手和脚的末端和权杖的末端添加空物体，会利用这些空物体在对应位置添加IK点</p>
-<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319111842235.png" alt=""></p>
-<p>在根对象的IKManager2D组件点击加号添加一个Chain（CCD）类型的IK，添加完会出现一个New CCDSolver2D子物体挂载NCCDSolver2D脚本<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319112232002.png" alt=""></p>
-<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319155451847.png" alt=""></p>
-<h3 id="CCD-Solver-2D参数"><a href="#CCD-Solver-2D参数" class="headerlink" title="CCD Solver 2D参数"></a>CCD Solver 2D参数</h3><p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319155551130.png" alt=""></p>
-<p>将权杖末端的空对象赋值进来。<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319160227279.png" alt=""></p>
-<p>Chain Length：IK影响的骨骼数量，往上影响多少个骨骼节点，加大数值，点变成绿色就意味着影响了那个骨骼。<br>Iterations：算法运行的次数。<br>Tolerance：容错程度。<br>Velocity：速度。</p>
-<p>点击创建对象，会出来一个对象并关联，这个对象可以理解为创建出来的IK节点，通过这个IK节点反向控制骨骼，现在移动子物体因为有了IK父物体也会跟着动。<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319160749996.png" alt=""></p>
-<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319160652843.png" alt=""></p>
-<p>Effector：默认的IK点位置<br>Target：会根据IK点位置生成真正的IK点对象<br>Flip：反向<br>Constrain Rotation：约束旋转程度<br>Solve from Default Pose：从默认姿势进行求解计算<br>Weight：权重</p>
-<p>CCD模式不能完全反向。<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161411037.png" alt=""></p>
-<p>但FABRIK模式可以<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161555150.png" alt=""><br>和上面ccd模式基本一样操作<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161756752.png" alt=""></p>
-<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161632339.png" alt=""></p>
-<h3 id="LimbSolver2D脚本参数"><a href="#LimbSolver2D脚本参数" class="headerlink" title="LimbSolver2D脚本参数"></a>LimbSolver2D脚本参数</h3><p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161504740.png" alt=""></p>
-<p>Effector：默认的IK点位置。<br>Target：会根据IK点位置生成真正的IK点对象。<br>Flip：反向。<br>Constrain Rotation：约束旋转程度。<br>Solve from Default Pose：从默认姿势进行求解计算。<br>Weight：权重。<br>Create Target：创建IK节点。<br>Restore Default Pose：重置默认形状。</p>
-<p>为人物四肢创建IK<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161726989.png" alt=""></p>
-<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319162003471.png" alt=""></p>
-<p>其实四肢也可以往上控制多个点的<br>先把左手这个删掉，重新选一个IK解算器<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319171643713.png" alt=""><br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319171831398.png" alt=""></p>
-<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319171929083.png" alt=""></p>
-<p>还可以改受IK点影响的到的骨骼颜色<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172041294.png" alt=""><br>下面的效果是一拳带动全身<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172134326.png" alt=""></p>
-<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172216601.png" alt=""></p>
-<p>现在IK点不会跟着人物的根骨骼动，而是锁死在原地如下。想要一起动的话把各个IK点放到根骨骼下就行<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172428852.png" alt=""></p>
-<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172540117.png" alt=""></p>
-<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172634470.png" alt=""></p>
-<h1 id="IK对于我们的意义"><a href="#IK对于我们的意义" class="headerlink" title="IK对于我们的意义"></a>IK对于我们的意义</h1><p>瞄准功能。<br>头部朝向功能。<br>拾取物品功能等等有指向性的功能时，我们都可以通过IK来达到目的。<br>最大的作用，可以方便我们进行动画制作。</p>
-<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><p>请制作一个鼠标指向哪，2D人物的手臂就指向哪里的功能</p>
-<p>创建空物体，拖psb文件图片进来，在左手添加一个空物体<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319173123446.png" alt=""></p>
-<p>选择空对象，添加IKManager2D脚本，添加一个IK，选择四肢用的Limb。会创建一个IK位置节点<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319173148368.png" alt=""></p>
-<p>在IK位置节点关联左手空物体，点击创建目标按钮，生成IK目标对象<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319173208855.png" alt=""></p>
-<p>制作思路：我们可以控制IK目标对象的位置移动手臂，那么只要用鼠标控制IK目标对象就行了<br><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319173429404.png" alt=""></p>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319111842235.png" alt="" /></p>
+<p>在根对象的IKManager2D组件点击加号添加一个Chain（CCD）类型的IK，添加完会出现一个New CCDSolver2D子物体挂载NCCDSolver2D脚本<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319112232002.png" alt="" /></p>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319155451847.png" alt="" /></p>
+<h3 id="ccd-solver-2d参数"><a class="markdownIt-Anchor" href="#ccd-solver-2d参数"></a> CCD Solver 2D参数</h3>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319155551130.png" alt="" /></p>
+<p>将权杖末端的空对象赋值进来。<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319160227279.png" alt="" /></p>
+<p>Chain Length：IK影响的骨骼数量，往上影响多少个骨骼节点，加大数值，点变成绿色就意味着影响了那个骨骼。<br />
+Iterations：算法运行的次数。<br />
+Tolerance：容错程度。<br />
+Velocity：速度。</p>
+<p>点击创建对象，会出来一个对象并关联，这个对象可以理解为创建出来的IK节点，通过这个IK节点反向控制骨骼，现在移动子物体因为有了IK父物体也会跟着动。<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319160749996.png" alt="" /></p>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319160652843.png" alt="" /></p>
+<p>Effector：默认的IK点位置<br />
+Target：会根据IK点位置生成真正的IK点对象<br />
+Flip：反向<br />
+Constrain Rotation：约束旋转程度<br />
+Solve from Default Pose：从默认姿势进行求解计算<br />
+Weight：权重</p>
+<p>CCD模式不能完全反向。<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161411037.png" alt="" /></p>
+<p>但FABRIK模式可以<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161555150.png" alt="" /><br />
+和上面ccd模式基本一样操作<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161756752.png" alt="" /></p>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161632339.png" alt="" /></p>
+<h3 id="limbsolver2d脚本参数"><a class="markdownIt-Anchor" href="#limbsolver2d脚本参数"></a> LimbSolver2D脚本参数</h3>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161504740.png" alt="" /></p>
+<p>Effector：默认的IK点位置。<br />
+Target：会根据IK点位置生成真正的IK点对象。<br />
+Flip：反向。<br />
+Constrain Rotation：约束旋转程度。<br />
+Solve from Default Pose：从默认姿势进行求解计算。<br />
+Weight：权重。<br />
+Create Target：创建IK节点。<br />
+Restore Default Pose：重置默认形状。</p>
+<p>为人物四肢创建IK<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319161726989.png" alt="" /></p>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319162003471.png" alt="" /></p>
+<p>其实四肢也可以往上控制多个点的<br />
+先把左手这个删掉，重新选一个IK解算器<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319171643713.png" alt="" /><br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319171831398.png" alt="" /></p>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319171929083.png" alt="" /></p>
+<p>还可以改受IK点影响的到的骨骼颜色<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172041294.png" alt="" /><br />
+下面的效果是一拳带动全身<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172134326.png" alt="" /></p>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172216601.png" alt="" /></p>
+<p>现在IK点不会跟着人物的根骨骼动，而是锁死在原地如下。想要一起动的话把各个IK点放到根骨骼下就行<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172428852.png" alt="" /></p>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172540117.png" alt="" /></p>
+<p><img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319172634470.png" alt="" /></p>
+<h1 id="ik对于我们的意义"><a class="markdownIt-Anchor" href="#ik对于我们的意义"></a> IK对于我们的意义</h1>
+<p>瞄准功能。<br />
+头部朝向功能。<br />
+拾取物品功能等等有指向性的功能时，我们都可以通过IK来达到目的。<br />
+最大的作用，可以方便我们进行动画制作。</p>
+<h1 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h1>
+<p>请制作一个鼠标指向哪，2D人物的手臂就指向哪里的功能</p>
+<p>创建空物体，拖psb文件图片进来，在左手添加一个空物体<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319173123446.png" alt="" /></p>
+<p>选择空对象，添加IKManager2D脚本，添加一个IK，选择四肢用的Limb。会创建一个IK位置节点<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319173148368.png" alt="" /></p>
+<p>在IK位置节点关联左手空物体，点击创建目标按钮，生成IK目标对象<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319173208855.png" alt="" /></p>
+<p>制作思路：我们可以控制IK目标对象的位置移动手臂，那么只要用鼠标控制IK目标对象就行了<br />
+<img src="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/file-20250319173429404.png" alt="" /></p>
 <figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Transform ikPoint; <span class="comment">//IK点的位置</span></span><br><span class="line"><span class="keyword">private</span> <span class="built_in">float</span> z; <span class="comment">//2D游戏所在平面的z轴坐标</span></span><br><span class="line"><span class="keyword">private</span> Vector3 mousePos;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    z = Camera.main.WorldToScreenPoint(ikPoint.position).z; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (Input.GetMouseButton(<span class="number">0</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        mousePos = Input.mousePosition;</span><br><span class="line">        mousePos.z = z;</span><br><span class="line">        ikPoint.position = Camera.main.ScreenToWorldPoint(mousePos);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
             </div>

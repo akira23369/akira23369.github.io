@@ -9,12 +9,12 @@
         <meta name="keywords" content="游戏引擎,unity,unity核心,导航系统" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="准备地形在进行导航寻路网格生成时第一步是需要有地形地形由美术同学制作模型 打开导航网格窗口  参数相关 旧版 Ojbect 场景对象设置页签 Sceme Filter：场景过滤器，配合Hierarchy窗口使用All：显示场景上所有对象MeshRenderers：显示挂载的网格渲染器的对象Terrains：显示挂载了地形脚本的对象 Navigation Static 导航静态物体开关 相当于在 G">
+    <meta name="description" content="准备地形 在进行导航寻路网格生成时 第一步是需要有地形 地形由美术同学制作模型   打开导航网格窗口    参数相关 旧版   Ojbect 场景对象设置页签   Sceme Filter： 场景过滤器，配合Hierarchy窗口使用 All：显示场景上所有对象 MeshRenderers：显示挂载的网格渲染器的对象 Terrains：显示挂载了地形脚本的对象  Navigation Stati">
 <meta property="og:type" content="article">
 <meta property="og:title" content="64.导航网格生成">
 <meta property="og:url" content="http://example.com/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/index.html">
 <meta property="og:site_name" content="akiraの博客思密达">
-<meta property="og:description" content="准备地形在进行导航寻路网格生成时第一步是需要有地形地形由美术同学制作模型 打开导航网格窗口  参数相关 旧版 Ojbect 场景对象设置页签 Sceme Filter：场景过滤器，配合Hierarchy窗口使用All：显示场景上所有对象MeshRenderers：显示挂载的网格渲染器的对象Terrains：显示挂载了地形脚本的对象 Navigation Static 导航静态物体开关 相当于在 G">
+<meta property="og:description" content="准备地形 在进行导航寻路网格生成时 第一步是需要有地形 地形由美术同学制作模型   打开导航网格窗口    参数相关 旧版   Ojbect 场景对象设置页签   Sceme Filter： 场景过滤器，配合Hierarchy窗口使用 All：显示场景上所有对象 MeshRenderers：显示挂载的网格渲染器的对象 Terrains：显示挂载了地形脚本的对象  Navigation Stati">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323200302258.png">
 <meta property="og:image" content="http://example.com/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323201320284.png">
@@ -262,6 +262,15 @@
                     </li> 
                      </ul> 
                     </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            UGUI
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/1.UGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0/">1.UGUI基础知识概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/2.%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/">2.六大基础组件概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/3.Canvas%E7%94%BB%E5%B8%83%E7%BB%84%E4%BB%B6/">3.Canvas画布组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/4.CanvasScaler%E7%94%BB%E5%B8%83%E7%BC%A9%E6%94%BE%E6%8E%A7%E5%88%B6%E7%BB%84%E4%BB%B6/">4.CanvasScaler画布缩放控制组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/5.GraphicRaycaster%E5%9B%BE%E5%BD%A2%E5%B0%84%E7%BA%BF%E6%8A%95%E5%B0%84%E5%99%A8%E7%BB%84%E4%BB%B6/">5.GraphicRaycaster图形射线投射器组件</a></li>  </ul> 
+                    </li> 
                      </ul> 
                     </li> 
                     
@@ -489,7 +498,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title"><span>标签云</span></h3>
         <div class="widget tagcloud">
-            <a href="/tags/2d-Animation/" style="font-size: 12.17px;">2d Animation</a> <a href="/tags/2d%E5%8A%A8%E7%94%BB/" style="font-size: 14.35px;">2d动画</a> <a href="/tags/2d%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">2d序列帧动画</a> <a href="/tags/2d%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">2d物理系统</a> <a href="/tags/2d%E7%9B%B8%E5%85%B3/" style="font-size: 17.39px;">2d相关</a> <a href="/tags/2d%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/" style="font-size: 13.91px;">2d骨骼动画</a> <a href="/tags/3D%E6%95%B0%E5%AD%A6/" style="font-size: 12.61px;">3D数学</a> <a href="/tags/3d%E5%8A%A8%E7%94%BB%E7%9B%B8%E5%85%B3/" style="font-size: 13.48px;">3d动画相关</a> <a href="/tags/Csharp/" style="font-size: 14.35px;">Csharp</a> <a href="/tags/GUI/" style="font-size: 16.96px;">GUI</a> <a href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.78px;">GUI基础知识</a> <a href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 14.78px;">GUI实践项目</a> <a href="/tags/Json/" style="font-size: 13.04px;">Json</a> <a href="/tags/NGUI/" style="font-size: 16.96px;">NGUI</a> <a href="/tags/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.96px;">NGUI基础知识</a> <a href="/tags/PlayerPrefs/" style="font-size: 16.09px;">PlayerPrefs</a> <a href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.3px;">PlayerPrefs基础知识</a> <a href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 15.22px;">PlayerPrefs实践项目</a> <a href="/tags/Spine/" style="font-size: 11.3px;">Spine</a> <a href="/tags/Sprite/" style="font-size: 13.91px;">Sprite</a> <a href="/tags/Tilemap/" style="font-size: 11.74px;">Tilemap</a> <a href="/tags/UI%E7%B3%BB%E7%BB%9F/" style="font-size: 19.13px;">UI系统</a> <a href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" style="font-size: 10.43px;">Unity工作原理</a> <a href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity界面基础</a> <a href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity脚本基础</a> <a href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" style="font-size: 14.35px;">Unity重要组件和API</a> <a href="/tags/XML/" style="font-size: 14.78px;">XML</a> <a href="/tags/hexo/" style="font-size: 10.87px;">hexo</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unity%E5%85%A5%E9%97%A8/" style="font-size: 18.7px;">unity入门</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.26px;">unity入门基础知识</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 11.3px;">unity入门实践项目</a> <a href="/tags/unity%E5%9F%BA%E7%A1%80/" style="font-size: 16.52px;">unity基础</a> <a href="/tags/unity%E6%A0%B8%E5%BF%83/" style="font-size: 19.57px;">unity核心</a> <a href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10.43px;">光源系统</a> <a href="/tags/%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" style="font-size: 15.65px;">动画系统</a> <a href="/tags/%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 12.17px;">图片导入相关设置</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">导航系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 18.7px;">数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" style="font-size: 18.7px;">数据持久化</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" style="font-size: 17.83px;">核心系统</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3/" style="font-size: 13.04px;">模型导入相关</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" style="font-size: 20px;">游戏引擎</a> <a href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14.78px;">物理系统</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 14.35px;">编程语言</a> <a href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" style="font-size: 10.87px;">音效系统</a>
+            <a href="/tags/2d-Animation/" style="font-size: 12.17px;">2d Animation</a> <a href="/tags/2d%E5%8A%A8%E7%94%BB/" style="font-size: 14.35px;">2d动画</a> <a href="/tags/2d%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">2d序列帧动画</a> <a href="/tags/2d%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">2d物理系统</a> <a href="/tags/2d%E7%9B%B8%E5%85%B3/" style="font-size: 17.39px;">2d相关</a> <a href="/tags/2d%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/" style="font-size: 13.91px;">2d骨骼动画</a> <a href="/tags/3D%E6%95%B0%E5%AD%A6/" style="font-size: 12.61px;">3D数学</a> <a href="/tags/3d%E5%8A%A8%E7%94%BB%E7%9B%B8%E5%85%B3/" style="font-size: 13.48px;">3d动画相关</a> <a href="/tags/Csharp/" style="font-size: 14.35px;">Csharp</a> <a href="/tags/GUI/" style="font-size: 16.96px;">GUI</a> <a href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.78px;">GUI基础知识</a> <a href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 14.78px;">GUI实践项目</a> <a href="/tags/Json/" style="font-size: 13.04px;">Json</a> <a href="/tags/NGUI/" style="font-size: 16.96px;">NGUI</a> <a href="/tags/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.96px;">NGUI基础知识</a> <a href="/tags/PlayerPrefs/" style="font-size: 16.09px;">PlayerPrefs</a> <a href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.3px;">PlayerPrefs基础知识</a> <a href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 15.22px;">PlayerPrefs实践项目</a> <a href="/tags/Spine/" style="font-size: 11.3px;">Spine</a> <a href="/tags/Sprite/" style="font-size: 13.91px;">Sprite</a> <a href="/tags/Tilemap/" style="font-size: 11.74px;">Tilemap</a> <a href="/tags/UGUI/" style="font-size: 11.74px;">UGUI</a> <a href="/tags/UGUI%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/" style="font-size: 11.3px;">UGUI六大基础组件</a> <a href="/tags/UI%E7%B3%BB%E7%BB%9F/" style="font-size: 19.13px;">UI系统</a> <a href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" style="font-size: 10.43px;">Unity工作原理</a> <a href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity界面基础</a> <a href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity脚本基础</a> <a href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" style="font-size: 14.35px;">Unity重要组件和API</a> <a href="/tags/XML/" style="font-size: 14.78px;">XML</a> <a href="/tags/hexo/" style="font-size: 10.87px;">hexo</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unity%E5%85%A5%E9%97%A8/" style="font-size: 18.7px;">unity入门</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.26px;">unity入门基础知识</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 11.3px;">unity入门实践项目</a> <a href="/tags/unity%E5%9F%BA%E7%A1%80/" style="font-size: 16.52px;">unity基础</a> <a href="/tags/unity%E6%A0%B8%E5%BF%83/" style="font-size: 19.57px;">unity核心</a> <a href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10.43px;">光源系统</a> <a href="/tags/%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" style="font-size: 15.65px;">动画系统</a> <a href="/tags/%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 12.17px;">图片导入相关设置</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">导航系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 18.7px;">数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" style="font-size: 18.7px;">数据持久化</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" style="font-size: 17.83px;">核心系统</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3/" style="font-size: 13.04px;">模型导入相关</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" style="font-size: 20px;">游戏引擎</a> <a href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14.78px;">物理系统</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 14.35px;">编程语言</a> <a href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" style="font-size: 10.87px;">音效系统</a>
         </div>
     </div>
 
@@ -548,60 +557,121 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%9C%B0%E5%BD%A2"><span class="toc-number">1.</span> <span class="toc-text">准备地形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%AA%97%E5%8F%A3"><span class="toc-number">2.</span> <span class="toc-text">打开导航网格窗口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E7%9B%B8%E5%85%B3-%E6%97%A7%E7%89%88"><span class="toc-number">3.</span> <span class="toc-text">参数相关 旧版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ojbect-%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E8%AE%BE%E7%BD%AE%E9%A1%B5%E7%AD%BE"><span class="toc-number">3.1.</span> <span class="toc-text">Ojbect 场景对象设置页签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sceme-Filter%EF%BC%9A"><span class="toc-number">3.1.1.</span> <span class="toc-text">Sceme Filter：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Navigation-Static-%E5%AF%BC%E8%88%AA%E9%9D%99%E6%80%81%E7%89%A9%E4%BD%93%E5%BC%80%E5%85%B3"><span class="toc-number">3.1.2.</span> <span class="toc-text">Navigation Static 导航静态物体开关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-OffMeshLinks-%E7%94%9F%E6%88%90%E7%BD%91%E6%A0%BC%E8%BF%9E%E6%8E%A5%E7%82%B9%E5%BC%80%E5%85%B3"><span class="toc-number">3.1.3.</span> <span class="toc-text">Generate OffMeshLinks 生成网格连接点开关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Navigation-Area"><span class="toc-number">3.1.4.</span> <span class="toc-text">Navigation Area</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bake-%E5%AF%BC%E8%88%AA%E6%95%B0%E6%8D%AE%E7%83%98%E7%84%99%E9%A1%B5%E7%AD%BE"><span class="toc-number">3.2.</span> <span class="toc-text">Bake 导航数据烘焙页签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Agent-Radius-%E4%BB%A3%E7%90%86%E5%8D%8A%E5%BE%84"><span class="toc-number">3.2.1.</span> <span class="toc-text">Agent Radius 代理半径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Agent-Height-%E4%BB%A3%E7%90%86%E9%AB%98%E5%BA%A6"><span class="toc-number">3.2.2.</span> <span class="toc-text">Agent Height 代理高度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Max-Slope-%E6%9C%80%E5%A4%A7%E5%9D%A1%E5%BA%A6"><span class="toc-number">3.2.3.</span> <span class="toc-text">Max Slope 最大坡度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Step-Height-%E6%9C%80%E5%B0%8F%E6%A5%BC%E6%A2%AF%E9%AB%98%E5%BA%A6"><span class="toc-number">3.2.4.</span> <span class="toc-text">Step Height 最小楼梯高度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generated-off-mesh-Links-%E7%94%9F%E6%88%90%E9%9D%9E%E7%BD%91%E6%A0%BC%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.5.</span> <span class="toc-text">Generated off mesh Links 生成非网格连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Advanced"><span class="toc-number">3.2.6.</span> <span class="toc-text">Advanced</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Areas-%E5%AF%BC%E8%88%AA%E5%9C%B0%E5%8C%BA%E9%A1%B5%E7%AD%BE"><span class="toc-number">3.3.</span> <span class="toc-text">Areas 导航地区页签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Name-%E5%8C%BA%E5%9F%9F%E5%90%8D%E5%AD%97"><span class="toc-number">3.3.1.</span> <span class="toc-text">Name 区域名字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cost-%E5%AF%BB%E8%B7%AF%E6%B6%88%E8%80%97"><span class="toc-number">3.3.2.</span> <span class="toc-text">Cost 寻路消耗</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Agents-%E4%BB%A3%E7%90%86%E9%A1%B5%E7%AD%BE"><span class="toc-number">3.4.</span> <span class="toc-text">Agents 代理页签</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%9C%B0%E5%BD%A2"><span class="toc-number">1.</span> <span class="toc-text"> 准备地形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%93%E5%BC%80%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%AA%97%E5%8F%A3"><span class="toc-number">2.</span> <span class="toc-text"> 打开导航网格窗口</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E7%9B%B8%E5%85%B3-%E6%97%A7%E7%89%88"><span class="toc-number">3.</span> <span class="toc-text"> 参数相关 旧版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ojbect-%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E8%AE%BE%E7%BD%AE%E9%A1%B5%E7%AD%BE"><span class="toc-number">3.1.</span> <span class="toc-text"> Ojbect 场景对象设置页签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sceme-filter"><span class="toc-number">3.1.1.</span> <span class="toc-text"> Sceme Filter：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#navigation-static-%E5%AF%BC%E8%88%AA%E9%9D%99%E6%80%81%E7%89%A9%E4%BD%93%E5%BC%80%E5%85%B3"><span class="toc-number">3.1.2.</span> <span class="toc-text"> Navigation Static 导航静态物体开关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#generate-offmeshlinks-%E7%94%9F%E6%88%90%E7%BD%91%E6%A0%BC%E8%BF%9E%E6%8E%A5%E7%82%B9%E5%BC%80%E5%85%B3"><span class="toc-number">3.1.3.</span> <span class="toc-text"> Generate OffMeshLinks 生成网格连接点开关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#navigation-area"><span class="toc-number">3.1.4.</span> <span class="toc-text"> Navigation Area</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bake-%E5%AF%BC%E8%88%AA%E6%95%B0%E6%8D%AE%E7%83%98%E7%84%99%E9%A1%B5%E7%AD%BE"><span class="toc-number">3.2.</span> <span class="toc-text"> Bake 导航数据烘焙页签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#agent-radius-%E4%BB%A3%E7%90%86%E5%8D%8A%E5%BE%84"><span class="toc-number">3.2.1.</span> <span class="toc-text"> Agent Radius 代理半径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#agent-height-%E4%BB%A3%E7%90%86%E9%AB%98%E5%BA%A6"><span class="toc-number">3.2.2.</span> <span class="toc-text"> Agent Height 代理高度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#max-slope-%E6%9C%80%E5%A4%A7%E5%9D%A1%E5%BA%A6"><span class="toc-number">3.2.3.</span> <span class="toc-text"> Max Slope 最大坡度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step-height-%E6%9C%80%E5%B0%8F%E6%A5%BC%E6%A2%AF%E9%AB%98%E5%BA%A6"><span class="toc-number">3.2.4.</span> <span class="toc-text"> Step Height 最小楼梯高度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#generated-off-mesh-links-%E7%94%9F%E6%88%90%E9%9D%9E%E7%BD%91%E6%A0%BC%E8%BF%9E%E6%8E%A5"><span class="toc-number">3.2.5.</span> <span class="toc-text"> Generated off mesh Links 生成非网格连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#advanced"><span class="toc-number">3.2.6.</span> <span class="toc-text"> Advanced</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#areas-%E5%AF%BC%E8%88%AA%E5%9C%B0%E5%8C%BA%E9%A1%B5%E7%AD%BE"><span class="toc-number">3.3.</span> <span class="toc-text"> Areas 导航地区页签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#name-%E5%8C%BA%E5%9F%9F%E5%90%8D%E5%AD%97"><span class="toc-number">3.3.1.</span> <span class="toc-text"> Name 区域名字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cost-%E5%AF%BB%E8%B7%AF%E6%B6%88%E8%80%97"><span class="toc-number">3.3.2.</span> <span class="toc-text"> Cost 寻路消耗</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#agents-%E4%BB%A3%E7%90%86%E9%A1%B5%E7%AD%BE"><span class="toc-number">3.4.</span> <span class="toc-text"> Agents 代理页签</span></a></li></ol></li></ol>
                 </div>
             
         
         
-            <h1 id="准备地形"><a href="#准备地形" class="headerlink" title="准备地形"></a>准备地形</h1><p>在进行导航寻路网格生成时<br>第一步是需要有地形<br>地形由美术同学制作模型<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323200302258.png" alt=""></p>
-<h1 id="打开导航网格窗口"><a href="#打开导航网格窗口" class="headerlink" title="打开导航网格窗口"></a>打开导航网格窗口</h1><p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323201320284.png" alt=""></p>
-<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323201534374.png" alt=""></p>
-<h1 id="参数相关-旧版"><a href="#参数相关-旧版" class="headerlink" title="参数相关 旧版"></a>参数相关 旧版</h1><p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/导航参数相关.png" alt=""></p>
-<h2 id="Ojbect-场景对象设置页签"><a href="#Ojbect-场景对象设置页签" class="headerlink" title="Ojbect 场景对象设置页签"></a>Ojbect 场景对象设置页签</h2><p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323201940346.png" alt=""></p>
-<h3 id="Sceme-Filter："><a href="#Sceme-Filter：" class="headerlink" title="Sceme Filter："></a>Sceme Filter：</h3><p>场景过滤器，配合Hierarchy窗口使用<br>All：显示场景上所有对象<br>MeshRenderers：显示挂载的网格渲染器的对象<br>Terrains：显示挂载了地形脚本的对象</p>
-<h3 id="Navigation-Static-导航静态物体开关"><a href="#Navigation-Static-导航静态物体开关" class="headerlink" title="Navigation Static 导航静态物体开关"></a>Navigation Static 导航静态物体开关</h3><p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202212586.png" alt=""></p>
-<p>相当于在<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202244659.png" alt=""></p>
-<h3 id="Generate-OffMeshLinks-生成网格连接点开关"><a href="#Generate-OffMeshLinks-生成网格连接点开关" class="headerlink" title="Generate OffMeshLinks 生成网格连接点开关"></a>Generate OffMeshLinks 生成网格连接点开关</h3><p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202428514.png" alt=""></p>
-<h3 id="Navigation-Area"><a href="#Navigation-Area" class="headerlink" title="Navigation Area"></a>Navigation Area</h3><p>导航区域选择，配合Areas页签使用</p>
-<h2 id="Bake-导航数据烘焙页签"><a href="#Bake-导航数据烘焙页签" class="headerlink" title="Bake 导航数据烘焙页签"></a>Bake 导航数据烘焙页签</h2><p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202907610.png" alt=""></p>
-<p>先把导航静态物体开关给打开再点下面烘焙<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202940989.png" alt=""><br>点击烘焙，场景中生成的蓝色部分就是可行走的区域。注意要设置成有对象是导航静态才能烘焙成功<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202855634.png" alt=""></p>
-<h3 id="Agent-Radius-代理半径"><a href="#Agent-Radius-代理半径" class="headerlink" title="Agent Radius 代理半径"></a>Agent Radius 代理半径</h3><p>决定了烘焙边缘精确度<br>控制平台可行走区域和边缘可行走区域</p>
-<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203124027.png" alt=""></p>
-<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203144585.png" alt=""></p>
-<h3 id="Agent-Height-代理高度"><a href="#Agent-Height-代理高度" class="headerlink" title="Agent Height 代理高度"></a>Agent Height 代理高度</h3><p>决定了烘焙高度精确度<br>控制拱桥是否可以穿越</p>
-<p>拱桥不可以过<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203255536.png" alt=""></p>
-<p>把代理高度调小就可以过<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203336407.png" alt=""></p>
-<h3 id="Max-Slope-最大坡度"><a href="#Max-Slope-最大坡度" class="headerlink" title="Max Slope 最大坡度"></a>Max Slope 最大坡度</h3><p>斜坡度数<br>决定了斜坡是否可以行走</p>
-<p>不能走，只能0~14.5<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203508836.png" alt=""></p>
-<p>可以走，有0~60<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203446109.png" alt=""></p>
-<h3 id="Step-Height-最小楼梯高度"><a href="#Step-Height-最小楼梯高度" class="headerlink" title="Step Height 最小楼梯高度"></a>Step Height 最小楼梯高度</h3><p>决定了台阶是否可以行走</p>
-<p>上面不能走，下面能走，上面 - 下面的高度差 &gt; 0.1所以不能走<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203712718.png" alt=""></p>
-<p>两个台阶都可以走<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203646016.png" alt=""></p>
-<h3 id="Generated-off-mesh-Links-生成非网格连接"><a href="#Generated-off-mesh-Links-生成非网格连接" class="headerlink" title="Generated off mesh Links 生成非网格连接"></a>Generated off mesh Links 生成非网格连接</h3><p>两个分开的网格之间连接相关设置<br>记得要先把两平面之间的生成网格连接点开关给打开<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203923054.png" alt=""></p>
-<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204139049.png" alt=""></p>
+            <h1 id="准备地形"><a class="markdownIt-Anchor" href="#准备地形"></a> 准备地形</h1>
+<p>在进行导航寻路网格生成时<br />
+第一步是需要有地形<br />
+地形由美术同学制作模型<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323200302258.png" alt="" /></p>
+<h1 id="打开导航网格窗口"><a class="markdownIt-Anchor" href="#打开导航网格窗口"></a> 打开导航网格窗口</h1>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323201320284.png" alt="" /></p>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323201534374.png" alt="" /></p>
+<h1 id="参数相关-旧版"><a class="markdownIt-Anchor" href="#参数相关-旧版"></a> 参数相关 旧版</h1>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/%E5%AF%BC%E8%88%AA%E5%8F%82%E6%95%B0%E7%9B%B8%E5%85%B3.png" alt="" /></p>
+<h2 id="ojbect-场景对象设置页签"><a class="markdownIt-Anchor" href="#ojbect-场景对象设置页签"></a> Ojbect 场景对象设置页签</h2>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323201940346.png" alt="" /></p>
+<h3 id="sceme-filter"><a class="markdownIt-Anchor" href="#sceme-filter"></a> Sceme Filter：</h3>
+<p>场景过滤器，配合Hierarchy窗口使用<br />
+All：显示场景上所有对象<br />
+MeshRenderers：显示挂载的网格渲染器的对象<br />
+Terrains：显示挂载了地形脚本的对象</p>
+<h3 id="navigation-static-导航静态物体开关"><a class="markdownIt-Anchor" href="#navigation-static-导航静态物体开关"></a> Navigation Static 导航静态物体开关</h3>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202212586.png" alt="" /></p>
+<p>相当于在<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202244659.png" alt="" /></p>
+<h3 id="generate-offmeshlinks-生成网格连接点开关"><a class="markdownIt-Anchor" href="#generate-offmeshlinks-生成网格连接点开关"></a> Generate OffMeshLinks 生成网格连接点开关</h3>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202428514.png" alt="" /></p>
+<h3 id="navigation-area"><a class="markdownIt-Anchor" href="#navigation-area"></a> Navigation Area</h3>
+<p>导航区域选择，配合Areas页签使用</p>
+<h2 id="bake-导航数据烘焙页签"><a class="markdownIt-Anchor" href="#bake-导航数据烘焙页签"></a> Bake 导航数据烘焙页签</h2>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202907610.png" alt="" /></p>
+<p>先把导航静态物体开关给打开再点下面烘焙<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202940989.png" alt="" /><br />
+点击烘焙，场景中生成的蓝色部分就是可行走的区域。注意要设置成有对象是导航静态才能烘焙成功<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323202855634.png" alt="" /></p>
+<h3 id="agent-radius-代理半径"><a class="markdownIt-Anchor" href="#agent-radius-代理半径"></a> Agent Radius 代理半径</h3>
+<p>决定了烘焙边缘精确度<br />
+控制平台可行走区域和边缘可行走区域</p>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203124027.png" alt="" /></p>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203144585.png" alt="" /></p>
+<h3 id="agent-height-代理高度"><a class="markdownIt-Anchor" href="#agent-height-代理高度"></a> Agent Height 代理高度</h3>
+<p>决定了烘焙高度精确度<br />
+控制拱桥是否可以穿越</p>
+<p>拱桥不可以过<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203255536.png" alt="" /></p>
+<p>把代理高度调小就可以过<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203336407.png" alt="" /></p>
+<h3 id="max-slope-最大坡度"><a class="markdownIt-Anchor" href="#max-slope-最大坡度"></a> Max Slope 最大坡度</h3>
+<p>斜坡度数<br />
+决定了斜坡是否可以行走</p>
+<p>不能走，只能0~14.5<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203508836.png" alt="" /></p>
+<p>可以走，有0~60<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203446109.png" alt="" /></p>
+<h3 id="step-height-最小楼梯高度"><a class="markdownIt-Anchor" href="#step-height-最小楼梯高度"></a> Step Height 最小楼梯高度</h3>
+<p>决定了台阶是否可以行走</p>
+<p>上面不能走，下面能走，上面 - 下面的高度差 &gt; 0.1所以不能走<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203712718.png" alt="" /></p>
+<p>两个台阶都可以走<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203646016.png" alt="" /></p>
+<h3 id="generated-off-mesh-links-生成非网格连接"><a class="markdownIt-Anchor" href="#generated-off-mesh-links-生成非网格连接"></a> Generated off mesh Links 生成非网格连接</h3>
+<p>两个分开的网格之间连接相关设置<br />
+记得要先把两平面之间的生成网格连接点开关给打开<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323203923054.png" alt="" /></p>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204139049.png" alt="" /></p>
 <ul>
-<li>Drop Height<br>掉落高度<br>可以从这个高度掉下来</li>
-<li>Jump Distance<br>跳跃距离<br>决定不同平面上的跳跃距离</li>
+<li>Drop Height<br />
+掉落高度<br />
+可以从这个高度掉下来</li>
+<li>Jump Distance<br />
+跳跃距离<br />
+决定不同平面上的跳跃距离</li>
 </ul>
-<h3 id="Advanced"><a href="#Advanced" class="headerlink" title="Advanced"></a>Advanced</h3><p>一般很少设置高级设置，耗性能</p>
+<h3 id="advanced"><a class="markdownIt-Anchor" href="#advanced"></a> Advanced</h3>
+<p>一般很少设置高级设置，耗性能</p>
 <ul>
-<li><p>Manual Voxel Size<br>手动设置立体像素大小<br>立体像素大小描述了生成的导航网格表示场景几何体的准确程度<br>注意：立体像素大小减半会使内存使用量增加4倍，构建时间也增加4倍一般情况下不需要修改这个值<br>除非想要极其准确的导航网格</p>
+<li>
+<p>Manual Voxel Size<br />
+手动设置立体像素大小<br />
+立体像素大小描述了生成的导航网格表示场景几何体的准确程度<br />
+注意：立体像素大小减半会使内存使用量增加4倍，构建时间也增加4倍一般情况下不需要修改这个值<br />
+除非想要极其准确的导航网格</p>
 <ul>
-<li>Voxel Size<br>开启前者后可以在这里设置立体像素大小可以控制烘焙的准确度</li>
+<li>Voxel Size<br />
+开启前者后可以在这里设置立体像素大小可以控制烘焙的准确度</li>
 </ul>
 </li>
-<li><p>Min Region Area<br>最小区域面积<br>当面积小于此处值的导航网格区域会被移除</p>
+<li>
+<p>Min Region Area<br />
+最小区域面积<br />
+当面积小于此处值的导航网格区域会被移除</p>
 </li>
-<li><p>Height Mesh<br>高度网格构建开关<br>主要用来解决楼梯烘焙为斜坡时希望在楼梯表面的位置准确的放置在楼梯平面上而不是斜坡上<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204613197.png" alt=""><br>启用它会增加烘焙时间</p>
+<li>
+<p>Height Mesh<br />
+高度网格构建开关<br />
+主要用来解决楼梯烘焙为斜坡时希望在楼梯表面的位置准确的放置在楼梯平面上而不是斜坡上<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204613197.png" alt="" /><br />
+启用它会增加烘焙时间</p>
 </li>
 </ul>
-<h2 id="Areas-导航地区页签"><a href="#Areas-导航地区页签" class="headerlink" title="Areas 导航地区页签"></a>Areas 导航地区页签</h2><p>配合Object页签使用<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204702595.png" alt=""></p>
-<p>可以自己新加一个导航区域（Plane（4）），去Object页签选择<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204825238.png" alt=""></p>
-<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204858473.png" alt=""></p>
-<p>烘焙后<br><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204918668.png" alt=""></p>
-<h3 id="Name-区域名字"><a href="#Name-区域名字" class="headerlink" title="Name 区域名字"></a>Name 区域名字</h3><h3 id="Cost-寻路消耗"><a href="#Cost-寻路消耗" class="headerlink" title="Cost 寻路消耗"></a>Cost 寻路消耗</h3><p>寻路消耗越大，越不会从这边走</p>
-<h2 id="Agents-代理页签"><a href="#Agents-代理页签" class="headerlink" title="Agents 代理页签"></a>Agents 代理页签</h2><p>用于配置寻路代理信息</p>
-<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323205100567.png" alt=""></p>
+<h2 id="areas-导航地区页签"><a class="markdownIt-Anchor" href="#areas-导航地区页签"></a> Areas 导航地区页签</h2>
+<p>配合Object页签使用<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204702595.png" alt="" /></p>
+<p>可以自己新加一个导航区域（Plane（4）），去Object页签选择<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204825238.png" alt="" /></p>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204858473.png" alt="" /></p>
+<p>烘焙后<br />
+<img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323204918668.png" alt="" /></p>
+<h3 id="name-区域名字"><a class="markdownIt-Anchor" href="#name-区域名字"></a> Name 区域名字</h3>
+<h3 id="cost-寻路消耗"><a class="markdownIt-Anchor" href="#cost-寻路消耗"></a> Cost 寻路消耗</h3>
+<p>寻路消耗越大，越不会从这边走</p>
+<h2 id="agents-代理页签"><a class="markdownIt-Anchor" href="#agents-代理页签"></a> Agents 代理页签</h2>
+<p>用于配置寻路代理信息</p>
+<p><img src="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/file-20250323205100567.png" alt="" /></p>
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
             </div>
         
