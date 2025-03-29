@@ -13,82 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/UI系统/UGUI/5.GraphicRaycaster图形射线投射器组件.md",
+                "file": "source/_posts/UI系统/UGUI/9.Text文本控件.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5.GraphicRaycaster图形射线投射器组件"
-            }
-          },
-          {
-            "id": "ed683bade3aac1cf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "source/_posts/游戏引擎/unity/unity核心/66.导航网格外连接组件.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "66.导航网格外连接组件"
-            }
-          },
-          {
-            "id": "5eeb5442f136ce84",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "source/_posts/游戏引擎/unity/unity核心/58.动画IK控制.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "58.动画IK控制"
-            }
-          },
-          {
-            "id": "b8741c34c779b6e5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/9.生命周期函数.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "9.生命周期函数"
-            }
-          },
-          {
-            "id": "4d0792bc29fd7c97",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "source/_posts/游戏引擎/unity/unity核心/4.纹理类型设置.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "4.纹理类型设置"
-            }
-          },
-          {
-            "id": "0e602b7960ed3c27",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "source/_posts/UI系统/NGUI/NGUI基础知识/24.NGUI之其它.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "24.NGUI之其它"
+              "title": "9.Text文本控件"
             }
           },
           {
@@ -97,15 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/UI系统/NGUI/NGUI基础知识/13.PopupList下拉列表.md",
+                "file": "source/_posts/UI系统/UGUI/11.Button按钮控件.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "13.PopupList下拉列表"
+              "title": "11.Button按钮控件"
+            }
+          },
+          {
+            "id": "dbfb3b4da8e86212",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/UI系统/UGUI/6.EventSystem和StandaloneInputModule组件.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "6.EventSystem和StandaloneInputModule组件"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -254,31 +199,39 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "3d22961c2f487be6",
+  "active": "1e8b8dfa0ac4d4f3",
   "lastOpenFiles": [
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329225718790.png",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329225601579.png",
+    "source/_posts/UI系统/UGUI/6.EventSystem和StandaloneInputModule组件.md",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件.md",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221841271.png",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221133396.png",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221114093.png",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221109387.png",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221103875.png",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221039265.png",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/导航模式动画.gif",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329220133453.png",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329215933205.png",
+    "source/_posts/UI系统/UGUI/11.Button按钮控件",
+    "source/_posts/UI系统/UGUI/10.RawImage原始图像.md",
+    "source/_posts/UI系统/UGUI/10.RawImage原始图像",
+    "source/_posts/UI系统/UGUI/9.Text文本控件.md",
+    "source/_posts/UI系统/UGUI/4.CanvasScaler画布缩放控制组件.md",
+    "source/_posts/UI系统/UGUI/9.Text文本控件",
+    "source/_posts/UI系统/UGUI/8.Image图片.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/13.PopupList下拉列表.md",
+    "source/_posts/游戏引擎/unity/unity核心/66.导航网格外连接组件.md",
+    "source/_posts/UI系统/UGUI/8.Image图片",
+    "source/_posts/UI系统/UGUI/7.RectTransform矩形变换组件.md",
+    "source/_posts/UI系统/UGUI/7.RectTransform矩形变换组件",
+    "source/_posts/UI系统/UGUI/6.EventSystem和StandaloneInputModule组件",
+    "source/_posts/UI系统/UGUI/5.GraphicRaycaster图形射线投射器组件.md",
     "db.json",
     "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/index.html",
-    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301144027904.png",
-    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143929796.png",
-    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143825667.png",
-    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143846271.png",
-    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143740401.png",
     "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/index.html",
-    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143730160.png",
     "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/3.Unity随机数和UnityAction委托/index.html",
-    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/file-20250227213144486.png",
-    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/2.Cursor鼠标的隐藏锁定图片/index.html",
-    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/33.Microphone麦克风/index.html",
-    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/34.unity入门基础知识总结/index.html",
-    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/34.unity入门基础知识总结/file-20250221165603601.png",
-    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/9.反射读取List数据类型/index.html",
-    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/32.AudioSource音频源代码控制/index.html",
-    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/31.AudioSource音频源组件和AudioListener音频监听组件/index.html",
-    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/31.AudioSource音频源组件和AudioListener音频监听组件/file-20250221155703937.png",
-    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/31.AudioSource音频源组件和AudioListener音频监听组件/file-20250221155634858.png",
-    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/13.打包PlayerPrefsDataMgr/index.html",
-    "source/_posts/UI系统/UGUI/4.CanvasScaler画布缩放控制组件.md",
-    "source/_posts/UI系统/UGUI/5.GraphicRaycaster图形射线投射器组件.md",
     "source/_posts/UI系统/UGUI/3.Canvas画布组件.md",
     "source/_posts/UI系统/UGUI/2.六大基础组件概述.md",
     "source/_posts/UI系统/UGUI/1.UGUI基础知识概述.md",
@@ -293,14 +246,6 @@
     "source/_posts/数据/数据持久化/XML/4.XML文件存放的位置.md",
     "source/_posts/数据/数据持久化/XML/3.XML属性.md",
     "source/_posts/数据/数据持久化/XML/2.XML基础语法.md",
-    "source/_posts/数据/数据持久化/XML/1.XML基础知识概述.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/3.XML属性.md",
-    "source/_posts/数据/数据持久化/XML/XML基础知识/13.XMLDataMgr存储读取功能.md",
-    "source/_posts/数据/数据持久化/Json/8.Json实践小项目.md",
-    "source/_posts/数据/数据持久化/Json/1.Json基础知识概述.md",
-    "source/_posts/数据/数据持久化/Json/6.Newtonsoft.Json.md",
-    "source/_posts/数据/数据持久化/Json/7.各Json库对比.md",
-    "source/_posts/数据/数据持久化/Json/4.JsonUtility.md",
-    "source/_posts/数据/数据持久化/Json/5.LitJson.md"
+    "source/_posts/数据/数据持久化/XML/1.XML基础知识概述.md"
   ]
 }
