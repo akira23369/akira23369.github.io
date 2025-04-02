@@ -9,16 +9,16 @@
         <meta name="keywords" content="UI系统,NGUI,NGUI基础知识" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Panel是用来干啥的它是用于让UI元素能够被渲染的关键组件一般情况下 一个面板 就需要一个UIPanel所有的UI元素会依托在离自己最近的Panel下 用于管理一个UI面板的渲染顺序用于管理一个UI面板上的所有子控件 UIRoot默认就会带一个Panel组件，如果Panel组件失活了，其他在UIRoot下暴露在外不在其他Panel下的UI控件都显示不了也可以创建Panel，创建的Panel自带P">
+    <meta name="description" content="Panel是用来干啥的 它是用于让UI元素能够被渲染的关键组件 一般情况下 一个面板 就需要一个UIPanel 所有的UI元素会依托在离自己最近的Panel下 用于管理一个UI面板的渲染顺序 用于管理一个UI面板上的所有子控件 UIRoot默认就会带一个Panel组件，如果Panel组件失活了，其他在UIRoot下暴露在外不在其他Panel下的UI控件都显示不了 也可以创建Panel，创建的Pa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="4.Panel组件(UIPanel)">
 <meta property="og:url" content="http://example.com/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel)/index.html">
 <meta property="og:site_name" content="akiraの博客思密达">
-<meta property="og:description" content="Panel是用来干啥的它是用于让UI元素能够被渲染的关键组件一般情况下 一个面板 就需要一个UIPanel所有的UI元素会依托在离自己最近的Panel下 用于管理一个UI面板的渲染顺序用于管理一个UI面板上的所有子控件 UIRoot默认就会带一个Panel组件，如果Panel组件失活了，其他在UIRoot下暴露在外不在其他Panel下的UI控件都显示不了也可以创建Panel，创建的Panel自带P">
+<meta property="og:description" content="Panel是用来干啥的 它是用于让UI元素能够被渲染的关键组件 一般情况下 一个面板 就需要一个UIPanel 所有的UI元素会依托在离自己最近的Panel下 用于管理一个UI面板的渲染顺序 用于管理一个UI面板上的所有子控件 UIRoot默认就会带一个Panel组件，如果Panel组件失活了，其他在UIRoot下暴露在外不在其他Panel下的UI控件都显示不了 也可以创建Panel，创建的Pa">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel">
-<meta property="og:image" content="http://example.com/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel">
-<meta property="og:image" content="http://example.com/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel">
+<meta property="og:image" content="http://example.com/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel)/Panel%E5%8F%82%E6%95%B0%E7%9B%B8%E5%85%B3.png">
+<meta property="og:image" content="http://example.com/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel)/file-20250307164724001.png">
+<meta property="og:image" content="http://example.com/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel)/file-20250307164730316.png">
 <meta property="article:published_time" content="2025-03-07T06:36:59.000Z">
 <meta property="article:modified_time" content="2025-03-07T09:02:20.735Z">
 <meta property="article:author" content="akira23369">
@@ -26,7 +26,7 @@
 <meta property="article:tag" content="NGUI">
 <meta property="article:tag" content="NGUI基础知识">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel">
+<meta name="twitter:image" content="http://example.com/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel)/Panel%E5%8F%82%E6%95%B0%E7%9B%B8%E5%85%B3.png">
     
 
     
@@ -244,7 +244,7 @@
                             &nbsp;
                             UGUI
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/1.UGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0/">1.UGUI基础知识概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/2.%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/">2.六大基础组件概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/3.Canvas%E7%94%BB%E5%B8%83%E7%BB%84%E4%BB%B6/">3.Canvas画布组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/4.CanvasScaler%E7%94%BB%E5%B8%83%E7%BC%A9%E6%94%BE%E6%8E%A7%E5%88%B6%E7%BB%84%E4%BB%B6/">4.CanvasScaler画布缩放控制组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/5.GraphicRaycaster%E5%9B%BE%E5%BD%A2%E5%B0%84%E7%BA%BF%E6%8A%95%E5%B0%84%E5%99%A8%E7%BB%84%E4%BB%B6/">5.GraphicRaycaster图形射线投射器组件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/6.EventSystem%E5%92%8CStandaloneInputModule%E7%BB%84%E4%BB%B6/">6.EventSystem和StandaloneInputModule组件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/7.RectTransform%E7%9F%A9%E5%BD%A2%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6/">7.RectTransform矩形变换组件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/8.Image%E5%9B%BE%E7%89%87/">8.Image图片</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/9.Text%E6%96%87%E6%9C%AC%E6%8E%A7%E4%BB%B6/">9.Text文本控件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/10.RawImage%E5%8E%9F%E5%A7%8B%E5%9B%BE%E5%83%8F/">10.RawImage原始图像</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/11.Button%E6%8C%89%E9%92%AE%E6%8E%A7%E4%BB%B6/">11.Button按钮控件</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/1.UGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0/">1.UGUI基础知识概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/2.%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/">2.六大基础组件概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/3.Canvas%E7%94%BB%E5%B8%83%E7%BB%84%E4%BB%B6/">3.Canvas画布组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/4.CanvasScaler%E7%94%BB%E5%B8%83%E7%BC%A9%E6%94%BE%E6%8E%A7%E5%88%B6%E7%BB%84%E4%BB%B6/">4.CanvasScaler画布缩放控制组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/5.GraphicRaycaster%E5%9B%BE%E5%BD%A2%E5%B0%84%E7%BA%BF%E6%8A%95%E5%B0%84%E5%99%A8%E7%BB%84%E4%BB%B6/">5.GraphicRaycaster图形射线投射器组件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/6.EventSystem%E5%92%8CStandaloneInputModule%E7%BB%84%E4%BB%B6/">6.EventSystem和StandaloneInputModule组件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/7.RectTransform%E7%9F%A9%E5%BD%A2%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6/">7.RectTransform矩形变换组件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/8.Image%E5%9B%BE%E7%89%87/">8.Image图片</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/9.Text%E6%96%87%E6%9C%AC%E6%8E%A7%E4%BB%B6/">9.Text文本控件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/10.RawImage%E5%8E%9F%E5%A7%8B%E5%9B%BE%E5%83%8F/">10.RawImage原始图像</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/11.Button%E6%8C%89%E9%92%AE%E6%8E%A7%E4%BB%B6/">11.Button按钮控件</a></li>  <li class="file"><a href="/2025/03/31/UI%E7%B3%BB%E7%BB%9F/UGUI/12.Toggle%E5%BC%80%E5%85%B3%E6%8E%A7%E4%BB%B6/">12.Toggle开关控件</a></li>  <li class="file"><a href="/2025/04/01/UI%E7%B3%BB%E7%BB%9F/UGUI/13.InputField%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5%E6%8E%A7%E4%BB%B6/">13.InputField文本输入控件</a></li>  <li class="file"><a href="/2025/04/01/UI%E7%B3%BB%E7%BB%9F/UGUI/14.Slider%E6%BB%91%E5%8A%A8%E6%9D%A1%E6%8E%A7%E4%BB%B6/">14.Slider滑动条控件</a></li>  <li class="file"><a href="/2025/04/02/UI%E7%B3%BB%E7%BB%9F/UGUI/15.ScrollBar%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%8E%A7%E4%BB%B6/">15.ScrollBar滚动条控件</a></li>  <li class="file"><a href="/2025/04/02/UI%E7%B3%BB%E7%BB%9F/UGUI/16.ScrollView%E6%BB%9A%E5%8A%A8%E8%A7%86%E5%9B%BE%E6%8E%A7%E4%BB%B6/">16.ScrollView滚动视图控件</a></li>  <li class="file"><a href="/2025/04/02/UI%E7%B3%BB%E7%BB%9F/UGUI/17.Dropdown%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E6%8E%A7%E4%BB%B6/">17.Dropdown下拉列表控件</a></li>  <li class="file"><a href="/2025/04/02/UI%E7%B3%BB%E7%BB%9F/UGUI/18.%E5%9B%BE%E9%9B%86%E5%88%B6%E4%BD%9C/">18.图集制作</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -473,7 +473,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title"><span>标签云</span></h3>
         <div class="widget tagcloud">
-            <a href="/tags/2d-Animation/" style="font-size: 12.17px;">2d Animation</a> <a href="/tags/2d%E5%8A%A8%E7%94%BB/" style="font-size: 14.35px;">2d动画</a> <a href="/tags/2d%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">2d序列帧动画</a> <a href="/tags/2d%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">2d物理系统</a> <a href="/tags/2d%E7%9B%B8%E5%85%B3/" style="font-size: 17.39px;">2d相关</a> <a href="/tags/2d%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/" style="font-size: 13.91px;">2d骨骼动画</a> <a href="/tags/3D%E6%95%B0%E5%AD%A6/" style="font-size: 12.61px;">3D数学</a> <a href="/tags/3d%E5%8A%A8%E7%94%BB%E7%9B%B8%E5%85%B3/" style="font-size: 13.48px;">3d动画相关</a> <a href="/tags/Csharp/" style="font-size: 14.35px;">Csharp</a> <a href="/tags/GUI/" style="font-size: 16.96px;">GUI</a> <a href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.78px;">GUI基础知识</a> <a href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 14.78px;">GUI实践项目</a> <a href="/tags/Json/" style="font-size: 13.04px;">Json</a> <a href="/tags/NGUI/" style="font-size: 16.96px;">NGUI</a> <a href="/tags/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.96px;">NGUI基础知识</a> <a href="/tags/PlayerPrefs/" style="font-size: 16.09px;">PlayerPrefs</a> <a href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.3px;">PlayerPrefs基础知识</a> <a href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 15.22px;">PlayerPrefs实践项目</a> <a href="/tags/Spine/" style="font-size: 11.3px;">Spine</a> <a href="/tags/Sprite/" style="font-size: 13.91px;">Sprite</a> <a href="/tags/Tilemap/" style="font-size: 11.74px;">Tilemap</a> <a href="/tags/UGUI/" style="font-size: 14.35px;">UGUI</a> <a href="/tags/UGUI%E4%B8%89%E5%A4%A7%E5%9F%BA%E7%A1%80%E6%8E%A7%E4%BB%B6/" style="font-size: 10.87px;">UGUI三大基础控件</a> <a href="/tags/UGUI%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/" style="font-size: 12.17px;">UGUI六大基础组件</a> <a href="/tags/UGUI%E7%BB%84%E5%90%88%E6%8E%A7%E4%BB%B6/" style="font-size: 10px;">UGUI组合控件</a> <a href="/tags/UI%E7%B3%BB%E7%BB%9F/" style="font-size: 19.13px;">UI系统</a> <a href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" style="font-size: 10.43px;">Unity工作原理</a> <a href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity界面基础</a> <a href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity脚本基础</a> <a href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" style="font-size: 14.35px;">Unity重要组件和API</a> <a href="/tags/XML/" style="font-size: 14.78px;">XML</a> <a href="/tags/hexo/" style="font-size: 10.87px;">hexo</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unity%E5%85%A5%E9%97%A8/" style="font-size: 18.7px;">unity入门</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.26px;">unity入门基础知识</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 11.3px;">unity入门实践项目</a> <a href="/tags/unity%E5%9F%BA%E7%A1%80/" style="font-size: 16.52px;">unity基础</a> <a href="/tags/unity%E6%A0%B8%E5%BF%83/" style="font-size: 19.57px;">unity核心</a> <a href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10.43px;">光源系统</a> <a href="/tags/%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" style="font-size: 15.65px;">动画系统</a> <a href="/tags/%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 12.17px;">图片导入相关设置</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">导航系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 18.7px;">数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" style="font-size: 18.7px;">数据持久化</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" style="font-size: 17.83px;">核心系统</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3/" style="font-size: 13.04px;">模型导入相关</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" style="font-size: 20px;">游戏引擎</a> <a href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14.78px;">物理系统</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 14.35px;">编程语言</a> <a href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" style="font-size: 10.87px;">音效系统</a>
+            <a href="/tags/2d-Animation/" style="font-size: 12.17px;">2d Animation</a> <a href="/tags/2d%E5%8A%A8%E7%94%BB/" style="font-size: 14.35px;">2d动画</a> <a href="/tags/2d%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">2d序列帧动画</a> <a href="/tags/2d%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">2d物理系统</a> <a href="/tags/2d%E7%9B%B8%E5%85%B3/" style="font-size: 17.39px;">2d相关</a> <a href="/tags/2d%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/" style="font-size: 13.91px;">2d骨骼动画</a> <a href="/tags/3D%E6%95%B0%E5%AD%A6/" style="font-size: 12.61px;">3D数学</a> <a href="/tags/3d%E5%8A%A8%E7%94%BB%E7%9B%B8%E5%85%B3/" style="font-size: 13.48px;">3d动画相关</a> <a href="/tags/Csharp/" style="font-size: 14.35px;">Csharp</a> <a href="/tags/GUI/" style="font-size: 16.96px;">GUI</a> <a href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 14.78px;">GUI基础知识</a> <a href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 14.78px;">GUI实践项目</a> <a href="/tags/Json/" style="font-size: 13.04px;">Json</a> <a href="/tags/NGUI/" style="font-size: 16.96px;">NGUI</a> <a href="/tags/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.96px;">NGUI基础知识</a> <a href="/tags/PlayerPrefs/" style="font-size: 16.09px;">PlayerPrefs</a> <a href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.3px;">PlayerPrefs基础知识</a> <a href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 15.22px;">PlayerPrefs实践项目</a> <a href="/tags/Spine/" style="font-size: 11.3px;">Spine</a> <a href="/tags/Sprite/" style="font-size: 13.91px;">Sprite</a> <a href="/tags/Tilemap/" style="font-size: 11.74px;">Tilemap</a> <a href="/tags/UGUI/" style="font-size: 16.09px;">UGUI</a> <a href="/tags/UGUI%E4%B8%89%E5%A4%A7%E5%9F%BA%E7%A1%80%E6%8E%A7%E4%BB%B6/" style="font-size: 10.87px;">UGUI三大基础控件</a> <a href="/tags/UGUI%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/" style="font-size: 12.17px;">UGUI六大基础组件</a> <a href="/tags/UGUI%E7%BB%84%E5%90%88%E6%8E%A7%E4%BB%B6/" style="font-size: 12.61px;">UGUI组合控件</a> <a href="/tags/UI%E7%B3%BB%E7%BB%9F/" style="font-size: 19.13px;">UI系统</a> <a href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" style="font-size: 10.43px;">Unity工作原理</a> <a href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity界面基础</a> <a href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" style="font-size: 11.3px;">Unity脚本基础</a> <a href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" style="font-size: 14.35px;">Unity重要组件和API</a> <a href="/tags/XML/" style="font-size: 14.78px;">XML</a> <a href="/tags/hexo/" style="font-size: 10.87px;">hexo</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unity%E5%85%A5%E9%97%A8/" style="font-size: 18.7px;">unity入门</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 18.26px;">unity入门基础知识</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 11.3px;">unity入门实践项目</a> <a href="/tags/unity%E5%9F%BA%E7%A1%80/" style="font-size: 16.52px;">unity基础</a> <a href="/tags/unity%E6%A0%B8%E5%BF%83/" style="font-size: 19.57px;">unity核心</a> <a href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10.43px;">光源系统</a> <a href="/tags/%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" style="font-size: 15.65px;">动画系统</a> <a href="/tags/%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 12.17px;">图片导入相关设置</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/" style="font-size: 11.74px;">导航系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 18.7px;">数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" style="font-size: 18.7px;">数据持久化</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" style="font-size: 17.83px;">核心系统</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3/" style="font-size: 13.04px;">模型导入相关</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" style="font-size: 20px;">游戏引擎</a> <a href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14.78px;">物理系统</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 14.35px;">编程语言</a> <a href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" style="font-size: 10.87px;">音效系统</a>
         </div>
     </div>
 
@@ -532,44 +532,61 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Panel%E6%98%AF%E7%94%A8%E6%9D%A5%E5%B9%B2%E5%95%A5%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">Panel是用来干啥的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E7%9B%B8%E5%85%B3"><span class="toc-number">2.</span> <span class="toc-text">参数相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Alpha"><span class="toc-number">2.1.</span> <span class="toc-text">Alpha</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Depth"><span class="toc-number">2.2.</span> <span class="toc-text">Depth</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Clipping"><span class="toc-number">2.3.</span> <span class="toc-text">Clipping</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sorting-Layer"><span class="toc-number">2.4.</span> <span class="toc-text">Sorting Layer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Advanced-Options"><span class="toc-number">2.5.</span> <span class="toc-text">Advanced Options</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anchors"><span class="toc-number">2.6.</span> <span class="toc-text">Anchors</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#panel%E6%98%AF%E7%94%A8%E6%9D%A5%E5%B9%B2%E5%95%A5%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text"> Panel是用来干啥的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E7%9B%B8%E5%85%B3"><span class="toc-number">2.</span> <span class="toc-text"> 参数相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#alpha"><span class="toc-number">2.1.</span> <span class="toc-text"> Alpha</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#depth"><span class="toc-number">2.2.</span> <span class="toc-text"> Depth</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clipping"><span class="toc-number">2.3.</span> <span class="toc-text"> Clipping</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sorting-layer"><span class="toc-number">2.4.</span> <span class="toc-text"> Sorting Layer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#advanced-options"><span class="toc-number">2.5.</span> <span class="toc-text"> Advanced Options</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#anchors"><span class="toc-number">2.6.</span> <span class="toc-text"> Anchors</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text"> 总结</span></a></li></ol>
                 </div>
             
         
         
-            <h1 id="Panel是用来干啥的"><a href="#Panel是用来干啥的" class="headerlink" title="Panel是用来干啥的"></a>Panel是用来干啥的</h1><p>它是用于让UI元素能够被渲染的关键组件<br>一般情况下 一个面板 就需要一个UIPanel<br>所有的UI元素会依托在离自己最近的Panel下</p>
-<p>用于管理一个UI面板的渲染顺序<br>用于管理一个UI面板上的所有子控件</p>
-<p>UIRoot默认就会带一个Panel组件，如果Panel组件失活了，其他在UIRoot下暴露在外不在其他Panel下的UI控件都显示不了<br>也可以创建Panel，创建的Panel自带Panel组件，拖拽其他UI控件到创建Panel对象上，就可以显示了</p>
-<p><img src="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel" alt="">/Panel参数相关.png)</p>
-<h1 id="参数相关"><a href="#参数相关" class="headerlink" title="参数相关"></a>参数相关</h1><p><img src="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel" alt="">/file-20250307164724001.png)</p>
-<h2 id="Alpha"><a href="#Alpha" class="headerlink" title="Alpha"></a>Alpha</h2><p>控制所有子UI元素的透明度</p>
-<h2 id="Depth"><a href="#Depth" class="headerlink" title="Depth"></a>Depth</h2><p>控制该Panel的层级<br>层级高Panel会把成绩低的Panel遮挡住，后渲染会把层级低的先渲染的遮挡住</p>
-<h2 id="Clipping"><a href="#Clipping" class="headerlink" title="Clipping"></a>Clipping</h2><p>裁剪</p>
+            <h1 id="panel是用来干啥的"><a class="markdownIt-Anchor" href="#panel是用来干啥的"></a> Panel是用来干啥的</h1>
+<p>它是用于让UI元素能够被渲染的关键组件<br />
+一般情况下 一个面板 就需要一个UIPanel<br />
+所有的UI元素会依托在离自己最近的Panel下</p>
+<p>用于管理一个UI面板的渲染顺序<br />
+用于管理一个UI面板上的所有子控件</p>
+<p>UIRoot默认就会带一个Panel组件，如果Panel组件失活了，其他在UIRoot下暴露在外不在其他Panel下的UI控件都显示不了<br />
+也可以创建Panel，创建的Panel自带Panel组件，拖拽其他UI控件到创建Panel对象上，就可以显示了</p>
+<p><img src="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel)/Panel%E5%8F%82%E6%95%B0%E7%9B%B8%E5%85%B3.png" alt="" /></p>
+<h1 id="参数相关"><a class="markdownIt-Anchor" href="#参数相关"></a> 参数相关</h1>
+<p><img src="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel)/file-20250307164724001.png" alt="" /></p>
+<h2 id="alpha"><a class="markdownIt-Anchor" href="#alpha"></a> Alpha</h2>
+<p>控制所有子UI元素的透明度</p>
+<h2 id="depth"><a class="markdownIt-Anchor" href="#depth"></a> Depth</h2>
+<p>控制该Panel的层级<br />
+层级高Panel会把成绩低的Panel遮挡住，后渲染会把层级低的先渲染的遮挡住</p>
+<h2 id="clipping"><a class="markdownIt-Anchor" href="#clipping"></a> Clipping</h2>
+<p>裁剪</p>
 <ul>
-<li><p>None不处理</p>
+<li>
+<p>None不处理</p>
 <ul>
 <li>正常</li>
 </ul>
 </li>
-<li><p>Texture Mask根据图片信息进行遮罩 </p>
+<li>
+<p>Texture Mask根据图片信息进行遮罩</p>
 <ul>
 <li>比如人物头像</li>
 </ul>
 </li>
-<li><p>Soft Clip自己定范围裁剪</p>
+<li>
+<p>Soft Clip自己定范围裁剪</p>
 <ul>
 <li>比如拖动框</li>
 </ul>
 </li>
-<li><p>Constrain But Dont Clip约束但不剪裁</p>
+<li>
+<p>Constrain But Dont Clip约束但不剪裁</p>
 <ul>
-<li>不裁剪画面<br>只限制响应范围</li>
+<li>不裁剪画面<br />
+只限制响应范围</li>
 </ul>
 </li>
 </ul>
-<h2 id="Sorting-Layer"><a href="#Sorting-Layer" class="headerlink" title="Sorting Layer"></a>Sorting Layer</h2><p>排序层</p>
-<p><img src="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel" alt="">/file-20250307164730316.png)</p>
-<h2 id="Advanced-Options"><a href="#Advanced-Options" class="headerlink" title="Advanced Options"></a>Advanced Options</h2><p>渲染相关高级选项</p>
+<h2 id="sorting-layer"><a class="markdownIt-Anchor" href="#sorting-layer"></a> Sorting Layer</h2>
+<p>排序层</p>
+<p><img src="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel)/file-20250307164730316.png" alt="" /></p>
+<h2 id="advanced-options"><a class="markdownIt-Anchor" href="#advanced-options"></a> Advanced Options</h2>
+<p>渲染相关高级选项</p>
 <ul>
 <li>Render Q渲染队列</li>
 <li>Sort Order排序</li>
@@ -583,8 +600,11 @@
 <li>Static检查子元素是否会移动</li>
 <li>Panel Tool是否显示面板工具</li>
 </ul>
-<h2 id="Anchors"><a href="#Anchors" class="headerlink" title="Anchors"></a>Anchors</h2><p>锚点设置相关<br>用于分辨率自适应设置大小</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<h2 id="anchors"><a class="markdownIt-Anchor" href="#anchors"></a> Anchors</h2>
+<p>锚点设置相关<br />
+用于分辨率自适应设置大小</p>
+<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
+<ul>
 <li>没有Panel父对象 UI控件看不到</li>
 <li>Panel一般用于管理面板 控制层级</li>
 <li>Panel可以有多个 一般一个Panel管理一个面板</li>
