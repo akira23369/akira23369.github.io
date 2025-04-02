@@ -27,12 +27,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/UI系统/UGUI/11.Button按钮控件.md",
+                "file": "source/_posts/UI系统/NGUI/NGUI基础知识/15.ScrollBar滚动条和ProgressBar进度条.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "11.Button按钮控件"
+              "title": "15.ScrollBar滚动条和ProgressBar进度条"
+            }
+          },
+          {
+            "id": "f02c76c1791ac8c2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/游戏引擎/unity/unity基础/2.Mathf数学计算结构体常用方法.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2.Mathf数学计算结构体常用方法"
             }
           },
           {
@@ -41,16 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/UI系统/UGUI/6.EventSystem和StandaloneInputModule组件.md",
+                "file": "source/_posts/UI系统/UGUI/12.Toggle开关控件.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "6.EventSystem和StandaloneInputModule组件"
+              "title": "12.Toggle开关控件"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -199,53 +213,53 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "1e8b8dfa0ac4d4f3",
+  "active": "dbfb3b4da8e86212",
   "lastOpenFiles": [
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329225718790.png",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329225601579.png",
-    "source/_posts/UI系统/UGUI/6.EventSystem和StandaloneInputModule组件.md",
+    "db.json",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301144027904.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/index.html",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143929796.png",
+    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/31.AudioSource音频源组件和AudioListener音频监听组件/file-20250221155634858.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143846271.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143825667.png",
+    "public/2025/02/21/游戏引擎/unity/unity入门/unity入门基础知识/31.AudioSource音频源组件和AudioListener音频监听组件/file-20250221153553505.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143730160.png",
+    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/file-20250301143740401.png",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/2.Cursor鼠标的隐藏锁定图片/index.html",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/3.Unity随机数和UnityAction委托/index.html",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/index.html",
+    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/file-20250227213144486.png",
+    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/7.反射存储自定义类型/index.html",
+    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/6.反射存储Dictionary数据类型/index.html",
+    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/5.反射存储List数据类型/index.html",
+    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/4.反射存储常用数据类型/index.html",
+    "public/2025/02/24/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/8.反射读取常用成员数据/index.html",
+    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/3.数据管理类的创建/index.html",
+    "public/2025/02/22/数据/数据持久化/PlayerPrefs/PlayerPrefs实践项目/2.需求分析/Pasted image 20240311161937.png",
+    "source/_posts/UI系统/UGUI/13.InputField文本输入控件.md",
+    "source/_posts/UI系统/UGUI/14.Slider滑动条控件.md",
+    "source/_posts/UI系统/UGUI/15.ScrollBar滚动条控件.md",
+    "source/_posts/UI系统/UGUI/16.ScrollView滚动视图控件.md",
+    "source/_posts/UI系统/UGUI/17.Dropdown下拉列表控件.md",
+    "source/_posts/UI系统/UGUI/18.图集制作.md",
+    "source/_posts/游戏引擎/unity/unity基础/2.Mathf数学计算结构体常用方法.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/15.ScrollBar滚动条和ProgressBar进度条.md",
+    "source/_posts/UI系统/NGUI/NGUI基础知识/14.Slider滑动条.md",
     "source/_posts/UI系统/UGUI/11.Button按钮控件.md",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221841271.png",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221133396.png",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221114093.png",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221109387.png",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221103875.png",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329221039265.png",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/导航模式动画.gif",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329220133453.png",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件/file-20250329215933205.png",
-    "source/_posts/UI系统/UGUI/11.Button按钮控件",
+    "source/_posts/UI系统/UGUI/12.Toggle开关控件.md",
+    "source/_posts/UI系统/UGUI/6.EventSystem和StandaloneInputModule组件.md",
+    "source/_posts/UI系统/UGUI/3.Canvas画布组件.md",
     "source/_posts/UI系统/UGUI/10.RawImage原始图像.md",
-    "source/_posts/UI系统/UGUI/10.RawImage原始图像",
     "source/_posts/UI系统/UGUI/9.Text文本控件.md",
-    "source/_posts/UI系统/UGUI/4.CanvasScaler画布缩放控制组件.md",
-    "source/_posts/UI系统/UGUI/9.Text文本控件",
     "source/_posts/UI系统/UGUI/8.Image图片.md",
+    "source/_posts/UI系统/UGUI/7.RectTransform矩形变换组件.md",
+    "source/_posts/UI系统/UGUI/5.GraphicRaycaster图形射线投射器组件.md",
+    "source/_posts/UI系统/UGUI/4.CanvasScaler画布缩放控制组件.md",
     "source/_posts/UI系统/NGUI/NGUI基础知识/13.PopupList下拉列表.md",
     "source/_posts/游戏引擎/unity/unity核心/66.导航网格外连接组件.md",
-    "source/_posts/UI系统/UGUI/8.Image图片",
-    "source/_posts/UI系统/UGUI/7.RectTransform矩形变换组件.md",
-    "source/_posts/UI系统/UGUI/7.RectTransform矩形变换组件",
-    "source/_posts/UI系统/UGUI/6.EventSystem和StandaloneInputModule组件",
-    "source/_posts/UI系统/UGUI/5.GraphicRaycaster图形射线投射器组件.md",
-    "db.json",
-    "public/2025/03/01/游戏引擎/unity/unity入门/unity入门实践项目/4.模型自资源的导入/index.html",
-    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/1.场景切换和游戏退出/index.html",
-    "public/2025/02/27/游戏引擎/unity/unity入门/unity入门实践项目/3.Unity随机数和UnityAction委托/index.html",
-    "source/_posts/UI系统/UGUI/3.Canvas画布组件.md",
     "source/_posts/UI系统/UGUI/2.六大基础组件概述.md",
     "source/_posts/UI系统/UGUI/1.UGUI基础知识概述.md",
     "source/_posts/数据/数据持久化/XML/12.XML数据管理类.md",
-    "source/_posts/数据/数据持久化/XML/11.让Dictionary支持序列化和反序列化.md",
-    "source/_posts/数据/数据持久化/XML/10.IXmlSerializable接口.md",
-    "source/_posts/数据/数据持久化/XML/9.CSharp中XML反序列化.md",
-    "source/_posts/数据/数据持久化/XML/8.CSharp中XML序列化.md",
-    "source/_posts/数据/数据持久化/XML/7.XML总结.md",
-    "source/_posts/数据/数据持久化/XML/6.CSharp存储XML文件.md",
-    "source/_posts/数据/数据持久化/XML/5.CSharp读取XML文件.md",
-    "source/_posts/数据/数据持久化/XML/4.XML文件存放的位置.md",
-    "source/_posts/数据/数据持久化/XML/3.XML属性.md",
-    "source/_posts/数据/数据持久化/XML/2.XML基础语法.md",
-    "source/_posts/数据/数据持久化/XML/1.XML基础知识概述.md"
+    "source/_posts/数据/数据持久化/XML/11.让Dictionary支持序列化和反序列化.md"
   ]
 }
