@@ -15,5 +15,14 @@ if (folders.length === 0) {
 }
 %>
 tags:
+<%*
+// 使用和 categories 相同的逻辑生成 tags
+for (let tag of folders) {
+    tR += `  - ${tag}\n`;
+}
+if (folders.length === 0) {
+    tR += "  - 未分类";
+}
+%>
 ---
 
