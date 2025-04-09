@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>11.2字符串哈希 | akiraの博客思密达</title>
+    
+    
+        <meta name="keywords" content="算法,Acwing,基础,模板题,数据结构,哈希表" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="841. 字符串哈希 - AcWing题库  题目描述 给定一个长度为 nnn 的字符串，再给定 mmm 个询问，每个询问包含四个整数 l1,r1,l2,r2l_1, r_1, l_2, r_2l1​,r1​,l2​,r2​，请你判断 [l1,r1][l_1, r_1][l1​,r1​] 和 [l2,r2][l_2, r_2][l2​,r2​] 这两个区间所包含的字符串子串是否完全相同。 字符串中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="11.2字符串哈希">
+<meta property="og:url" content="http://example.com/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/11.2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8C/index.html">
+<meta property="og:site_name" content="akiraの博客思密达">
+<meta property="og:description" content="841. 字符串哈希 - AcWing题库  题目描述 给定一个长度为 nnn 的字符串，再给定 mmm 个询问，每个询问包含四个整数 l1,r1,l2,r2l_1, r_1, l_2, r_2l1​,r1​,l2​,r2​，请你判断 [l1,r1][l_1, r_1][l1​,r1​] 和 [l2,r2][l_2, r_2][l2​,r2​] 这两个区间所包含的字符串子串是否完全相同。 字符串中">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="1999-12-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-09T14:57:17.633Z">
+<meta property="article:author" content="akira23369">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Acwing">
+<meta property="article:tag" content="基础">
+<meta property="article:tag" content="模板题">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="哈希表">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="akiraの博客思密达" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">akiraの博客思密达</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>分类</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            UI系统
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            GUI
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            GUI基础知识
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.GUI%E6%A6%82%E8%BF%B0/">1.GUI概述</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.GUI%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%B8%8E%E4%B8%BB%E8%A6%81%E4%BD%9C%E7%94%A8/">2.GUI工作原理与主要作用</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.%E6%96%87%E6%9C%AC%E5%92%8C%E6%8C%89%E9%92%AE%E6%8E%A7%E4%BB%B6/">3.文本和按钮控件</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.%E5%A4%9A%E9%80%89%E6%A1%86%E5%92%8C%E5%8D%95%E9%80%89%E6%A1%86/">4.多选框和单选框</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.%E8%BE%93%E5%85%A5%E6%A1%86%E5%92%8C%E6%8B%96%E5%8A%A8%E6%9D%A1/">5.输入框和拖动条</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%9B%BE%E7%89%87%E7%BB%98%E5%88%B6%E5%92%8C%E6%A1%86/">6.图片绘制和框</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.%E5%B7%A5%E5%85%B7%E6%A0%8F%E5%92%8C%E9%80%89%E6%8B%A9%E7%BD%91%E6%A0%BC/">7.工具栏和选择网格</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E6%BB%9A%E5%8A%A8%E5%88%97%E8%A1%A8%E5%92%8C%E5%88%86%E7%BB%84/">8.滚动列表和分组</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%AA%97%E5%8F%A3/">9.窗口</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/10.%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%AE%E8%82%A4%E6%A0%B7%E5%BC%8F/">10.自定义皮肤样式</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/11.GUILayout%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80/">11.GUILayout自动布局</a></li>  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/12.GUI%E6%80%BB%E7%BB%93/">12.GUI总结</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            GUI实践项目
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/26/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/1.%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%AE%A9%E6%8C%87%E5%AE%9A%E4%BB%A3%E7%A0%81%E8%BF%90%E8%A1%8C/">1.编辑模式下让指定代码运行</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/2.%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/">2.需求分析</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/3.%E4%B9%9D%E5%AE%AB%E6%A0%BC%E6%A6%82%E5%BF%B5/">3.九宫格概念</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/4.%E6%8E%A7%E4%BB%B6%E4%BD%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E7%B1%BB/">4.控件位置信息类</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/5.%E6%8E%A7%E4%BB%B6%E7%88%B6%E7%B1%BB/">5.控件父类</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/6.%E6%8E%A7%E4%BB%B6%E6%A0%B9%E5%AF%B9%E8%B1%A1/">6.控件根对象</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/7.%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E6%9C%AC%E5%92%8C%E6%8C%89%E9%92%AE/">7.自定义文本和按钮</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/8.%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%9A%E9%80%89%E6%A1%86/">8.自定义多选框</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/9.%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%95%E9%80%89%E6%A1%86/">9.自定义单选框</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/10.%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%85%A5%E6%A1%86%E5%92%8C%E6%8B%96%E5%8A%A8%E6%9D%A1/">10.自定义输入框和拖动条</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/11.%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E7%89%87%E7%BB%98%E5%88%B6/">11.自定义图片绘制</a></li>  <li class="file"><a href="/2025/02/27/UI%E7%B3%BB%E7%BB%9F/GUI/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/12.%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%A7%E4%BB%B6%E6%8B%BC%E9%9D%A2%E6%9D%BF/">12.自定义控件拼面板</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            NGUI
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            NGUI基础知识
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/05/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0/">1.NGUI基础知识概述</a></li>  <li class="file"><a href="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.NGUI%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AF%BC%E5%85%A5/">2.NGUI下载和导入</a></li>  <li class="file"><a href="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.Root%E7%BB%84%E4%BB%B6(UIRoot)/">3.Root组件(UIRoot)</a></li>  <li class="file"><a href="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Panel%E7%BB%84%E4%BB%B6(UIPanel)/">4.Panel组件(UIPanel)</a></li>  <li class="file"><a href="/2025/03/07/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.EventSystem%E4%BA%8B%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%BB%84%E4%BB%B6/">5.EventSystem事件系统组件</a></li>  <li class="file"><a href="/2025/03/10/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%9B%BE%E9%9B%86%E5%88%B6%E4%BD%9C/">6.图集制作</a></li>  <li class="file"><a href="/2025/03/10/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.Sprite%E7%B2%BE%E7%81%B5%E5%9B%BE%E7%89%87/">7.Sprite精灵图片</a></li>  <li class="file"><a href="/2025/03/10/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.Label%E6%96%87%E6%9C%AC/">8.Label文本</a></li>  <li class="file"><a href="/2025/03/10/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.Texture%E7%BA%B9%E7%90%86%E5%9B%BE%E7%89%87/">9.Texture纹理图片</a></li>  <li class="file"><a href="/2025/03/10/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/10.Button%E6%8C%89%E9%92%AE/">10.Button按钮</a></li>  <li class="file"><a href="/2025/03/11/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/11.Toggle%E5%8D%95%E5%A4%9A%E9%80%89%E6%A1%86/">11.Toggle单多选框</a></li>  <li class="file"><a href="/2025/03/11/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/12.Input%E8%BE%93%E5%85%A5%E6%A1%86/">12.Input输入框</a></li>  <li class="file"><a href="/2025/03/11/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/13.PopupList%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8/">13.PopupList下拉列表</a></li>  <li class="file"><a href="/2025/03/11/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/14.Slider%E6%BB%91%E5%8A%A8%E6%9D%A1/">14.Slider滑动条</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/15.ScrollBar%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%92%8CProgressBar%E8%BF%9B%E5%BA%A6%E6%9D%A1/">15.ScrollBar滚动条和ProgressBar进度条</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/16.ScrollView%E6%BB%9A%E5%8A%A8%E8%A7%86%E5%9B%BE/">16.ScrollView滚动视图</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/17.Anchor%E9%94%9A%E7%82%B9/">17.Anchor锚点</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.EventListener%E5%92%8CEventTrigger%E4%BA%8B%E4%BB%B6%E7%9B%B8%E5%85%B3/">18.EventListener和EventTrigger事件相关</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/19.Drawcall/">19.Drawcall</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20.NGUI%E5%AD%97%E4%BD%93/">20.NGUI字体</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/21.NGUI%E7%BC%93%E5%8A%A8/">21.NGUI缓动</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/22.3d%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88%E6%98%BE%E7%A4%BA%E5%9C%A8UI%E4%B9%8B%E5%89%8D/">22.3d模型和粒子特效显示在UI之前</a></li>  <li class="file"><a href="/2025/03/12/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/24.NGUI%E4%B9%8B%E5%85%B6%E5%AE%83/">24.NGUI之其它</a></li>  <li class="file"><a href="/2025/03/13/UI%E7%B3%BB%E7%BB%9F/NGUI/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.NGUI%E6%80%BB%E7%BB%93/">25.NGUI总结</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            UGUI
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            UGUI实践小项目
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/04/06/UI%E7%B3%BB%E7%BB%9F/UGUI/UGUI%E5%AE%9E%E8%B7%B5%E5%B0%8F%E9%A1%B9%E7%9B%AE/1.%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/">1.需求分析</a></li>  <li class="file"><a href="/2025/04/06/UI%E7%B3%BB%E7%BB%9F/UGUI/UGUI%E5%AE%9E%E8%B7%B5%E5%B0%8F%E9%A1%B9%E7%9B%AE/2.%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/">2.准备工作</a></li>  <li class="file"><a href="/2025/04/06/UI%E7%B3%BB%E7%BB%9F/UGUI/UGUI%E5%AE%9E%E8%B7%B5%E5%B0%8F%E9%A1%B9%E7%9B%AE/3.%E9%9D%A2%E6%9D%BF%E5%9F%BA%E7%B1%BB/">3.面板基类</a></li>  <li class="file"><a href="/2025/04/06/UI%E7%B3%BB%E7%BB%9F/UGUI/UGUI%E5%AE%9E%E8%B7%B5%E5%B0%8F%E9%A1%B9%E7%9B%AE/4.UI%E7%AE%A1%E7%90%86%E5%99%A8/">4.UI管理器</a></li>  <li class="file"><a href="/2025/04/06/UI%E7%B3%BB%E7%BB%9F/UGUI/UGUI%E5%AE%9E%E8%B7%B5%E5%B0%8F%E9%A1%B9%E7%9B%AE/5.%E6%8F%90%E7%A4%BA%E9%9D%A2%E6%9D%BF/">5.提示面板</a></li>  <li class="file"><a href="/2025/04/06/UI%E7%B3%BB%E7%BB%9F/UGUI/UGUI%E5%AE%9E%E8%B7%B5%E5%B0%8F%E9%A1%B9%E7%9B%AE/6.%E7%99%BB%E5%BD%95%E9%9D%A2%E6%9D%BF/">6.登录面板</a></li>  <li class="file"><a href="/2025/04/06/UI%E7%B3%BB%E7%BB%9F/UGUI/UGUI%E5%AE%9E%E8%B7%B5%E5%B0%8F%E9%A1%B9%E7%9B%AE/7.%E6%B3%A8%E5%86%8C%E9%9D%A2%E6%9D%BF/">7.注册面板</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/1.UGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0/">1.UGUI基础知识概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/2.%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E6%A6%82%E8%BF%B0/">2.六大基础组件概述</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/3.Canvas%E7%94%BB%E5%B8%83%E7%BB%84%E4%BB%B6/">3.Canvas画布组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/4.CanvasScaler%E7%94%BB%E5%B8%83%E7%BC%A9%E6%94%BE%E6%8E%A7%E5%88%B6%E7%BB%84%E4%BB%B6/">4.CanvasScaler画布缩放控制组件</a></li>  <li class="file"><a href="/2025/03/28/UI%E7%B3%BB%E7%BB%9F/UGUI/5.GraphicRaycaster%E5%9B%BE%E5%BD%A2%E5%B0%84%E7%BA%BF%E6%8A%95%E5%B0%84%E5%99%A8%E7%BB%84%E4%BB%B6/">5.GraphicRaycaster图形射线投射器组件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/6.EventSystem%E5%92%8CStandaloneInputModule%E7%BB%84%E4%BB%B6/">6.EventSystem和StandaloneInputModule组件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/7.RectTransform%E7%9F%A9%E5%BD%A2%E5%8F%98%E6%8D%A2%E7%BB%84%E4%BB%B6/">7.RectTransform矩形变换组件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/8.Image%E5%9B%BE%E7%89%87/">8.Image图片</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/9.Text%E6%96%87%E6%9C%AC%E6%8E%A7%E4%BB%B6/">9.Text文本控件</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/10.RawImage%E5%8E%9F%E5%A7%8B%E5%9B%BE%E5%83%8F/">10.RawImage原始图像</a></li>  <li class="file"><a href="/2025/03/29/UI%E7%B3%BB%E7%BB%9F/UGUI/11.Button%E6%8C%89%E9%92%AE%E6%8E%A7%E4%BB%B6/">11.Button按钮控件</a></li>  <li class="file"><a href="/2025/03/31/UI%E7%B3%BB%E7%BB%9F/UGUI/12.Toggle%E5%BC%80%E5%85%B3%E6%8E%A7%E4%BB%B6/">12.Toggle开关控件</a></li>  <li class="file"><a href="/2025/04/01/UI%E7%B3%BB%E7%BB%9F/UGUI/13.InputField%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5%E6%8E%A7%E4%BB%B6/">13.InputField文本输入控件</a></li>  <li class="file"><a href="/2025/04/01/UI%E7%B3%BB%E7%BB%9F/UGUI/14.Slider%E6%BB%91%E5%8A%A8%E6%9D%A1%E6%8E%A7%E4%BB%B6/">14.Slider滑动条控件</a></li>  <li class="file"><a href="/2025/04/02/UI%E7%B3%BB%E7%BB%9F/UGUI/15.ScrollBar%E6%BB%9A%E5%8A%A8%E6%9D%A1%E6%8E%A7%E4%BB%B6/">15.ScrollBar滚动条控件</a></li>  <li class="file"><a href="/2025/04/02/UI%E7%B3%BB%E7%BB%9F/UGUI/16.ScrollView%E6%BB%9A%E5%8A%A8%E8%A7%86%E5%9B%BE%E6%8E%A7%E4%BB%B6/">16.ScrollView滚动视图控件</a></li>  <li class="file"><a href="/2025/04/02/UI%E7%B3%BB%E7%BB%9F/UGUI/17.Dropdown%E4%B8%8B%E6%8B%89%E5%88%97%E8%A1%A8%E6%8E%A7%E4%BB%B6/">17.Dropdown下拉列表控件</a></li>  <li class="file"><a href="/2025/04/02/UI%E7%B3%BB%E7%BB%9F/UGUI/18.%E5%9B%BE%E9%9B%86%E5%88%B6%E4%BD%9C/">18.图集制作</a></li>  <li class="file"><a href="/2025/04/02/UI%E7%B3%BB%E7%BB%9F/UGUI/19.UI%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC%E6%8E%A5%E5%8F%A3/">19.UI事件监听接口</a></li>  <li class="file"><a href="/2025/04/04/UI%E7%B3%BB%E7%BB%9F/UGUI/20.EventTigger%E4%BA%8B%E4%BB%B6%E8%A7%A6%E5%8F%91%E5%99%A8/">20.EventTigger事件触发器</a></li>  <li class="file"><a href="/2025/04/04/UI%E7%B3%BB%E7%BB%9F/UGUI/21.%E5%B1%8F%E5%B9%95%E5%9D%90%E6%A0%87%E8%BD%ACUI%E7%9B%B8%E5%AF%B9%E5%9D%90%E6%A0%87/">21.屏幕坐标转UI相对坐标</a></li>  <li class="file"><a href="/2025/04/04/UI%E7%B3%BB%E7%BB%9F/UGUI/22.Mask%E9%81%AE%E7%BD%A9/">22.Mask遮罩</a></li>  <li class="file"><a href="/2025/04/04/UI%E7%B3%BB%E7%BB%9F/UGUI/23.%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%B2%92%E5%AD%90%E7%89%B9%E6%95%88%E6%98%BE%E7%A4%BA%E5%9C%A8UI%E4%B9%8B%E5%89%8D/">23.模型和粒子特效显示在UI之前</a></li>  <li class="file"><a href="/2025/04/04/UI%E7%B3%BB%E7%BB%9F/UGUI/24.%E5%BC%82%E6%80%A7%E6%8C%89%E9%92%AE/">24.异性按钮</a></li>  <li class="file"><a href="/2025/04/04/UI%E7%B3%BB%E7%BB%9F/UGUI/25.%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80%E7%BB%84%E4%BB%B6/">25.自动布局组件</a></li>  <li class="file"><a href="/2025/04/04/UI%E7%B3%BB%E7%BB%9F/UGUI/26.CanvasGroup%E7%94%BB%E5%B8%83%E7%BB%84/">26.CanvasGroup画布组</a></li>  <li class="file"><a href="/2025/04/04/UI%E7%B3%BB%E7%BB%9F/UGUI/27.UGUI%E6%80%BB%E7%BB%93/">27.UGUI总结</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            hexo
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/09/hexo/1.%E4%BD%BF%E7%94%A8obsidian%E6%9D%A5%E5%86%99hexo%E5%8D%9A%E5%AE%A2/">1.使用obsidian来写hexo博客</a></li>  <li class="file"><a href="/2025/02/26/hexo/2.hexo%E6%BA%90%E7%A0%81%E4%B8%8A%E4%BC%A0%E5%88%B0GitHub/">2.hexo源码上传到GitHub</a></li>  <li class="file"><a href="/2025/03/02/hexo/3.hexo%E6%8F%92%E4%BB%B6/">3.hexo插件</a></li>  <li class="file"><a href="/2025/04/09/hexo/4.hexo%E5%B8%B8%E7%94%A8Front-Matter/">4.hexo常用Front-Matter</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            工具
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/04/05/%E5%B7%A5%E5%85%B7/VisualStudio/">VisualStudio</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            数据
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            数据持久化
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Json
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/27/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Json/1.Json%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0/">1.Json基础知识概述</a></li>  <li class="file"><a href="/2025/03/27/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Json/2.Json%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">2.Json基本语法</a></li>  <li class="file"><a href="/2025/03/27/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Json/3.Excel%E8%BD%ACJson/">3.Excel转Json</a></li>  <li class="file"><a href="/2025/03/27/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Json/4.JsonUtility/">4.JsonUtility</a></li>  <li class="file"><a href="/2025/03/27/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Json/5.LitJson/">5.LitJson</a></li>  <li class="file"><a href="/2025/03/27/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Json/6.Newtonsoft.Json/">6.Newtonsoft.Json</a></li>  <li class="file"><a href="/2025/03/27/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Json/7.%E5%90%84Json%E5%BA%93%E5%AF%B9%E6%AF%94/">7.各Json库对比</a></li>  <li class="file"><a href="/2025/03/27/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/Json/8.Json%E5%AE%9E%E8%B7%B5%E5%B0%8F%E9%A1%B9%E7%9B%AE/">8.Json实践小项目</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            PlayerPrefs
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            PlayerPrefs基础知识
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/21/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.PlayerPrefs%E6%A6%82%E8%BF%B0/">1.PlayerPrefs概述</a></li>  <li class="file"><a href="/2025/02/21/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.PlayerPrefs%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95/">2.PlayerPrefs基本方法</a></li>  <li class="file"><a href="/2025/02/21/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.PlayerPrefs%E4%B8%8D%E5%90%8C%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">3.PlayerPrefs不同平台的存储位置</a></li>  <li class="file"><a href="/2025/02/21/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.PlayerPrefs%E6%80%BB%E7%BB%93/">4.PlayerPrefs总结</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            PlayerPrefs实践项目
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/22/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/1.%E5%8F%8D%E5%B0%84%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85/">1.反射知识补充</a></li>  <li class="file"><a href="/2025/02/22/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/2.%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/">2.需求分析</a></li>  <li class="file"><a href="/2025/02/22/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/3.%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%B1%BB%E7%9A%84%E5%88%9B%E5%BB%BA/">3.数据管理类的创建</a></li>  <li class="file"><a href="/2025/02/22/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/4.%E5%8F%8D%E5%B0%84%E5%AD%98%E5%82%A8%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">4.反射存储常用数据类型</a></li>  <li class="file"><a href="/2025/02/22/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/5.%E5%8F%8D%E5%B0%84%E5%AD%98%E5%82%A8List%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">5.反射存储List数据类型</a></li>  <li class="file"><a href="/2025/02/22/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/6.%E5%8F%8D%E5%B0%84%E5%AD%98%E5%82%A8Dictionary%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">6.反射存储Dictionary数据类型</a></li>  <li class="file"><a href="/2025/02/22/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/7.%E5%8F%8D%E5%B0%84%E5%AD%98%E5%82%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B/">7.反射存储自定义类型</a></li>  <li class="file"><a href="/2025/02/24/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/8.%E5%8F%8D%E5%B0%84%E8%AF%BB%E5%8F%96%E5%B8%B8%E7%94%A8%E6%88%90%E5%91%98%E6%95%B0%E6%8D%AE/">8.反射读取常用成员数据</a></li>  <li class="file"><a href="/2025/02/24/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/9.%E5%8F%8D%E5%B0%84%E8%AF%BB%E5%8F%96List%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">9.反射读取List数据类型</a></li>  <li class="file"><a href="/2025/02/24/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/10.%E5%8F%8D%E5%B0%84%E8%AF%BB%E5%8F%96Dictionary%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">10.反射读取Dictionary数据类型</a></li>  <li class="file"><a href="/2025/02/24/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/11.%E5%8F%8D%E5%B0%84%E8%AF%BB%E5%8F%96%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B/">11.反射读取自定义类型</a></li>  <li class="file"><a href="/2025/02/24/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/12.%E5%8A%A0%E5%AF%86%E6%80%9D%E8%B7%AF/">12.加密思路</a></li>  <li class="file"><a href="/2025/02/24/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/PlayerPrefs/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/13.%E6%89%93%E5%8C%85PlayerPrefsDataMgr/">13.打包PlayerPrefsDataMgr</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            XML
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/06/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/1.XML%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A6%82%E8%BF%B0/">1.XML基础知识概述</a></li>  <li class="file"><a href="/2025/03/06/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/2.XML%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">2.XML基础语法</a></li>  <li class="file"><a href="/2025/03/06/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/3.XML%E5%B1%9E%E6%80%A7/">3.XML属性</a></li>  <li class="file"><a href="/2025/03/06/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/4.XML%E6%96%87%E4%BB%B6%E5%AD%98%E6%94%BE%E7%9A%84%E4%BD%8D%E7%BD%AE/">4.XML文件存放的位置</a></li>  <li class="file"><a href="/2025/03/06/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/5.CSharp%E8%AF%BB%E5%8F%96XML%E6%96%87%E4%BB%B6/">5.CSharp读取XML文件</a></li>  <li class="file"><a href="/2025/03/06/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/6.CSharp%E5%AD%98%E5%82%A8XML%E6%96%87%E4%BB%B6/">6.CSharp存储XML文件</a></li>  <li class="file"><a href="/2025/03/06/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/7.XML%E6%80%BB%E7%BB%93/">7.XML总结</a></li>  <li class="file"><a href="/2025/03/06/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/8.CSharp%E4%B8%ADXML%E5%BA%8F%E5%88%97%E5%8C%96/">8.CSharp中XML序列化</a></li>  <li class="file"><a href="/2025/03/06/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/9.CSharp%E4%B8%ADXML%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">9.CSharp中XML反序列化</a></li>  <li class="file"><a href="/2025/03/06/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/10.IXmlSerializable%E6%8E%A5%E5%8F%A3/">10.IXmlSerializable接口</a></li>  <li class="file"><a href="/2025/03/07/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/11.%E8%AE%A9Dictionary%E6%94%AF%E6%8C%81%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">11.让Dictionary支持序列化和反序列化</a></li>  <li class="file"><a href="/2025/03/07/%E6%95%B0%E6%8D%AE/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/XML/12.XML%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%B1%BB/">12.XML数据管理类</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            游戏引擎
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            unity
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            unity入门
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            unity入门基础知识
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1.unity%E5%85%A5%E9%97%A8%E6%A6%82%E8%BF%B0/">1.unity入门概述</a></li>  <li class="file"><a href="/2025/02/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2.Scene%E5%92%8CHierarchy%E7%AA%97%E5%8F%A3/">2.Scene和Hierarchy窗口</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3.Game%E5%92%8CProject%E7%AA%97%E5%8F%A3/">3.Game和Project窗口</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4.Inspector%E5%92%8CConsole%E7%AA%97%E5%8F%A3/">4.Inspector和Console窗口</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/5.%E5%B7%A5%E5%85%B7%E6%A0%8F%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/">5.工具栏与对象的父子关系</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/6.%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E5%92%8C%E6%B8%B8%E6%88%8F%E5%9C%BA%E6%99%AF/">6.反射机制和游戏场景</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/7.%E9%A2%84%E5%88%B6%E4%BD%93%E5%92%8C%E8%B5%84%E6%BA%90%E5%8C%85%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/">7.预制体和资源包的导入导出</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/8.%E8%84%9A%E6%9C%AC%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%88%99/">8.脚本基本规则</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/9.%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0/">9.生命周期函数</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/10.inspector%E7%AA%97%E5%8F%A3%E5%8F%AF%E7%BC%96%E8%BE%91%E5%8F%98%E9%87%8F/">10.inspector窗口可编辑变量</a></li>  <li class="file"><a href="/2025/02/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/11.MonoBehavior%E4%B8%AD%E7%9A%84%E9%87%8D%E8%A6%81%E5%86%85%E5%AE%B9/">11.MonoBehavior中的重要内容</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/12.GameObject/">12.GameObject</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/13.%E6%97%B6%E9%97%B4%E7%9B%B8%E5%85%B3Time/">13.时间相关Time</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/14.%E4%BD%8D%E7%BD%AE%E4%BD%8D%E7%A7%BB%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9B%B8%E5%85%B3/">14.位置位移坐标系相关</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/15.%E8%A7%92%E5%BA%A6%E5%92%8C%E6%97%8B%E8%BD%AC/">15.角度和旋转</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/16.%E7%BC%A9%E6%94%BE%E5%92%8C%E7%9C%8B%E5%90%91/">16.缩放和看向</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/17.%E7%88%B6%E5%AD%90%E5%85%B3%E7%B3%BB/">17.父子关系</a></li>  <li class="file"><a href="/2025/02/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/18.%E5%9D%90%E6%A0%87%E8%BD%AC%E6%8D%A2/">18.坐标转换</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/19.Input%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3/">19.Input输入相关</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/20.Screen%E5%B1%8F%E5%B9%95%E7%9B%B8%E5%85%B3/">20.Screen屏幕相关</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/21.Camera/">21.Camera</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/22.Camera%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6/">22.Camera代码控制</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/23.Light%E5%85%89%E6%BA%90%E7%BB%84%E4%BB%B6/">23.Light光源组件</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/24.%E5%85%89%E9%9D%A2%E6%9D%BF/">24.光面板</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/25.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E5%88%9A%E4%BD%93/">25.碰撞检测之刚体</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/26.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%A2%B0%E6%92%9E%E5%99%A8/">26.碰撞检测之碰撞器</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/27.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/">27.碰撞检测之物理材质</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/28.%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E4%B9%8B%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E5%87%BD%E6%95%B0/">28.碰撞检测之碰撞检测函数</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/29.%E5%88%9A%E4%BD%93%E5%8A%A0%E5%8A%9B/">29.刚体加力</a></li>  <li class="file"><a href="/2025/02/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/30.%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5/">30.音频文件导入</a></li>  <li class="file"><a href="/2025/02/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/31.AudioSource%E9%9F%B3%E9%A2%91%E6%BA%90%E7%BB%84%E4%BB%B6%E5%92%8CAudioListener%E9%9F%B3%E9%A2%91%E7%9B%91%E5%90%AC%E7%BB%84%E4%BB%B6/">31.AudioSource音频源组件和AudioListener音频监听组件</a></li>  <li class="file"><a href="/2025/02/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/32.AudioSource%E9%9F%B3%E9%A2%91%E6%BA%90%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6/">32.AudioSource音频源代码控制</a></li>  <li class="file"><a href="/2025/02/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/33.Microphone%E9%BA%A6%E5%85%8B%E9%A3%8E/">33.Microphone麦克风</a></li>  <li class="file"><a href="/2025/02/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/34.unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">34.unity入门基础知识总结</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            unity入门实践项目
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/27/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/1.%E5%9C%BA%E6%99%AF%E5%88%87%E6%8D%A2%E5%92%8C%E6%B8%B8%E6%88%8F%E9%80%80%E5%87%BA/">1.场景切换和游戏退出</a></li>  <li class="file"><a href="/2025/02/27/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/2.Cursor%E9%BC%A0%E6%A0%87%E7%9A%84%E9%9A%90%E8%97%8F%E9%94%81%E5%AE%9A%E5%9B%BE%E7%89%87/">2.鼠标的隐藏锁定图片</a></li>  <li class="file"><a href="/2025/02/27/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/3.Unity%E9%9A%8F%E6%9C%BA%E6%95%B0%E5%92%8CUnityAction%E5%A7%94%E6%89%98/">3.Unity随机数和UnityAction委托</a></li>  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%85%A5%E9%97%A8/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/4.%E6%A8%A1%E5%9E%8B%E8%87%AA%E8%B5%84%E6%BA%90%E7%9A%84%E5%AF%BC%E5%85%A5/">4.模型自资源的导入</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            unity基础
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/1.unity%E5%9F%BA%E7%A1%80%E6%A6%82%E8%BF%B0/">1.unity基础概述</a></li>  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/2.Mathf%E6%95%B0%E5%AD%A6%E8%AE%A1%E7%AE%97%E7%BB%93%E6%9E%84%E4%BD%93%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">2.Mathf数学计算结构体常用方法</a></li>  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/3.%E5%9D%90%E6%A0%87%E7%B3%BB/">3.坐标系</a></li>  <li class="file"><a href="/2025/03/01/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/4.Vector3%E5%90%91%E9%87%8F/">4.Vector3向量</a></li>  <li class="file"><a href="/2025/03/02/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/5.Quaternion%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%9B%9B%E5%85%83%E6%95%B0/">5.Quaternion为什么要使用四元数</a></li>  <li class="file"><a href="/2025/03/02/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/6.Quaternion%E5%9B%9B%E5%85%83%E6%95%B0%E6%A6%82%E5%BF%B5/">6.Quaternion四元数概念</a></li>  <li class="file"><a href="/2025/03/02/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/7.Quaternion%E5%9B%9B%E5%85%83%E6%95%B0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">7.Quaternion四元数常用方法</a></li>  <li class="file"><a href="/2025/03/02/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/8.Quaternion%E5%9B%9B%E5%85%83%E6%95%B0%E8%AE%A1%E7%AE%97/">8.Quaternion四元数计算</a></li>  <li class="file"><a href="/2025/03/02/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/9.%E5%BB%B6%E8%BF%9F%E5%87%BD%E6%95%B0/">9.延迟函数</a></li>  <li class="file"><a href="/2025/03/02/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/10.%E5%8D%8F%E5%90%8C%E7%A8%8B%E5%BA%8F/">10.协同程序</a></li>  <li class="file"><a href="/2025/03/04/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/11.%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6%E5%A4%B9/">11.特殊文件夹</a></li>  <li class="file"><a href="/2025/03/04/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/12.Resources%E5%90%8C%E6%AD%A5%E5%8A%A0%E8%BD%BD/">12.Resources同步加载</a></li>  <li class="file"><a href="/2025/03/04/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/13.Resources%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD/">13.Resources异步加载</a></li>  <li class="file"><a href="/2025/03/04/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/14.Resources%E8%B5%84%E6%BA%90%E5%8D%B8%E8%BD%BD/">14.Resources资源卸载</a></li>  <li class="file"><a href="/2025/03/04/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/15.%E5%9C%BA%E6%99%AF%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD/">15.场景异步加载</a></li>  <li class="file"><a href="/2025/03/04/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/16.LineRenderer%E7%94%BB%E7%BA%BF%E7%BB%84%E4%BB%B6/">16.LineRenderer画线组件</a></li>  <li class="file"><a href="/2025/03/05/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/17.%E8%8C%83%E5%9B%B4%E6%A3%80%E6%B5%8B/">17.范围检测</a></li>  <li class="file"><a href="/2025/03/05/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/18.%E5%B0%84%E7%BA%BF%E6%A3%80%E6%B5%8B/">18.射线检测</a></li>  <li class="file"><a href="/2025/03/05/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E5%9F%BA%E7%A1%80/19.unity%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/">19.unity基础总结</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            unity核心
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/1.unity%E6%A0%B8%E5%BF%83%E6%A6%82%E8%BF%B0/">1.unity核心概述</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/2.%E6%A8%A1%E5%9E%8B%E5%88%B6%E4%BD%9C%E6%B5%81%E7%A8%8B/">2.模型制作流程</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/3.%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5%E6%A6%82%E8%BF%B0/">3.图片导入概述</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/4.%E7%BA%B9%E7%90%86%E7%B1%BB%E5%9E%8B%E8%AE%BE%E7%BD%AE/">4.纹理类型设置</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/5.%E7%BA%B9%E7%90%86%E5%BD%A2%E7%8A%B6%E8%AE%BE%E7%BD%AE/">5.纹理形状设置</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/6.%E7%BA%B9%E7%90%86%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE/">6.纹理高级设置</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/7.%E7%BA%B9%E7%90%86%E5%B9%B3%E9%93%BA%E6%8B%89%E4%BC%B8%E8%AE%BE%E7%BD%AE/">7.纹理平铺拉伸设置</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/8.%E7%BA%B9%E7%90%86%E5%B9%B3%E5%8F%B0%E6%89%93%E5%8C%85%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/">8.纹理平台打包相关设置</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/9.SpriteEditor%E4%B9%8BSingle/">9.SpriteEditor之Single</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/10.SpriteEditor%E4%B9%8BMultiple/">10.SpriteEditor之Multiple</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/11.SpriteEditor%E4%B9%8BPolygon%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%BC%96%E8%BE%91/">11.SpriteEditor之Polygon多边形编辑</a></li>  <li class="file"><a href="/2025/03/13/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/12.SpriteRenderer%E7%B2%BE%E7%81%B5%E6%B8%B2%E6%9F%93%E5%99%A8/">12.SpriteRenderer精灵渲染器</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/13.SpriteCreator%E7%B2%BE%E7%81%B5%E5%88%9B%E9%80%A0%E8%80%85/">13.SpriteCreator精灵创造者</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/14.SpriteMask%E7%B2%BE%E7%81%B5%E9%81%AE%E7%BD%A9/">14.SpriteMask精灵遮罩</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/15.SortingGroup%E6%8E%92%E5%BA%8F%E5%88%86%E7%BB%84/">15.SortingGroup排序分组</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/16.SpriteAtlas%E7%B2%BE%E7%81%B5%E5%9B%BE%E9%9B%86/">16.SpriteAtlas精灵图集</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/17.Rigidbody2D%E5%88%9A%E4%BD%93/">17.Rigidbody2D刚体</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/18.Collision2D%E7%A2%B0%E6%92%9E%E5%99%A8%E5%92%8C%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B%E5%87%BD%E6%95%B0/">18.Collision2D碰撞器和碰撞检测函数</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/19.PhysicsMaterial2D%E7%89%A9%E7%90%86%E6%9D%90%E8%B4%A8/">19.PhysicsMaterial2D物理材质</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/20.ConstantForce2D%E6%81%92%E5%AE%9A%E5%8A%9B%E7%BB%84%E4%BB%B6/">20.ConstantForce2D恒定力组件</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/21.Effector2D%E6%95%88%E5%BA%94%E5%99%A8%E7%BB%84%E4%BB%B6/">21.Effector2D效应器组件</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/22.SpriteShapeProfile%E7%B2%BE%E7%81%B5%E5%BD%A2%E7%8A%B6%E6%A6%82%E8%BF%B0%E6%96%87%E4%BB%B6/">22.SpriteShapeProfile精灵形状概述文件</a></li>  <li class="file"><a href="/2025/03/14/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/23.SpriteShapeRenderer%E7%B2%BE%E7%81%B5%E5%BD%A2%E7%8A%B6%E6%B8%B2%E6%9F%93%E5%99%A8%E5%92%8CSpriteShapeController%E7%B2%BE%E7%81%B5%E5%BD%A2%E7%8A%B6%E6%8E%A7%E5%88%B6%E5%99%A8/">23.SpriteShapeRenderer精灵形状渲染器和SpriteShapeController精灵形状控制器</a></li>  <li class="file"><a href="/2025/03/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/24.Tilemap%E7%93%A6%E7%89%87%E8%B5%84%E6%BA%90/">24.Tilemap瓦片资源</a></li>  <li class="file"><a href="/2025/03/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/25.TilePalette%E7%93%A6%E7%89%87%E8%B0%83%E8%89%B2%E6%9D%BF%E7%AA%97%E5%8F%A3/">25.TilePalette瓦片调色板窗口</a></li>  <li class="file"><a href="/2025/03/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/26.%E7%93%A6%E7%89%87%E5%9C%B0%E5%9B%BE%E5%85%B3%E9%94%AE%E8%84%9A%E6%9C%AC%E5%92%8C%E7%A2%B0%E6%92%9E%E5%99%A8/">26.瓦片地图关键脚本和碰撞器</a></li>  <li class="file"><a href="/2025/03/16/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/27.%E7%93%A6%E7%89%87%E5%9C%B0%E5%9B%BE%E6%89%A9%E5%B1%95%E5%8C%85/">27.瓦片地图扩展包</a></li>  <li class="file"><a href="/2025/03/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/28.%E7%93%A6%E7%89%87%E5%9C%B0%E5%9B%BE%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6/">28.瓦片地图代码控制</a></li>  <li class="file"><a href="/2025/03/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/29.%E8%AE%A4%E8%AF%86Animation%E5%8A%A8%E7%94%BB%E7%AA%97%E5%8F%A3/">29.认识Animation动画窗口</a></li>  <li class="file"><a href="/2025/03/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/30.%E5%88%9B%E5%BB%BA%E5%92%8C%E7%BC%96%E8%BE%91Animation%E5%8A%A8%E7%94%BB%E6%96%87%E4%BB%B6/">30.创建和编辑Animation动画文件</a></li>  <li class="file"><a href="/2025/03/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/31.%E8%80%81%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/">31.老动画系统</a></li>  <li class="file"><a href="/2025/03/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/32.%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA%E6%A6%82%E5%BF%B5/">32.有限状态机概念</a></li>  <li class="file"><a href="/2025/03/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/33.AnimatorController%E5%8A%A8%E7%94%BB%E6%8E%A7%E5%88%B6%E5%99%A8/">33.AnimatorController动画控制器</a></li>  <li class="file"><a href="/2025/03/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/34.2D%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB/">34.2D序列帧动画</a></li>  <li class="file"><a href="/2025/03/18/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/35.%E5%8D%95%E5%BC%A0%E5%9B%BE%E7%89%87%E9%AA%A8%E9%AA%BC%E7%BC%96%E8%BE%91/">35.单张图片骨骼编辑</a></li>  <li class="file"><a href="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/36.%E5%9B%BE%E9%9B%86%E5%9B%BE%E7%89%87%E9%AA%A8%E9%AA%BC%E7%BC%96%E8%BE%91/">36.图集图片骨骼编辑</a></li>  <li class="file"><a href="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/37.psb%E5%9B%BE%E7%89%87%E9%AA%A8%E9%AA%BC%E7%BC%96%E8%BE%91/">37.psb图片骨骼编辑</a></li>  <li class="file"><a href="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/38.%E5%8F%8D%E5%90%91%E5%8A%A8%E5%8A%9B%E5%AD%A6IK/">38.反向动力学IK</a></li>  <li class="file"><a href="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/39.%E6%8D%A2%E8%A3%85%E5%90%8C%E4%B8%80%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90/">39.换装同一文件资源</a></li>  <li class="file"><a href="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/40.%E6%8D%A2%E8%A3%85%E4%B8%8D%E5%90%8C%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90/">40.换装不同文件资源</a></li>  <li class="file"><a href="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/41.Spine%E5%AF%BC%E5%85%A5/">41.Spine导入</a></li>  <li class="file"><a href="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/42.Spine%E4%BD%BF%E7%94%A8%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB%E6%96%87%E4%BB%B6/">42.Spine使用骨骼动画文件</a></li>  <li class="file"><a href="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/43.Spine%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB%E5%8F%82%E6%95%B0/">43.Spine骨骼动画参数</a></li>  <li class="file"><a href="/2025/03/19/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/44.Spine%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB%E4%BB%A3%E7%A0%81%E6%8E%A7%E5%88%B6/">44.Spine骨骼动画代码控制</a></li>  <li class="file"><a href="/2025/03/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/45.%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5%E6%A6%82%E8%BF%B0/">45.模型导入概述</a></li>  <li class="file"><a href="/2025/03/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/46.Model%E6%A8%A1%E5%9E%8B%E9%A1%B5%E7%AD%BE/">46.Model模型页签</a></li>  <li class="file"><a href="/2025/03/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/47.Rig%E6%93%8D%E7%BA%B5%E9%A1%B5%E7%AD%BE/">47.Rig操纵页签</a></li>  <li class="file"><a href="/2025/03/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/48.Animation%E5%8A%A8%E7%94%BB%E9%A1%B5%E7%AD%BE%E6%A6%82%E8%BF%B0/">48.Animation动画页签概述</a></li>  <li class="file"><a href="/2025/03/20/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/49.Animation%E5%8A%A8%E7%94%BB%E9%A1%B5%E7%AD%BE%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF%E8%AE%BE%E7%BD%AE/">49.Animation动画页签基础信息设置</a></li>  <li class="file"><a href="/2025/03/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/50.Animation%E5%8A%A8%E7%94%BB%E9%A1%B5%E7%AD%BE%E5%8A%A8%E7%94%BB%E5%89%AA%E8%BE%91%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE/">50.Animation动画页签动画剪辑基础设置</a></li>  <li class="file"><a href="/2025/03/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/51.Animation%E5%8A%A8%E7%94%BB%E9%A1%B5%E7%AD%BE%E5%8A%A8%E7%94%BB%E5%89%AA%E8%BE%91%E5%85%B6%E5%AE%83%E8%AE%BE%E7%BD%AE/">51.Animation动画页签动画剪辑其它设置</a></li>  <li class="file"><a href="/2025/03/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/52.Materials%E6%9D%90%E8%B4%A8%E7%BA%B9%E7%90%86%E9%A1%B5%E7%AD%BE/">52.Materials材质纹理页签</a></li>  <li class="file"><a href="/2025/03/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/53.3d%E5%8A%A8%E7%94%BB%E7%9A%84%E4%BD%BF%E7%94%A8/">53.3d动画的使用</a></li>  <li class="file"><a href="/2025/03/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/54.3d%E5%8A%A8%E7%94%BB%E5%88%86%E5%B1%82%E5%92%8C%E9%81%AE%E7%BD%A9/">54.3d动画分层和遮罩</a></li>  <li class="file"><a href="/2025/03/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/55.%E5%8A%A8%E7%94%BB1d%E6%B7%B7%E5%90%88/">55.动画1d混合</a></li>  <li class="file"><a href="/2025/03/21/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/56.%E5%8A%A8%E7%94%BB2d%E6%B7%B7%E5%90%88/">56.动画2d混合</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/57.%E5%8A%A8%E7%94%BB%E5%AD%90%E7%8A%B6%E6%80%81%E6%9C%BA/">57.动画子状态机</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/58.%E5%8A%A8%E7%94%BBIK%E6%8E%A7%E5%88%B6/">58.动画IK控制</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/59.%E5%8A%A8%E7%94%BB%E7%9B%AE%E6%A0%87%E5%8C%B9%E9%85%8D/">59.动画目标匹配</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/60.%E7%8A%B6%E6%80%81%E6%9C%BA%E8%A1%8C%E4%B8%BA%E8%84%9A%E6%9C%AC/">60.状态机行为脚本</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/61.%E7%8A%B6%E6%80%81%E6%9C%BA%E5%A4%8D%E7%94%A8/">61.状态机复用</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/62.%E8%A7%92%E8%89%B2%E6%8E%A7%E5%88%B6%E5%99%A8/">62.角色控制器</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/63.%E5%AF%BC%E8%88%AA%E5%AF%BB%E8%B7%AF%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/">63.导航寻路系统概述</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/64.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E7%94%9F%E6%88%90/">64.导航网格生成</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/65.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E5%AF%BB%E8%B7%AF%E7%BB%84%E4%BB%B6/">65.导航网格寻路组件</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/66.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E5%A4%96%E8%BF%9E%E6%8E%A5%E7%BB%84%E4%BB%B6/">66.导航网格外连接组件</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/67.%E5%AF%BC%E8%88%AA%E7%BD%91%E6%A0%BC%E5%8A%A8%E6%80%81%E9%9A%9C%E7%A2%8D%E7%BB%84%E4%BB%B6/">67.导航网格动态障碍组件</a></li>  <li class="file"><a href="/2025/03/23/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/unity/unity%E6%A0%B8%E5%BF%83/68.unity%E6%A0%B8%E5%BF%83%E6%80%BB%E7%BB%93/">68.unity核心总结</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            算法
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Acwing
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            基础
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            动态规划
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">01背包问题</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%88%86%E7%BB%84%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">分组背包问题</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%20I/">多重背包问题 I</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%20II/">多重背包问题 II</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">完全背包问题</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%95%B0%E5%AD%97%E4%B8%89%E8%A7%92%E5%BD%A2/">数字三角形</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%95%B4%E6%95%B0%E5%88%92%E5%88%86/">整数划分</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%9C%80%E7%9F%ADHamilton%E8%B7%AF%E5%BE%84/">最短Hamilton路径</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97%20II/">最长上升子序列 II</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%9C%80%E7%9F%AD%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/">最短编辑距离</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/">最长上升子序列</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/">最长公共子序列</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%B2%A1%E6%9C%89%E4%B8%8A%E5%8F%B8%E7%9A%84%E8%88%9E%E4%BC%9A/">没有上司的舞会</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E6%BB%91%E9%9B%AA/">滑雪</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/">石子合并</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/">编辑距离</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%92%99%E5%BE%B7%E9%87%8C%E5%AE%89%E7%9A%84%E6%A2%A6%E6%83%B3/">蒙德里安的梦想</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%AE%A1%E6%95%B0%E9%97%AE%E9%A2%98/">计数问题</a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/111%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92List/"></a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            基础算法
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/1.2%E7%AC%ACK%E4%B8%AA%E6%95%B0/">1.2第K个数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/1.1%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">1.1快速排序</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/10.%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">10.十大排序算法总结</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/2.1%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/">2.1归并排序</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/2.2%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E6%95%B0%E9%87%8F/">2.2逆序对的数量</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/3.1%E6%95%B0%E7%9A%84%E8%8C%83%E5%9B%B4/">3.1数的范围</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/3.2%E6%95%B0%E7%9A%84%E4%B8%89%E6%AC%A1%E6%96%B9%E6%A0%B9/">3.2数的三次方根</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/4.1%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95/">4.1高精度加法</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/4.2%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95/">4.2高精度减法</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/4.3%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95/">4.3高精度乘法</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/4.4%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95/">4.4高精度除法</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/5.1%E5%89%8D%E7%BC%80%E5%92%8C/">5.1前缀和</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/5.2%E5%AD%90%E7%9F%A9%E9%98%B5%E7%9A%84%E5%92%8C/">5.2子矩阵的和</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/5.3%E5%B7%AE%E5%88%86/">5.3差分</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/5.4%E5%B7%AE%E5%88%86%E7%9F%A9%E9%98%B5/">5.4差分矩阵</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/6.1%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E4%B8%8D%E9%87%8D%E5%A4%8D%E5%AD%90%E5%BA%8F%E5%88%97/">6.1最长连续不重复子序列</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/6.2%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E7%9B%AE%E6%A0%87%E5%92%8C/">6.2数组元素的目标和</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/6.3%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97/">6.3判断子序列</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/8.%E5%8C%BA%E9%97%B4%E5%92%8C/">8.区间和</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/7.%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/">7.二进制中1的个数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/9.%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/">9.区间合并</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            搜索与图论
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/1.1%E6%8E%92%E5%88%97%E6%95%B0%E5%AD%97/">1.1排列数字</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/1.2N-%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/">1.2N-皇后问题</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/10.Prim%E7%AE%97%E6%B3%95%E6%B1%82%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">10.Prim算法求最小生成树</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/11.Kruskal%E7%AE%97%E6%B3%95%E6%B1%82%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">11.Kruskal算法求最小生成树</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/12.%E6%9F%93%E8%89%B2%E6%B3%95%E5%88%A4%E5%AE%9A%E4%BA%8C%E5%88%86%E5%9B%BE/">12.染色法判定二分图</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/13.%E4%BA%8C%E5%88%86%E5%9B%BE%E7%9A%84%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/">13.二分图的最大匹配</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/2.1%E8%B5%B0%E8%BF%B7%E5%AE%AB/">2.1走迷宫</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/2.2%E5%85%AB%E6%95%B0%E7%A0%81/">2.2八数码</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/3.%E6%A0%91%E7%9A%84%E9%87%8D%E5%BF%83/">树的重心</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/4.%E5%9B%BE%E4%B8%AD%E7%82%B9%E7%9A%84%E5%B1%82%E6%AC%A1/">4.图中点的层次</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/5.%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E6%8B%93%E6%89%91%E5%BA%8F%E5%88%97/">5.有向图的拓扑序列</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/6.1Dijkstra%E6%B1%82%E6%9C%80%E7%9F%AD%E8%B7%AF1/">6.1Dijkstra求最短路1</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/6.2Dijkstra%E6%B1%82%E6%9C%80%E7%9F%AD%E8%B7%AF2/">6.2Dijkstra求最短路2</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/7.%E6%9C%89%E8%BE%B9%E6%95%B0%E9%99%90%E5%88%B6%E7%9A%84%E6%9C%80%E7%9F%AD%E8%B7%AF/">7.有边数限制的最短路</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/8.1spfa%E6%B1%82%E6%9C%80%E7%9F%AD%E8%B7%AF/">8.1spfa求最短路</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/8.2SPFA%E5%88%A4%E6%96%AD%E8%B4%9F%E7%8E%AF/">8.2SPFA判断负环</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/9.Floyd%E6%B1%82%E6%9C%80%E7%9F%AD%E8%B7%AF/">9.Floyd求最短路</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E5%90%84%E7%A7%8D%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95%E5%AF%B9%E6%AF%94/">各种最短路算法对比</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E7%9A%84%E5%90%84%E7%A7%8D%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95/">图的各种表示方法</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%8C%87%E6%95%B0%E5%9E%8B%E6%9E%9A%E4%B8%BE/">递归实现指数型枚举</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%8E%92%E5%88%97%E5%9E%8B%E6%9E%9A%E4%B8%BE/">递归实现排列型枚举</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E7%BB%84%E5%90%88%E5%9E%8B%E6%9E%9A%E4%B8%BE/">递归实现组合型枚举</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            数学
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E5%88%86%E8%A7%A3%E8%B4%A8%E5%9B%A0%E6%95%B0/">分解质因数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E5%BF%AB%E9%80%9F%E5%B9%82/">快速幂</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E5%BF%AB%E9%80%9F%E5%B9%82%E6%B1%82%E9%80%86%E5%85%83/">快速幂求逆元</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/">扩展欧几里得算法</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/">最大公约数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/">欧拉函数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20I/">求组合数 I</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20II/">求组合数 II</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20III/">求组合数 III</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E6%B1%82%E7%BB%84%E5%90%88%E6%95%B0%20IV/">求组合数 IV</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6%E7%9A%8401%E5%BA%8F%E5%88%97/">满足条件的01序列</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E7%AD%9B%E6%B3%95%E6%B1%82%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/">筛法求欧拉函数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E7%AD%9B%E8%B4%A8%E6%95%B0/">筛质数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E7%BA%A6%E6%95%B0%E4%B8%AA%E6%95%B0/">约数个数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E7%BA%A6%E6%95%B0%E4%B9%8B%E5%92%8C/">约数之和</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/">线性同余方程</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E8%83%BD%E8%A2%AB%E6%95%B4%E9%99%A4%E7%9A%84%E6%95%B0/">能被整除的数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E8%A1%A8%E8%BE%BE%E6%95%B4%E6%95%B0%E7%9A%84%E5%A5%87%E6%80%AA%E6%96%B9%E5%BC%8F/">表达整数的奇怪方式</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E8%AF%95%E9%99%A4%E6%B3%95%E5%88%A4%E5%AE%9A%E8%B4%A8%E6%95%B0/">试除法判定质数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E8%AF%95%E9%99%A4%E6%B3%95%E6%B1%82%E7%BA%A6%E6%95%B0/">试除法求约数</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83%E8%A7%A3%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/">高斯消元解线性方程组</a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E5%AD%A6/111%E6%95%B0%E5%AD%A6List/"></a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            数据结构
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/1.%E5%8D%95%E9%93%BE%E8%A1%A8/">1.单链表</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/10.1%E6%A8%A1%E6%8B%9F%E5%A0%86/">10.1模拟堆</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/10.2%E5%A0%86%E6%8E%92%E5%BA%8F/">10.2堆排序</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/11.1%E6%A8%A1%E6%8B%9F%E6%95%A3%E5%88%97%E8%A1%A8/">11.1模拟散列表</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/2.%E5%8F%8C%E9%93%BE%E8%A1%A8/">2.双链表</a></li>  <li class="file active"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/11.2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8C/">11.2字符串哈希</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/3.2%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/">3.2表达式求值</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/3.1%E6%A8%A1%E6%8B%9F%E6%A0%88/">3.1模拟栈</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/4.%E6%A8%A1%E6%8B%9F%E9%98%9F%E5%88%97/">4.模拟队列</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/5.%E5%8D%95%E8%B0%83%E6%A0%88/">5.单调栈</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/6.%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/">6.滑动窗口</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/7.KMP%E5%AD%97%E7%AC%A6%E4%B8%B2/">7.KMP字符串</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/8.1Trie%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BB%9F%E8%AE%A1/">8.1Trie字符串统计</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/8.2%E6%9C%80%E5%A4%A7%E5%BC%82%E6%88%96%E5%AF%B9/">8.2最大异或对</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/9.2%E8%BF%9E%E9%80%9A%E5%9D%97%E4%B8%AD%E7%82%B9%E7%9A%84%E6%95%B0%E9%87%8F/">9.2连通块中点的数量</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/9.1%E5%90%88%E5%B9%B6%E9%9B%86%E5%90%88/">9.1合并集合</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            贪心
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E8%B4%AA%E5%BF%83/%E5%8C%BA%E9%97%B4%E5%88%86%E7%BB%84/">区间分组</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E8%B4%AA%E5%BF%83/%E5%8C%BA%E9%97%B4%E8%A6%86%E7%9B%96/">区间覆盖</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E8%B4%AA%E5%BF%83/%E5%90%88%E5%B9%B6%E6%9E%9C%E5%AD%90/">合并果子</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E8%B4%AA%E5%BF%83/%E5%8C%BA%E9%97%B4%E9%80%89%E7%82%B9/">区间选点</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E8%B4%AA%E5%BF%83/%E6%9C%80%E5%A4%A7%E4%B8%8D%E7%9B%B8%E4%BA%A4%E5%8C%BA%E9%97%B4%E6%95%B0%E9%87%8F/">最大不相交区间数量</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E8%B4%AA%E5%BF%83/%E8%80%8D%E6%9D%82%E6%8A%80%E7%9A%84%E7%89%9B/">耍杂技的牛</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E8%B4%AA%E5%BF%83/%E8%B4%A7%E4%BB%93%E9%80%89%E5%9D%80/">货仓选址</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E8%B4%AA%E5%BF%83/%E6%8E%92%E9%98%9F%E6%89%93%E6%B0%B4/">排队打水</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            左神
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            排序
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E6%8E%92%E5%BA%8F/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/">基数排序</a></li>  <li class="file"><a href="/2000/01/01/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E6%8E%92%E5%BA%8F/%E5%A0%86%E7%BB%93%E6%9E%84/">堆结构</a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E6%8E%92%E5%BA%8F/%E5%BD%92%E5%B9%B6%E4%B8%8E%E5%BD%92%E5%B9%B6%E5%88%86%E6%B2%BB/"></a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E6%8E%92%E5%BA%8F/%E5%BF%AB%E6%8E%92/"></a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            数据结构
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%AB%98%E9%A2%91%E9%A2%98%20%E4%B8%8A/"></a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%AB%98%E9%A2%91%E9%A2%98%20%E4%B8%8B/"></a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E4%BD%8D%E5%9B%BE/"></a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E4%BD%8D%E8%BF%90%E7%AE%97%E9%AA%9A%E6%93%8D%E4%BD%9C/"></a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E5%B8%B8%E8%A7%81%E9%80%92%E5%BD%92%E8%BF%87%E7%A8%8B/"></a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E5%BC%82%E6%88%96%E8%BF%90%E7%AE%97%E7%9A%84%E9%AA%9A%E6%93%8D%E4%BD%9C/"></a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%AB%98%E9%A2%91%E9%A2%98/"></a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E9%80%92%E5%BD%92%E5%92%8Cmaster%E5%85%AC%E5%BC%8F/"></a></li>  <li class="file"><a href="/2025/04/09/%E7%AE%97%E6%B3%95/%E5%B7%A6%E7%A5%9E/%E9%93%BE%E8%A1%A8%E9%AB%98%E9%A2%91%E9%A2%98/"></a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            编程语言
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Csharp
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2025/02/18/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/csharp%E7%89%B9%E6%80%A7/">csharp特性</a></li>  <li class="file"><a href="/2025/02/21/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/csharp%E5%8F%8D%E5%B0%84/">csharp反射</a></li>  <li class="file"><a href="/2025/02/27/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/csharp%E5%A7%94%E6%89%98/">csharp委托</a></li>  <li class="file"><a href="/2025/02/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/csharp%E7%9A%84Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">csharp的Lambda表达式</a></li>  <li class="file"><a href="/2025/02/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/csharp%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%93/">csharp表达式体</a></li>  <li class="file"><a href="/2025/02/28/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/csharp%E4%BA%8B%E4%BB%B6/">csharp事件</a></li>  <li class="file"><a href="/2025/03/01/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/%E6%B3%9B%E5%9E%8B%E5%A7%94%E6%89%98%E5%92%8C%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3%E3%81%AE%E5%8D%8F%E5%8F%98%E5%92%8C%E9%80%86%E5%8F%98/">泛型委托和泛型接口の协变和逆变</a></li>  <li class="file"><a href="/2025/03/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/csharp%E6%8B%93%E5%B1%95%E6%96%B9%E6%B3%95/">csharp拓展方法</a></li>  <li class="file"><a href="/2025/03/03/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/csharp%E5%A4%9A%E7%BA%BF%E7%A8%8B/">csharp多线程</a></li>  <li class="file"><a href="/2025/03/03/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/csharp%E8%BF%AD%E4%BB%A3%E5%99%A8/">csharp迭代器</a></li>  <li class="file"><a href="/2025/03/06/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Csharp/csharp%E7%9A%84using%E8%AF%AD%E5%8F%A5/">csharp的using语句</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     <li class="file"><a href="/2000/01/01/%E4%BD%A0%E5%A5%BD%E5%91%80/">你好呀</a></li>  </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title"><span>标签云</span></h3>
+        <div class="widget tagcloud">
+            <a href="/tags/2d-Animation/" style="font-size: 11.72px;">2d Animation</a> <a href="/tags/2d%E5%8A%A8%E7%94%BB/" style="font-size: 13.45px;">2d动画</a> <a href="/tags/2d%E5%BA%8F%E5%88%97%E5%B8%A7%E5%8A%A8%E7%94%BB/" style="font-size: 10px;">2d序列帧动画</a> <a href="/tags/2d%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 11.38px;">2d物理系统</a> <a href="/tags/2d%E7%9B%B8%E5%85%B3/" style="font-size: 16.9px;">2d相关</a> <a href="/tags/2d%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BB/" style="font-size: 13.1px;">2d骨骼动画</a> <a href="/tags/3D%E6%95%B0%E5%AD%A6/" style="font-size: 12.07px;">3D数学</a> <a href="/tags/3d%E5%8A%A8%E7%94%BB%E7%9B%B8%E5%85%B3/" style="font-size: 12.76px;">3d动画相关</a> <a href="/tags/Acwing/" style="font-size: 19.31px;">Acwing</a> <a href="/tags/BFS/" style="font-size: 10.34px;">BFS</a> <a href="/tags/Bellman-ford/" style="font-size: 10px;">Bellman-ford</a> <a href="/tags/Csharp/" style="font-size: 13.45px;">Csharp</a> <a href="/tags/DFS/" style="font-size: 10.34px;">DFS</a> <a href="/tags/Dijkstra/" style="font-size: 10.34px;">Dijkstra</a> <a href="/tags/Floyd/" style="font-size: 10px;">Floyd</a> <a href="/tags/GUI/" style="font-size: 16.55px;">GUI</a> <a href="/tags/GUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 13.79px;">GUI基础知识</a> <a href="/tags/GUI%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 13.79px;">GUI实践项目</a> <a href="/tags/Json/" style="font-size: 12.41px;">Json</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/Kruskal/" style="font-size: 10px;">Kruskal</a> <a href="/tags/NGUI/" style="font-size: 16.55px;">NGUI</a> <a href="/tags/NGUI%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 16.55px;">NGUI基础知识</a> <a href="/tags/PlayerPrefs/" style="font-size: 15.17px;">PlayerPrefs</a> <a href="/tags/PlayerPrefs%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 11.03px;">PlayerPrefs基础知识</a> <a href="/tags/PlayerPrefs%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 14.14px;">PlayerPrefs实践项目</a> <a href="/tags/Prim/" style="font-size: 10px;">Prim</a> <a href="/tags/SPFA/" style="font-size: 10.34px;">SPFA</a> <a href="/tags/Spine/" style="font-size: 11.03px;">Spine</a> <a href="/tags/Sprite/" style="font-size: 13.1px;">Sprite</a> <a href="/tags/Tilemap/" style="font-size: 11.38px;">Tilemap</a> <a href="/tags/Trie/" style="font-size: 10.34px;">Trie</a> <a href="/tags/UGUI/" style="font-size: 17.59px;">UGUI</a> <a href="/tags/UGUI%E4%B8%89%E5%A4%A7%E5%9F%BA%E7%A1%80%E6%8E%A7%E4%BB%B6/" style="font-size: 10.69px;">UGUI三大基础控件</a> <a href="/tags/UGUI%E5%85%AD%E5%A4%A7%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/" style="font-size: 11.72px;">UGUI六大基础组件</a> <a href="/tags/UGUI%E5%AE%9E%E8%B7%B5%E5%B0%8F%E9%A1%B9%E7%9B%AE/" style="font-size: 12.07px;">UGUI实践小项目</a> <a href="/tags/UGUI%E7%BB%84%E5%90%88%E6%8E%A7%E4%BB%B6/" style="font-size: 12.07px;">UGUI组合控件</a> <a href="/tags/UI%E7%B3%BB%E7%BB%9F/" style="font-size: 18.62px;">UI系统</a> <a href="/tags/Unity%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" style="font-size: 10.34px;">Unity工作原理</a> <a href="/tags/Unity%E7%95%8C%E9%9D%A2%E5%9F%BA%E7%A1%80/" style="font-size: 11.03px;">Unity界面基础</a> <a href="/tags/Unity%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/" style="font-size: 11.03px;">Unity脚本基础</a> <a href="/tags/Unity%E9%87%8D%E8%A6%81%E7%BB%84%E4%BB%B6%E5%92%8CAPI/" style="font-size: 13.45px;">Unity重要组件和API</a> <a href="/tags/XML/" style="font-size: 13.79px;">XML</a> <a href="/tags/hexo/" style="font-size: 11.03px;">hexo</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unity%E5%85%A5%E9%97%A8/" style="font-size: 17.93px;">unity入门</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" style="font-size: 17.59px;">unity入门基础知识</a> <a href="/tags/unity%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5%E9%A1%B9%E7%9B%AE/" style="font-size: 11.03px;">unity入门实践项目</a> <a href="/tags/unity%E5%9F%BA%E7%A1%80/" style="font-size: 15.52px;">unity基础</a> <a href="/tags/unity%E6%A0%B8%E5%BF%83/" style="font-size: 18.28px;">unity核心</a> <a href="/tags/%E4%BA%8C%E5%88%86/" style="font-size: 10.34px;">二分</a> <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" style="font-size: 10px;">位运算</a> <a href="/tags/%E5%85%89%E6%BA%90%E7%B3%BB%E7%BB%9F/" style="font-size: 10.34px;">光源系统</a> <a href="/tags/%E5%89%8D%E7%BC%80%E5%92%8C/" style="font-size: 10.34px;">前缀和</a> <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" style="font-size: 15.17px;">动态规划</a> <a href="/tags/%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/" style="font-size: 14.48px;">动画系统</a> <a href="/tags/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95/" style="font-size: 10px;">匈牙利算法</a> <a href="/tags/%E5%8C%BA%E9%97%B4%E5%90%88%E5%B9%B6/" style="font-size: 10px;">区间合并</a> <a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 10px;">单调栈</a> <a href="/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/" style="font-size: 10px;">单调队列</a> <a href="/tags/%E5%8D%95%E9%93%BE%E8%A1%A8/" style="font-size: 10px;">单链表</a> <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" style="font-size: 10.69px;">双指针</a> <a href="/tags/%E5%8F%8C%E9%93%BE%E8%A1%A8/" style="font-size: 10px;">双链表</a> <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 10.34px;">哈希表</a> <a href="/tags/%E5%9B%BE%E7%89%87%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" style="font-size: 11.72px;">图片导入相关设置</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 19.31px;">基础</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" style="font-size: 15.86px;">基础算法</a> <a href="/tags/%E5%A0%86/" style="font-size: 10.34px;">堆</a> <a href="/tags/%E5%AF%BC%E8%88%AA%E7%B3%BB%E7%BB%9F/" style="font-size: 11.38px;">导航系统</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 10px;">工具</a> <a href="/tags/%E5%B7%A6%E7%A5%9E/" style="font-size: 10.34px;">左神</a> <a href="/tags/%E5%B7%AE%E5%88%86/" style="font-size: 10.34px;">差分</a> <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" style="font-size: 10.34px;">并查集</a> <a href="/tags/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/" style="font-size: 10.34px;">归并排序</a> <a href="/tags/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" style="font-size: 10.34px;">快速排序</a> <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">拓扑排序</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10.34px;">排序</a> <a href="/tags/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%BE%E8%AE%BA/" style="font-size: 16.21px;">搜索与图论</a> <a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 15.86px;">数学</a> <a href="/tags/%E6%95%B0%E6%8D%AE/" style="font-size: 17.93px;">数据</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" style="font-size: 17.93px;">数据持久化</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14.83px;">数据结构</a> <a href="/tags/%E6%9F%93%E8%89%B2%E6%B3%95%E5%88%A4%E6%96%AD%E4%BA%8C%E5%88%86%E5%9B%BE/" style="font-size: 10px;">染色法判断二分图</a> <a href="/tags/%E6%A0%88/" style="font-size: 10.34px;">栈</a> <a href="/tags/%E6%A0%91%E5%9B%BEBFS/" style="font-size: 10px;">树图BFS</a> <a href="/tags/%E6%A0%91%E5%9B%BEDFS/" style="font-size: 10px;">树图DFS</a> <a href="/tags/%E6%A0%B8%E5%BF%83%E7%B3%BB%E7%BB%9F/" style="font-size: 17.24px;">核心系统</a> <a href="/tags/%E6%A8%A1%E5%9E%8B%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3/" style="font-size: 12.41px;">模型导入相关</a> <a href="/tags/%E6%A8%A1%E6%9D%BF%E9%A2%98/" style="font-size: 18.97px;">模板题</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E/" style="font-size: 20px;">游戏引擎</a> <a href="/tags/%E7%89%A9%E7%90%86%E7%B3%BB%E7%BB%9F/" style="font-size: 13.79px;">物理系统</a> <a href="/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/" style="font-size: 10px;">离散化</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 19.66px;">算法</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 13.45px;">编程语言</a> <a href="/tags/%E8%B4%AA%E5%BF%83/" style="font-size: 12.41px;">贪心</a> <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 10px;">队列</a> <a href="/tags/%E9%9F%B3%E6%95%88%E7%B3%BB%E7%BB%9F/" style="font-size: 10.69px;">音效系统</a> <a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/" style="font-size: 11.03px;">高精度</a>
+        </div>
+    </div>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-算法/Acwing/基础/数据结构/11.2字符串哈希" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/Acwing/">Acwing</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/">基础</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Acwing/" rel="tag">Acwing</a>, <a class="tag-link-link" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag">哈希表</a>, <a class="tag-link-link" href="/tags/%E5%9F%BA%E7%A1%80/" rel="tag">基础</a>, <a class="tag-link-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a>, <a class="tag-link-link" href="/tags/%E6%A8%A1%E6%9D%BF%E9%A2%98/" rel="tag">模板题</a>, <a class="tag-link-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a>
+    </div>
+
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/11.2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%93%88%E5%B8%8C/">
+            <time datetime="1999-12-31T16:00:00.000Z" itemprop="datePublished">2000-01-01</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            11.2字符串哈希
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/843/">841. 字符串哈希 - AcWing题库</a></p>
+<h3 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h3>
+<p>给定一个长度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 的字符串，再给定 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">m</span></span></span></span> 个询问，每个询问包含四个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>r</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>l</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>r</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">l_1, r_1, l_2, r_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，请你判断 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>l</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>r</mi><mn>1</mn></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[l_1, r_1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>l</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>r</mi><mn>2</mn></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[l_2, r_2]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span> 这两个区间所包含的字符串子串是否完全相同。</p>
+<p>字符串中只包含大小写英文字母和数字。</p>
+<h4 id="输入格式"><a class="markdownIt-Anchor" href="#输入格式"></a> 输入格式</h4>
+<p>第一行包含整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">m</span></span></span></span>，表示字符串长度和询问次数。</p>
+<p>第二行包含一个长度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 的字符串，字符串中只包含大小写英文字母和数字。</p>
+<p>接下来 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">m</span></span></span></span> 行，每行包含四个整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>r</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>l</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>r</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">l_1, r_1, l_2, r_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，表示一次询问所涉及的两个区间。</p>
+<p>注意，字符串的位置从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 开始编号。</p>
+<h4 id="输出格式"><a class="markdownIt-Anchor" href="#输出格式"></a> 输出格式</h4>
+<p>对于每个询问输出一个结果，如果两个字符串子串完全相同则输出 <code>Yes</code>，否则输出 <code>No</code>。</p>
+<p>每个结果占一行。</p>
+<h4 id="数据范围"><a class="markdownIt-Anchor" href="#数据范围"></a> 数据范围</h4>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">1 \le n, m \le 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8304100000000001em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></p>
+<h4 id="输入样例"><a class="markdownIt-Anchor" href="#输入样例"></a> 输入样例：</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">8 3</span><br><span class="line">aabbaabb</span><br><span class="line">1 3 5 7</span><br><span class="line">1 3 6 8</span><br><span class="line">1 2 1 2</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例"><a class="markdownIt-Anchor" href="#输出样例"></a> 输出样例：</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Yes</span><br><span class="line">No</span><br><span class="line">Yes</span><br></pre></td></tr></table></figure>
+<hr />
+<h3 id="算法"><a class="markdownIt-Anchor" href="#算法"></a> 算法</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 字符串哈希</span></span><br><span class="line"><span class="comment">// 判断数字间是否有相同的子串？</span></span><br><span class="line"><span class="comment">// string 1 = 99912366000</span></span><br><span class="line"><span class="comment">// string 2 = 66612345</span></span><br><span class="line"><span class="comment">// s1[6] - s1[3] = s2[6] - s2[3];      s1, s2是，的前缀和数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 所谓字符串哈希就是把每个子串映射成一个 p进制 哈希值，通过上面类似的式子判断相同子串</span></span><br><span class="line"><span class="comment">// ps:人品足够好，不会发生冲突，字符串哈希时只放在一个数组，故有如下公式</span></span><br><span class="line"><span class="comment">//预处理前缀哈希值 ： h[i] = h[i - 1] * p + str[i]  </span></span><br><span class="line"><span class="comment">//判断子串是否相等 ： h[r1] - h[l1 - 1] * p[r1 - l1 + 1] = h[r2] - h[l2 - 1] * p[r2 - l2 + 1]</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">long</span> <span class="type">long</span> ULL;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>, P = <span class="number">131</span>;      <span class="comment">//一般来说进制数p可以去经验值131 ，13331</span></span><br><span class="line">ULL h[N], p[N];     <span class="comment">//p用来存p的多少次方</span></span><br><span class="line"><span class="type">char</span> str[N];</span><br><span class="line"></span><br><span class="line"><span class="comment">//返回子串的哈希值1</span></span><br><span class="line"><span class="function">ULL <span class="title">get</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> h[r] - h[l - <span class="number">1</span>] * p[r - l + <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, str + <span class="number">1</span>);       <span class="comment">//题目是从1开始</span></span><br><span class="line">    p[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)    <span class="comment">//处理p， 和 前缀和哈希数组</span></span><br><span class="line">    &#123;</span><br><span class="line">        h[i] = h[i - <span class="number">1</span>] * P + str[i];</span><br><span class="line">        p[i] = p[i - <span class="number">1</span>] * P;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> l1, r1, l2, r2;</span><br><span class="line">        cin &gt;&gt; l1 &gt;&gt; r1 &gt;&gt; l2 &gt;&gt; r2;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">get</span>(l1, r1) == <span class="built_in">get</span>(l2, r2)) cout &lt;&lt; <span class="string">&quot;Yes&quot;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;No&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/2.%E5%8F%8C%E9%93%BE%E8%A1%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    2.双链表
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2000/01/01/%E7%AE%97%E6%B3%95/Acwing/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/3.2%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">3.2表达式求值</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            akira23369 &copy; 2025 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer>
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
