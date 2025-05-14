@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/UI系统/UGUI/7.RectTransform矩形变换组件.md",
+                "file": "source/_posts/算法/Acwing/基础/基础算法/1.1快速排序.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "7.RectTransform矩形变换组件"
+              "title": "1.1快速排序"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/算法/Acwing/基础/搜索与图论/图的各种表示方法.md",
+                "file": "source/_posts/项目/Unity制作RPG游戏/2.角色状态机.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "图的各种表示方法"
+              "title": "2.角色状态机"
             }
           },
           {
@@ -118,12 +118,22 @@
         "type": "tabs",
         "children": [
           {
+            "id": "37a0d3f515092143",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          },
+          {
             "id": "86cc3175dabe7bdd",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity入门/1.unity入门概述.md",
+                "file": "source/_posts/项目/Unity制作RPG游戏/1.项目所需的知识.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +143,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "1.unity入门概述 的反向链接列表"
+              "title": "1.项目所需的知识 的反向链接列表"
             }
           },
           {
@@ -142,12 +152,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/子分类/新新新测试分类.md",
+                "file": "source/_posts/项目/Unity制作RPG游戏/1.项目所需的知识.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "新新新测试分类 的出链列表"
+              "title": "1.项目所需的知识 的出链列表"
             }
           },
           {
@@ -171,22 +181,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/游戏引擎/unity/unity入门/unity入门基础知识/18.坐标转换.md",
+                "file": "source/_posts/项目/Unity制作RPG游戏/2.角色状态机.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "18.坐标转换 的大纲"
+              "title": "2.角色状态机 的大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 340.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,56 +204,57 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "copilot:Open Copilot Chat": false
     }
   },
   "active": "1e8b8dfa0ac4d4f3",
   "lastOpenFiles": [
-    "public/2000/01/01/算法/Acwing/基础/数据结构/9.2连通块中点的数量/index.html",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/9.1合并集合/index.html",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/8.2最大异或对/index.html",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/8.1Trie字符串统计/index.html",
+    "db.json",
+    "public/NGUI总结.png",
+    "public/MyImg/千夜QYS3_miku_千里走单骑_49240323_p0.jpg",
+    "public/MyImg/《原神》神里绫华4k电脑桌面壁纸.jpg",
+    "public/MyImg/void_0_世界の鎮魂歌_85543107_p0.jpg",
+    "public/MyImg/test.jpg",
+    "public/MyImg/1733075511460.png",
+    "public/MyImg",
+    "public/content.json",
+    "public/images/SitePreview.png",
+    "public/images/mobile2.png",
+    "public/images/mobile1.png",
+    "public/images",
+    "public/page/13/index.html",
+    "public/page/13",
+    "public/page/14/index.html",
+    "public/page/14",
+    "public/page/12/index.html",
+    "public/page/12",
+    "public/page/11/index.html",
     "public/2000/01/01/算法/Acwing/基础/数据结构/7.KMP字符串/Pasted image 20240509185448.png",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/7.KMP字符串/Pasted image 20240509185351.png",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/7.KMP字符串/Pasted image 20240509185309.png",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/7.KMP字符串/Pasted image 20240509185325.png",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/7.KMP字符串/index.html",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/6.滑动窗口/Pasted image 20240509184802.png",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/6.滑动窗口/index.html",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/4.模拟队列/index.html",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/5.单调栈/index.html",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/3.2表达式求值/index.html",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/3.1模拟栈/index.html",
-    "public/2000/01/01/算法/Acwing/基础/数据结构/11.2字符串哈希/index.html",
-    "public/2000/01/01/算法/Acwing/基础/数学/高斯消元解线性方程组/Pasted image 20240511002911.png",
-    "public/2000/01/01/算法/Acwing/基础/数学/高斯消元解线性方程组/file-20250409130158014.png",
-    "public/2000/01/01/算法/Acwing/基础/贪心/区间分组/Pasted image 20240514010934.png",
-    "public/2000/01/01/算法/Acwing/基础/数学/能被整除的数/Pasted image 20240511003919.png",
-    "public/2000/01/01/算法/Acwing/基础/数学/线性同余方程/Pasted image 20240511002538.png",
-    "source/_posts/算法/Acwing/基础/搜索与图论/13.二分图的最大匹配.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/12.染色法判定二分图.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/11.Kruskal算法求最小生成树.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/10.Prim算法求最小生成树.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/9.Floyd求最短路.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/8.2SPFA判断负环.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/8.1spfa求最短路.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/7.有边数限制的最短路.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/6.2Dijkstra求最短路2.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/6.1Dijkstra求最短路1.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/5.有向图的拓扑序列.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/4.图中点的层次.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/3.树的重心.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/2.2八数码.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/2.1走迷宫.md",
-    "source/_posts/算法/Acwing/基础/搜索与图论/1.2N-皇后问题.md",
-    "source/_posts/算法/Acwing/基础/数据结构/1.单链表.md",
-    "source/_posts/算法/Acwing/基础/数据结构/2.双链表.md",
-    "source/_posts/算法/Acwing/基础/数据结构/3.1模拟栈.md",
-    "source/_posts/算法/Acwing/基础/数据结构/3.2表达式求值.md",
-    "source/_posts/算法/Acwing/基础/数据结构/4.模拟队列.md",
-    "source/_posts/算法/Acwing/基础/数据结构/5.单调栈.md",
-    "source/_posts/算法/Acwing/基础/数据结构/6.滑动窗口.md",
-    "source/_posts/算法/Acwing/基础/数据结构/7.KMP字符串.md",
-    "source/_posts/算法/Acwing/基础/数据结构/8.1Trie字符串统计.md"
+    "source/_posts/游戏引擎/unity/unity基础/10.协同程序.md",
+    "source/_posts/项目/Unity制作RPG游戏/2.角色状态机.md",
+    "source/_posts/项目/Unity制作RPG游戏/1.项目所需的知识.md",
+    "source/_posts/算法/Acwing/基础/数学/快速幂.md",
+    "source/_posts/你好呀.md",
+    "source/_posts/算法/Acwing/基础/动态规划/01背包问题.md",
+    "source/_posts/算法/Acwing/基础/搜索与图论/图的各种表示方法.md",
+    "source/_posts/算法/左神/异或运算的骚操作.md",
+    "source/_posts/算法/左神/位运算骚操作.md",
+    "source/_posts/算法/左神/常见递归过程.md",
+    "source/_posts/算法/左神/递归和master公式.md",
+    "source/_posts/算法/左神/链表高频题.md",
+    "source/_posts/算法/左神/排序/基数排序.md",
+    "source/_posts/算法/左神/排序/堆结构.md",
+    "source/_posts/生活/租房相关.md",
+    "scaffolds/Templates/hexo的超链接.md",
+    "scaffolds/Templates/HexoPost.md",
+    "scaffolds/Templates/算法模板.md",
+    "source/_posts/UI系统/UGUI/20.EventTigger事件触发器.md",
+    "source/_posts/UI系统/UGUI/UGUI实践小项目/7.注册面板.md",
+    "source/_posts/UI系统/UGUI/27.UGUI总结.md",
+    "source/_posts/算法/Acwing/基础/基础算法/10.十大排序算法总结.md",
+    "source/_posts/算法/Acwing/基础/数学/最大公约数.md",
+    "source/_posts/算法/左神/排序/归并与归并分治.md",
+    "source/_posts/算法/左神/排序/快排.md"
   ]
 }
