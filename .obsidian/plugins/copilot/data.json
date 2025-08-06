@@ -50,6 +50,40 @@
       "isBuiltIn": true,
       "core": true,
       "plusExclusive": true,
+      "projectEnabled": false,
+      "capabilities": [
+        "vision"
+      ]
+    },
+    {
+      "name": "google/gemini-2.5-flash-lite-preview-06-17",
+      "provider": "openrouterai",
+      "enabled": true,
+      "isBuiltIn": true,
+      "core": true,
+      "projectEnabled": true,
+      "capabilities": [
+        "vision"
+      ]
+    },
+    {
+      "name": "google/gemini-2.5-flash",
+      "provider": "openrouterai",
+      "enabled": true,
+      "isBuiltIn": true,
+      "core": true,
+      "projectEnabled": true,
+      "capabilities": [
+        "vision"
+      ]
+    },
+    {
+      "name": "google/gemini-2.5-pro",
+      "provider": "openrouterai",
+      "enabled": true,
+      "isBuiltIn": true,
+      "core": true,
+      "projectEnabled": true,
       "capabilities": [
         "vision"
       ]
@@ -60,6 +94,7 @@
       "enabled": true,
       "isBuiltIn": true,
       "core": true,
+      "projectEnabled": true,
       "capabilities": [
         "vision"
       ]
@@ -70,6 +105,7 @@
       "enabled": true,
       "isBuiltIn": true,
       "core": true,
+      "projectEnabled": true,
       "capabilities": [
         "vision"
       ]
@@ -267,79 +303,11 @@
   "numPartitions": 1,
   "promptUsageTimestamps": {},
   "defaultConversationNoteName": "{$topic}@{$date}_{$time}",
-  "inlineEditCommands": [
-    {
-      "name": "修正语法和拼写错误。",
-      "prompt": "修正 {} 中的语法和拼写错误。保留所有格式、换行符和特殊字符。不要添加或删除任何内容。仅返回修正后的文本。",
-      "showInContextMenu": true
-    },
-    {
-      "name": "翻译成中文",
-      "prompt": "将 {} 翻译成中文：\n    1. 保留原意和语气\n    2. 维持合适的文化背景\n    3. 保持格式和结构\n    仅返回翻译后的文本。",
-      "showInContextMenu": true
-    },
-    {
-      "name": "总结；概述；归纳",
-      "prompt": "为 {} 创建一个要点总结。每个要点都应涵盖一个关键点。仅返回要点总结。",
-      "showInContextMenu": true
-    },
-    {
-      "name": "简化",
-      "prompt": "将 {} 简化到适合六年级（11 - 12 岁）阅读水平。使用简单的句子、常用词汇和清晰的解释。保留原始关键概念。仅返回简化后的文本。",
-      "showInContextMenu": true
-    },
-    {
-      "name": "Emoji回答",
-      "prompt": "为增强 {} 添加相关表情符号。遵循以下规则：\n    1. 在文本自然停顿处插入表情符号\n    2. 保留所有原始文本不变\n    3. 绝不要将两个表情符号紧挨着放置\n    4. 选择与上下文和语气相符的表情符号\n    仅返回添加表情符号后的文本。",
-      "showInContextMenu": true
-    },
-    {
-      "name": "缩短",
-      "prompt": "在保留以下元素的同时，将 {} 的长度缩减一半：\n1. 主要观点和要点\n2. 关键细节\n3. 原始语气和风格\n仅返回缩短后的文本。",
-      "showInContextMenu": true
-    },
-    {
-      "name": "更长，丰富文本",
-      "prompt": "通过以下方式将 {} 的长度扩展一倍：\n添加相关细节和示例\n详细阐述要点\n保持原始语气和风格\n仅返回扩充后的文本。",
-      "showInContextMenu": true
-    },
-    {
-      "name": "Generate table of contents",
-      "prompt": "Generate a hierarchical table of contents for {}. Use appropriate heading levels (H1, H2, H3, etc.). Include page numbers if present. Return only the table of contents.",
-      "showInContextMenu": false
-    },
-    {
-      "name": "Generate glossary",
-      "prompt": "Create a glossary of important terms, concepts, and phrases from {}. Format each entry as \"Term: Definition\". Sort entries alphabetically. Return only the glossary.",
-      "showInContextMenu": false
-    },
-    {
-      "name": "Remove URLs",
-      "prompt": "Remove all URLs from {}. Preserve all other content and formatting. URLs may be in various formats (http, https, www). Return only the text with URLs removed.",
-      "showInContextMenu": false
-    },
-    {
-      "name": "Rewrite as tweet",
-      "prompt": "Rewrite {} as a single tweet with these requirements:\n    1. Maximum 280 characters\n    2. Use concise, impactful language\n    3. Maintain the core message\n    Return only the tweet text.",
-      "showInContextMenu": false
-    },
-    {
-      "name": "Rewrite as tweet thread",
-      "prompt": "Convert {} into a Twitter thread following these rules:\n    1. Each tweet must be under 240 characters\n    2. Start with \"THREAD START\" on its own line\n    3. Separate tweets with \"\n\n---\n\n\"\n    4. End with \"THREAD END\" on its own line\n    5. Make content engaging and clear\n    Return only the formatted thread.",
-      "showInContextMenu": false
-    },
-    {
-      "name": "Explain like I am 5",
-      "prompt": "Explain {} in simple terms that a 5-year-old would understand:\n    1. Use basic vocabulary\n    2. Include simple analogies\n    3. Break down complex concepts\n    Return only the simplified explanation.",
-      "showInContextMenu": false
-    },
-    {
-      "name": "Rewrite as press release",
-      "prompt": "Transform {} into a professional press release:\n    1. Use formal, journalistic style\n    2. Include headline and dateline\n    3. Follow inverted pyramid structure\n    Return only the press release format.",
-      "showInContextMenu": false
-    }
-  ],
-  "lastDismissedVersion": null,
+  "inlineEditCommands": [],
+  "lastDismissedVersion": "2.9.4",
   "passMarkdownImages": true,
-  "enableCustomPromptTemplating": true
+  "enableCustomPromptTemplating": true,
+  "includeActiveNoteAsContext": true,
+  "allowAdditionalContext": true,
+  "enableWordCompletion": false
 }

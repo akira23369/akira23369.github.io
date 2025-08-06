@@ -20,6 +20,9 @@ tags:
 - **`IEnumerable` 接口**：表示一个集合可以被迭代，包含一个 `GetEnumerator` 方法。
 - **`IEnumerator` 接口**：提供了遍历集合的能力，包含 `MoveNext()`、`Reset()` 和 `Current` 属性。
 
+
+`IEnumerable<T>` 是更**抽象**的概念：它只要求 “能遍历”，不关心底层是数组、链表、哈希表还是其他数据结构。这种抽象的好处是 “解耦”，意味着它的内部实现可以随时修改（比如改成用数组存储），但调用者的遍历逻辑（`foreach`）完全不需要变。
+
 **标准迭代器实现（手动版）**
 **接口定义**：
 ```cs
@@ -174,6 +177,13 @@ class GeneratedStateMachine : IEnumerator<string>
 }
 ```
 
+`yield return` 既可以用于返回 `IEnumerable<T>` 的函数，也可以用于返回 `IEnumerator<T>`（或非泛型 `IEnumerator`）的函数。这两种返回类型都属于 C# 迭代器模式的一部分，而 `yield return` 本质是**生成迭代器逻辑的语法糖**，对这两种类型都适用。
+
+`IEnumerable<T>` 和 `IEnumerator<T>` 是迭代器模式的两个核心接口：
+- `IEnumerable<T>`：表示 “可被遍历的集合”，它的 `GetEnumerator()` 方法返回一个 `IEnumerator<T>`（负责实际遍历）。
+- `IEnumerator<T>`：表示 “枚举器”，负责跟踪遍历状态（`Current` 属性、`MoveNext()` 方法等）。
+
+`yield return` 的作用是**自动生成这两个接口的实现代码**，无论函数返回的是 “可枚举集合”（`IEnumerable<T>`这个**常用**）还是 “枚举器”（`IEnumerator<T>`），编译器都会帮我们处理底层的状态管理和迭代逻辑。
 ## yield break
 **`yield break` 的基本作用**
 - **功能**：在迭代器方法中，`yield break` 会立即终止迭代，不再生成后续的值。
