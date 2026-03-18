@@ -10,7 +10,7 @@
     "node_modules/",
     "public/"
   ],
-  "attachmentFolderPath": "source/img",
+  "attachmentFolderPath": "./{{titile}}",
   "propertiesInDocument": "source",
   "promptDelete": false,
   "smartIndentList": true,

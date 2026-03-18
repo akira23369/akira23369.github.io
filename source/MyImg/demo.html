@@ -1,0 +1,3477 @@
+<!DOCTYPE html>
+<!-- saved from url=(0309)file:///F:/1/C%23%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%A1%B9%E7%9B%AE%E5%A4%A7%E5%B8%88%E8%AF%BE%2075h/02%20-%20C%23%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%EF%BC%88%E5%AE%9E%E6%88%98%E4%BB%8E%E8%BF%99%E9%87%8C%E5%BC%80%E5%A7%8B%EF%BC%89/032%20Notes.html -->
+<html lang="en" imt-state="translation" imt-trans-position="after"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>笔记 --- Notes</title>
+
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                font-family: var(--font-stack-text);
+                font-weight: 400;
+                line-height: 1.4;
+                font-size: 1.6rem;
+                color: #2d2f31;
+            }
+            .container {
+                position: relative;
+                height: 100%;
+                overflow-y: auto;
+            }
+            .content {
+                padding: 3.2rem 4.8rem;
+                word-break: break-word;
+                max-width: 69.6rem;
+                margin: 0 auto;
+            }
+            .heading {
+                margin-bottom: 24px;
+                font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Helvetica, Arial, sans-serif,
+                    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                font-weight: 700;
+                line-height: 1.2;
+                letter-spacing: 0;
+                font-size: 32px;
+                max-width: 36em;
+            }
+            .article-asset-container {
+                padding: 2.4rem;
+            }
+            .article-asset-container p {
+                font-size: 19px;
+            }
+            code {
+                background-color: #fff;
+                border: 1px solid #d1d7dc;
+                color: #b4690e;
+                font-size: 80%;
+                padding: 0.2rem 0.4rem;
+                font-family: sfmono-regular, Consolas, liberation mono, Menlo, Courier, monospace;
+            }
+            p {
+                font-weight: 400;
+            }
+        </style>
+    <style data-id="immersive-translate-input-injected-css">.immersive-translate-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2147483647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.immersive-translate-attach-loading::after {
+  content: " ";
+
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-2000%, -50%);
+  z-index: 100;
+}
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.immersive-translate-input-loading {
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+}
+
+@keyframes immersiveTranslateShadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  25% {
+    box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color),
+      0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color),
+      100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color),
+      110px 0 var(--loading-color), 100px 0 var(--loading-color);
+  }
+
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color),
+      120px 0 var(--loading-color), 110px 0 var(--loading-color);
+  }
+
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      130px 0 var(--loading-color), 120px 0 var(--loading-color);
+  }
+
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color);
+  }
+
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.immersive-translate-modal {
+  position: fixed;
+  z-index: 2147483647;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 15px;
+}
+
+.immersive-translate-modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 40px 24px 24px;
+  border-radius: 12px;
+  width: 350px;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .immersive-translate-modal-content {
+    margin: 25% auto !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .immersive-translate-modal-content {
+    width: 80vw !important;
+    margin: 20vh auto !important;
+    padding: 20px 12px 12px !important;
+  }
+
+  .immersive-translate-modal-title {
+    font-size: 14px !important;
+  }
+
+  .immersive-translate-modal-body {
+    font-size: 13px !important;
+    max-height: 60vh !important;
+  }
+
+  .immersive-translate-btn {
+    font-size: 13px !important;
+    padding: 8px 16px !important;
+    margin: 0 4px !important;
+  }
+
+  .immersive-translate-modal-footer {
+    gap: 6px !important;
+    margin-top: 16px !important;
+  }
+}
+
+.immersive-translate-modal .immersive-translate-modal-content-in-input {
+  max-width: 500px;
+}
+.immersive-translate-modal-content-in-input .immersive-translate-modal-body {
+  text-align: left;
+  max-height: unset;
+}
+
+.immersive-translate-modal-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.immersive-translate-modal-body {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  margin-top: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .immersive-translate-modal-body {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+}
+
+.immersive-translate-close {
+  color: #666666;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.immersive-translate-close:hover,
+.immersive-translate-close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.immersive-translate-modal-footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.immersive-translate-btn {
+  width: fit-content;
+  color: #fff;
+  background-color: #ea4c89;
+  border: none;
+  font-size: 14px;
+  margin: 0 8px;
+  padding: 9px 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.immersive-translate-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.immersive-translate-btn:hover {
+  background-color: #f082ac;
+}
+.immersive-translate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.immersive-translate-btn:disabled:hover {
+  background-color: #ea4c89;
+}
+
+.immersive-translate-link-btn {
+  background-color: transparent;
+  color: #ea4c89;
+  border: none;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+}
+
+.immersive-translate-cancel-btn {
+  /* gray color */
+  background-color: rgb(89, 107, 120);
+}
+
+.immersive-translate-cancel-btn:hover {
+  background-color: hsl(205, 20%, 32%);
+}
+
+.immersive-translate-action-btn {
+  background-color: transparent;
+  color: #ea4c89;
+  border: 1px solid #ea4c89;
+}
+
+.immersive-translate-btn svg {
+  margin-right: 5px;
+}
+
+.immersive-translate-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #ea4c89;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+.immersive-translate-primary-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #ea4c89;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+.immersive-translate-modal input[type="radio"] {
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+.immersive-translate-modal label {
+  cursor: pointer;
+}
+
+.immersive-translate-close-action {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.imt-image-status {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 16px !important;
+}
+.imt-image-status img,
+.imt-image-status svg,
+.imt-img-loading {
+  width: 28px !important;
+  height: 28px !important;
+  margin: 0 0 8px 0 !important;
+  min-height: 28px !important;
+  min-width: 28px !important;
+  position: relative !important;
+}
+.imt-img-loading {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAAAtFBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////oK74hAAAAPHRSTlMABBMIDyQXHwyBfFdDMSw+OjXCb+5RG51IvV/k0rOqlGRM6KKMhdvNyZBz9MaupmxpWyj437iYd/yJVNZeuUC7AAACt0lEQVRIx53T2XKiUBCA4QYOiyCbiAsuuGBcYtxiYtT3f6/pbqoYHVFO5r+iivpo6DpAWYpqeoFfr9f90DsYAuRSWkFnPO50OgR9PwiCUFcl2GEcx+N/YBh6pvKaefHlUgZd1zVe0NbYcQjGBfzrPE8Xz8aF+71D8gG6DHFPpc4a7xFiCDuhaWgKgGIJQ3d5IMGDrpS4S5KgpIm+en9f6PlAhKby4JwEIxlYJV9h5k5nee9GoxHJ2IDSNB0dwdad1NAxDJ/uXDHYmebdk4PdbkS58CIVHdYSUHTYYRWOJblWSyu2lmy3KNFVJNBhxcuGW4YBVCbYGRZwIooipHsNqjM4FbgOQqQqSKQQU9V8xmi1QlgHqQQ6DDBvRUVCDirs+EzGDGOQTCATgtYTnbCVLgsVgRE0T1QE0qHCFAht2z6dLvJQs3Lo2FQoDxWNUiBhaP4eRgwNkI+dAjVOA/kUrIDwf3CG8NfNOE0eiFotSuo+rBiq8tD9oY4Qzc6YJw99hl1wzpQvD7ef2M8QgnOGJfJw+EltQc+oX2yn907QB22WZcvlUpd143dqQu+8pCJZuGE4xCuPXJqqcs5sNpsI93Rmzym1k4Npk+oD1SH3/a3LOK/JpUBpWfqNySxWzCfNCUITuDG5dtuphrUJ1myeIE9bIsPiKrfqTai5WZxbhtNphYx6GEIHihyGFTI69lje/rxajdh0s0msZ0zYxyPLhYCb1CyHm9Qsd2H37Y3lugVwL9kNh8Ot8cha6fUNQ8nuXi5z9/ExsAO4zQrb/ev1yrCB7lGyQzgYDGuxq1toDN/JGvN+HyWNHKB7zEoK+PX11e12G431erGYzwmytAWU56fkMHY5JJnDRR2eZji3AwtIcrEV8Cojat/BdQ7XOwGV1e1hDjGGjXbdArm8uJZtCH5MbcctVX8A1WpqumJHwckAAAAASUVORK5CYII=");
+  background-size: 28px 28px;
+  animation: image-loading-rotate 1s linear infinite !important;
+}
+
+.imt-image-status span {
+  color: var(--bg-2, #fff) !important;
+  font-size: 14px !important;
+  line-height: 14px !important;
+  font-weight: 500 !important;
+  font-family: "PingFang SC", Arial, sans-serif !important;
+}
+
+.imt-primary-button {
+  display: flex;
+  padding: 12px 80px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  background: #ea4c89;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.imt-retry-text {
+  color: #999;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.imt-action-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.imt-modal-content-text {
+  text-align: left;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@keyframes image-loading-rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.imt-linear-gradient-text {
+  background: linear-gradient(90deg, #00a6ff 0%, #c369ff 52.4%, #ff4590 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.imt-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-linear-black-btn {
+  border-radius: 50px;
+  background: linear-gradient(66deg, #222 19%, #696969 94.25%);
+  height: 48px;
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+</style><style data-id="immersive-translate-default-injected-css">:root {
+  --immersive-translate-theme-underline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeUnderline-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDashed-borderColor: #72ece9;
+  --immersive-translate-theme-nativeDotted-borderColor: #72ece9;
+  --immersive-translate-theme-highlight-backgroundColor: #ffff00;
+  --immersive-translate-theme-dashed-borderColor: #59c1bd;
+  --immersive-translate-theme-blockquote-borderColor: #cc3355;
+  --immersive-translate-theme-thinDashed-borderColor: #ff374f;
+  --immersive-translate-theme-dashedBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-dashedBorder-borderRadius: 0;
+  --immersive-translate-theme-solidBorder-borderColor: #94a3b8;
+  --immersive-translate-theme-solidBorder-borderRadius: 0;
+  --immersive-translate-theme-dotted-borderColor: #94a3b8;
+  --immersive-translate-theme-wavy-borderColor: #72ece9;
+  --immersive-translate-theme-dividingLine-borderColor: #94a3b8;
+  --immersive-translate-theme-grey-textColor: #2f4f4f;
+  --immersive-translate-theme-marker-backgroundColor: #fbda41;
+  --immersive-translate-theme-marker-backgroundColor-rgb: 251, 218, 65;
+  --immersive-translate-theme-marker2-backgroundColor: #ffff00;
+  --immersive-translate-theme-background-backgroundColor: #dbafaf;
+  --immersive-translate-theme-background-backgroundColor-rgb: 219, 175, 175;
+  --immersive-translate-theme-background-backgroundOpacity: 12;
+  --immersive-translate-theme-opacity-opacity: 10;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-pre-whitespace {
+  white-space: pre-wrap !important;
+}
+
+[imt-state="dual"] .immersive-translate-pdf-target-container {
+  position: absolute;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    sans-serif;
+  top: 0;
+  width: 600px;
+  height: 100%;
+  z-index: 2;
+  line-height: 1.3;
+  font-size: 16px;
+}
+[imt-state="dual"] .immersive-translate-target-wrapper[dir="rtl"] {
+  text-align: right;
+}
+
+[imt-state="dual"]
+  .immersive-translate-pdf-target-container
+  .immersive-translate-target-wrapper {
+  color: rgb(0, 0, 0);
+  white-space: normal;
+  position: absolute;
+}
+
+[imt-state="dual"]
+  .immersive-translate-pdf-target-container
+  .immersive-translate-target-wrapper
+  font {
+  color: inherit;
+  white-space: inherit;
+  position: unset;
+}
+
+[imt-state="translation"] .immersive-translate-target-wrapper > br {
+  display: none;
+}
+
+[imt-state="translation"]
+  .immersive-translate-target-translation-block-wrapper {
+  margin: 0 !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-block-wrapper {
+  margin: 8px 0 !important;
+  display: inline-block;
+}
+
+[imt-trans-position="before"]
+  .immersive-translate-target-translation-block-wrapper {
+  display: block;
+}
+
+[imt-trans-position="before"]
+  .immersive-translate-target-translation-block-wrapper {
+  margin-top: 0 !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-pdf-block-wrapper {
+  margin: 0 !important;
+  display: inline-block;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-grey-inner {
+  color: var(--immersive-translate-theme-grey-textColor);
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-underline-inner {
+  border-bottom: 1px solid
+    var(--immersive-translate-theme-underline-borderColor) !important;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-nativeUnderline-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(
+    --immersive-translate-theme-nativeUnderline-borderColor
+  ) !important;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(
+    --immersive-translate-theme-dashedBorder-borderRadius
+  ) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: inline-block;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-inline-wrapper-theme-dashedBorder {
+  border: 1px dashed var(--immersive-translate-theme-dashedBorder-borderColor) !important;
+  border-radius: var(
+    --immersive-translate-theme-dashedBorder-borderRadius
+  ) !important;
+  padding: 2px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(
+    --immersive-translate-theme-solidBorder-borderRadius
+  ) !important;
+  padding: 6px;
+  margin-top: 2px;
+  display: inline-block;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-inline-wrapper-theme-solidBorder {
+  border: 1px solid var(--immersive-translate-theme-solidBorder-borderColor) !important;
+  border-radius: var(
+    --immersive-translate-theme-solidBorder-borderRadius
+  ) !important;
+  padding: 2px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-nativeDashed-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(
+    --immersive-translate-theme-nativeDashed-borderColor
+  ) !important;
+  text-decoration-style: dashed !important;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-thinDashed-inner {
+  border-bottom: 1px dashed
+    var(--immersive-translate-theme-thinDashed-borderColor) !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-dotted-inner {
+  background-image: linear-gradient(
+    to right,
+    var(--immersive-translate-theme-dotted-borderColor) 30%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: bottom;
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  padding-bottom: 3px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-nativeDotted-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(
+    --immersive-translate-theme-nativeDotted-borderColor
+  ) !important;
+  text-decoration-style: dotted !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-wavy-inner {
+  text-decoration: underline !important;
+  text-decoration-color: var(
+    --immersive-translate-theme-wavy-borderColor
+  ) !important;
+  text-decoration-style: wavy !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-dashed-inner {
+  background: linear-gradient(
+      to right,
+      var(--immersive-translate-theme-dashed-borderColor) 0%,
+      var(--immersive-translate-theme-dashed-borderColor) 50%,
+      transparent 50%,
+      transparent 100%
+    )
+    repeat-x left bottom;
+  background-size: 8px 2px;
+  padding-bottom: 2px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {
+  content: "";
+  display: block;
+  max-width: 80px;
+  width: 10%;
+  border-top: 1px dashed
+    var(--immersive-translate-theme-dividingLine-borderColor);
+  padding-top: 8px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-inline-wrapper-theme-dividingLine::before {
+  content: "";
+  border-left: 1px dashed
+    var(--immersive-translate-theme-dividingLine-borderColor);
+  max-height: 16px;
+  height: 16px;
+  padding-left: 8px;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-highlight-inner {
+  background: var(--immersive-translate-theme-highlight-backgroundColor);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-marker {
+  line-height: 1.5em;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-marker2-inner {
+  font-weight: bold;
+  text-shadow: 10px 0px 3px
+      var(--immersive-translate-theme-marker2-backgroundColor),
+    16px 3px 9px var(--immersive-translate-theme-marker2-backgroundColor),
+    2px 0px 6px var(--immersive-translate-theme-marker2-backgroundColor),
+    -12px 0px 12px var(--immersive-translate-theme-marker2-backgroundColor) !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-marker-inner {
+  /* TODO: add more texture */
+  background: linear-gradient(
+    to right,
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.1),
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 3%,
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 35%,
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.9) 70%,
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.8) 95%,
+    rgba(var(--immersive-translate-theme-marker-backgroundColor-rgb), 0.3)
+  );
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-weakening {
+  opacity: 0.618 !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-italic {
+  font-style: italic !important;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-bold {
+  font-weight: bold !important;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-paper {
+  margin: 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 16px 32px;
+  display: inline-block;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-blockquote {
+  border-left: 4px solid var(--immersive-translate-theme-blockquote-borderColor) !important;
+  padding-left: 12px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-mask-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"]
+  .immersive-translate-target-translation-theme-mask-inner {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"]
+  .immersive-translate-target-inner {
+  filter: blur(5px) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* opacity theme start */
+
+[imt-state="dual"] .immersive-translate-target-translation-theme-opacity-inner {
+  filter: opacity(
+    calc(var(--immersive-translate-theme-opacity-opacity) * 1%)
+  ) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[data-immersive-translate-root-translation-theme="none"]
+  .immersive-translate-target-translation-theme-opacity-inner {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"]
+  .immersive-translate-target-inner,
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: opacity(
+    calc(var(--immersive-translate-theme-opacity-opacity) * 1%)
+  ) !important;
+  transition: filter 0.3s ease !important;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-opacity-inner:hover {
+  filter: none !important;
+}
+
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-mask-inner:hover {
+  filter: none !important;
+}
+[data-immersive-translate-root-translation-theme="opacity"]
+  .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+[data-immersive-translate-root-translation-theme="mask"]
+  .immersive-translate-target-inner:hover {
+  filter: none !important;
+}
+
+/* opacity theme end */
+
+/* background theme start */
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper-theme-background {
+  margin: 8px 0;
+  background: rgba(
+    var(--immersive-translate-theme-background-backgroundColor-rgb),
+    calc(var(--immersive-translate-theme-background-backgroundOpacity) * 1%)
+  );
+  border-radius: 4px;
+  box-shadow: unset !important;
+  padding: 12px;
+  display: inline-block;
+}
+[imt-state="dual"]
+  .immersive-translate-target-translation-theme-background-inner {
+  background: rgba(
+    var(--immersive-translate-theme-background-backgroundColor-rgb),
+    calc(var(--immersive-translate-theme-background-backgroundOpacity) * 1%)
+  );
+  padding-left: 6px;
+  padding-right: 6px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+[imt-state="dual"]
+  .immersive-translate-target-translation-block-wrapper
+  .immersive-translate-target-translation-theme-background-inner {
+  background: unset;
+  padding-left: unset;
+  padding-right: unset;
+}
+/* background theme end */
+
+/* vertical css , please remain it in the last one. */
+.immersive-translate-target-translation-vertical-block-wrapper {
+  margin: 0px 8px !important;
+}
+
+.immersive-translate-text {
+  font-size: 15px !important;
+}
+
+.immersive-translate-error-toast {
+  position: fixed;
+  top: 5%;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media all and (min-width: 750px) {
+  .immersive-translate-error-toast {
+    max-width: 400px;
+  }
+}
+
+.immersive-translate-clickable-button {
+  cursor: pointer;
+}
+
+.immersive-translate-help-button {
+  cursor: pointer;
+}
+
+.immersive-translate-loading-text:before {
+  content: "...";
+}
+
+/* dark mode for loading */
+
+@media only screen and (prefers-color-scheme: dark) {
+  .immersive-translate-loading {
+    border: 2px rgba(255, 255, 255, 0.25) solid !important;
+    border-top: 2px rgba(255, 255, 255, 1) solid !important;
+  }
+}
+
+.immersive-translate-error-wrapper {
+  position: relative;
+  display: inline-flex;
+  padding: 6px;
+  margin: 0 12px;
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+[lang="zh-CN"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+[lang="zh-TW"] .immersive-translate-error-wrapper {
+  font-size: 0.75em;
+}
+
+.immersive-translate-tooltip {
+  position: relative;
+  display: inline-flex;
+  /* little indicater to indicate it's hoverable */
+}
+
+.immersive-translate-tooltip-content {
+  /* here's the magic */
+  position: absolute;
+  z-index: 100000000000;
+
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 110%);
+  line-height: 1;
+  /* and add a small left margin */
+
+  /* basic styles */
+  width: max-content;
+  max-width: 250px;
+  word-wrap: break-word;
+  white-space: pre-line;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000c;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+  /* hide by default */
+}
+
+.immersive-translate-tooltip:hover .immersive-translate-tooltip-content {
+  display: inline-block;
+}
+
+.immersive-translate-tooltip:hover + .immersive-translate-tooltip-content {
+  display: inline-block;
+}
+
+.immersive-translate-tooltip-content-table {
+  left: unset !important;
+  bottom: unset !important;
+  transform: translate(-10%, 50%) !important;
+}
+
+.immersive-translate-tooltip:hover:before {
+  display: inline-block;
+}
+
+.immersive-translate-loading-spinner {
+  vertical-align: middle !important;
+  width: 10px !important;
+  height: 10px !important;
+  display: inline-block !important;
+  margin: 0 4px !important;
+  border: 2px rgba(221, 244, 255, 0.6) solid !important;
+  border-top: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-left: 2px rgba(0, 0, 0, 0.375) solid !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  -webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+  animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+}
+
+@-webkit-keyframes immersive-translate-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes immersive-translate-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-image-status {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-2, #fff);
+  font-size: 14px;
+}
+</style><style data-id="immersive-translate-user-custom-style">:root {
+
+.immersive-translate-target-inner { font-family: inherit; }
+
+
+.immersive-translate-target-inner { font-family: inherit; }
+}
+</style><style data-id="immersive-translate-dynamic-injected-css">.immersive-translate-target-wrapper[dir='rtl'] {text-align: right;display:block!important;}
+[dir='rtl'] .immersive-translate-target-wrapper:not([dir]) {text-align:left;direction:ltr;}
+.immersive-translate-target-wrapper {word-break:break-word; user-select:text;}
+[imt-state=dual] .immersive-translate-target-translation-block-wrapper-theme-dividingLine::before {display:block;}
+[imt-trans-position=before] .immersive-translate-target-translation-block-wrapper {display:block!important;}
+</style></head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div class="heading immersive-translate-target-translation-theme-marker immersive-translate-target-inner" data-imt-p="1" data-imt-translation-only="1">笔记</div>
+                <div class="article-asset-container"><h4><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">第 2 节：C#语言基础</strong></h4><p><br></p><p><br></p><h4><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">第一讲：Visual Studio 安装指南</strong></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">简介</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">Visual Studio 是一款专业的集成开发环境（IDE），专为 C# 开发设计。它不仅是代码编辑器，更是一个功能完备的开发工作台，集成了构建、调试及高效管理应用程序所需的各类专业工具。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">运作原理与最佳实践</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">安装 Visual Studio 时需选择工作负载，即针对不同开发类型预置的工具包。其中".NET 桌面开发"工作负载是必备项，它包含了 C#编译器、.NET 框架及项目模板，这正是我们所需的。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">访谈视角</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">若面试官问及你最喜欢的 Visual Studio 功能，可以重点介绍调试器和智能感知(IntelliSense)这两个特性。</p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"调试器：说明这是你排查问题的主要工具。通过设置断点可暂停程序运行，支持逐行执行代码并实时查看变量状态。"</font></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">IntelliSense：一种智能代码补全工具，能够实时推荐代码、检测输入错误，并辅助探索 C#语言的各项特性。</font></font></font></p></li></ul><p><br></p><h4><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">第二讲：创建首个 C#应用程序</strong></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">简介</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"“Hello, World!”程序是入门的第一个基础步骤。它能验证开发环境配置是否正确，并帮助您了解 C#程序的基本架构。创建项目时，请务必选择“控制台应用(.NET Framework)”模板。"</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"工作原理：程序的结构解析"</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">Visual Studio 生成的代码存放在 Program.cs 文件中。</p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
+</pre><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>namespace</code> ：代码整理工具，类似文件夹的功能。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>class Program</code> ：用于封装方法和数据的容器。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>static void Main(string[] args)</code> ：此处为程序入口点。运行程序时，.NET 运行时会自动定位并从此特定方法开始执行。"</font></font></p></li></ul><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">访谈视角</strong></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"解释这行代码： <code><strong>static void Main(string[] args)</strong></code> ”：这是面试中经常被问到的问题。"</font></font></font></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">该方法是直接通过 <code>Program</code> 类本身调用的，而非其实例化的对象。</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">此方法无返回值。</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>Main</code> : 该入口点的约定命名。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">该参数用于接收以字符串数组形式传递的命令行参数。</font></font></p></li></ul></li></ul><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner"><strong>"第三讲： </strong><code><strong>System.Console</strong></code><strong> 类"</strong></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">简介</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">Console 类是与文本控制台窗口交互的核心工具，提供了基础的输入输出功能方法。</p><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">常用方法</strong></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>Console.WriteLine(string value)</code> ：将指定文本输出至控制台，并自动换行。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>Console.Write(string value)</code> : 打印文本但光标不换行。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">读取用户输入的整行文本，并将其作为 <code>string</code> 返回。</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">等待一次按键输入。</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>Console.Clear()</code> : 清空控制台窗口内的全部文字内容。"</font></font></p></li></ul><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">访谈视角</strong></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code><strong>Write</strong></code> 与 <code><strong>WriteLine</strong></code> 的区别： <code>WriteLine</code> 打印后会自动换行，而 <code>Write</code> 则不会。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"输入处理：一个常见问题是，“当要求用户输入年龄时，该如何存储？”关键在于理解 <code>Console.ReadLine()</code> 始终返回的是 <code>string</code> 。因此，必须通过类似 <code>int.Parse()</code> 的方法显式地将该字符串转换为数字。"</font></font></font></p></li></ul><p><br></p><h4><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">第四讲：变量</strong></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">简介</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">变量是内存中的命名存储单元，用于存放程序可操作的数据值。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">运行机制：作用域与内存管理</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">在方法内部声明基本类型变量时，其值会存储在栈内存中——这是一块访问速度极快的内存区域。该变量的生命周期与其作用域（即声明该变量的代码块{...}）相关联。</p><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">最佳实践及面试要点</strong></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"命名规范：局部变量统一采用驼峰式命名法（如 <code>userAge</code> 、 <code>firstName</code> ）。"</font></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"作用域：需准备好应对类似这样的问题，例如“若在 <code>if</code> 代码块中声明一个变量，能否在 <code>else</code> 块中使用？”答案是否定的，因为它们属于不同的作用域。"</font></font></font></p></li></ul><p><br></p><h4><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">第五讲：基本数据类型</strong></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">简介</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">原始类型是基础的数据结构单元。C#属于静态类型语言，因此必须先声明变量类型才能使用。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">整数类型（整型数）</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">这些数据类型用于存储不带小数部分的整数值，主要区别在于其存储范围大小以及是否支持负数。</p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>sbyte</code> ：8 位有符号整型（取值范围为-128 至 127）。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>byte</code> : 8 位无符号整型（取值范围 0-255）。适用于不能出现负值的场景，如文件或网络流中的原始数据。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>short</code> ：16 位有符号整型（取值范围-32,768 到 32,767）。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>ushort</code> ：16 位无符号整数（取值范围 0 至 65,535）。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>int</code> ：32 位有符号整数（取值范围-21 亿至 21 亿）。此为默认且最常用的整数类型，若无特殊需求，建议直接使用。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>uint</code> ：32 位无符号整型（取值范围 0 至 42 亿）。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>long</code> ：64 位有符号整数（取值范围极大）。当 <code>int</code> 的范围不足时使用。如需定义长整型字面值，请添加 <code>L</code> 后缀： <code>long bigNumber = 9000000000L;</code> 。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>ulong</code> ：64 位无符号整数。"</font></font></p></li></ul><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">浮点数类型（十进制数字）</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">这类数据类型用于存储带小数点的数值，选择时需在取值范围、精度和性能之间进行权衡。</p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>float</code> ：32 位单精度浮点数（精度约为 6-9 位）。适用于需要小数但对精度要求不高的场景，例如图形编程。使用时添加 <code>F</code> 后缀： <code>float height = 1.88F;</code> 。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>double</code> ：64 位双精度浮点数（精度约为 15-17 位）。此为默认且最常用的浮点类型，适用于科学计算及常规运算。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>decimal</code> ：128 位高精度（精确到 28-29 位数字）。该类型虽比 <code>double</code> 慢，但能避免二进制浮点数固有的微小舍入误差。进行财务或货币计算时务必使用 <code><strong>decimal</strong></code> 类型，并使用 <code>M</code> 后缀： <code>decimal accountBalance = 100.05M;</code> 。"</font></font></p></li></ul><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">其他基本类型</strong></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>char</code> ：代表一个 16 位的 Unicode 字符，其值由单引号包裹，如： <code>char grade = 'A';</code> 。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>bool</code> ：代表一个逻辑值，其取值可能为 <code>true</code> 或 <code>false</code> 。"</font></font></p></li></ul><p><br></p><h4><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">第六讲：操作符</strong></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">简介</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">运算符是一种特殊符号，用于对变量及数值（即操作数）执行运算操作。</p><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">算术运算符</h4><p><br></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>+</code> （加法运算）：对两个操作数进行相加。 <code>int sum = 10 + 5; // 15 "</code></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>-</code> （减法运算）：用左操作数减去右操作数。 <code>int diff = 10 - 5; // 5 "</code></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>*</code> （乘法）：用于计算两个操作数的乘积。 <code>int prod = 10 * 5; // 50 "</code></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>/</code> （除法）：用右操作数除左操作数，具体运算行为由操作数的类型决定。"</font></font></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">整数相除：若两操作数均为整数，则结果取整，小数部分直接舍去。 <code>int result = 10 / 4; // result is 2</code> </font></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">浮点数除法规则：若任一操作数为浮点类型，则结果也为浮点类型。 <code>double result = 10.0 / 4; // result is 2.5</code> </font></font></font></p></li></ul></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>%</code> （取模运算）：返回两数相除后的余数。 <code>int remainder = 10 % 3; // remainder is 1</code> ，常用于判断一个数是否为偶数（ <code>num % 2 == 0</code> ）。"</font></font></p></li></ul><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">赋值操作符</h4><p><br></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>=</code> （简单赋值）：将右侧操作数的值赋予左侧操作数。 <code>int x = 10; "</code></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>+=</code> 、 <code>-=</code> 、 <code>*=</code> 、 <code>/=</code> 、 <code>%=</code> （复合赋值运算符）：可一步完成运算与赋值操作。 <code>x += 5;</code> 实际上是 <code>x = x + 5;</code> 的简写形式。"</font></font></p></li></ul><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">比较操作符</h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">它们对两个操作数进行比较，并始终返回一个 <code>bool</code> （ <code>true</code> 或 <code>false</code> ）。</p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-inline-wrapper-theme-marker immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1">" <code>==</code> （等同于）： <code>bool areEqual = (name == "John"); "</code></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>!=</code> （不等于） <code>bool areNotEqual = (age != 30); "</code></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>&gt;</code> 、 <code>&lt;</code> 、 <code>&gt;=</code> 、 <code>&lt;=</code> （如大于、小于等关系）： <code>bool isAdult = (age &gt;= 18); "</code></font></font></p></li></ul><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">逻辑运算符</h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">这些用于合并 <code>bool</code> 表达式。</p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>&amp;&amp;</code> （逻辑与运算）：当且仅当两个操作数均为真时，才返回 <code>true</code> 。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>||</code> （逻辑或运算）：当任意一个操作数为真时，返回 <code>true</code> 。"</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>!</code> （逻辑非运算符）：用于取反布尔值。 <code>!true</code> 即为 <code>false</code> 。"</font></font></p></li></ul><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">三目运算符</h4><p><br></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">" <code>?:</code> （条件运算符）：简化 <code>if-else</code> 语句的快捷方式。 <code>string message = (score &gt;= 50) ? "Pass" : "Fail"; "</code></font></font></p></li></ul><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">访谈观点：数据类型及其赋值操作</h4><p><br></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">字面量：支持多种赋值格式，面试中可能会被考察这一知识点。</font></font></font></p><ul><li><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">十六进制： <code>int hex = 0x2A; // 42 in decimal</code></p></li><li><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">二进制文件: <code>int bin = 0b00101010; // 42 in decimal</code></p></li></ul></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">类型转换与数据丢失：这是面试中的重点考察内容。</font></font></font></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">隐式类型转换（安全）：由较小数据类型自动转换为较大类型且不会造成数据丢失的情况，C#默认支持此类转换。 <code>int i = 100; double d = i; // d is 100.0</code> </font></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">显式转换（不安全）：将较大类型转换为较小类型时可能导致数据丢失。你必须使用强制转换 <code>(type)</code> 明确告知编译器你已知晓此风险。 <code>double d = 9.78; int i = (int)d; // i is 9. The decimal part is lost.</code> 面试官通常会要求你解释这种潜在数据丢失的概念。</font></font></font></p></li></ul></li></ul><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner"><strong>"第七讲： </strong><code><strong>if</strong></code><strong> 及其变体形式"</strong></h4><p><br></p><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">简单的 <code>if</code> 声明</h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">适用场景：当且仅当满足某一条件时执行特定代码块，否则不进行任何操作。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"运行机制：首先计算括号内的布尔表达式。若结果为真，则执行大括号内的代码块；若为假，则跳过该代码块。"</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例：</p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">int currentStock = 12;
+if (currentStock &lt; 10)
+{
+    Console.WriteLine("Warning: Stock is low. Time to re-order.");
+}
+</pre><p><br></p><h4 data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-inline-wrapper-theme-marker immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1">" <code>if-else</code> 声明"</font></font></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">适用场景：当条件判断为真时执行某段代码，为假时则执行另一段代码的情况。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">运行机制：当条件成立时，执行第一个代码块（if）；否则执行第二个代码块（else）。两者必居其一，总有一个代码块会被执行。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例：</p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">int userAge = 17;
+if (userAge &gt;= 18)
+{
+    Console.WriteLine("Access granted to the restricted area.");
+}
+else
+{
+    Console.WriteLine("Access denied. You must be 18 or older.");
+}
+</pre><p><br></p><h4 data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-inline-wrapper-theme-marker immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1">" <code>if-else if</code> 梯子"</font></font></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">使用场景：当需要依次检查多个相关条件时。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"运行机制：系统会从上至下依次判断条件。当遇到第一个满足的条件时，执行对应的代码块，并跳过之后所有的 else if 和 else 语句。最后的 else 语句是可选的，用于处理所有前置条件均不满足的情况。"</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例：</p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">double score = 85.5;
+if (score &gt;= 90)
+{
+    Console.WriteLine("Grade: A");
+}
+else if (score &gt;= 80)
+{
+    Console.WriteLine("Grade: B");
+}
+else if (score &gt;= 70)
+{
+    Console.WriteLine("Grade: C");
+}
+else
+{
+    Console.WriteLine("Grade: F");
+}
+</pre><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">嵌套的 <code>if</code> 语句</h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">适用场景：当某个条件的检查前提是另一个外部条件必须首先成立时。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">运行机制：仅当外层 if 语句的条件成立时，才会执行内层 if 语句的判断。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例：</p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">bool hasTicket = true;
+bool isVip = false;
+if (hasTicket)
+{
+    Console.WriteLine("Welcome! Please proceed.");
+    if (isVip)
+    {
+        Console.WriteLine("Please enjoy the VIP lounge.");
+    }
+}
+else
+{
+    Console.WriteLine("You need a ticket to enter.");
+}
+</pre><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">最佳实践：避免过度嵌套 <code>if</code> 语句（超过 2 至 3 层），否则会导致代码可读性大幅降低，难以理解。</font></font></font></p><p><br></p><h4 data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-inline-wrapper-theme-marker immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"第八讲: <code><strong>switch-case</strong> "</code></font></font></font></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">适用场景：当需要对单个变量进行多重条件判断（且条件均为特定常量值）时，使用 switch 语句比冗长的 if-else if 条件链更简洁清晰，可读性也更强。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"其工作原理如下：程序会将 switch()中的变量值依次与每个 case 的值进行比对。一旦发现匹配项，即执行对应的 case 代码块，直至遇到 break 语句为止，此时程序将跳出整个 switch 结构。若所有 case 均不匹配，则自动执行 default 部分的代码。"</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例：</p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">string userRole = "admin";
+switch (userRole.ToLower()) // Good practice to normalize string input
+{
+    case "admin":
+        Console.WriteLine("You have full access.");
+        break;
+    case "editor":
+        Console.WriteLine("You can create and edit content.");
+        break;
+    case "viewer":
+        Console.WriteLine("You can only view content.");
+        break;
+    default:
+        Console.WriteLine("Unknown role. Access denied.");
+        break;
+}
+</pre><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner"><strong>"第九讲： </strong><code><strong>while</strong></code><strong> 循环"</strong></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">适用场景：当需要根据条件进行循环且无法预先确定具体迭代次数时。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"运行机制：每次循环开始前都会先判断布尔条件。若条件为真，则执行循环体内的代码；该过程会不断重复，直至条件变为假。若初始条件即为假，则循环体内的代码不会被执行。"</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例：</p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-inline-wrapper-theme-marker immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">计数控制循环：</font></font></font></p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">int ticketsLeft = 5;
+while (ticketsLeft &gt; 0)
+{
+    Console.WriteLine($"Selling a ticket... {ticketsLeft} tickets remaining.");
+    ticketsLeft--; // This change is crucial to prevent an infinite loop
+}
+Console.WriteLine("All tickets sold!");
+</pre></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">哨兵控制循环（等待用户输入）：</font></font></font></p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">string command = "";
+while (command != "quit")
+{
+    Console.Write("Enter a command ('help', 'run', 'quit'): ");
+    command = Console.ReadLine();
+    // ... process the command ...
+}
+</pre></li></ul><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner"><strong>"第十讲： </strong><code><strong>do-while</strong></code><strong> 循环"</strong></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">适用场景：当您需要确保循环体至少执行一次的特殊情况下使用。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"运行机制：先执行循环体内的代码，随后判断布尔条件是否成立。若成立，则继续循环。"</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例（经典应用场景：输入验证）：</p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">int age;
+do
+{
+    Console.Write("Please enter your age (must be 18 or older): ");
+    // This code must run at least once to get the input
+    string input = Console.ReadLine();
+    age = int.Parse(input);
+    if (age &lt; 18)
+    {
+        Console.WriteLine("Invalid age. Please try again.");
+    }
+} while (age &lt; 18); // Check the condition after the first run
+Console.WriteLine("Age successfully validated.");
+</pre><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner"><strong>"第 11 讲： </strong><code><strong>for</strong></code><strong> 循环"</strong></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">适用场景：在循环开始前已知迭代次数的情况下使用。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">运行机制解析：for 循环（初始化；条件判断；迭代）</p><ol><li><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">" <code>initializer</code> 会在初始阶段运行一次。"</p></li><li><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">每次循环开始前都会检查 <code>condition</code> 。</p></li><li><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">若条件成立，则执行循环体。</p></li><li><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"每次迭代后， <code>iterator</code> 都会执行。"</p></li></ol><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">常见示例：</strong></p><ul><li><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">从 0 开始递增至 n-1（针对数组的情况）：</strong></p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">string[] shoppingList = { "Apples", "Bananas", "Carrots" };
+for (int i = 0; i &lt; shoppingList.Length; i++)
+{
+    Console.WriteLine($"Item {i + 1}: {shoppingList[i]}");
+}
+</pre></li><li><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"倒计时循环（火箭发射）："</strong></p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">for (int i = 10; i &gt; 0; i--)
+{
+    Console.WriteLine($"{i}...");
+}
+Console.WriteLine("Liftoff!");
+</pre></li><li><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">跳过特定数字的循环（偶数部分）：</strong></p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">for (int i = 2; i &lt;= 10; i += 2)
+{
+    Console.WriteLine(i);
+}
+</pre></li></ul><p><br></p><h4 data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"第十二讲： <code><strong>break</strong></code> 与 <code><strong>continue</strong> "</code></font></font></font></h4><p><br></p><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">使用场景：在循环体内部手动控制循环流程时。</font></font></font></p><ul><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">当需要立即跳出循环时使用，无论循环条件是否满足。例如，已找到目标项时即可使用。</font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1">用于跳过当前项并直接进入下一次循环的情况。例如，可用来忽略列表中的无效数据。</font></font></p></li></ul><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例：</strong></p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">// Find the first multiple of 7, but ignore numbers less than 20.
+for (int i = 1; i &lt;= 100; i++)
+{
+    if (i &lt; 20)
+    {
+        continue; // Skip this number and go to the next i
+    }
+    if (i % 7 == 0)
+    {
+        Console.WriteLine($"Found the first multiple of 7 greater than 20: {i}");
+        break; // Found it, exit the loop completely
+    }
+}
+</pre><p><br></p><h4 data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"第 13 讲：嵌套循环"</font></font></font></h4><p><br></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">适用场景：当您需要处理二维结构时，例如网格、乘法表或游戏棋盘等场景。</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"运行机制：每当外部循环进行一次迭代时，内部循环都会完整执行一遍所有步骤。"</p><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例（乘法口诀表）：</strong></p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">// Outer loop for the first number in the multiplication
+for (int i = 1; i &lt;= 5; i++)
+{
+    // Inner loop for the second number
+    for (int j = 1; j &lt;= 5; j++)
+    {
+        // Use Write to keep everything on the same line for this row
+        Console.Write($"{i * j}\t"); // \t adds a tab for spacing
+    }
+    // After the inner loop finishes, move to the next line for the next row
+    Console.WriteLine();
+}
+</pre><p><br></p><h4 data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-inline-wrapper-theme-marker immersive-translate-target-translation-inline-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"第 14 讲： <code><strong>goto</strong> "</code></font></font></font></h4><p><br></p><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"说明与警示： <code>goto</code> 语句可实现无条件跳转至 <code>label</code> 。尽管该语法属于编程语言的一部分，但在现代编程实践中强烈不建议使用。它会导致代码结构混乱（俗称“面条代码”），难以理解和维护。结构化控制流程（如 <code>if</code> 、 <code>switch</code> 及循环结构）才是更佳选择。面试时，考官会默认你知晓这一原则，并期待你明确反对使用 <code>goto</code> 。"</font></font></font></p><p><br></p><h4 data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner"><strong>第 15 讲：利用嵌套 </strong><code><strong>for</strong></code><strong> 循环实现图案打印</strong></h4><p><br></p><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">引言：此经典练习旨在考察你对嵌套循环及算法思维的理解与应用能力。</font></font></font></p><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例 1：直角三角形</strong></p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">int size = 5;
+for (int row = 1; row &lt;= size; row++)
+{
+    for (int col = 1; col &lt;= row; col++)
+    {
+        Console.Write("*");
+    }
+    Console.WriteLine();
+}
+</pre><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"运行机制：外层循环负责控制行数。内层循环的条件 <code>col &lt;= row</code> 是核心所在，它会根据当前行号打印相应数量的星号。"</font></font></font></p><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例 2：倒直角三角形</strong></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"C#"</p><pre class="prettyprint linenums">int size = 5;
+for (int row = size; row &gt;= 1; row--)
+{
+    for (int col = 1; col &lt;= row; col++)
+    {
+        Console.Write("*");
+    }
+    Console.WriteLine();
+}
+</pre><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"实现原理：逻辑顺序被反转。外层循环从 <code>size</code> 开始递减计数，内层循环依然输出与当前递减的 <code>row</code> 值对应的星号数量。"</font></font></font></p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">示例三：金字塔</p><p data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">这是一种更复杂的模式，需通过第三个循环控制间距。</p><p data-imt-p="1" data-imt_insert_failed_reason="same_text">C#</p><pre class="prettyprint linenums">int size = 5;
+for (int row = 1; row &lt;= size; row++)
+{
+    // Loop for leading spaces
+    for (int space = 1; space &lt;= size - row; space++)
+    {
+        Console.Write(" ");
+    }
+    // Loop for the stars
+    for (int star = 1; star &lt;= (2 * row) - 1; star++)
+    {
+        Console.Write("*");
+    }
+    Console.WriteLine();
+}
+</pre><p><strong data-imt-p="1" data-imt-translation-only="1" class="immersive-translate-target-translation-theme-marker immersive-translate-target-inner">"工作原理："</strong></p><ol><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">外层循环：控制编号 <code>row</code> 的数量。</font></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"空格循环：针对每个 <code>row</code> ，程序会输出 <code>size - row</code> 个空格。例如，第 1 行输出 4 个空格，第 5 行则输出 0 个空格，以此实现图案居中效果。"</font></font></font></p></li><li><p data-imt-p="1"><font class="notranslate immersive-translate-target-wrapper" lang="zh-CN"><br hidden=""><font class="notranslate immersive-translate-target-translation-theme-marker immersive-translate-target-translation-block-wrapper-theme-marker immersive-translate-target-translation-block-wrapper" data-immersive-translate-translation-element-mark="1"><font class="notranslate immersive-translate-target-inner immersive-translate-target-translation-theme-marker-inner" data-immersive-translate-translation-element-mark="1">"星形循环：打印 <code>(2 * row) - 1</code> 颗星。首行打印 1 颗，第二行 3 颗，第三行 5 颗，以此类推形成金字塔形状。"</font></font></font></p></li></ol></div>
+            </div>
+        </div>
+    
+
+</body><div id="immersive-translate-browser-popup" style="all: initial"><template shadowrootmode="open"><style>/** 基础色阶定义 **/
+:root,
+#mount[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  /* 中性灰阶（light） */
+  --c-00: #000000;
+  --c-22: #222222;
+  --c-33: #333333;
+  --c-66: #666666;
+  --c-83: #838383;
+  --c-99: #999999;
+  --c-c7: #c7c7c7;
+  --c-cc: #cccccc;
+  --c-e6: #e6e6e6;
+  --c-f5: #f5f5f5;
+  --c-ff: #ffffff;
+  /* 品牌主色阶（light） */
+  --p-main: #ea4c89;
+  --p-hover: #ec5e95;
+  --p-active: #e34a85;
+  --p-special: #ee71a2;
+  --p-disabled: #f4a5c4;
+  --p-text-disabled: #f9c9dc;
+  --p-weak: #fdedf3;
+  /* Surface 层级（light，TC 填充-1） */
+  --s-1: #f3f5f6;
+  --s-1-hover: #f6f8f9;
+  --s-1-active: #edf1f2;
+  --s-1-weak: #fafbfb;
+  /* 输入/边框（light，TC 填充-2） */
+  --input-bg-base: #fafbfc;
+  --input-border: #ecf0f7;
+  --input-border-strong: #e0e0e6;
+  --input-bg-strong: #fafdff;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  /* 中性灰阶（dark） */
+  --c-00: #ffffff;
+  --c-22: #dbdbdb;
+  --c-33: #dbdbdb;
+  --c-66: #b3b3b3;
+  --c-83: #838383;
+  --c-99: #707070;
+  --c-c7: #666666;
+  --c-cc: #5c5c5c;
+  --c-e6: #3b3b3b;
+  --c-f5: #262626;
+  --c-ff: #222222;
+  /* 品牌主色阶（dark） */
+  --p-main: #e23c7c;
+  --p-hover: #ea4c89;
+  --p-active: #d5467d;
+  --p-special: #a93a65;
+  --p-disabled: #7e2f4d;
+  --p-text-disabled: #522335;
+  --p-weak: #26171d;
+  /* Surface 层级（dark，TC 填充-1） */
+  --s-1: #2d2e2f;
+  --s-1-hover: #323434;
+  --s-1-active: #202121;
+  --s-1-weak: #262627;
+  /* 输入/边框（dark，TC 填充-2） */
+  --input-bg-base: #2b2d30;
+  --input-border: #3e434b;
+  --input-border-strong: #43474b;
+  --input-bg-strong: #1f2123;
+}
+
+:root,
+#mount [data-theme] {
+  /* 业务/通用变量引用色阶（全局可见，含 Shadow DOM） */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+}
+
+#mount {
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  /* PC/H5 兼容的字号、间距、圆角、阴影变量 */
+  --f-12: 12px;
+  --f-14: 14px;
+  --f-15: 15px;
+  --f-16: 16px;
+  --f-18: 18px;
+  --f-20: 20px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --control-height-lg: 44px;
+  --width-28: 28px;
+  --width-24: 24px;
+  --width-20: 20px;
+  --width-18: 18px;
+  --width-16: 16px;
+  --width-label-md: 56px;
+  --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.12);
+
+  /* 常规变量 */
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --border-width: 2px;
+  --outline-width: 3px;
+  --spacing: 16px;
+  --typography-spacing-vertical: 24px;
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
+  --form-element-spacing-vertical: 12px;
+  --form-element-spacing-horizontal: 16px;
+  --nav-element-spacing-vertical: 16px;
+  --nav-element-spacing-horizontal: 8px;
+  --nav-link-spacing-vertical: 8px;
+  --nav-link-spacing-horizontal: 8px;
+  --form-label-font-weight: var(--font-weight);
+  --transition: 0.2s ease-in-out;
+  --modal-overlay-backdrop-filter: blur(4px);
+  --switch-color: var(--primary-inverse);
+  --switch-checked-background-color: var(--primary);
+  --icon-xia: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkZyYW1lIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTguMDAyOTEgOS42Nzk4M0wzLjgzMzM5IDUuNTEyMjFMMy4wMjUzOSA2LjMxOTgzTDguMDAzMjkgMTEuMjk1MUwxMi45NzYyIDYuMzE5ODNMMTIuMTY3OSA1LjUxMjIxTDguMDAyOTEgOS42Nzk4M1oiIGZpbGw9IiM4MzgzODMiLz4KPC9nPgo8L3N2Zz4K");
+  /* 兼容旧变量：主色直接引用品牌主色阶 */
+  --primary: var(--p-main);
+  --primary-hover: var(--p-hover);
+  --primary-inverse: #fff;
+  /* Modal 业务变量引用色阶 */
+  --modal-background: var(--s-1);
+  --modal-border: var(--input-border);
+  --modal-text: var(--c-22);
+  --modal-text-secondary: var(--c-66);
+  --modal-error: var(--p-main);
+  --modal-required: #f53f3f;
+  --modal-success: #68cd52;
+  --modal-button-background: var(--p-main);
+  --modal-button-text: var(--c-ff);
+  --modal-input-background: var(--input-bg-base);
+  --modal-check-color: var(--p-main);
+  --background-color: var(--c-ff);
+  --background-light-green: var(--s-1-weak, #f5f7f9);
+  --text-black-2: var(--c-22);
+  --text-gray-2: var(--c-22);
+  --text-gray-6: var(--c-66);
+  --text-gray-9: var(--c-99);
+  --text-gray-c2: var(--c-c7);
+  --switch-background-color: var(--c-c7, hsl(205deg, 16%, 77%));
+  --float-ball-more-button-border-color: var(--c-f5, #f6f6f6);
+  --float-ball-more-button-background-color: var(--c-ff);
+  --float-ball-more-button-hover-color: var(--p-weak);
+  --float-ball-more-button-svg-color: #6c6f73;
+  --service-bg-hover: var(--s-1-hover, #f7faff);
+  --service-bg: var(--s-1-weak, #fafbfb);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+@media (max-width: 480px) {
+  :root,
+  #mount {
+    --f-12: 10px;
+    --f-14: 12px;
+    --f-15: 13px;
+    --f-16: 14px;
+    --f-18: 16px;
+    --f-20: 18px;
+    --space-4: 4px;
+    --space-6: 4px;
+    --space-8: 6px;
+    --space-12: 8px;
+    --space-16: 12px;
+    --space-18: 14px;
+    --space-24: 18px;
+    --radius-8: 6px;
+    --radius-12: 10px;
+    --radius-16: 12px;
+    --control-height-lg: 38px;
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --width-28: 24px;
+    --width-24: 20px;
+    --width-20: 16px;
+    --width-18: 14px;
+    --width-16: 12px;
+    --width-label-md: 52px;
+  }
+}
+
+#mount * {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(#mount) a,
+:where(#mount) [role="link"] {
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color);
+  color: var(--color);
+  -webkit-text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
+  transition: background-color var(--transition), color var(--transition),
+    box-shadow var(--transition), -webkit-text-decoration var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), color var(--transition),
+    text-decoration var(--transition), box-shadow var(--transition),
+    -webkit-text-decoration var(--transition);
+}
+:where(#mount) a:is([aria-current], :hover, :active, :focus),
+:where(#mount) [role="link"]:is([aria-current], :hover, :active, :focus) {
+  --color: var(--primary-hover);
+  --text-decoration: underline;
+}
+
+:where(#mount) label {
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) button {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.3;
+  min-height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  border: none;
+  background-color: var(--primary, #ea4c89);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:where(#mount) button:hover {
+  background-color: var(--primary-hover, #f082ac);
+}
+
+:where(#mount) button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(#mount) select,
+:where(#mount) input,
+:where(#mount) textarea {
+  font-family: inherit;
+  color: var(--text-gray-2, #222222);
+}
+
+:where(#mount) select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+  color: var(--text-gray-2, inherit);
+  font-size: 13px;
+  line-height: 1.3;
+  outline: none;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--popup-item-background-color, transparent);
+  background-image: var(--icon-xia, none);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  cursor: pointer;
+}
+
+:where(#mount) input[type="checkbox"] {
+  accent-color: var(--primary, #ea4c89);
+}
+
+[type="checkbox"],
+[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -0.125em;
+  margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
+  border-width: var(--border-width);
+  font-size: inherit;
+  vertical-align: middle;
+  cursor: pointer;
+}
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
+  display: none;
+}
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
+  display: inline-block;
+  margin-right: 0.375em;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+[type="checkbox"]:indeterminate {
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  background-image: var(--icon-minus);
+  background-position: center;
+  background-size: 0.75em auto;
+  background-repeat: no-repeat;
+}
+
+[type="radio"] {
+  border-radius: 50%;
+}
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
+  --background-color: var(--primary-inverse);
+  border-width: 0.35em;
+  background-image: none;
+}
+
+:where(#mount) [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
+  width: 2.25em;
+  height: 1.25em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 1.25em;
+  background-color: var(--background-color);
+  line-height: 1.25em;
+}
+:where(#mount) [type="checkbox"][role="switch"]:focus {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  --background-color: var(--switch-checked-background-color);
+  --border-color: var(--switch-checked-background-color);
+}
+:where(#mount) [type="checkbox"][role="switch"]:before {
+  display: block;
+  width: calc(1.25em - (var(--border-width) * 2));
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color);
+  content: "";
+  transition: margin 0.1s ease-in-out;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked {
+  background-image: none;
+}
+:where(#mount) [type="checkbox"][role="switch"]:checked::before {
+  margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+
+:where(#mount) [type="checkbox"][aria-invalid="false"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="false"],
+:where(#mount) [type="radio"][aria-invalid="false"],
+:where(#mount) [type="radio"]:checked[aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="false"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="false"] {
+  --border-color: var(--form-element-valid-border-color);
+}
+:where(#mount) [type="checkbox"][aria-invalid="true"],
+:where(#mount) [type="checkbox"]:checked[aria-invalid="true"],
+:where(#mount) [type="radio"][aria-invalid="true"],
+:where(#mount) [type="radio"]:checked[aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"][aria-invalid="true"],
+:where(#mount) [type="checkbox"][role="switch"]:checked[aria-invalid="true"] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+
+.text-black {
+  color: var(--text-black-2);
+}
+
+.text-gray-2 {
+  color: var(--text-gray-2);
+}
+
+.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+.text-gray-9 {
+  color: var(--text-gray-9);
+}
+
+.text-gray-c2 {
+  color: var(--text-gray-c2);
+}
+
+.pt-4 {
+  padding-top: 16px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.pl-5 {
+  padding-left: 48px;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-4 {
+  padding-left: 24px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.pb-4 {
+  padding-bottom: 16px;
+}
+
+.pb-5 {
+  padding-bottom: 20px;
+}
+
+.pr-5 {
+  padding-right: 48px;
+}
+
+.text-sm {
+  font-size: 13px;
+}
+
+.text-base {
+  font-size: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 12px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.py-2-5 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 12px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mt-5 {
+  margin-top: 20px;
+}
+
+.mt-6 {
+  margin-top: 24px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.ml-4 {
+  margin-left: 24px;
+}
+
+.ml-3 {
+  margin-left: 16px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+.ml-1 {
+  margin-left: 4px;
+}
+
+.mr-1 {
+  margin-right: 4px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-6 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.pt-6 {
+  padding-top: 20px;
+}
+
+.py-3 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.left-auto {
+  left: auto !important;
+}
+
+.max-h-28 {
+  max-height: 112px;
+}
+
+.max-h-30 {
+  max-height: 120px;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-4 {
+  flex: 4;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.max-content {
+  width: max-content;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.my-5 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.my-4 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.my-3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.pt-3 {
+  padding-top: 12px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.pt-2 {
+  padding-top: 8px;
+}
+
+.px-2 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 4px;
+}
+
+.px-1 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.pb-2 {
+  padding-bottom: 8px;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.close {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.padding-two-column {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.muted {
+  color: #999;
+}
+
+.text-label {
+  color: #666;
+}
+
+.display-none {
+  display: none;
+}
+
+/* dark use #18232c */
+@media (prefers-color-scheme: dark) {
+  .text-label {
+    color: #9ca3af;
+  }
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-none:is([aria-current], :hover, :active, :focus),
+[role="link"]:is([aria-current], :hover, :active, :focus) {
+  --text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.max-w-20 {
+  max-width: 180px;
+  white-space: nowrap;
+}
+
+[data-theme="light"],
+#mount:not([data-theme="dark"]) {
+  --popup-footer-background-color: #e8eaeb;
+  --popup-content-background-color: #ffffff;
+  --popup-item-background-color: #f3f5f6;
+  --popup-item-hover-background-color: #eaeced;
+  --popup-trial-pro-background-color: #f9fbfc;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(75, 76, 77, 0.2);
+  --service-select-border-color: #fafafa;
+  --service-select-selected-background-color: #f3f5f6;
+  --download-app-background: #f3f5f6;
+}
+
+[data-theme="dark"] {
+  --popup-footer-background-color: #0d0d0d;
+  --popup-content-background-color: #191919;
+  --popup-item-background-color: #272727;
+  --popup-item-hover-background-color: #333333;
+  --popup-trial-pro-background-color: #222222;
+  --service-select-content-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.9);
+  --service-select-border-color: #2c2c2c;
+  --service-select-selected-background-color: #333333;
+  --download-app-background: #333;
+}
+
+#mount {
+  min-width: 268px;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  min-width: 268px;
+  border-radius: 10px;
+}
+
+.popup-container {
+  font-size: 16px;
+  --font-size: 16px;
+  color: #666;
+  background-color: var(--popup-footer-background-color);
+  width: 316px;
+  min-width: 316px;
+}
+
+.popup-content {
+  background-color: var(--popup-content-background-color);
+  border-radius: 0px 0px 12px 12px;
+  padding: 16px 20px;
+}
+
+.immersive-translate-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  touch-action: none;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 10px;
+  border: 1px solid var(--muted-border-color);
+}
+
+.main-button {
+  font-size: 15px;
+  vertical-align: middle;
+  border-radius: 12px;
+  padding: unset;
+  height: 44px;
+  line-height: 44px;
+}
+
+select.language-select,
+select.translate-service,
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  margin-bottom: 0px;
+  max-width: unset;
+  flex: 1;
+  overflow: hidden;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  padding-right: 30px;
+  padding-left: 0px;
+  background-position: center right 12px;
+  background-size: 16px auto;
+  background-image: var(--icon-xia);
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+  background-color: transparent;
+  box-shadow: unset !important;
+  cursor: pointer;
+}
+
+select.more {
+  background-position: center right;
+  padding-right: 20px;
+}
+
+select.translate-service {
+  color: var(--text-black-2);
+}
+
+.min-select-container.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.popup-footer {
+  background-color: var(--popup-footer-background-color);
+  height: 40px;
+}
+
+.language-select-container {
+  position: relative;
+  width: 100%;
+  background-color: var(--popup-item-background-color);
+  height: 55px;
+  border-radius: 12px;
+}
+
+select.language-select {
+  color: var(--text-black-2);
+  font-size: 14px;
+  padding: 8px 24px 24px 16px;
+  position: absolute;
+  border-radius: 12px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.language-select-container label {
+  position: absolute;
+  bottom: 10px;
+  left: 16px;
+  font-size: 12px;
+  color: var(--text-gray-9);
+  line-height: 12px;
+  margin: 0;
+}
+
+.translation-service-container {
+  background-color: var(--popup-item-background-color);
+  border-radius: 12px;
+}
+
+.min-select-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  background-color: var(--popup-item-background-color);
+  padding-left: 16px;
+}
+
+.min-select-container:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.min-select-container:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.min-select-container:only-child {
+  border-radius: 10px;
+}
+
+.translate-mode {
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background-color: var(--popup-item-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.translate-mode svg {
+  fill: var(--text-gray-2);
+}
+
+.widgets-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  gap: 9px;
+}
+
+/* 当只有两个小组件时的样式优化 */
+.widgets-container.widgets-two-items {
+  gap: 16px;
+}
+
+.widgets-container.widgets-two-items .widget-item {
+  flex: 0 1 auto;
+  min-width: 93px;
+  max-width: 120px;
+}
+
+.widget-item {
+  display: flex;
+  max-width: 93px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--popup-item-background-color);
+  font-size: 12px;
+  min-height: 44px;
+  height: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.widget-icon-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-gray-2);
+}
+
+.widgets-container svg {
+  fill: var(--text-gray-2);
+  color: var(--text-gray-2);
+}
+
+.share-button-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 3px 0 8px;
+}
+
+.share-button-container svg {
+  fill: var(--text-gray-9);
+}
+
+.min-select-container:hover,
+.language-select-container:hover,
+.widget-item:hover,
+.translate-mode:hover {
+  background-color: var(--popup-item-hover-background-color);
+}
+
+.main-button:hover {
+  background-color: #f5508f;
+}
+
+.share-button-container:hover {
+  background-color: var(--popup-item-background-color);
+  border-radius: 6px;
+}
+
+.error-boundary {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  display: flex;
+  padding: 12px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  word-break: break-all;
+  margin: 12px;
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.upgrade-pro {
+  border-radius: 11px;
+  background: linear-gradient(57deg, #272727 19.8%, #696969 82.2%);
+  padding: 2px 8px;
+  transform: scale(0.85);
+}
+
+.upgrade-pro span {
+  background: linear-gradient(180deg, #ffeab4 17.65%, #f8c235 85.29%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.upgrade-pro svg {
+  margin-top: -2px;
+}
+
+.upgrade-pro:hover {
+  background: linear-gradient(57deg, #3d3d3d 19.8%, #949494 82.2%);
+}
+
+.border-bottom-radius-0 {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.trial-pro-container {
+  border-radius: 0px 0px 12px 12px;
+  background: var(--popup-trial-pro-background-color);
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 16px;
+  padding-right: 12px;
+  font-size: 12px;
+}
+
+.trial-pro-container label {
+  line-height: 13px;
+  color: var(--text-black-2);
+}
+
+.trial-pro-container img {
+  margin-left: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act {
+  height: 25px;
+  display: flex;
+  padding: 0 4px;
+  align-items: center;
+  border-radius: 15px;
+  background: linear-gradient(
+    90deg,
+    #cefbfa 11.33%,
+    #d7f56f 63.75%,
+    #fccd5e 100%
+  );
+  transform: scale(0.9);
+  box-shadow: 0px 1.8px 3.6px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.upgrade-pro-discount-act span {
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 4px;
+  color: #222222;
+}
+
+.upgrade-pro-discount-act:hover {
+  text-decoration: unset;
+  background: linear-gradient(
+    90deg,
+    #e2fffe 11.33%,
+    #e6ff91 63.75%,
+    #ffdf93 100%
+  );
+}
+
+.custom-select-container {
+  width: 200px;
+  position: relative;
+  flex: 1;
+}
+
+#translation-service-select {
+  padding-right: 12px;
+  padding-left: 6px;
+}
+
+.custom-select-content {
+  border-radius: 12px;
+  background: var(--popup-content-background-color);
+  box-shadow: var(--service-select-content-shadow);
+  border: 1px solid var(--service-select-border-color);
+  padding: 4px 5px;
+  position: absolute;
+  left: -10px;
+  right: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.custom-select-item.default {
+  width: 100%;
+  padding: 0;
+}
+
+.custom-select-item {
+  font-size: 13px;
+  padding: 5px 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-black-2);
+  width: auto;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+
+.custom-select-item-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .custom-select-item-img {
+    margin-right: 6px;
+  }
+}
+
+.custom-select-content .custom-select-item.selected,
+.custom-select-content .custom-select-item:hover {
+  background: var(--service-select-selected-background-color);
+}
+
+.custom-select-item > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select-item-pro {
+  font-size: 12px;
+  margin-left: 6px;
+  display: flex;
+}
+
+.custom-select-item-pro img {
+  margin: 0 3px;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.custom-select-group-header {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-gray-9);
+  padding: 6px 8px 4px;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.more-container {
+  position: relative;
+}
+
+.new-menu-indicator {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ef3434;
+  border-radius: 50%;
+  right: 18px;
+  top: 4px;
+}
+
+.download-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--download-app-background);
+  padding: 4px 8px;
+  color: var(--text-gray-6);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Popup 动画效果 */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+}
+
+.popup-generic-content {
+  animation: popup-fade-in 0.2s ease-out;
+}
+
+.popup-generic-content.hiding {
+  animation: popup-fade-out 0.15s ease-in;
+}
+
+select.min-select {
+  --form-element-spacing-horizontal: 0;
+  max-width: 128px;
+  overflow: hidden;
+  color: var(--primary);
+  font-size: 13px;
+  border: none;
+  padding: 0;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  color: var(--color);
+}
+select.min-select-secondary {
+  color: var(--color);
+}
+select.min-select:focus {
+  outline: none;
+  border: none;
+  --box-shadow: none;
+}
+
+select.min-select-left {
+  padding-right: 0px;
+  /* padding-left: 24px; */
+  /* background-position: center left 0; */
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+select.transform-padding-left {
+  padding-left: 12px;
+  transform: translateX(-12px);
+  background-position: center right 0px;
+}
+
+select.text-gray-6 {
+  color: var(--text-gray-6);
+}
+
+/* dark use black, for windows */
+@media (prefers-color-scheme: dark) {
+  select.language-select option,
+  select.translate-service option,
+  select.min-select option {
+    background-color: #666666;
+  }
+}
+
+select.min-select-no-arrow {
+  background-image: none;
+  padding-right: 0;
+}
+
+
+
+.activity-tips {
+  border-radius: 8px;
+  padding: 0px 8px;
+  min-height: 28px;
+  background: linear-gradient(83deg, #FACCDE -0.87%, #FCE7EF 43.13%, #FBD6E4 72.08%, #FFB3D1 96.34%);  gap: 2px;
+  color: #333;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.activity-tips-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.countdown-container {
+  min-width: 50px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.activity-tips-text {
+  font-weight: 600;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html {
+  font-size: 17px;
+}
+
+@media print {
+  .imt-fb-container {
+    display: none !important;
+  }
+}
+
+#mount {
+  position: absolute;
+  display: none;
+  min-width: 250px;
+  height: auto;
+  --font-size: 17px;
+  font-size: 17px;
+}
+
+/* float-ball */
+.imt-fb-container {
+  position: fixed;
+  padding: 0;
+  top: 335px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  direction: ltr;
+  background-color: transparent !important;
+}
+
+.imt-fb-container:hover .imt-manga-button {
+  opacity: 1;
+}
+
+.imt-fb-container.left {
+  align-items: flex-start;
+  left: 0;
+}
+
+.imt-fb-container.right {
+  align-items: flex-end;
+  right: 0;
+}
+
+.imt-fb-btn {
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  height: 36px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-btn.left {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  padding-left: 3px;
+}
+
+.imt-fb-btn.right {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  padding-right: 3px;
+}
+
+.imt-fb-btn.mini.left {
+  transform: translateX(-22px);
+}
+
+.imt-fb-btn.mini.right {
+  transform: translateX(22px);
+}
+
+.imt-fb-btn.mini.active {
+  transform: translateX(0);
+}
+
+.imt-fb-btn div {
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.imt-fb-btn .imt-fb-hit-area {
+  position: absolute;
+  top: 0;
+  height: 36px;
+  bottom: -6px;
+  left: -6px;
+  right: -6px;
+  background: transparent;
+}
+
+.imt-fb-btn.mini.right .imt-fb-hit-area {
+  left: -10px;
+}
+
+.imt-fb-btn.mini.left .imt-fb-hit-area {
+  right: -10px;
+}
+
+.imt-fb-btn.left div {
+  border-top-right-radius: 34px;
+  border-bottom-right-radius: 34px;
+  justify-content: flex-end;
+}
+
+.imt-fb-btn.right div {
+  border-top-left-radius: 34px;
+  border-bottom-left-radius: 34px;
+}
+
+.imt-fb-logo-img {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+.imt-fb-logo-img-big-bg {
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  background-color: #ed6d8f;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.imt-float-ball-translated {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 4px;
+  right: 4px;
+}
+
+.btn-animate {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform ease-out 250ms;
+  transition: -webkit-transform ease-out 250ms;
+  transition: transform ease-out 250ms;
+  transition: transform ease-out 250ms, -webkit-transform ease-out 250ms;
+}
+
+.imt-fb-setting-btn {
+  margin-right: 18px;
+  width: 28px;
+  height: 28px;
+}
+
+.immersive-translate-popup-wrapper {
+  background: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 2px 10px 24px 0px #0e121614;
+  border: none;
+}
+
+.popup-container {
+  border-radius: 20px;
+}
+
+.popup-content {
+  border-radius: 20px 20px 12px 12px;
+}
+.popup-footer {
+  border-radius: 20px;
+}
+
+.imt-fb-close-button {
+  cursor: pointer;
+  position: absolute;
+  left: -10px;
+  bottom: -20px;
+}
+.imt-fb-container.left .imt-fb-close-button {
+  left: auto;
+  right: -10px;
+}
+
+.imt-fb-close-content {
+  padding: 22px;
+  width: 320px;
+  pointer-events: all;
+}
+
+.imt-fb-close-title {
+  font-weight: 500;
+  color: var(--text-black-2);
+}
+
+.imt-fb-close-radio-content {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+}
+
+.imt-fb-radio-sel,
+.imt-fb-radio-nor {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.imt-fb-radio-sel {
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-radio-sel div {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--primary);
+}
+
+.imt-fb-radio-nor {
+  border: 2px solid var(--input-border-strong);
+}
+
+.imt-fb-primary-btn {
+  background-color: var(--primary);
+  width: 72px;
+  height: 32px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-default-btn {
+  border: 1px solid var(--primary);
+  width: 72px;
+  height: 32px;
+  border-radius: 8px;
+  color: var(--primary);
+  line-height: 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.imt-fb-guide-container {
+  width: 312px;
+  transform: translateY(-45%);
+}
+
+.imt-fb-guide-bg {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 90%;
+}
+
+.imt-fb-guide-bg.left {
+  transform: scaleX(-1);
+}
+
+.imt-fb-guide-content {
+  margin: 16px -30px 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imt-fb-guide-content.left {
+  margin: 16px 21px 60px 32px;
+}
+
+.imt-fb-guide-img {
+  width: 220px;
+  height: 112px;
+}
+
+.imt-fb-guide-message {
+  font-size: 14px;
+  line-height: 28px;
+  color: #333333;
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.imt-manga-guide-message {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.imt-fb-guide-button {
+  margin-top: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 20px;
+  width: unset;
+}
+
+.imt-fb-side {
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: all;
+  position: relative;
+}
+
+.imt-fb-side {
+  margin: 10px 0;
+}
+
+.imt-fb-side::before,
+.imt-manga-button::before,
+.imt-fb-round-button::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.imt-fb-side:hover::before,
+.imt-manga-button:hover::before,
+.imt-fb-round-button:hover::before {
+  background-color: var(--float-ball-more-button-hover-color);
+}
+
+.imt-fb-new-badge {
+  width: 26px;
+  height: 14px;
+  padding: 3px;
+  background-color: #f53f3f;
+  border-radius: 4px;
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imt-fb-side * {
+  pointer-events: all;
+}
+
+.imt-fb-pin-icon {
+  position: absolute;
+  left: -16px;
+  bottom: -12px;
+  opacity: 0;
+  cursor: pointer;
+}
+.imt-fb-container.left .imt-fb-pin-icon {
+  left: auto;
+  right: -16px;
+}
+
+.imt-fb-side:hover .imt-fb-pin-icon {
+  opacity: 1;
+}
+
+.imt-fb-more-button {
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+/* Sheet.css */
+.immersive-translate-sheet {
+  position: fixed;
+  transform: translateY(100%);
+  /* Start off screen */
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease-out;
+  /* Smooth slide transition */
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  /* Ensure it's above other content */
+  bottom: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  overflow: hidden;
+}
+
+.immersive-translate-sheet.visible {
+  transform: translateY(0);
+}
+
+.immersive-translate-sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.immersive-translate-sheet-backdrop.visible {
+  opacity: 1;
+}
+
+.popup-container-sheet {
+  max-width: 100vw;
+  width: 100vw;
+}
+
+.imt-no-events svg * {
+  pointer-events: none !important;
+}
+
+.imt-manga-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
+  margin: 0 0 10px 0;
+  background-color: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  right: 8px;
+}
+
+.imt-manga-feedback {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.imt-fb-round-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--float-ball-more-button-background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.imt-fb-round-button > svg {
+  z-index: 1;
+}
+
+.imt-fb-upgrade-button {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.imt-manga-translated {
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.imt-float-ball-loading {
+  animation: imt-loading-animation 0.6s infinite linear !important;
+}
+
+.imt-manga-guide-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.imt-manga-guide-content {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: 0 40px 0;
+}
+
+.img-manga-guide-button {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.img-manga-close {
+  position: absolute;
+  bottom: -200px;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+.imt-fb-container.dragging .imt-manga-button,
+.imt-fb-container.dragging .btn-animate:not(.imt-fb-btn) {
+  display: none !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: move !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn div {
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left,
+.imt-fb-container.dragging .imt-fb-btn.right {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-btn.left div,
+.imt-fb-container.dragging .imt-fb-btn.right div {
+  border-radius: 50% !important;
+}
+
+.imt-fb-container.dragging .imt-fb-logo-img {
+  margin: 0 !important;
+}
+
+.imt-fb-container.dragging .imt-float-ball-translated {
+  right: 2px !important;
+  bottom: 2px !important;
+}
+
+@-webkit-keyframes imt-loading-animation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes imt-loading-animation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.imt-fb-icon {
+  color: #666666;
+}
+
+[data-theme="dark"] .imt-fb-icon {
+  color: #b3b3b3;
+}
+
+[data-theme="light"] .imt-fb-icon {
+  color: #666666;
+}
+
+/* 悬浮球设置弹窗样式 */
+.imt-fb-setting-wrapper {
+  border-radius: 12px;
+  box-shadow: 2px 10px 24px 0px rgba(0, 0, 0, 0.06);
+}
+
+.imt-fb-setting-content {
+  padding: 16px;
+  width: 350px;
+  pointer-events: all;
+}
+
+.imt-fb-setting-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-black-2);
+}
+
+.imt-fb-setting-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.imt-fb-preview-wrapper {
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item {
+  width: 99px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+.imt-fb-preview-item.light {
+  background-color: #f3f5f6;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.imt-fb-preview-item.dark {
+  background-color: #444;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.imt-fb-preview-ball {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.imt-fb-preview-ball.light {
+  background-color: #fff;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.dark {
+  background-color: #111;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.imt-fb-preview-ball.full {
+  width: 41px;
+  justify-content: center;
+}
+
+.imt-fb-preview-ball.mini {
+  width: 41px;
+  justify-content: center;
+  transform: translateX(21px);
+}
+
+.imt-fb-preview-ball .imt-fb-preview-logo {
+  flex-shrink: 0;
+}
+
+/* 选项区域 */
+.imt-fb-setting-options {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.imt-fb-setting-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.imt-fb-setting-option-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: var(--text-black-2);
+}
+
+/* Toggle 开关样式 */
+.imt-fb-toggle {
+  width: 30px;
+  height: 18px;
+  background-color: var(--switch-background-color);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.imt-fb-toggle.checked {
+  background-color: var(--primary);
+}
+
+.imt-fb-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.imt-fb-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background-color: var(--switch-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+}
+
+.imt-fb-toggle.checked .imt-fb-toggle-thumb {
+  transform: translateX(12px);
+}
+
+.imt-fb-setting-hide-options {
+  background-color: var(--background-light-green);
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.imt-fb-setting-save-btn {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 45px;
+  height: 45px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.imt-fb-setting-save-btn:hover {
+  opacity: 0.9;
+}
+
+.imt-fb-setting-save-btn:active {
+  opacity: 0.8;
+}
+</style><div id="mount" style="display: block;"><div hidden="" id="immersive-translate-popup-overlay" class="immersive-translate-popup-overlay" style="z-index: 2147483647; background-color: rgba(0, 0, 0, 0.5);"><div class="immersive-translate-popup-wrapper" style="position: fixed; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);"></div></div></div></template></div></html>

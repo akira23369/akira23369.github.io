@@ -304,7 +304,7 @@
   "promptUsageTimestamps": {},
   "defaultConversationNoteName": "{$topic}@{$date}_{$time}",
   "inlineEditCommands": [],
-  "lastDismissedVersion": "2.9.4",
+  "lastDismissedVersion": "3.2.4",
   "passMarkdownImages": true,
   "enableCustomPromptTemplating": true,
   "includeActiveNoteAsContext": true,
