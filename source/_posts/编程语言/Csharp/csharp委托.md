@@ -176,5 +176,5 @@ class Program
 # {% post_link csharp事件 %}
 # {% post_link csharp的Lambda表达式 %}
 
-# {% post_link 泛型委托和泛型接口の协变和逆变 %}
+# {% post_link 167.协变与逆变 %}
 
