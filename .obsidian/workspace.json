@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/算法/Acwing/基础/基础算法/1.1快速排序.md",
+                "file": "source/_posts/编程语言/Csharp/01基础理论/002.CLI公共语言基础结构.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1.1快速排序"
+              "title": "002.CLI公共语言基础结构"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/编程语言/Csharp/25Linq/199.GroupBy(按条件分组).md",
+                "file": "source/_posts/编程语言/Csharp/19委托与事件/124.委托(Delegates).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "199.GroupBy(按条件分组)"
+              "title": "124.委托(Delegates)"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/244.BinaryWriter和BinaryReader.md",
+                "file": "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/247.XML序列化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "244.BinaryWriter和BinaryReader"
+              "title": "247.XML序列化"
             }
           }
         ],
@@ -107,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 409.5
+    "width": 474.5
   },
   "right": {
     "id": "cdc41ef16c706e04",
@@ -194,7 +194,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 344.5
+    "width": 323.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -211,51 +212,51 @@
   },
   "active": "1e8b8dfa0ac4d4f3",
   "lastOpenFiles": [
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/243.StreamWriter和StreamReader.md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/242.Stream类以及流的概念.md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/241.FileStream类.md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/240.DriveInfo类.md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/239.DirectoryInfo类.md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/238.Directory类.md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/237.FileInfo类.md",
+    "source/_posts/数据/数据持久化/XML/10.IXmlSerializable接口.md",
+    "source/_posts/数据/数据持久化/XML/9.CSharp中XML反序列化.md",
+    "source/_posts/数据/数据持久化/XML/8.CSharp中XML序列化.md",
+    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/247.XML序列化.md",
+    "source/_posts/数据/数据持久化/XML/6.CSharp存储XML文件.md",
+    "source/_posts/数据/数据持久化/XML/2.XML基础语法.md",
+    "source/_posts/数据/数据持久化/XML/3.XML属性.md",
+    "source/_posts/数据/数据持久化/XML/4.XML文件存放的位置.md",
+    "source/_posts/数据/数据持久化/XML/7.XML总结.md",
+    "source/_posts/数据/数据持久化/XML/11.让Dictionary支持序列化和反序列化.md",
+    "source/_posts/数据/数据持久化/XML/12.XML数据管理类.md",
+    "source/_posts/数据/数据持久化/XML/4.XML文件存放的位置/file-20250306111106544.png",
+    "source/_posts/数据/数据持久化/XML/4.XML文件存放的位置/file-20250306111044803.png",
+    "source/_posts/数据/数据持久化/XML/4.XML文件存放的位置/file-20250306111016341.png",
+    "source/_posts/数据/数据持久化/XML/4.XML文件存放的位置/file-20250306111010632.png",
+    "source/_posts/数据/数据持久化/XML/5.CSharp读取XML文件.md",
+    "source/_posts/数据/数据持久化/XML/1.XML基础知识概述.md",
+    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/246.Json序列化.md",
+    "source/_posts/编程语言/Csharp/反射与特性/反射系列笔记（一）：前置基础与核心概念.md",
+    "source/_posts/数据/数据持久化/Json/8.Json实践小项目.md",
+    "source/_posts/数据/数据持久化/Json/6.Newtonsoft.Json.md",
+    "source/_posts/数据/数据持久化/Json/5.LitJson.md",
+    "source/_posts/数据/数据持久化/Json/4.JsonUtility.md",
+    "source/_posts/数据/数据持久化/Json/7.各Json库对比.md",
+    "source/_posts/数据/数据持久化/Json/3.Excel转Json.md",
+    "source/_posts/数据/数据持久化/Json/2.Json基本语法.md",
+    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/245.从底层IO到序列化.md",
+    "source/_posts/编程语言/Csharp/反射与特性/反射系列笔记（三）：Assembly程序集反射——从文件到类型.md",
     "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/244.BinaryWriter和BinaryReader.md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/236.File类.md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/235.System.IO命名空间.md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/232.了解字符编码.md",
-    "source/_posts/编程语言/Csharp/28信息的表示与处理/231.浮点数IEEE754标准.md",
-    "source/_posts/编程语言/Csharp/28信息的表示与处理/230.整数运算.md",
-    "source/_posts/编程语言/Csharp/28信息的表示与处理/229.整数表示.md",
-    "source/_posts/编程语言/Csharp/28信息的表示与处理/228.信息存储.md",
-    "source/_posts/编程语言/Csharp/26字符串、日期时间、数学运算/225.Math类.md",
-    "source/_posts/编程语言/Csharp/27正则表达式/227.System.Text.RegularExpressions命名空间.md",
-    "source/_posts/编程语言/Csharp/27正则表达式/226.正则表达式.md",
+    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/243.StreamWriter和StreamReader.md",
     "db.json",
     "public/MyImg/test.jpg",
-    "public/MyImg/《原神》神里绫华4k电脑桌面壁纸.jpg",
     "public/NGUI总结.png",
+    "public/MyImg/《原神》神里绫华4k电脑桌面壁纸.jpg",
     "public/MyImg/void_0_世界の鎮魂歌_85543107_p0.jpg",
-    "public/page/9/index.html",
-    "public/page/64/index.html",
-    "public/page/8/index.html",
-    "public/page/7/index.html",
-    "public/page/65/index.html",
-    "public/page/63/index.html",
-    "public/page/62/index.html",
-    "public/page/61/index.html",
-    "public/page/60/index.html",
-    "public/css/images/thumb-default-small.png",
-    "public/css/images/logo.png",
-    "public/live2dw/assets/moc/miku.2048/texture_00.png",
-    "public/images/mobile2.png",
-    "public/2026/03/27/编程语言/Csharp/21集合/167.协变与逆变/file-20260327072814742.png",
-    "public/2026/03/27/编程语言/Csharp/21集合/167.协变与逆变/file-20260327072617951.png",
-    "source/_posts/编程语言/Csharp/25Linq/204.Aggregate(自定义聚合).md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/234.System.Text.Encoding.md",
-    "source/_posts/编程语言/Csharp/29编码、输入输出、序列化/233.CSharp字符串默认UTF-16.md",
-    "source/_posts/编程语言/Csharp/26字符串、日期时间、数学运算/+26.Csharp格式化语法与格式说明符.md",
-    "source/_posts/编程语言/Csharp/26字符串、日期时间、数学运算/223.DateTime格式化.md",
-    "source/_posts/编程语言/Csharp/26字符串、日期时间、数学运算/224.DateTime运算与时间间隔处理.md",
-    "source/_posts/编程语言/Csharp/26字符串、日期时间、数学运算/222.DateTime.md",
-    "source/_posts/数据/数据持久化/Json/6.Newtonsoft.Json.md"
+    "public/MyImg/千夜QYS3_miku_千里走单骑_49240323_p0.jpg",
+    "public/categories/游戏引擎/unity/unity入门/unity入门基础知识/page/4/index.html",
+    "public/categories/游戏引擎/unity/unity入门/unity入门基础知识/page/3/index.html",
+    "public/categories/游戏引擎/unity/unity入门/unity入门基础知识/page/2/index.html",
+    "public/categories/游戏引擎/unity/unity核心/page/6/index.html",
+    "public/categories/游戏引擎/unity/unity核心/page/5/index.html",
+    "public/categories/游戏引擎/unity/unity核心/page/7/index.html",
+    "public/categories/游戏引擎/unity/unity核心/page/4/index.html",
+    "public/categories/游戏引擎/unity/unity核心/page/3/index.html",
+    "public/categories/游戏引擎/unity/unity核心/page/2/index.html",
+    "public/2000/01/01/算法/Acwing/基础/数据结构/7.KMP字符串/Pasted image 20240509185448.png"
   ]
 }

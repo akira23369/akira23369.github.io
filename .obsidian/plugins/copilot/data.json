@@ -33,7 +33,7 @@
   "defaultOpenArea": "view",
   "customPromptsFolder": "copilot-custom-prompts",
   "indexVaultToVectorStore": "ON MODE SWITCH",
-  "qaExclusions": "",
+  "qaExclusions": "copilot",
   "qaInclusions": "",
   "chatNoteContextPath": "",
   "chatNoteContextTags": [],
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "name": "google/gemini-2.5-flash-lite-preview-06-17",
+      "name": "google/gemini-2.5-flash",
       "provider": "openrouterai",
       "enabled": true,
       "isBuiltIn": true,
@@ -67,7 +67,27 @@
       ]
     },
     {
-      "name": "google/gemini-2.5-flash",
+      "name": "gpt-5.2",
+      "provider": "openai",
+      "enabled": true,
+      "isBuiltIn": true,
+      "core": true,
+      "capabilities": [
+        "vision"
+      ]
+    },
+    {
+      "name": "gpt-5-mini",
+      "provider": "openai",
+      "enabled": true,
+      "isBuiltIn": true,
+      "core": true,
+      "capabilities": [
+        "vision"
+      ]
+    },
+    {
+      "name": "google/gemini-2.5-flash-lite-preview-06-17",
       "provider": "openrouterai",
       "enabled": true,
       "isBuiltIn": true,
@@ -259,12 +279,37 @@
       "dimensions": 512
     },
     {
+      "name": "openai/text-embedding-3-small",
+      "provider": "openrouterai",
+      "enabled": true,
+      "isBuiltIn": true,
+      "isEmbeddingModel": true,
+      "core": true
+    },
+    {
       "name": "text-embedding-3-small",
       "provider": "openai",
       "enabled": true,
       "isBuiltIn": true,
       "isEmbeddingModel": true,
       "core": true
+    },
+    {
+      "name": "gemini-embedding-001",
+      "provider": "google",
+      "enabled": true,
+      "isBuiltIn": true,
+      "isEmbeddingModel": true,
+      "core": true
+    },
+    {
+      "name": "Qwen/Qwen3-Embedding-0.6B",
+      "provider": "siliconflow",
+      "enabled": true,
+      "isBuiltIn": true,
+      "isEmbeddingModel": true,
+      "core": true,
+      "baseUrl": "https://api.siliconflow.com/v1"
     },
     {
       "name": "text-embedding-3-large",
@@ -304,10 +349,39 @@
   "promptUsageTimestamps": {},
   "defaultConversationNoteName": "{$topic}@{$date}_{$time}",
   "inlineEditCommands": [],
-  "lastDismissedVersion": "3.2.4",
+  "lastDismissedVersion": "3.2.6",
   "passMarkdownImages": true,
   "enableCustomPromptTemplating": true,
   "includeActiveNoteAsContext": true,
   "allowAdditionalContext": true,
-  "enableWordCompletion": false
+  "enableWordCompletion": false,
+  "lexicalSearchRamLimit": 100,
+  "autoAddActiveContentToContext": true,
+  "generateAIChatTitleOnSave": true,
+  "enableMiyo": false,
+  "selfHostSearchProvider": "firecrawl",
+  "enableInlineCitations": true,
+  "autonomousAgentMaxIterations": 4,
+  "autonomousAgentEnabledToolIds": [
+    "localSearch",
+    "readNote",
+    "webSearch",
+    "pomodoro",
+    "youtubeTranscription",
+    "writeToFile",
+    "replaceInFile",
+    "updateMemory"
+  ],
+  "memoryFolderName": "copilot/memory",
+  "enableRecentConversations": true,
+  "enableSavedMemory": true,
+  "maxRecentConversations": 30,
+  "autoCompactThreshold": 128000,
+  "quickCommandIncludeNoteContext": true,
+  "autoAddSelectionToContext": false,
+  "autoAcceptEdits": false,
+  "defaultSendShortcut": "enter",
+  "chatHistorySortStrategy": "recent",
+  "projectListSortStrategy": "recent",
+  "userSystemPromptsFolder": "copilot/system-prompts"
 }
