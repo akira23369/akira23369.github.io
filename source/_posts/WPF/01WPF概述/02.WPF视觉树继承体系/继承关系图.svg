@@ -1,0 +1,1049 @@
+<svg id="mermaid-svg-F1lT2sl9FhD3Foih" width="100%" xmlns="http://www.w3.org/2000/svg" class="classDiagram" style="max-width: 980.0720825195312px;" viewBox="0 0 980.0720825195312 2414.593994140625">
+  <style>#mermaid-svg-F1lT2sl9FhD3Foih{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-svg-F1lT2sl9FhD3Foih .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-svg-F1lT2sl9FhD3Foih .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-svg-F1lT2sl9FhD3Foih .error-icon{fill:#552222;}#mermaid-svg-F1lT2sl9FhD3Foih .error-text{fill:#552222;stroke:#552222;}#mermaid-svg-F1lT2sl9FhD3Foih .edge-thickness-normal{stroke-width:1px;}#mermaid-svg-F1lT2sl9FhD3Foih .edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg-F1lT2sl9FhD3Foih .edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg-F1lT2sl9FhD3Foih .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-svg-F1lT2sl9FhD3Foih .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg-F1lT2sl9FhD3Foih .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg-F1lT2sl9FhD3Foih .marker{fill:#333333;stroke:#333333;}#mermaid-svg-F1lT2sl9FhD3Foih .marker.cross{stroke:#333333;}#mermaid-svg-F1lT2sl9FhD3Foih svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg-F1lT2sl9FhD3Foih p{margin:0;}#mermaid-svg-F1lT2sl9FhD3Foih g.classGroup text{fill:#9370DB;stroke:none;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:10px;}#mermaid-svg-F1lT2sl9FhD3Foih g.classGroup text .title{font-weight:bolder;}#mermaid-svg-F1lT2sl9FhD3Foih .cluster-label text{fill:#333;}#mermaid-svg-F1lT2sl9FhD3Foih .cluster-label span{color:#333;}#mermaid-svg-F1lT2sl9FhD3Foih .cluster-label span p{background-color:transparent;}#mermaid-svg-F1lT2sl9FhD3Foih .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-svg-F1lT2sl9FhD3Foih .cluster text{fill:#333;}#mermaid-svg-F1lT2sl9FhD3Foih .cluster span{color:#333;}#mermaid-svg-F1lT2sl9FhD3Foih .nodeLabel,#mermaid-svg-F1lT2sl9FhD3Foih .edgeLabel{color:#131300;}#mermaid-svg-F1lT2sl9FhD3Foih .edgeLabel .label rect{fill:#ECECFF;}#mermaid-svg-F1lT2sl9FhD3Foih .label text{fill:#131300;}#mermaid-svg-F1lT2sl9FhD3Foih .labelBkg{background:#ECECFF;}#mermaid-svg-F1lT2sl9FhD3Foih .edgeLabel .label span{background:#ECECFF;}#mermaid-svg-F1lT2sl9FhD3Foih .classTitle{font-weight:bolder;}#mermaid-svg-F1lT2sl9FhD3Foih .node rect,#mermaid-svg-F1lT2sl9FhD3Foih .node circle,#mermaid-svg-F1lT2sl9FhD3Foih .node ellipse,#mermaid-svg-F1lT2sl9FhD3Foih .node polygon,#mermaid-svg-F1lT2sl9FhD3Foih .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-svg-F1lT2sl9FhD3Foih .divider{stroke:#9370DB;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih g.clickable{cursor:pointer;}#mermaid-svg-F1lT2sl9FhD3Foih g.classGroup rect{fill:#ECECFF;stroke:#9370DB;}#mermaid-svg-F1lT2sl9FhD3Foih g.classGroup line{stroke:#9370DB;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih .classLabel .box{stroke:none;stroke-width:0;fill:#ECECFF;opacity:0.5;}#mermaid-svg-F1lT2sl9FhD3Foih .classLabel .label{fill:#9370DB;font-size:10px;}#mermaid-svg-F1lT2sl9FhD3Foih .relation{stroke:#333333;stroke-width:1;fill:none;}#mermaid-svg-F1lT2sl9FhD3Foih .dashed-line{stroke-dasharray:3;}#mermaid-svg-F1lT2sl9FhD3Foih .dotted-line{stroke-dasharray:1 2;}#mermaid-svg-F1lT2sl9FhD3Foih #compositionStart,#mermaid-svg-F1lT2sl9FhD3Foih .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih #compositionEnd,#mermaid-svg-F1lT2sl9FhD3Foih .composition{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih #dependencyStart,#mermaid-svg-F1lT2sl9FhD3Foih .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih #dependencyStart,#mermaid-svg-F1lT2sl9FhD3Foih .dependency{fill:#333333!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih #extensionStart,#mermaid-svg-F1lT2sl9FhD3Foih .extension{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih #extensionEnd,#mermaid-svg-F1lT2sl9FhD3Foih .extension{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih #aggregationStart,#mermaid-svg-F1lT2sl9FhD3Foih .aggregation{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih #aggregationEnd,#mermaid-svg-F1lT2sl9FhD3Foih .aggregation{fill:transparent!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih #lollipopStart,#mermaid-svg-F1lT2sl9FhD3Foih .lollipop{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih #lollipopEnd,#mermaid-svg-F1lT2sl9FhD3Foih .lollipop{fill:#ECECFF!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg-F1lT2sl9FhD3Foih .edgeTerminals{font-size:11px;line-height:initial;}#mermaid-svg-F1lT2sl9FhD3Foih .classTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-svg-F1lT2sl9FhD3Foih .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-svg-F1lT2sl9FhD3Foih .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-svg-F1lT2sl9FhD3Foih :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+  <g>
+   <defs>
+    <marker id="mermaid-svg-F1lT2sl9FhD3Foih_class-aggregationStart" class="marker aggregation class" refX="18" refY="7" markerWidth="190" markerHeight="240" orient="auto">
+     <path d="M 18,7 L9,13 L1,7 L9,1 Z"></path>
+    </marker>
+   </defs>
+   <defs>
+    <marker id="mermaid-svg-F1lT2sl9FhD3Foih_class-aggregationEnd" class="marker aggregation class" refX="1" refY="7" markerWidth="20" markerHeight="28" orient="auto">
+     <path d="M 18,7 L9,13 L1,7 L9,1 Z"></path>
+    </marker>
+   </defs>
+   <defs>
+    <marker id="mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart" class="marker extension class" refX="18" refY="7" markerWidth="190" markerHeight="240" orient="auto">
+     <path d="M 1,7 L18,13 V 1 Z"></path>
+    </marker>
+   </defs>
+   <defs>
+    <marker id="mermaid-svg-F1lT2sl9FhD3Foih_class-extensionEnd" class="marker extension class" refX="1" refY="7" markerWidth="20" markerHeight="28" orient="auto">
+     <path d="M 1,1 V 13 L18,7 Z"></path>
+    </marker>
+   </defs>
+   <defs>
+    <marker id="mermaid-svg-F1lT2sl9FhD3Foih_class-compositionStart" class="marker composition class" refX="18" refY="7" markerWidth="190" markerHeight="240" orient="auto">
+     <path d="M 18,7 L9,13 L1,7 L9,1 Z"></path>
+    </marker>
+   </defs>
+   <defs>
+    <marker id="mermaid-svg-F1lT2sl9FhD3Foih_class-compositionEnd" class="marker composition class" refX="1" refY="7" markerWidth="20" markerHeight="28" orient="auto">
+     <path d="M 18,7 L9,13 L1,7 L9,1 Z"></path>
+    </marker>
+   </defs>
+   <defs>
+    <marker id="mermaid-svg-F1lT2sl9FhD3Foih_class-dependencyStart" class="marker dependency class" refX="6" refY="7" markerWidth="190" markerHeight="240" orient="auto">
+     <path d="M 5,7 L9,13 L1,7 L9,1 Z"></path>
+    </marker>
+   </defs>
+   <defs>
+    <marker id="mermaid-svg-F1lT2sl9FhD3Foih_class-dependencyEnd" class="marker dependency class" refX="13" refY="7" markerWidth="20" markerHeight="28" orient="auto">
+     <path d="M 18,7 L9,13 L14,7 L9,1 Z"></path>
+    </marker>
+   </defs>
+   <defs>
+    <marker id="mermaid-svg-F1lT2sl9FhD3Foih_class-lollipopStart" class="marker lollipop class" refX="13" refY="7" markerWidth="190" markerHeight="240" orient="auto">
+     <circle fill="transparent" cx="7" cy="7" r="6"></circle>
+    </marker>
+   </defs>
+   <defs>
+    <marker id="mermaid-svg-F1lT2sl9FhD3Foih_class-lollipopEnd" class="marker lollipop class" refX="1" refY="7" markerWidth="190" markerHeight="240" orient="auto">
+     <circle fill="transparent" cx="7" cy="7" r="6"></circle>
+    </marker>
+   </defs>
+   <g class="root">
+    <g class="clusters"></g>
+    <g class="edgePaths">
+     <path d="M804.352,175.281L804.352,176.573C804.352,177.865,804.352,180.448,804.352,185.906C804.352,191.365,804.352,199.698,804.352,203.865L804.352,208.031" id="id_Object_DispatcherObject_1" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M804.352,393.323L804.352,394.615C804.352,395.906,804.352,398.49,804.352,403.948C804.352,409.406,804.352,417.74,804.352,421.906L804.352,426.073" id="id_DispatcherObject_DependencyObject_2" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M804.352,659.385L804.352,660.677C804.352,661.969,804.352,664.552,804.352,670.01C804.352,675.469,804.352,683.802,804.352,687.969L804.352,692.135" id="id_DependencyObject_Visual_3" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M804.352,949.458L804.352,950.75C804.352,952.042,804.352,954.625,804.352,960.083C804.352,965.542,804.352,973.875,804.352,978.042L804.352,982.208" id="id_Visual_UIElement_4" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M804.352,1335.573L804.352,1336.865C804.352,1338.156,804.352,1340.74,804.352,1346.198C804.352,1351.656,804.352,1359.99,804.352,1364.156L804.352,1368.323" id="id_UIElement_FrameworkElement_5" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M662.751,1630.163L612.929,1654.712C563.107,1679.261,463.463,1728.36,413.641,1757.076C363.819,1785.792,363.819,1794.125,363.819,1798.292L363.819,1802.458" id="id_FrameworkElement_Control_6" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M664.994,1676.972L644.974,1693.72C624.955,1710.468,584.915,1743.963,564.896,1785.886C544.876,1827.809,544.876,1878.16,544.876,1903.335L544.876,1928.511" id="id_FrameworkElement_Panel_7" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M709.85,1768.161L709.145,1769.71C708.44,1771.26,707.03,1774.359,706.326,1801.084C705.621,1827.809,705.621,1878.16,705.621,1903.335L705.621,1928.511" id="id_FrameworkElement_ContentPresenter_8" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M898.855,1768.161L899.56,1769.71C900.265,1771.26,901.675,1774.359,902.379,1801.084C903.084,1827.809,903.084,1878.16,903.084,1903.335L903.084,1928.511" id="id_FrameworkElement_ItemsPresenter_9" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M251.199,2054.449L226.796,2072.636C202.392,2090.823,153.585,2127.198,129.181,2149.552C104.778,2171.906,104.778,2180.24,104.778,2184.406L104.778,2188.573" id="id_Control_ContentControl_10" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M472.008,2136.952L474.892,2141.389C477.776,2145.826,483.544,2154.699,486.428,2163.303C489.313,2171.906,489.313,2180.24,489.313,2184.406L489.313,2188.573" id="id_Control_ItemsControl_11" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M476.995,2045.358L506.789,2065.061C536.584,2084.763,596.172,2124.168,625.966,2148.037C655.76,2171.906,655.76,2180.24,655.76,2184.406L655.76,2188.573" id="id_Control_UserControl_12" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M55.884,2285.464L54.084,2287.484C52.285,2289.504,48.686,2293.544,46.886,2299.73C45.087,2305.917,45.087,2314.25,45.087,2318.417L45.087,2322.583" id="id_ContentControl_Button_13" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M153.672,2285.464L155.471,2287.484C157.271,2289.504,160.87,2293.544,162.669,2299.73C164.469,2305.917,164.469,2314.25,164.469,2318.417L164.469,2322.583" id="id_ContentControl_Label_14" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M190.413,2261.829L206.743,2267.788C223.072,2273.747,255.731,2285.665,272.061,2295.791C288.391,2305.917,288.391,2314.25,288.391,2318.417L288.391,2322.583" id="id_ContentControl_Window_15" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M432.855,2284.497L430.571,2286.678C428.288,2288.859,423.72,2293.221,421.436,2299.569C419.153,2305.917,419.153,2314.25,419.153,2318.417L419.153,2322.583" id="id_ItemsControl_ListBox_16" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M545.77,2284.497L548.054,2286.678C550.337,2288.859,554.905,2293.221,557.189,2299.569C559.472,2305.917,559.472,2314.25,559.472,2318.417L559.472,2322.583" id="id_ItemsControl_ComboBox_17" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+     <path d="M565.745,2254.058L589.359,2261.312C612.973,2268.566,660.202,2283.075,683.816,2294.496C707.431,2305.917,707.431,2314.25,707.431,2318.417L707.431,2322.583" id="id_ItemsControl_TreeView_18" class="edge-thickness-normal edge-pattern-solid relation" style=";;;" marker-start="url(#mermaid-svg-F1lT2sl9FhD3Foih_class-extensionStart)"></path>
+    </g>
+    <g class="edgeLabels">
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+     <g class="edgeLabel">
+      <g class="label" transform="translate(0, 0)">
+       <foreignObject width="0" height="0">
+        <div class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+         <span class="edgeLabel"></span>
+        </div>
+       </foreignObject>
+      </g>
+     </g>
+    </g>
+    <g class="nodes">
+     <g class="node default" id="classId-Object-38" transform="translate(804.3524398803711, 83.01563262939453)">
+      <g class="basic label-container">
+       <path d="M-82.50782012939453 -75.01563262939453 L82.50782012939453 -75.01563262939453 L82.50782012939453 75.01563262939453 L-82.50782012939453 75.01563262939453" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-82.50782012939453 -75.01563262939453 C-27.356577414505807 -75.01563262939453, 27.794665300382917 -75.01563262939453, 82.50782012939453 -75.01563262939453 M-82.50782012939453 -75.01563262939453 C-30.038909978304787 -75.01563262939453, 22.430000172784958 -75.01563262939453, 82.50782012939453 -75.01563262939453 M82.50782012939453 -75.01563262939453 C82.50782012939453 -23.176208614150987, 82.50782012939453 28.663215401092557, 82.50782012939453 75.01563262939453 M82.50782012939453 -75.01563262939453 C82.50782012939453 -40.71684768317577, 82.50782012939453 -6.418062736957012, 82.50782012939453 75.01563262939453 M82.50782012939453 75.01563262939453 C44.93218684132318 75.01563262939453, 7.356553553251828 75.01563262939453, -82.50782012939453 75.01563262939453 M82.50782012939453 75.01563262939453 C49.37956439248642 75.01563262939453, 16.251308655578313 75.01563262939453, -82.50782012939453 75.01563262939453 M-82.50782012939453 75.01563262939453 C-82.50782012939453 26.4990538434376, -82.50782012939453 -22.01752494251933, -82.50782012939453 -75.01563262939453 M-82.50782012939453 75.01563262939453 C-82.50782012939453 37.77499794005535, -82.50782012939453 0.5343632507161686, -82.50782012939453 -75.01563262939453" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -51.01563262939453)"></g>
+      <g class="label-group text" transform="translate(-25.078128814697266, -51.01563262939453)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="50.15625762939453" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 101px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>Object</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-70.50782012939453, -3.0052146911621094)"></g>
+      <g class="methods-group text" transform="translate(-70.50782012939453, 26.99478530883789)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="65.97222900390625" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 127px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Equals()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,12.005208969116211)">
+        <foreignObject width="115.93751525878906" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 180px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+GetHashCode()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="divider" style="">
+       <path d="M-82.50782012939453 -27.00521469116211 C-16.715549625439294 -27.00521469116211, 49.07672087851594 -27.00521469116211, 82.50782012939453 -27.00521469116211 M-82.50782012939453 -27.00521469116211 C-27.88471039270413 -27.00521469116211, 26.738399343986273 -27.00521469116211, 82.50782012939453 -27.00521469116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-82.50782012939453 -3.0052146911621094 C-33.31608651788109 -3.0052146911621094, 15.875647093632352 -3.0052146911621094, 82.50782012939453 -3.0052146911621094 M-82.50782012939453 -3.0052146911621094 C-34.35295391233144 -3.0052146911621094, 13.801912304731658 -3.0052146911621094, 82.50782012939453 -3.0052146911621094" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-DispatcherObject-39" transform="translate(804.3524398803711, 292.0521011352539)">
+      <g class="basic label-container">
+       <path d="M-99.56945037841797 -84.02083587646484 L99.56945037841797 -84.02083587646484 L99.56945037841797 84.02083587646484 L-99.56945037841797 84.02083587646484" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-99.56945037841797 -84.02083587646484 C-33.53672428463787 -84.02083587646484, 32.49600180914223 -84.02083587646484, 99.56945037841797 -84.02083587646484 M-99.56945037841797 -84.02083587646484 C-43.387010028337066 -84.02083587646484, 12.795430321743837 -84.02083587646484, 99.56945037841797 -84.02083587646484 M99.56945037841797 -84.02083587646484 C99.56945037841797 -33.592907861668294, 99.56945037841797 16.835020153128255, 99.56945037841797 84.02083587646484 M99.56945037841797 -84.02083587646484 C99.56945037841797 -29.031053026150076, 99.56945037841797 25.958729824164692, 99.56945037841797 84.02083587646484 M99.56945037841797 84.02083587646484 C37.74026323781664 84.02083587646484, -24.088923902784686 84.02083587646484, -99.56945037841797 84.02083587646484 M99.56945037841797 84.02083587646484 C36.77988758849826 84.02083587646484, -26.009675201421445 84.02083587646484, -99.56945037841797 84.02083587646484 M-99.56945037841797 84.02083587646484 C-99.56945037841797 46.559240631726134, -99.56945037841797 9.097645386987423, -99.56945037841797 -84.02083587646484 M-99.56945037841797 84.02083587646484 C-99.56945037841797 45.21040524105814, -99.56945037841797 6.399974605651437, -99.56945037841797 -84.02083587646484" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -60.020835876464844)"></g>
+      <g class="label-group text" transform="translate(-65, -60.020835876464844)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="130" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 181px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>DispatcherObject</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-87.56945037841797, -12.010417938232422)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="84.53126525878906" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 148px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Dispatcher</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="methods-group text" transform="translate(-87.56945037841797, 36)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="110.1388931274414" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 173px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+CheckAccess()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,12.005208969116211)">
+        <foreignObject width="108.78472900390625" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 168px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+VerifyAccess()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="divider" style="">
+       <path d="M-99.56945037841797 -36.01041793823242 C-31.046607556350054 -36.01041793823242, 37.47623526571786 -36.01041793823242, 99.56945037841797 -36.01041793823242 M-99.56945037841797 -36.01041793823242 C-55.04615752258432 -36.01041793823242, -10.522864666750678 -36.01041793823242, 99.56945037841797 -36.01041793823242" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-99.56945037841797 12 C-56.47870258942096 12, -13.387954800423955 12, 99.56945037841797 12 M-99.56945037841797 12 C-22.13795420528554 12, 55.29354196784689 12, 99.56945037841797 12" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-DependencyObject-40" transform="translate(804.3524398803711, 534.1041870117188)">
+      <g class="basic label-container">
+       <path d="M-136.0885467529297 -108.03125 L136.0885467529297 -108.03125 L136.0885467529297 108.03125 L-136.0885467529297 108.03125" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-136.0885467529297 -108.03125 C-36.7585208461592 -108.03125, 62.57150506061129 -108.03125, 136.0885467529297 -108.03125 M-136.0885467529297 -108.03125 C-37.27768563670338 -108.03125, 61.533175479522924 -108.03125, 136.0885467529297 -108.03125 M136.0885467529297 -108.03125 C136.0885467529297 -40.49012561556154, 136.0885467529297 27.050998768876923, 136.0885467529297 108.03125 M136.0885467529297 -108.03125 C136.0885467529297 -29.366903980332268, 136.0885467529297 49.297442039335465, 136.0885467529297 108.03125 M136.0885467529297 108.03125 C80.56717893196767 108.03125, 25.045811111005648 108.03125, -136.0885467529297 108.03125 M136.0885467529297 108.03125 C53.60584015736126 108.03125, -28.876866438207173 108.03125, -136.0885467529297 108.03125 M-136.0885467529297 108.03125 C-136.0885467529297 39.953280715827404, -136.0885467529297 -28.124688568345192, -136.0885467529297 -108.03125 M-136.0885467529297 108.03125 C-136.0885467529297 60.000954372938125, -136.0885467529297 11.97065874587625, -136.0885467529297 -108.03125" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -84.03125)"></g>
+      <g class="label-group text" transform="translate(-71.12848663330078, -84.03125)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="142.25697326660156" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 194px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>DependencyObject</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-124.08854675292969, -36.02083206176758)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="177.04861450195312" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 246px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+DependencyObjectType</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="methods-group text" transform="translate(-124.08854675292969, 11.989585876464844)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="96.52777862548828" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 157px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+ClearValue()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,12.005208969116211)">
+        <foreignObject width="84.77430725097656" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 144px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+GetValue()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,36.01562690734863)">
+        <foreignObject width="81.64930725097656" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 142px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+SetValue()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,60.026044845581055)">
+        <foreignObject width="108.62847900390625" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 169px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+CoerceValue()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="divider" style="">
+       <path d="M-136.0885467529297 -60.02083206176758 C-72.8031722152132 -60.02083206176758, -9.517797677496702 -60.02083206176758, 136.0885467529297 -60.02083206176758 M-136.0885467529297 -60.02083206176758 C-31.588868992555405 -60.02083206176758, 72.91080876781888 -60.02083206176758, 136.0885467529297 -60.02083206176758" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-136.0885467529297 -12.010414123535156 C-74.37653245631299 -12.010414123535156, -12.664518159696271 -12.010414123535156, 136.0885467529297 -12.010414123535156 M-136.0885467529297 -12.010414123535156 C-33.24924602570508 -12.010414123535156, 69.59005470151953 -12.010414123535156, 136.0885467529297 -12.010414123535156" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-Visual-41" transform="translate(804.3524398803711, 812.1718978881836)">
+      <g class="basic label-container">
+       <path d="M-78.3107681274414 -120.03646087646484 L78.3107681274414 -120.03646087646484 L78.3107681274414 120.03646087646484 L-78.3107681274414 120.03646087646484" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-78.3107681274414 -120.03646087646484 C-25.360110452061818 -120.03646087646484, 27.59054722331777 -120.03646087646484, 78.3107681274414 -120.03646087646484 M-78.3107681274414 -120.03646087646484 C-32.13283690620516 -120.03646087646484, 14.04509431503108 -120.03646087646484, 78.3107681274414 -120.03646087646484 M78.3107681274414 -120.03646087646484 C78.3107681274414 -60.43343122428059, 78.3107681274414 -0.8304015720963349, 78.3107681274414 120.03646087646484 M78.3107681274414 -120.03646087646484 C78.3107681274414 -29.290817092575693, 78.3107681274414 61.45482669131346, 78.3107681274414 120.03646087646484 M78.3107681274414 120.03646087646484 C23.57545900266907 120.03646087646484, -31.159850122103265 120.03646087646484, -78.3107681274414 120.03646087646484 M78.3107681274414 120.03646087646484 C27.975386072636873 120.03646087646484, -22.35999598216766 120.03646087646484, -78.3107681274414 120.03646087646484 M-78.3107681274414 120.03646087646484 C-78.3107681274414 67.76562395358516, -78.3107681274414 15.494787030705496, -78.3107681274414 -120.03646087646484 M-78.3107681274414 120.03646087646484 C-78.3107681274414 55.60625725907114, -78.3107681274414 -8.823946358322559, -78.3107681274414 -120.03646087646484" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -96.03646087646484)"></g>
+      <g class="label-group text" transform="translate(-22.01388931274414, -96.03646087646484)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="44.02777862548828" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 96px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>Visual</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-66.3107681274414, -48.02604293823242)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="97.03126525878906" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 161px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+VisualParent</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,12.005208969116211)">
+        <foreignObject width="110.6076431274414" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 174px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+VisualChildren</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,36.01562690734863)">
+        <foreignObject width="79.77430725097656" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 144px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Transform</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,60.026044845581055)">
+        <foreignObject width="51.7881965637207" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 110px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Effect</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,84.03646278381348)">
+        <foreignObject width="36.1631965637207" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 95px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Clip</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="methods-group text" transform="translate(-66.3107681274414, 96.02604293823242)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="70.36458587646484" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 129px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+HitTest()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="divider" style="">
+       <path d="M-78.3107681274414 -72.02604293823242 C-16.582962856062743 -72.02604293823242, 45.14484241531592 -72.02604293823242, 78.3107681274414 -72.02604293823242 M-78.3107681274414 -72.02604293823242 C-27.06518694692378 -72.02604293823242, 24.180394233593844 -72.02604293823242, 78.3107681274414 -72.02604293823242" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-78.3107681274414 72.02604293823242 C-20.608575008578114 72.02604293823242, 37.09361811028518 72.02604293823242, 78.3107681274414 72.02604293823242 M-78.3107681274414 72.02604293823242 C-17.644358279153927 72.02604293823242, 43.02205156913355 72.02604293823242, 78.3107681274414 72.02604293823242" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-UIElement-42" transform="translate(804.3524398803711, 1150.2656707763672)">
+      <g class="basic label-container">
+       <path d="M-96.14930725097656 -168.05731201171875 L96.14930725097656 -168.05731201171875 L96.14930725097656 168.05731201171875 L-96.14930725097656 168.05731201171875" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-96.14930725097656 -168.05731201171875 C-35.70618063653156 -168.05731201171875, 24.736945977913436 -168.05731201171875, 96.14930725097656 -168.05731201171875 M-96.14930725097656 -168.05731201171875 C-45.921990516994335 -168.05731201171875, 4.305326216987893 -168.05731201171875, 96.14930725097656 -168.05731201171875 M96.14930725097656 -168.05731201171875 C96.14930725097656 -71.58308884666857, 96.14930725097656 24.891134318381603, 96.14930725097656 168.05731201171875 M96.14930725097656 -168.05731201171875 C96.14930725097656 -77.21501199876815, 96.14930725097656 13.627288014182454, 96.14930725097656 168.05731201171875 M96.14930725097656 168.05731201171875 C46.31296325890479 168.05731201171875, -3.523380733166988 168.05731201171875, -96.14930725097656 168.05731201171875 M96.14930725097656 168.05731201171875 C29.296863690342377 168.05731201171875, -37.55557987029181 168.05731201171875, -96.14930725097656 168.05731201171875 M-96.14930725097656 168.05731201171875 C-96.14930725097656 54.58049838449713, -96.14930725097656 -58.896315242724484, -96.14930725097656 -168.05731201171875 M-96.14930725097656 168.05731201171875 C-96.14930725097656 60.2246047128051, -96.14930725097656 -47.608102586108544, -96.14930725097656 -168.05731201171875" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -144.05731201171875)"></g>
+      <g class="label-group text" transform="translate(-38.52430725097656, -144.05731201171875)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="77.04861450195312" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 130px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>UIElement</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-84.14930725097656, -96.04689407348633)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="92.29167175292969" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 157px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+InputEvents</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,12.005208969116211)">
+        <foreignObject width="56.4756965637207" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 119px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Layout</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,36.01562690734863)">
+        <foreignObject width="129.77430725097656" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 197px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+RenderTransform</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,60.026044845581055)">
+        <foreignObject width="63.21180725097656" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 125px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Opacity</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,84.03646278381348)">
+        <foreignObject width="70.10417175292969" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 131px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Visibility</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,108.0468807220459)">
+        <foreignObject width="76.31945037841797" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 140px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+IsEnabled</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="methods-group text" transform="translate(-84.14930725097656, 72.01562118530273)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="60.27778625488281" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 121px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Focus()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,12.005208969116211)">
+        <foreignObject width="78.80208587646484" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 140px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Measure()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,36.01562690734863)">
+        <foreignObject width="75.9375" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 135px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Arrange()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,60.026044845581055)">
+        <foreignObject width="89.6701431274414" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 153px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+OnRender()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="divider" style="">
+       <path d="M-96.14930725097656 -120.04689407348633 C-21.862884858067673 -120.04689407348633, 52.423537534841216 -120.04689407348633, 96.14930725097656 -120.04689407348633 M-96.14930725097656 -120.04689407348633 C-24.252491158119895 -120.04689407348633, 47.64432493473677 -120.04689407348633, 96.14930725097656 -120.04689407348633" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-96.14930725097656 48.015621185302734 C-39.47694713887764 48.015621185302734, 17.19541297322128 48.015621185302734, 96.14930725097656 48.015621185302734 M-96.14930725097656 48.015621185302734 C-20.094695691819425 48.015621185302734, 55.95991586733771 48.015621185302734, 96.14930725097656 48.015621185302734" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-FrameworkElement-43" transform="translate(804.3524398803711, 1560.3907165527344)">
+      <g class="basic label-container">
+       <path d="M-126.12760925292969 -192.06773376464844 L126.12760925292969 -192.06773376464844 L126.12760925292969 192.06773376464844 L-126.12760925292969 192.06773376464844" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-126.12760925292969 -192.06773376464844 C-37.16480576949499 -192.06773376464844, 51.79799771393971 -192.06773376464844, 126.12760925292969 -192.06773376464844 M-126.12760925292969 -192.06773376464844 C-66.1547414692329 -192.06773376464844, -6.181873685536104 -192.06773376464844, 126.12760925292969 -192.06773376464844 M126.12760925292969 -192.06773376464844 C126.12760925292969 -47.33351605136019, 126.12760925292969 97.40070166192805, 126.12760925292969 192.06773376464844 M126.12760925292969 -192.06773376464844 C126.12760925292969 -94.33536859679428, 126.12760925292969 3.396996571059873, 126.12760925292969 192.06773376464844 M126.12760925292969 192.06773376464844 C26.127208954997656 192.06773376464844, -73.87319134293438 192.06773376464844, -126.12760925292969 192.06773376464844 M126.12760925292969 192.06773376464844 C34.23888066162745 192.06773376464844, -57.64984792967479 192.06773376464844, -126.12760925292969 192.06773376464844 M-126.12760925292969 192.06773376464844 C-126.12760925292969 44.69224597320584, -126.12760925292969 -102.68324181823675, -126.12760925292969 -192.06773376464844 M-126.12760925292969 192.06773376464844 C-126.12760925292969 76.58594884874361, -126.12760925292969 -38.89583606716121, -126.12760925292969 -192.06773376464844" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -168.06773376464844)"></g>
+      <g class="label-group text" transform="translate(-73.046875, -168.06773376464844)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="146.09375" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 199px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>FrameworkElement</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-114.12760925292969, -120.05731582641602)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="49.02777862548828" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 112px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Name</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,12.005208969116211)">
+        <foreignObject width="55.00000762939453" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 117px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Parent</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,36.01562690734863)">
+        <foreignObject width="78.94098663330078" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 144px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Resources</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,60.026044845581055)">
+        <foreignObject width="97.69097900390625" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 160px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+DataContext</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,84.03646278381348)">
+        <foreignObject width="43.76736831665039" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 104px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Style</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,108.0468807220459)">
+        <foreignObject width="32.13541793823242" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 94px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Tag</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,132.05729866027832)">
+        <foreignObject width="105.64236450195312" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 168px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Width/Height</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,156.06771659851074)">
+        <foreignObject width="119.84376525878906" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 186px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Margin/Padding</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,180.07813453674316)">
+        <foreignObject width="155.20834350585938" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 223px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+HorizontalAlignment</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,204.0885524749756)">
+        <foreignObject width="136.25" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 201px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+VerticalAlignment</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="methods-group text" transform="translate(-114.12760925292969, 144.04685592651367)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="114.8263931274414" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 179px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+FindResource()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,12.005208969116211)">
+        <foreignObject width="126.44097900390625" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 189px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+ApplyTemplate()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="divider" style="">
+       <path d="M-126.12760925292969 -144.05731582641602 C-56.82427308285283 -144.05731582641602, 12.479063087224034 -144.05731582641602, 126.12760925292969 -144.05731582641602 M-126.12760925292969 -144.05731582641602 C-68.15537707090601 -144.05731582641602, -10.183144888882353 -144.05731582641602, 126.12760925292969 -144.05731582641602" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-126.12760925292969 120.04685592651367 C-46.34666280376287 120.04685592651367, 33.43428364540395 120.04685592651367, 126.12760925292969 120.04685592651367 M-126.12760925292969 120.04685592651367 C-28.708933279868546 120.04685592651367, 68.7097426931926 120.04685592651367, 126.12760925292969 120.04685592651367" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-Control-44" transform="translate(363.81857681274414, 1970.5157470703125)">
+      <g class="basic label-container">
+       <path d="M-98.78819274902344 -168.0572967529297 L98.78819274902344 -168.0572967529297 L98.78819274902344 168.0572967529297 L-98.78819274902344 168.0572967529297" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-98.78819274902344 -168.0572967529297 C-41.9648124676495 -168.0572967529297, 14.858567813724434 -168.0572967529297, 98.78819274902344 -168.0572967529297 M-98.78819274902344 -168.0572967529297 C-24.745343893515482 -168.0572967529297, 49.29750496199247 -168.0572967529297, 98.78819274902344 -168.0572967529297 M98.78819274902344 -168.0572967529297 C98.78819274902344 -47.85103107401051, 98.78819274902344 72.35523460490867, 98.78819274902344 168.0572967529297 M98.78819274902344 -168.0572967529297 C98.78819274902344 -79.11634192328218, 98.78819274902344 9.824612906365331, 98.78819274902344 168.0572967529297 M98.78819274902344 168.0572967529297 C51.90319493746344 168.0572967529297, 5.018197125903441 168.0572967529297, -98.78819274902344 168.0572967529297 M98.78819274902344 168.0572967529297 C22.39853675833365 168.0572967529297, -53.99111923235614 168.0572967529297, -98.78819274902344 168.0572967529297 M-98.78819274902344 168.0572967529297 C-98.78819274902344 85.64392079478588, -98.78819274902344 3.230544836642082, -98.78819274902344 -168.0572967529297 M-98.78819274902344 168.0572967529297 C-98.78819274902344 63.37436129919264, -98.78819274902344 -41.3085741545444, -98.78819274902344 -168.0572967529297" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -144.0572967529297)"></g>
+      <g class="label-group text" transform="translate(-27.62152862548828, -144.0572967529297)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="55.24305725097656" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 106px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>Control</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-86.78819274902344, -96.04687881469727)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="91.09376525878906" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 157px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Background</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,12.005208969116211)">
+        <foreignObject width="89.56598663330078" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 153px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Foreground</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,36.01562690734863)">
+        <foreignObject width="95.34723663330078" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 161px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+BorderBrush</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,60.026044845581055)">
+        <foreignObject width="125.12154388427734" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 193px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+BorderThickness</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,84.03646278381348)">
+        <foreignObject width="87.72570037841797" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 151px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+FontFamily</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,108.0468807220459)">
+        <foreignObject width="69.0451431274414" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 132px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+FontSize</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,132.05729866027832)">
+        <foreignObject width="74.80902862548828" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 137px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+Template</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,156.06771659851074)">
+        <foreignObject width="75.48611450195312" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 140px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+IsTabStop</p></span>
+         </div>
+        </foreignObject>
+       </g>
+       <g class="label" style="" transform="translate(0,180.07813453674316)">
+        <foreignObject width="71.875" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 137px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+TabIndex</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="methods-group text" transform="translate(-86.78819274902344, 144.04690170288086)">
+       <g class="label" style="" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="145.95486450195312" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 211px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>+OnApplyTemplate()</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="divider" style="">
+       <path d="M-98.78819274902344 -120.04687881469727 C-31.063996195679408 -120.04687881469727, 36.66020035766462 -120.04687881469727, 98.78819274902344 -120.04687881469727 M-98.78819274902344 -120.04687881469727 C-28.65456857006795 -120.04687881469727, 41.479055608887535 -120.04687881469727, 98.78819274902344 -120.04687881469727" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-98.78819274902344 120.04690170288086 C-39.04348341597864 120.04690170288086, 20.701225917066154 120.04690170288086, 98.78819274902344 120.04690170288086 M-98.78819274902344 120.04690170288086 C-49.51126453392227 120.04690170288086, -0.23433631882110717 120.04690170288086, 98.78819274902344 120.04690170288086" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-Panel-45" transform="translate(544.8758659362793, 1970.5157470703125)">
+      <g class="basic label-container">
+       <path d="M-32.26909828186035 -42.00520896911621 L32.26909828186035 -42.00520896911621 L32.26909828186035 42.00520896911621 L-32.26909828186035 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-32.26909828186035 -42.00520896911621 C-7.68811569970207 -42.00520896911621, 16.89286688245621 -42.00520896911621, 32.26909828186035 -42.00520896911621 M-32.26909828186035 -42.00520896911621 C-17.87111760774173 -42.00520896911621, -3.473136933623106 -42.00520896911621, 32.26909828186035 -42.00520896911621 M32.26909828186035 -42.00520896911621 C32.26909828186035 -10.824094136878117, 32.26909828186035 20.357020695359978, 32.26909828186035 42.00520896911621 M32.26909828186035 -42.00520896911621 C32.26909828186035 -10.477800881087592, 32.26909828186035 21.049607206941026, 32.26909828186035 42.00520896911621 M32.26909828186035 42.00520896911621 C15.519387418197855 42.00520896911621, -1.2303234454646415 42.00520896911621, -32.26909828186035 42.00520896911621 M32.26909828186035 42.00520896911621 C15.101139421270108 42.00520896911621, -2.0668194393201347 42.00520896911621, -32.26909828186035 42.00520896911621 M-32.26909828186035 42.00520896911621 C-32.26909828186035 14.310885039988271, -32.26909828186035 -13.383438889139669, -32.26909828186035 -42.00520896911621 M-32.26909828186035 42.00520896911621 C-32.26909828186035 18.790783034789996, -32.26909828186035 -4.423642899536219, -32.26909828186035 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-20.26909828186035, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="40.5381965637207" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 92px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>Panel</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-20.26909828186035, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-20.26909828186035, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-32.26909637451172 6.005208969116211 C-9.159021937646006 6.005208969116211, 13.951052499219706 6.005208969116211, 32.26909637451172 6.005208969116211 M-32.26909637451172 6.005208969116211 C-18.2085980809909 6.005208969116211, -4.1480997874700805 6.005208969116211, 32.26909637451172 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-32.26909637451172 24.00520896911621 C-14.31392123754912 24.00520896911621, 3.6412538994134778 24.00520896911621, 32.26909637451172 24.00520896911621 M-32.26909637451172 24.00520896911621 C-13.889688234550064 24.00520896911621, 4.48971990541159 24.00520896911621, 32.26909637451172 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-ContentPresenter-46" transform="translate(705.620662689209, 1970.5157470703125)">
+      <g class="basic label-container">
+       <path d="M-78.47570037841797 -42.00520896911621 L78.47570037841797 -42.00520896911621 L78.47570037841797 42.00520896911621 L-78.47570037841797 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-78.47570037841797 -42.00520896911621 C-37.95904338680338 -42.00520896911621, 2.557613604811209 -42.00520896911621, 78.47570037841797 -42.00520896911621 M-78.47570037841797 -42.00520896911621 C-37.240093733721295 -42.00520896911621, 3.9955129109753784 -42.00520896911621, 78.47570037841797 -42.00520896911621 M78.47570037841797 -42.00520896911621 C78.47570037841797 -9.079024433371437, 78.47570037841797 23.847160102373337, 78.47570037841797 42.00520896911621 M78.47570037841797 -42.00520896911621 C78.47570037841797 -14.147634608569533, 78.47570037841797 13.709939751977146, 78.47570037841797 42.00520896911621 M78.47570037841797 42.00520896911621 C37.34669669583556 42.00520896911621, -3.782306986746846 42.00520896911621, -78.47570037841797 42.00520896911621 M78.47570037841797 42.00520896911621 C17.93193868266313 42.00520896911621, -42.61182301309171 42.00520896911621, -78.47570037841797 42.00520896911621 M-78.47570037841797 42.00520896911621 C-78.47570037841797 24.227570257045485, -78.47570037841797 6.44993154497476, -78.47570037841797 -42.00520896911621 M-78.47570037841797 42.00520896911621 C-78.47570037841797 19.149649931424346, -78.47570037841797 -3.7059091062675193, -78.47570037841797 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-66.47570037841797, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="132.95140075683594" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 184px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>ContentPresenter</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-66.47570037841797, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-66.47570037841797, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-78.47570037841797 6.005208969116211 C-46.001829830010614 6.005208969116211, -13.527959281603259 6.005208969116211, 78.47570037841797 6.005208969116211 M-78.47570037841797 6.005208969116211 C-20.687149407883524 6.005208969116211, 37.10140156265092 6.005208969116211, 78.47570037841797 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-78.47570037841797 24.00520896911621 C-45.43742894969111 24.00520896911621, -12.399157520964252 24.00520896911621, 78.47570037841797 24.00520896911621 M-78.47570037841797 24.00520896911621 C-41.33875039935734 24.00520896911621, -4.201800420296706 24.00520896911621, 78.47570037841797 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-ItemsPresenter-47" transform="translate(903.0842170715332, 1970.5157470703125)">
+      <g class="basic label-container">
+       <path d="M-68.98785018920898 -42.00520896911621 L68.98785018920898 -42.00520896911621 L68.98785018920898 42.00520896911621 L-68.98785018920898 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-68.98785018920898 -42.00520896911621 C-32.166844303386256 -42.00520896911621, 4.654161582436473 -42.00520896911621, 68.98785018920898 -42.00520896911621 M-68.98785018920898 -42.00520896911621 C-39.50876818863475 -42.00520896911621, -10.02968618806051 -42.00520896911621, 68.98785018920898 -42.00520896911621 M68.98785018920898 -42.00520896911621 C68.98785018920898 -14.122261880477875, 68.98785018920898 13.76068520816046, 68.98785018920898 42.00520896911621 M68.98785018920898 -42.00520896911621 C68.98785018920898 -10.82618732943883, 68.98785018920898 20.35283431023855, 68.98785018920898 42.00520896911621 M68.98785018920898 42.00520896911621 C34.11477918739096 42.00520896911621, -0.7582918144270678 42.00520896911621, -68.98785018920898 42.00520896911621 M68.98785018920898 42.00520896911621 C21.2863573817866 42.00520896911621, -26.415135425635782 42.00520896911621, -68.98785018920898 42.00520896911621 M-68.98785018920898 42.00520896911621 C-68.98785018920898 22.886304979734405, -68.98785018920898 3.7674009903525985, -68.98785018920898 -42.00520896911621 M-68.98785018920898 42.00520896911621 C-68.98785018920898 24.91911176840743, -68.98785018920898 7.833014567698648, -68.98785018920898 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-56.987850189208984, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="113.97570037841797" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 165px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>ItemsPresenter</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-56.987850189208984, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-56.987850189208984, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-68.98785400390625 6.005208969116211 C-14.204942001365737 6.005208969116211, 40.577970001174776 6.005208969116211, 68.98785400390625 6.005208969116211 M-68.98785400390625 6.005208969116211 C-16.190709708390848 6.005208969116211, 36.606434587124554 6.005208969116211, 68.98785400390625 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-68.98785400390625 24.00520896911621 C-25.35898547460377 24.00520896911621, 18.26988305469871 24.00520896911621, 68.98785400390625 24.00520896911621 M-68.98785400390625 24.00520896911621 C-19.67288159702145 24.00520896911621, 29.642090809863348 24.00520896911621, 68.98785400390625 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-ContentControl-48" transform="translate(104.77778053283691, 2230.578254699707)">
+      <g class="basic label-container">
+       <path d="M-69.43055725097656 -42.00520896911621 L69.43055725097656 -42.00520896911621 L69.43055725097656 42.00520896911621 L-69.43055725097656 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-69.43055725097656 -42.00520896911621 C-15.285545166247097 -42.00520896911621, 38.85946691848237 -42.00520896911621, 69.43055725097656 -42.00520896911621 M-69.43055725097656 -42.00520896911621 C-37.19226813441913 -42.00520896911621, -4.953979017861698 -42.00520896911621, 69.43055725097656 -42.00520896911621 M69.43055725097656 -42.00520896911621 C69.43055725097656 -12.95597334385501, 69.43055725097656 16.09326228140619, 69.43055725097656 42.00520896911621 M69.43055725097656 -42.00520896911621 C69.43055725097656 -20.030204328023533, 69.43055725097656 1.9448003130691447, 69.43055725097656 42.00520896911621 M69.43055725097656 42.00520896911621 C29.547697077670563 42.00520896911621, -10.335163095635437 42.00520896911621, -69.43055725097656 42.00520896911621 M69.43055725097656 42.00520896911621 C37.621363884656674 42.00520896911621, 5.812170518336778 42.00520896911621, -69.43055725097656 42.00520896911621 M-69.43055725097656 42.00520896911621 C-69.43055725097656 16.23528193335559, -69.43055725097656 -9.53464510240503, -69.43055725097656 -42.00520896911621 M-69.43055725097656 42.00520896911621 C-69.43055725097656 15.912759906432438, -69.43055725097656 -10.179689156251335, -69.43055725097656 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-57.43055725097656, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="114.86111450195312" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 166px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>ContentControl</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-57.43055725097656, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-57.43055725097656, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-69.43055725097656 6.005208969116211 C-18.949334333211162 6.005208969116211, 31.53188858455424 6.005208969116211, 69.43055725097656 6.005208969116211 M-69.43055725097656 6.005208969116211 C-27.094488624525113 6.005208969116211, 15.241580001926337 6.005208969116211, 69.43055725097656 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-69.43055725097656 24.00520896911621 C-35.632477656164156 24.00520896911621, -1.8343980613517488 24.00520896911621, 69.43055725097656 24.00520896911621 M-69.43055725097656 24.00520896911621 C-32.83193458736945 24.00520896911621, 3.7666880762376564 24.00520896911621, 69.43055725097656 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-ItemsControl-49" transform="translate(489.3125057220459, 2230.578254699707)">
+      <g class="basic label-container">
+       <path d="M-59.942710876464844 -42.00520896911621 L59.942710876464844 -42.00520896911621 L59.942710876464844 42.00520896911621 L-59.942710876464844 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-59.942710876464844 -42.00520896911621 C-23.947256879070068 -42.00520896911621, 12.048197118324708 -42.00520896911621, 59.942710876464844 -42.00520896911621 M-59.942710876464844 -42.00520896911621 C-27.342567719710537 -42.00520896911621, 5.257575437043769 -42.00520896911621, 59.942710876464844 -42.00520896911621 M59.942710876464844 -42.00520896911621 C59.942710876464844 -22.389911844917098, 59.942710876464844 -2.7746147207179845, 59.942710876464844 42.00520896911621 M59.942710876464844 -42.00520896911621 C59.942710876464844 -10.407194148737176, 59.942710876464844 21.19082067164186, 59.942710876464844 42.00520896911621 M59.942710876464844 42.00520896911621 C30.74906130738325 42.00520896911621, 1.5554117383016575 42.00520896911621, -59.942710876464844 42.00520896911621 M59.942710876464844 42.00520896911621 C23.97702660995111 42.00520896911621, -11.988657656562623 42.00520896911621, -59.942710876464844 42.00520896911621 M-59.942710876464844 42.00520896911621 C-59.942710876464844 16.837324810941368, -59.942710876464844 -8.330559347233475, -59.942710876464844 -42.00520896911621 M-59.942710876464844 42.00520896911621 C-59.942710876464844 20.434770453851694, -59.942710876464844 -1.1356680614128223, -59.942710876464844 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-47.942710876464844, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="95.88542175292969" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 148px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>ItemsControl</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-47.942710876464844, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-47.942710876464844, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-59.942710876464844 6.005208969116211 C-16.061421869304453 6.005208969116211, 27.819867137855937 6.005208969116211, 59.942710876464844 6.005208969116211 M-59.942710876464844 6.005208969116211 C-21.567206844394015 6.005208969116211, 16.808297187676814 6.005208969116211, 59.942710876464844 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-59.942710876464844 24.00520896911621 C-15.18961761750127 24.00520896911621, 29.563475641462304 24.00520896911621, 59.942710876464844 24.00520896911621 M-59.942710876464844 24.00520896911621 C-12.375493203952942 24.00520896911621, 35.19172446855896 24.00520896911621, 59.942710876464844 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-UserControl-50" transform="translate(655.7604274749756, 2230.578254699707)">
+      <g class="basic label-container">
+       <path d="M-56.505210876464844 -42.00520896911621 L56.505210876464844 -42.00520896911621 L56.505210876464844 42.00520896911621 L-56.505210876464844 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-56.505210876464844 -42.00520896911621 C-31.632029321606083 -42.00520896911621, -6.758847766747323 -42.00520896911621, 56.505210876464844 -42.00520896911621 M-56.505210876464844 -42.00520896911621 C-21.35865296957273 -42.00520896911621, 13.787904937319382 -42.00520896911621, 56.505210876464844 -42.00520896911621 M56.505210876464844 -42.00520896911621 C56.505210876464844 -9.155512370574876, 56.505210876464844 23.69418422796646, 56.505210876464844 42.00520896911621 M56.505210876464844 -42.00520896911621 C56.505210876464844 -21.253944710695915, 56.505210876464844 -0.5026804522756194, 56.505210876464844 42.00520896911621 M56.505210876464844 42.00520896911621 C18.53576014956723 42.00520896911621, -19.43369057733038 42.00520896911621, -56.505210876464844 42.00520896911621 M56.505210876464844 42.00520896911621 C25.63198501608837 42.00520896911621, -5.2412408442881 42.00520896911621, -56.505210876464844 42.00520896911621 M-56.505210876464844 42.00520896911621 C-56.505210876464844 11.321992339764687, -56.505210876464844 -19.361224289586836, -56.505210876464844 -42.00520896911621 M-56.505210876464844 42.00520896911621 C-56.505210876464844 15.312603893805981, -56.505210876464844 -11.380001181504248, -56.505210876464844 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-44.505210876464844, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="89.01042175292969" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 140px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>UserControl</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-44.505210876464844, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-44.505210876464844, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-56.505210876464844 6.005208969116211 C-28.91211900533807 6.005208969116211, -1.3190271342112965 6.005208969116211, 56.505210876464844 6.005208969116211 M-56.505210876464844 6.005208969116211 C-13.477995875593649 6.005208969116211, 29.549219125277546 6.005208969116211, 56.505210876464844 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-56.505210876464844 24.00520896911621 C-25.999164204424325 24.00520896911621, 4.506882467616194 24.00520896911621, 56.505210876464844 24.00520896911621 M-56.505210876464844 24.00520896911621 C-29.275773418091777 24.00520896911621, -2.0463359597187107 24.00520896911621, 56.505210876464844 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-Button-51" transform="translate(45.08680725097656, 2364.5886764526367)">
+      <g class="basic label-container">
+       <path d="M-37.08680725097656 -42.00520896911621 L37.08680725097656 -42.00520896911621 L37.08680725097656 42.00520896911621 L-37.08680725097656 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-37.08680725097656 -42.00520896911621 C-8.416922296749934 -42.00520896911621, 20.252962657476694 -42.00520896911621, 37.08680725097656 -42.00520896911621 M-37.08680725097656 -42.00520896911621 C-9.92356477273859 -42.00520896911621, 17.239677705499382 -42.00520896911621, 37.08680725097656 -42.00520896911621 M37.08680725097656 -42.00520896911621 C37.08680725097656 -11.665622642488518, 37.08680725097656 18.673963684139174, 37.08680725097656 42.00520896911621 M37.08680725097656 -42.00520896911621 C37.08680725097656 -23.115756916027888, 37.08680725097656 -4.226304862939564, 37.08680725097656 42.00520896911621 M37.08680725097656 42.00520896911621 C19.745236298318336 42.00520896911621, 2.4036653456601087 42.00520896911621, -37.08680725097656 42.00520896911621 M37.08680725097656 42.00520896911621 C10.683532177121826 42.00520896911621, -15.71974289673291 42.00520896911621, -37.08680725097656 42.00520896911621 M-37.08680725097656 42.00520896911621 C-37.08680725097656 12.73264754129314, -37.08680725097656 -16.53991388652993, -37.08680725097656 -42.00520896911621 M-37.08680725097656 42.00520896911621 C-37.08680725097656 23.602016350595356, -37.08680725097656 5.198823732074501, -37.08680725097656 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-25.086807250976562, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="50.173614501953125" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 101px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>Button</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-25.086807250976562, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-25.086807250976562, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-37.08680725097656 6.005208969116211 C-20.65773661286586 6.005208969116211, -4.22866597475516 6.005208969116211, 37.08680725097656 6.005208969116211 M-37.08680725097656 6.005208969116211 C-9.645269926595073 6.005208969116211, 17.796267397786416 6.005208969116211, 37.08680725097656 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-37.08680725097656 24.00520896911621 C-19.247679878708837 24.00520896911621, -1.4085525064411115 24.00520896911621, 37.08680725097656 24.00520896911621 M-37.08680725097656 24.00520896911621 C-20.774458846256312 24.00520896911621, -4.462110441536062 24.00520896911621, 37.08680725097656 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-Label-52" transform="translate(164.46875381469727, 2364.5886764526367)">
+      <g class="basic label-container">
+       <path d="M-32.29513931274414 -42.00520896911621 L32.29513931274414 -42.00520896911621 L32.29513931274414 42.00520896911621 L-32.29513931274414 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-32.29513931274414 -42.00520896911621 C-7.144653196093849 -42.00520896911621, 18.005832920556443 -42.00520896911621, 32.29513931274414 -42.00520896911621 M-32.29513931274414 -42.00520896911621 C-12.017638329073762 -42.00520896911621, 8.259862654596617 -42.00520896911621, 32.29513931274414 -42.00520896911621 M32.29513931274414 -42.00520896911621 C32.29513931274414 -22.77479332455991, 32.29513931274414 -3.544377680003606, 32.29513931274414 42.00520896911621 M32.29513931274414 -42.00520896911621 C32.29513931274414 -19.427827871372884, 32.29513931274414 3.1495532263704433, 32.29513931274414 42.00520896911621 M32.29513931274414 42.00520896911621 C13.010708333966946 42.00520896911621, -6.273722644810249 42.00520896911621, -32.29513931274414 42.00520896911621 M32.29513931274414 42.00520896911621 C15.614049968421277 42.00520896911621, -1.0670393759015866 42.00520896911621, -32.29513931274414 42.00520896911621 M-32.29513931274414 42.00520896911621 C-32.29513931274414 21.536477906148818, -32.29513931274414 1.0677468431814248, -32.29513931274414 -42.00520896911621 M-32.29513931274414 42.00520896911621 C-32.29513931274414 19.294744536540154, -32.29513931274414 -3.4157198960359025, -32.29513931274414 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-20.29513931274414, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="40.59027862548828" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 91px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>Label</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-20.29513931274414, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-20.29513931274414, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-32.29513931274414 6.005208969116211 C-7.779831514688503 6.005208969116211, 16.735476283367134 6.005208969116211, 32.29513931274414 6.005208969116211 M-32.29513931274414 6.005208969116211 C-13.083177287564641 6.005208969116211, 6.128784737614858 6.005208969116211, 32.29513931274414 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-32.29513931274414 24.00520896911621 C-12.828188784781144 24.00520896911621, 6.638761743181853 24.00520896911621, 32.29513931274414 24.00520896911621 M-32.29513931274414 24.00520896911621 C-18.52229153276332 24.00520896911621, -4.749443752782497 24.00520896911621, 32.29513931274414 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-Window-53" transform="translate(288.39062881469727, 2364.5886764526367)">
+      <g class="basic label-container">
+       <path d="M-41.62673759460449 -42.00520896911621 L41.62673759460449 -42.00520896911621 L41.62673759460449 42.00520896911621 L-41.62673759460449 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-41.62673759460449 -42.00520896911621 C-21.251004266397718 -42.00520896911621, -0.875270938190944 -42.00520896911621, 41.62673759460449 -42.00520896911621 M-41.62673759460449 -42.00520896911621 C-15.979710809627047 -42.00520896911621, 9.667315975350398 -42.00520896911621, 41.62673759460449 -42.00520896911621 M41.62673759460449 -42.00520896911621 C41.62673759460449 -10.537853506255658, 41.62673759460449 20.929501956604895, 41.62673759460449 42.00520896911621 M41.62673759460449 -42.00520896911621 C41.62673759460449 -12.660541030794572, 41.62673759460449 16.684126907527066, 41.62673759460449 42.00520896911621 M41.62673759460449 42.00520896911621 C9.502733173111572 42.00520896911621, -22.621271248381348 42.00520896911621, -41.62673759460449 42.00520896911621 M41.62673759460449 42.00520896911621 C12.038447749988404 42.00520896911621, -17.549842094627685 42.00520896911621, -41.62673759460449 42.00520896911621 M-41.62673759460449 42.00520896911621 C-41.62673759460449 10.956471192261773, -41.62673759460449 -20.092266584592664, -41.62673759460449 -42.00520896911621 M-41.62673759460449 42.00520896911621 C-41.62673759460449 21.903295217953378, -41.62673759460449 1.801381466790545, -41.62673759460449 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-29.626737594604492, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="59.253475189208984" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 113px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>Window</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-29.626737594604492, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-29.626737594604492, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-41.62673568725586 6.005208969116211 C-13.637918323128076 6.005208969116211, 14.350899040999707 6.005208969116211, 41.62673568725586 6.005208969116211 M-41.62673568725586 6.005208969116211 C-11.510714853737547 6.005208969116211, 18.605305979780766 6.005208969116211, 41.62673568725586 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-41.62673568725586 24.00520896911621 C-14.104633287719029 24.00520896911621, 13.417469111817802 24.00520896911621, 41.62673568725586 24.00520896911621 M-41.62673568725586 24.00520896911621 C-24.592400808615764 24.00520896911621, -7.558065929975669 24.00520896911621, 41.62673568725586 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-ListBox-54" transform="translate(419.15278244018555, 2364.5886764526367)">
+      <g class="basic label-container">
+       <path d="M-39.13541793823242 -42.00520896911621 L39.13541793823242 -42.00520896911621 L39.13541793823242 42.00520896911621 L-39.13541793823242 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-39.13541793823242 -42.00520896911621 C-14.078128243363974 -42.00520896911621, 10.979161451504474 -42.00520896911621, 39.13541793823242 -42.00520896911621 M-39.13541793823242 -42.00520896911621 C-12.926860407756706 -42.00520896911621, 13.28169712271901 -42.00520896911621, 39.13541793823242 -42.00520896911621 M39.13541793823242 -42.00520896911621 C39.13541793823242 -20.520605884802812, 39.13541793823242 0.9639971995105867, 39.13541793823242 42.00520896911621 M39.13541793823242 -42.00520896911621 C39.13541793823242 -22.040410184144875, 39.13541793823242 -2.075611399173539, 39.13541793823242 42.00520896911621 M39.13541793823242 42.00520896911621 C17.380175208223914 42.00520896911621, -4.375067521784594 42.00520896911621, -39.13541793823242 42.00520896911621 M39.13541793823242 42.00520896911621 C12.694845901043237 42.00520896911621, -13.745726136145947 42.00520896911621, -39.13541793823242 42.00520896911621 M-39.13541793823242 42.00520896911621 C-39.13541793823242 9.153809172569488, -39.13541793823242 -23.697590623977234, -39.13541793823242 -42.00520896911621 M-39.13541793823242 42.00520896911621 C-39.13541793823242 14.421491936554172, -39.13541793823242 -13.162225096007866, -39.13541793823242 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-27.135417938232422, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="54.270835876464844" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 106px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>ListBox</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-27.135417938232422, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-27.135417938232422, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-39.13541793823242 6.005208969116211 C-13.646165161532757 6.005208969116211, 11.843087615166908 6.005208969116211, 39.13541793823242 6.005208969116211 M-39.13541793823242 6.005208969116211 C-19.650071133386167 6.005208969116211, -0.16472432853991137 6.005208969116211, 39.13541793823242 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-39.13541793823242 24.00520896911621 C-22.20848693266908 24.00520896911621, -5.281555927105735 24.00520896911621, 39.13541793823242 24.00520896911621 M-39.13541793823242 24.00520896911621 C-9.98232175877293 24.00520896911621, 19.170774420686563 24.00520896911621, 39.13541793823242 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-ComboBox-55" transform="translate(559.4722290039062, 2364.5886764526367)">
+      <g class="basic label-container">
+       <path d="M-51.18402862548828 -42.00520896911621 L51.18402862548828 -42.00520896911621 L51.18402862548828 42.00520896911621 L-51.18402862548828 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-51.18402862548828 -42.00520896911621 C-15.822317558017431 -42.00520896911621, 19.53939350945342 -42.00520896911621, 51.18402862548828 -42.00520896911621 M-51.18402862548828 -42.00520896911621 C-27.838623977816354 -42.00520896911621, -4.493219330144427 -42.00520896911621, 51.18402862548828 -42.00520896911621 M51.18402862548828 -42.00520896911621 C51.18402862548828 -17.18772946280675, 51.18402862548828 7.62975004350271, 51.18402862548828 42.00520896911621 M51.18402862548828 -42.00520896911621 C51.18402862548828 -13.301596040332079, 51.18402862548828 15.402016888452053, 51.18402862548828 42.00520896911621 M51.18402862548828 42.00520896911621 C23.186134218347068 42.00520896911621, -4.811760188794146 42.00520896911621, -51.18402862548828 42.00520896911621 M51.18402862548828 42.00520896911621 C18.556579900672588 42.00520896911621, -14.070868824143105 42.00520896911621, -51.18402862548828 42.00520896911621 M-51.18402862548828 42.00520896911621 C-51.18402862548828 18.1028212199063, -51.18402862548828 -5.799566529303611, -51.18402862548828 -42.00520896911621 M-51.18402862548828 42.00520896911621 C-51.18402862548828 22.16052988680722, -51.18402862548828 2.3158508044982256, -51.18402862548828 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-39.18402862548828, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="78.36805725097656" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 134px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>ComboBox</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-39.18402862548828, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-39.18402862548828, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-51.18402862548828 6.005208969116211 C-21.24392869823048 6.005208969116211, 8.696171229027321 6.005208969116211, 51.18402862548828 6.005208969116211 M-51.18402862548828 6.005208969116211 C-20.96880967758771 6.005208969116211, 9.24640927031286 6.005208969116211, 51.18402862548828 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-51.18402862548828 24.00520896911621 C-15.257712183644728 24.00520896911621, 20.668604258198826 24.00520896911621, 51.18402862548828 24.00520896911621 M-51.18402862548828 24.00520896911621 C-25.066615937442645 24.00520896911621, 1.0507967506029914 24.00520896911621, 51.18402862548828 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+     <g class="node default" id="classId-TreeView-56" transform="translate(707.4305648803711, 2364.5886764526367)">
+      <g class="basic label-container">
+       <path d="M-46.77430725097656 -42.00520896911621 L46.77430725097656 -42.00520896911621 L46.77430725097656 42.00520896911621 L-46.77430725097656 42.00520896911621" stroke="none" stroke-width="0" fill="#ECECFF" style=""></path>
+       <path d="M-46.77430725097656 -42.00520896911621 C-10.7854729818837 -42.00520896911621, 25.203361287209162 -42.00520896911621, 46.77430725097656 -42.00520896911621 M-46.77430725097656 -42.00520896911621 C-26.795019777923084 -42.00520896911621, -6.815732304869606 -42.00520896911621, 46.77430725097656 -42.00520896911621 M46.77430725097656 -42.00520896911621 C46.77430725097656 -12.07143499455849, 46.77430725097656 17.86233897999923, 46.77430725097656 42.00520896911621 M46.77430725097656 -42.00520896911621 C46.77430725097656 -19.003219229046838, 46.77430725097656 3.998770511022535, 46.77430725097656 42.00520896911621 M46.77430725097656 42.00520896911621 C9.722866163570579 42.00520896911621, -27.328574923835404 42.00520896911621, -46.77430725097656 42.00520896911621 M46.77430725097656 42.00520896911621 C27.600497375548954 42.00520896911621, 8.426687500121346 42.00520896911621, -46.77430725097656 42.00520896911621 M-46.77430725097656 42.00520896911621 C-46.77430725097656 14.230971421627927, -46.77430725097656 -13.543266125860356, -46.77430725097656 -42.00520896911621 M-46.77430725097656 42.00520896911621 C-46.77430725097656 13.326909762404267, -46.77430725097656 -15.351389444307678, -46.77430725097656 -42.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="annotation-group text" transform="translate(0, -18.00520896911621)"></g>
+      <g class="label-group text" transform="translate(-34.77430725097656, -18.00520896911621)">
+       <g class="label" style="font-weight: bolder" transform="translate(0,-12.005208969116211)">
+        <foreignObject width="69.54861450195312" height="24.010417938232422">
+         <div style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 120px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+          <span class="nodeLabel markdown-node-label" style=""><p>TreeView</p></span>
+         </div>
+        </foreignObject>
+       </g>
+      </g>
+      <g class="members-group text" transform="translate(-34.77430725097656, 30.00520896911621)"></g>
+      <g class="methods-group text" transform="translate(-34.77430725097656, 60.00520896911621)"></g>
+      <g class="divider" style="">
+       <path d="M-46.77430725097656 6.005208969116211 C-10.887059322291684 6.005208969116211, 25.000188606393195 6.005208969116211, 46.77430725097656 6.005208969116211 M-46.77430725097656 6.005208969116211 C-26.341207169158668 6.005208969116211, -5.908107087340774 6.005208969116211, 46.77430725097656 6.005208969116211" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+      <g class="divider" style="">
+       <path d="M-46.77430725097656 24.00520896911621 C-14.642015959289196 24.00520896911621, 17.49027533239817 24.00520896911621, 46.77430725097656 24.00520896911621 M-46.77430725097656 24.00520896911621 C-13.545985825991444 24.00520896911621, 19.682335598993674 24.00520896911621, 46.77430725097656 24.00520896911621" stroke="#9370DB" stroke-width="1.3" fill="none" stroke-dasharray="0 0" style=""></path>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </svg>

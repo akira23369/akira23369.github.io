@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/编程语言/Csharp/01基础理论/002.CLI公共语言基础结构.md",
+                "file": "source/_posts/WPF/03布局/02.使用StackPanel面板进行简单布局.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "002.CLI公共语言基础结构"
+              "title": "02.使用StackPanel面板进行简单布局"
             }
           },
           {
@@ -27,26 +27,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/编程语言/Csharp/补充/02.Span.md",
+                "file": "source/_posts/WPF/07Application类/01.应用程序的生命周期.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02.Span"
+              "title": "01.应用程序的生命周期"
             }
           },
           {
-            "id": "1e8b8dfa0ac4d4f3",
+            "id": "992a27fc48f33f01",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/编程语言/Csharp/11命名空间/093.命名空间别名.md",
+                "file": "source/_posts/WPF/06控件/03.特殊容器.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "093.命名空间别名"
+              "title": "03.特殊容器"
             }
           }
         ],
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "struct",
+                "query": "Expander",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -212,51 +212,51 @@
   },
   "active": "f02c76c1791ac8c2",
   "lastOpenFiles": [
-    "source/_posts/编程语言/Csharp/39CSharp十三/02.分部属性、分部索引器.md",
-    "source/_posts/编程语言/Csharp/39CSharp十三/01.params增强.md",
-    "source/_posts/编程语言/Csharp/39CSharp十三/01.params增强/file-20260424184351279.png",
-    "source/_posts/编程语言/Csharp/39CSharp十三/01.params增强",
-    "source/_posts/编程语言/Csharp/补充/02.Span.md",
-    "source/_posts/编程语言/Csharp/39CSharp十三",
-    "source/_posts/编程语言/Csharp/补充/01.CSharp运算符重载.md",
-    "source/_posts/编程语言/Csharp/05方法/045.参数修饰符-ref.md",
-    "source/_posts/编程语言/Csharp/13结构体/结构体099-103Note.md",
-    "source/_posts/编程语言/Csharp/13结构体/103.基元类型与结构体.md",
-    "source/_posts/编程语言/Csharp/13结构体/102.只读结构体.md",
-    "source/_posts/编程语言/Csharp/13结构体/101.结构体与类对比.md",
-    "source/_posts/编程语言/Csharp/13结构体/100.结构体构造函数.md",
-    "source/_posts/编程语言/Csharp/13结构体/099.结构体.md",
-    "source/_posts/编程语言/Csharp/38CSharp十二/324.using别名.md",
-    "source/_posts/编程语言/Csharp/38CSharp十二/323.Lambda表达式默认参数.md",
-    "source/_posts/编程语言/Csharp/35任务/309.Task的创建.md",
-    "source/_posts/编程语言/Csharp/11命名空间/093.命名空间别名.md",
-    "source/_posts/编程语言/Csharp/11命名空间/094.静态导入Using Static.md",
-    "source/_posts/编程语言/Csharp/csharp表达式体.md",
-    "source/_posts/编程语言/Csharp/38CSharp十二/322.集合表达式.md",
-    "source/_posts/编程语言/Csharp/33Record/277.继承、模式匹配与新特性.md",
-    "source/_posts/编程语言/Csharp/38CSharp十二/321.主构造函数.md",
-    "source/_posts/编程语言/Csharp/37CSharp十一/320.泛型数学了解.md",
-    "source/_posts/编程语言/Csharp/38CSharp十二",
-    "source/_posts/编程语言/Csharp/37CSharp十一/319.required必须初始化的成员.md",
-    "source/_posts/编程语言/Csharp/37CSharp十一/318.file访问修饰符.md",
-    "source/_posts/编程语言/Csharp/32模式匹配/268.各种模式类型详解.md",
-    "source/_posts/编程语言/Csharp/32模式匹配/269.Switch表达式与模式匹配.md",
-    "source/_posts/编程语言/Csharp/32模式匹配/270.复杂模式组合与嵌套.md",
-    "source/_posts/编程语言/Csharp/37CSharp十一",
-    "db.json",
-    "public/MyImg/test.jpg",
-    "public/NGUI总结.png",
-    "public/MyImg/《原神》神里绫华4k电脑桌面壁纸.jpg",
-    "public/libs/lightgallery/js/lightgallery.min.js",
-    "public/libs/lightgallery/js/lightgallery.js",
-    "public/libs/lightgallery/js/lg-zoom.js",
-    "public/libs/lightgallery/js/lg-video.min.js",
-    "public/libs/lightgallery/js/lg-zoom.min.js",
-    "public/libs/lightgallery/img/youtube-play.png",
-    "public/libs/lightgallery/img/video-play.png",
-    "public/libs/lightgallery/img/vimeo-play.png",
-    "public/libs/lightgallery/img/loading.gif",
-    "public/libs/lightgallery/fonts/lg.svg",
-    "public/css/images/thumb-default-small.png"
+    "public/tags/搜索与图论/page/3/index.html",
+    "public/tags/搜索与图论/page/3",
+    "public/tags/搜索与图论/page/2/index.html",
+    "public/tags/搜索与图论/page/2",
+    "public/tags/NGUI基础知识/page/3/index.html",
+    "public/tags/NGUI基础知识/page/2/index.html",
+    "public/tags/NGUI基础知识/page/3",
+    "public/tags/NGUI基础知识/page/2",
+    "public/tags/NGUI基础知识/page",
+    "public/tags/NGUI基础知识/index.html",
+    "public/tags/NGUI基础知识",
+    "public/css/images/thumb-default-small.png",
+    "public/css/images/logo.png",
+    "source/_posts/WPF/06控件/08.控件小结.md",
+    "source/_posts/WPF/06控件/03.特殊容器.md",
+    "source/_posts/WPF/06控件/01.控件类.md",
+    "source/_posts/WPF/06控件/02.内容控件.md",
+    "source/_posts/WPF/05路由事件/01.理解路由事件.md",
+    "source/_posts/WPF/03布局/02.使用StackPanel面板进行简单布局.md",
+    "source/_posts/WPF/03布局/01.理解WPF中的布局.md",
+    "source/_posts/编程语言/Csharp/19委托与事件/126.事件Events与发布-订阅模式.md",
+    "source/_posts/WPF/06控件/07.日期控件.md",
+    "source/_posts/WPF/06控件/07.日期控件/file-20260616203646677.png",
+    "source/_posts/WPF/06控件/07.日期控件/DatePicker例子动画.gif",
+    "source/_posts/WPF/06控件/06.基于范围的控件.md",
+    "source/_posts/WPF/06控件/06.基于范围的控件/IsIndeterminate例子动画.gif",
+    "source/_posts/WPF/06控件/06.基于范围的控件/file-20260616195702029.png",
+    "public/2000/01/01/算法/Acwing/基础/数据结构/7.KMP字符串/Pasted image 20240509185448.png",
+    "public/2000/01/01/算法/Acwing/基础/数据结构/7.KMP字符串/Pasted image 20240509185351.png",
+    "public/2000/01/01/算法/Acwing/基础/数据结构/7.KMP字符串/Pasted image 20240509185325.png",
+    "public/2000/01/01/算法/Acwing/基础/数据结构/7.KMP字符串/Pasted image 20240509185309.png",
+    "source/_posts/WPF/06控件/05.列表控件.md",
+    "source/_posts/WPF/06控件/04.文本控件.md",
+    "source/_posts/WPF/03布局/03.WrapPanel和DockPanel面板.md",
+    "source/_posts/你好呀.md",
+    "source/_posts/WPF/05路由事件/07.路由事件小结.md",
+    "source/_posts/WPF/05路由事件/03.WPF事件.md",
+    "source/_posts/WPF/05路由事件/02.事件路由.md",
+    "source/_posts/WPF/05路由事件/04.键盘输入.md",
+    "source/_posts/WPF/05路由事件/05.鼠标输入.md",
+    "source/_posts/WPF/05路由事件/06.多点触控输入.md",
+    "source/_posts/WPF/01WPF概述/02.WPF视觉树继承体系.md",
+    "source/_posts/编程语言/Csharp/19委托与事件/127.自动实现的事件.md",
+    "source/_posts/编程语言/Csharp/01基础理论/002.CLI公共语言基础结构.md",
+    "source/_posts/WPF/04依赖项属性/01.理解依赖项属性.md",
+    "source/_posts/WPF/04依赖项属性/03.依赖项属性小结.md"
   ]
 }

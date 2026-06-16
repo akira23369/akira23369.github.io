@@ -16,5 +16,5 @@
   "smartIndentList": true,
   "readableLineLength": false,
   "useTab": false,
-  "strictLineBreaks": true
+  "strictLineBreaks": false
 }
